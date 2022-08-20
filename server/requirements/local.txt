@@ -1,1 +1,2 @@
 requests
+python-decouple==3.6
