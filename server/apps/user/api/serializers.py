@@ -42,6 +42,9 @@ class RegisterSerializer(serializers.ModelSerializer):
         if attrs['password'] != attrs['password2']:
             raise serializers.ValidationError({"password": "Password fields didn't match."})
 
+        if attrs['policy_agreement'] == False:
+            raise serializers.ValidationError({"policy_agreement": "policy agreement must be True"})
+
         return attrs
 
     def create(self, validated_data):
