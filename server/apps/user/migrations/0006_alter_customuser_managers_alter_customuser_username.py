@@ -7,19 +7,19 @@ import user.managers
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('user', '0005_alter_customuser_username'),
+        ("user", "0005_alter_customuser_username"),
     ]
 
     operations = [
         migrations.AlterModelManagers(
-            name='customuser',
+            name="customuser",
             managers=[
-                ('objects', user.managers.UserManager()),
+                ("objects", user.managers.UserManager()),
             ],
         ),
         migrations.AlterField(
-            model_name='customuser',
-            name='username',
+            model_name="customuser",
+            name="username",
             field=models.CharField(blank=True, max_length=25),
         ),
     ]

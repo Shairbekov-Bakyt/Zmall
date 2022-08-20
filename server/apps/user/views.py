@@ -1,4 +1,5 @@
 from django.contrib.sites.shortcuts import get_current_site
+from django.http import HttpRequest
 from django.urls import reverse
 
 from rest_framework import generics, status
@@ -9,8 +10,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 from user.models import CustomUser
 from user.utils import Util
-from user.api.serializers import MyTokenObtainPairSerializer,\
-        RegisterSerializer
+from user.api.serializers import MyTokenObtainPairSerializer, RegisterSerializer
 
 
 class MyObtainTokenPairView(TokenObtainPairView):
@@ -21,7 +21,7 @@ class MyObtainTokenPairView(TokenObtainPairView):
 class RegisterView(generics.GenericAPIView):
     serializer_class = RegisterSerializer
 
-    def post(self, request):
+    def post(self, request: HttpRequest) -> Response:
         user = request.data
         serializer = self.serializer_class(data=user)
         serializer.is_valid(raise_exception=True)
@@ -29,24 +29,28 @@ class RegisterView(generics.GenericAPIView):
 
         user_data = serializer.data
 
-        user= CustomUser.objects.get(email=user_data['email'])
+        user = CustomUser.objects.get(email=user_data["email"])
 
         token = RefreshToken.for_user(user).access_token
         current_site = get_current_site(request).domain
-        relativeLink = reverse('email-verify')
-        
-        absurl = 'http://'+current_site+relativeLink+"?token="+str(token)
+        relativeLink = reverse("email-verify")
 
-        email_body = "Hi" + user.username+"use link below to verify email \n" + absurl
+        absurl = "http://" + current_site + relativeLink + "?token=" + str(token)
 
-        data = {"email_body": email_body, 'email_subject': 'Verify your email', 'to_whom': user.email}
+        email_body = (
+            "Hi " + user.first_name + " use link below to verify email \n" + absurl
+        )
+
+        data = {
+            "email_body": email_body,
+            "email_subject": "Verify your email",
+            "to_whom": user.email,
+        }
         Util.send_email(data)
 
         return Response(user_data, status=status.HTTP_201_CREATED)
 
 
 class VerifyEmail(generics.GenericAPIView):
-
     def get(self, request):
         pass
-

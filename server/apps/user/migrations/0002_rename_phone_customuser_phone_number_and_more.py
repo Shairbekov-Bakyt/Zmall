@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('user', '0001_initial'),
+        ("user", "0001_initial"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='customuser',
-            old_name='phone',
-            new_name='phone_number',
+            model_name="customuser",
+            old_name="phone",
+            new_name="phone_number",
         ),
         migrations.AddField(
-            model_name='customuser',
-            name='policy_agreement',
+            model_name="customuser",
+            name="policy_agreement",
             field=models.BooleanField(default=1),
             preserve_default=False,
         ),
