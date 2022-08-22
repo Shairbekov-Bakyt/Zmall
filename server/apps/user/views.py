@@ -31,13 +31,15 @@ class RegisterView(generics.GenericAPIView):
 
 
 class VerifyEmail(generics.GenericAPIView):
+
     def get(self, request):
         token = request.GET.get('token')
+        print(token)
         try:
-            payload = jwt.decode(token, settings.SECRET_KEY)
+            payload = jwt.decode(token, settings.SECRET_KEY, algorithms=['HS256'])
             user =  get_user_by_id(payload['user_id'])
-            if not user.is_activate:
-                user.is_activate = True
+            if not user.is_active:
+                user.is_active = True
                 user.save()
 
             return Response({"email": "Successfully activated"}, status=status.HTTP_200_OK)
