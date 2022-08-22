@@ -112,20 +112,20 @@ class Advert(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     def save(self, *args, **kwargs):
-        client = connect(REDIS_HOST, REDIS_PORT)
-        if not client.exists(self.category.name):
-            client.set(self.category.name, 0)
+        if not self.pk:
+            client = connect(REDIS_HOST, REDIS_PORT)
+            if not client.exists(self.category.name):
+                client.set(self.category.name, 0)
 
-        if not client.exists(self.sub_category.name):
-            client.set(self.sub_category.name, 0)
+            if not client.exists(self.sub_category.name):
+                client.set(self.sub_category.name, 0)
 
-        client.incr(self.category.name)
-        client.incr(self.sub_category.name)
+            client.incr(self.category.name)
+            client.incr(self.sub_category.name)
 
-        super().save(*args, **kwargs)
-
+        super(Advert, self).save(*args, **kwargs)
 
     class Meta: 
         verbose_name = 'объявление'
