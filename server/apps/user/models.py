@@ -11,14 +11,12 @@ class CustomUser(AbstractUser):
 
     email = models.EmailField(verbose_name="email address", max_length=255, unique=True)
     phone_number = PhoneNumberField(blank=True)
-    policy_agreement = models.BooleanField()
     username = None
 
     REQUIRED_FIELDS = [
         "first_name",
         "last_name",
         "phone_number",
-        "policy_agreement",
     ]
     USERNAME_FIELD = "email"
 

@@ -23,11 +23,11 @@ class RegisterSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(
         required=True, validators=[UniqueValidator(queryset=User.objects.all())]
     )
-
     password = serializers.CharField(
         write_only=True, required=True, validators=[validate_password]
     )
     password2 = serializers.CharField(write_only=True, required=True)
+    policy_agreement = serializers.BooleanField(write_only=True, default=False)
 
     class Meta:
         model = User
@@ -40,11 +40,11 @@ class RegisterSerializer(serializers.ModelSerializer):
             "password2",
             "policy_agreement",
         )
+
         extra_kwargs = {
             "first_name": {"required": True},
             "last_name": {"required": True},
             "phone_number": {"required": True},
-            "policy_agreement": {"required": True},
         }
 
     def validate(self, attrs):
@@ -53,7 +53,7 @@ class RegisterSerializer(serializers.ModelSerializer):
                 {"password": "Password fields didn't match."}
             )
 
-        if attrs["policy_agreement"] == False:
+        if not attrs["policy_agreement"]:
             raise serializers.ValidationError(
                 {"policy_agreement": "policy agreement must be True"}
             )
@@ -65,12 +65,12 @@ class RegisterSerializer(serializers.ModelSerializer):
             email=validated_data["email"],
             first_name=validated_data["first_name"],
             last_name=validated_data["last_name"],
-            policy_agreement=validated_data["policy_agreement"],
             phone_number=validated_data["phone_number"],
         )
 
         user.set_password(validated_data["password"])
         user.save()
+
         self.user = user
 
         return user

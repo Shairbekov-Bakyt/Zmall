@@ -49,8 +49,6 @@ class AdvertImageSerializer(serializers.ModelSerializer):
 
 
 class AdvertCreateSerializer(serializers.ModelSerializer):
-    # image = AdvertImageSerializer()
-    # contact = AdvertContactSerailzer()
     category = CategorySerializer()
     sub_category = SubCategorySerializer()
     promote = PromoteSerializer()
