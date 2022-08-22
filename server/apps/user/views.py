@@ -11,6 +11,7 @@ from user.api.serializers import MyTokenObtainPairSerializer, RegisterSerializer
 from user.services import send_token_with_mail
 from user.selectors import get_user_by_id
 
+
 class MyObtainTokenPairView(TokenObtainPairView):
     permission_classes = (AllowAny,)
     serializer_class = MyTokenObtainPairSerializer
@@ -32,12 +33,11 @@ class RegisterView(generics.GenericAPIView):
 
 class VerifyEmail(generics.GenericAPIView):
 
-    def get(self, request):
+    def get(self, request: HttpRequest) -> Response:
         token = request.GET.get('token')
-        print(token)
         try:
             payload = jwt.decode(token, settings.SECRET_KEY, algorithms=['HS256'])
-            user =  get_user_by_id(payload['user_id'])
+            user = get_user_by_id(payload['user_id'])
             if not user.is_active:
                 user.is_active = True
                 user.save()

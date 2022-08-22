@@ -125,6 +125,10 @@ USE_I18N = True
 USE_TZ = True
 
 
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 

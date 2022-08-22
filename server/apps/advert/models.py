@@ -2,7 +2,9 @@ from django.db import models
 
 from phonenumber_field.modelfields import PhoneNumberField
 
+from config.settings import REDIS_HOST, REDIS_PORT
 from user.models import CustomUser
+from advert.utils import connect
 
 
 class Category(models.Model):
@@ -110,8 +112,22 @@ class Advert(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def save(self, *args, **kwargs):
+        client = connect(REDIS_HOST, REDIS_PORT)
+        if not client.exists(self.category.name):
+            client.set(self.category.name, 0)
 
-    class Meta:
+        if not client.exists(self.sub_category.name):
+            client.set(self.sub_category.name, 0)
+
+        client.incr(self.category.name)
+        client.incr(self.sub_category.name)
+
+        super().save(*args, **kwargs)
+
+
+    class Meta: 
         verbose_name = 'объявление'
         verbose_name_plural = 'объявлении'
 
