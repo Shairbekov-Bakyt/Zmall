@@ -8,10 +8,13 @@ from user.models import CustomUser
 class Category(models.Model):
     icon = models.ImageField(upload_to='category/icon/%Y/%m/%d', verbose_name='изображение категории')
     name = models.CharField(max_length=100, verbose_name='название категории')
-    advert_count = models.IntegerField(verbose_name='количество объявлении')
+    advert_count = models.IntegerField(verbose_name='количество объявлении', default=0)
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        self.advert_count = Advert.objects.filter(category=self).count()
 
     class Meta:
         verbose_name = 'Категория'
@@ -21,10 +24,13 @@ class Category(models.Model):
 class SubCategory(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
     name = models.CharField(max_length=100, verbose_name='название подкатегори')
-    advert_count = models.IntegerField(verbose_name='количество объявлении')
+    advert_count = models.IntegerField(verbose_name='количество объявлении', default=0)
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        self.advert_count = Advert.objects.filter(sub_category=self).count()
     
     class Meta:
         verbose_name = 'Подкатегория'
@@ -32,8 +38,12 @@ class SubCategory(models.Model):
 
 
 class AdvertImage(models.Model):
+    advert = models.ForeignKey("Advert", on_delete=models.CASCADE, verbose_name='объявления', related_name='advert_image')
     image = models.ImageField(upload_to='advert/images/%Y/%m/%d')
-    
+
+    def __str__(self):
+        return self.image.url
+
     class Meta:
         verbose_name = 'изображение для объявлении'
         verbose_name_plural = 'изображении для объявлении'
@@ -51,10 +61,8 @@ class City(models.Model):
 
 
 class AdvertContact(models.Model):
+    advert = models.ForeignKey("Advert", on_delete=models.CASCADE, verbose_name='объявления')
     phone_number = PhoneNumberField(verbose_name='номер телефона')
-
-    def __str__(self):
-        return self.phone_number
 
     class Meta:
         verbose_name = 'номер для объявления'
@@ -71,7 +79,6 @@ class Promote(models.Model):
     icon = models.ImageField(upload_to='promote/%Y/%m/%d', blank=True)
     name = models.CharField(max_length=50)
     description = models.TextField(verbose_name='описание')
-    
     types = models.CharField(max_length=50, choices=PromoteType.choices)
 
     def __str__(self):
@@ -91,12 +98,10 @@ class Advert(models.Model):
     from_price = models.IntegerField(verbose_name='от цены')
     to_price = models.IntegerField(verbose_name='до цены')
     description = models.TextField(verbose_name='описание')
-    image = models.ForeignKey(AdvertImage, on_delete=models.CASCADE, verbose_name='изображение')
     city = models.ForeignKey(City, on_delete=models.PROTECT, verbose_name='город')
     email = models.EmailField(verbose_name='E-mail')
     phone_number = PhoneNumberField(verbose_name='номер телефона')
     wa_number = PhoneNumberField(verbose_name='WhatsApp номер')
-    contact = models.ForeignKey(AdvertContact, on_delete=models.PROTECT, verbose_name='доп номер телефона')
     promote = models.ForeignKey(Promote, on_delete=models.PROTECT, verbose_name='реклама', blank=True, null=True)
     created_date = models.DateTimeField(auto_now_add=True)
     image_count = models.IntegerField(verbose_name='количество изображений')
