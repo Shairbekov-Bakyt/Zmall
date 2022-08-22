@@ -95,6 +95,7 @@ class AdvertListSerializer(serializers.ModelSerializer):
 
 class AdvertDetailSerializer(serializers.ModelSerializer):
     promote = PromoteSerializer()
+    advert_contact = AdvertContactSerailzer(many=True)
     city = CitySerializer()
     advert_image = AdvertImageSerializer(many=True)
 
@@ -107,11 +108,12 @@ class AdvertDetailSerializer(serializers.ModelSerializer):
             "from_price",
             "description",
             "wa_number",
-            "advert_image",
             "phone_number",
             "view",
             "created_date",
             "city",
             "promote",
+            "advert_image",
+            "advert_contact",
         ]
 

@@ -61,7 +61,7 @@ class City(models.Model):
 
 
 class AdvertContact(models.Model):
-    advert = models.ForeignKey("Advert", on_delete=models.CASCADE, verbose_name='объявления')
+    advert = models.ForeignKey("Advert", on_delete=models.CASCADE, verbose_name='объявления', related_name='advert_contact')
     phone_number = PhoneNumberField(verbose_name='номер телефона')
 
     class Meta:
@@ -87,7 +87,6 @@ class Promote(models.Model):
     class Meta:
         verbose_name = 'Реклама'
         verbose_name_plural = 'Рекламы'
-
 
 
 class Advert(models.Model):
