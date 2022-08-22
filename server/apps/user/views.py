@@ -1,3 +1,5 @@
+import jwt
+from django.conf import settings
 from django.http import HttpRequest
 
 from rest_framework import generics, status
@@ -7,7 +9,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 
 from user.api.serializers import MyTokenObtainPairSerializer, RegisterSerializer
 from user.services import send_token_with_mail
-
+from user.selectors import get_user_by_id
 
 class MyObtainTokenPairView(TokenObtainPairView):
     permission_classes = (AllowAny,)
@@ -30,4 +32,15 @@ class RegisterView(generics.GenericAPIView):
 
 class VerifyEmail(generics.GenericAPIView):
     def get(self, request):
-        pass
+        token = request.GET.get('token')
+        try:
+            payload = jwt.decode(token, settings.SECRET_KEY)
+            user =  get_user_by_id(payload['user_id'])
+            if not user.is_activate:
+                user.is_activate = True
+                user.save()
+
+            return Response({"email": "Successfully activated"}, status=status.HTTP_200_OK)
+
+        except jwt.ExpiredSignatureError as e:
+            return Response({"email": "Activation Expired"}, status=status.HTTP_400_BAD_REQUEST)
