@@ -1,5 +1,4 @@
 import jwt
-from django.conf import settings
 from django.http import HttpRequest
 
 from rest_framework import generics, status
@@ -10,6 +9,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from user.api.serializers import MyTokenObtainPairSerializer, RegisterSerializer
 from user.services import send_token_with_mail
 from user.selectors import get_user_by_id
+from config.settings.base import SECRET_KEY
 
 
 class MyObtainTokenPairView(TokenObtainPairView):
@@ -24,7 +24,6 @@ class RegisterView(generics.GenericAPIView):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-
         user = serializer.user
         send_token_with_mail(user, request)
 
@@ -36,7 +35,7 @@ class VerifyEmail(generics.GenericAPIView):
     def get(self, request: HttpRequest) -> Response:
         token = request.GET.get('token')
         try:
-            payload = jwt.decode(token, settings.SECRET_KEY, algorithms=['HS256'])
+            payload = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
             user = get_user_by_id(payload['user_id'])
             if not user.is_active:
                 user.is_active = True
