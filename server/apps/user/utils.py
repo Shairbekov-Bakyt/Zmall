@@ -1,6 +1,6 @@
 from django.core.mail import EmailMessage, send_mail
 
-from config.settings import EMAIL_HOST_USER
+from config.settings.base import EMAIL_HOST_USER
 
 
 class Util:

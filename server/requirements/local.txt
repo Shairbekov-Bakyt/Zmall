@@ -1,3 +1,4 @@
 -r base.txt
-requests
+
 python-decouple==3.6
+django-debug-toolbar==2.2

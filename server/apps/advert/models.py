@@ -2,7 +2,7 @@ from django.db import models
 
 from phonenumber_field.modelfields import PhoneNumberField
 
-from config.settings import REDIS_HOST, REDIS_PORT
+from config.settings.base import REDIS_HOST, REDIS_PORT
 from user.models import CustomUser
 from advert.utils import connect
 
