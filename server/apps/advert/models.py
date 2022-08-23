@@ -17,8 +17,11 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-    def save(self, *args, **kwargs):
-        self.advert_count = Advert.objects.filter(category=self).count()
+
+    @staticmethod
+    def set_advert_count(cls, number):
+        cls.advert_count = number
+        cls.save()
 
     class Meta:
         verbose_name = "Категория"
@@ -35,8 +38,10 @@ class SubCategory(models.Model):
     def __str__(self):
         return self.name
 
-    def save(self, *args, **kwargs):
-        self.advert_count = Advert.objects.filter(sub_category=self).count()
+    @staticmethod
+    def set_advert_count(cls, number):
+        cls.advert_count = number
+        cls.save()
 
     class Meta:
         verbose_name = "Подкатегория"
@@ -135,7 +140,7 @@ class Advert(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
-        if not self.pk:
+        if not self.pk and self.is_active and self.is_verified:
             client = connect(REDIS_HOST, REDIS_PORT)
             if not client.exists(self.category.name):
                 client.set(self.category.name, 0)
@@ -145,6 +150,8 @@ class Advert(models.Model):
 
             client.incr(self.category.name)
             client.incr(self.sub_category.name)
+            self.category.set_advert_count(self.category, client.get(self.category.name))
+            self.sub_category.set_advert_count(self.category, client.get(self.sub_category.name))
 
         super(Advert, self).save(*args, **kwargs)
 
