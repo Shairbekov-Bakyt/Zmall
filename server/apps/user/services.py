@@ -13,9 +13,7 @@ def send_token_with_mail(user, request):
 
     absurl = "http://" + current_site + relativeLink + "?token=" + str(token)
 
-    email_body = (
-            "Hi " + user.first_name + " use link below to verify email \n" + absurl
-    )
+    email_body = "Hi " + user.first_name + " use link below to verify email \n" + absurl
 
     data = {
         "email_body": email_body,

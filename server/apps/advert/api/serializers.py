@@ -86,7 +86,7 @@ class AdvertListSerializer(serializers.ModelSerializer):
     def to_representation(self, instance):
         representation = super().to_representation(instance)
         advert = AdvertImage.objects.filter(advert=instance).first()
-        representation['image'] = advert.image.url
+        representation["image"] = advert.image.url
 
         return representation
 
@@ -114,4 +114,3 @@ class AdvertDetailSerializer(serializers.ModelSerializer):
             "advert_image",
             "advert_contact",
         ]
-

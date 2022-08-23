@@ -31,17 +31,20 @@ class RegisterView(generics.GenericAPIView):
 
 
 class VerifyEmail(generics.GenericAPIView):
-
     def get(self, request: HttpRequest) -> Response:
-        token = request.GET.get('token')
+        token = request.GET.get("token")
         try:
-            payload = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
-            user = get_user_by_id(payload['user_id'])
+            payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
+            user = get_user_by_id(payload["user_id"])
             if not user.is_active:
                 user.is_active = True
                 user.save()
 
-            return Response({"email": "Successfully activated"}, status=status.HTTP_200_OK)
+            return Response(
+                {"email": "Successfully activated"}, status=status.HTTP_200_OK
+            )
 
         except jwt.ExpiredSignatureError as e:
-            return Response({"email": "Activation Expired"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {"email": "Activation Expired"}, status=status.HTTP_400_BAD_REQUEST
+            )

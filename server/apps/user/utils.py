@@ -11,7 +11,7 @@ class Util:
             message=data["email_body"],
             from_email=EMAIL_HOST_USER,
             recipient_list=[
-               data["to_whom"],
+                data["to_whom"],
             ],
-            fail_silently=True
+            fail_silently=True,
         )
