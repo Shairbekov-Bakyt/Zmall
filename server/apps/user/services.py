@@ -3,13 +3,14 @@ from django.urls import reverse
 
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from .utils import Util
+from .utils import Util, get_token_by_user
 
 
 def send_token_with_mail(user, request):
-    token = RefreshToken.for_user(user).access_token
     current_site = get_current_site(request).domain
     relativeLink = reverse("email-verify")
+
+    token = get_token_by_user(user)
 
     absurl = "http://" + current_site + relativeLink + "?token=" + str(token)
 

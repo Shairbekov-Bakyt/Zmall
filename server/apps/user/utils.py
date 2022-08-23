@@ -1,4 +1,5 @@
 from django.core.mail import EmailMessage, send_mail
+from rest_framework_simplejwt.tokens import RefreshToken
 
 from config.settings.base import EMAIL_HOST_USER
 
@@ -15,3 +16,8 @@ class Util:
             ],
             fail_silently=True,
         )
+
+
+def get_token_by_user(user):
+    token = RefreshToken.for_user(user).access_token
+    return str(token)
