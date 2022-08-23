@@ -2,22 +2,49 @@ import jwt
 from django.http import HttpRequest
 
 from rest_framework import generics, status
-from rest_framework.permissions import AllowAny
+from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
 
-from user.api.serializers import MyTokenObtainPairSerializer, RegisterSerializer
+from user.api.serializers import MyTokenObtainPairSerializer, RegisterSerializer, ChangePasswordSerializer
 from user.services import send_token_with_mail
 from user.selectors import get_user_by_id
 from config.settings.base import SECRET_KEY
 
 
+class ChangePasswordView(generics.UpdateAPIView):
+    """
+    an endpoint change password
+    """
+    serializer_class = ChangePasswordSerializer
+    permission_classes = [IsAuthenticated, ]
+
+    def get_object(self):
+        obj = self.request.user
+        return obj
+
+    def update(self, request, *args, **kwargs):
+        user = self.get_object()
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user.set_password(serializer.data.get('new_password'))
+        user.save()
+        return Response({"password": "password change successfully"}, status=status.HTTP_200_OK)
+
+
 class MyObtainTokenPairView(TokenObtainPairView):
+    """
+    an endpoint login
+    """
     permission_classes = (AllowAny,)
     serializer_class = MyTokenObtainPairSerializer
 
 
 class RegisterView(generics.GenericAPIView):
+    """
+    an endpoint registration
+    """
     serializer_class = RegisterSerializer
 
     def post(self, request: HttpRequest) -> Response:
@@ -31,6 +58,10 @@ class RegisterView(generics.GenericAPIView):
 
 
 class VerifyEmail(generics.GenericAPIView):
+    """
+    an endpoint email verification
+    """
+
     def get(self, request: HttpRequest) -> Response:
         token = request.GET.get("token")
         try:
