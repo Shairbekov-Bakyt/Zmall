@@ -49,10 +49,10 @@ class AdvertImageSerializer(serializers.ModelSerializer):
 
 
 class AdvertCreateSerializer(serializers.ModelSerializer):
-    category = CategorySerializer()
-    sub_category = SubCategorySerializer()
-    promote = PromoteSerializer()
-    city = CitySerializer()
+    category = serializers.SlugRelatedField(slug_field='name', queryset=Category.objects.all())
+    sub_category = serializers.SlugRelatedField(slug_field='name', queryset=SubCategory.objects.all())
+    promote = serializers.SlugRelatedField(slug_field='name', queryset=Promote.objects.all())
+    city = serializers.SlugRelatedField(slug_field='name', queryset=City.objects.all())
 
     class Meta:
         model = Advert
@@ -68,11 +68,6 @@ class AdvertCreateSerializer(serializers.ModelSerializer):
             "phone_number",
             "wa_number",
             "promote",
-            "created_date",
-            "image_count",
-            "view",
-            "is_active",
-            "is_verified",
         )
 
 

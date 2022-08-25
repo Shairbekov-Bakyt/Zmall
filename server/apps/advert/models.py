@@ -131,10 +131,10 @@ class Advert(models.Model):
         Promote, on_delete=models.PROTECT, verbose_name="реклама", blank=True, null=True
     )
     created_date = models.DateTimeField(auto_now_add=True)
-    image_count = models.IntegerField(verbose_name="количество изображений")
-    view = models.IntegerField(verbose_name="просмотры")
-    is_active = models.BooleanField()
-    is_verified = models.BooleanField()
+    image_count = models.IntegerField(verbose_name="количество изображений", default=0)
+    view = models.IntegerField(verbose_name="просмотры", default=0)
+    is_active = models.BooleanField(default=False)
+    is_verified = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
