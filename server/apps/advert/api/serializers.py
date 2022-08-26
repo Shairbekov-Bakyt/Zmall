@@ -15,7 +15,7 @@ from advert.models import (
 class AdvertContactSerailzer(serializers.ModelSerializer):
     class Meta:
         model = AdvertContact
-        fields = ("phone_number")
+        fields = "phone_number"
 
 
 class AdvertImageSerializer(serializers.ModelSerializer):
@@ -25,10 +25,16 @@ class AdvertImageSerializer(serializers.ModelSerializer):
 
 
 class AdvertCreateSerializer(serializers.ModelSerializer):
-    category = serializers.SlugRelatedField(slug_field='name', queryset=Category.objects.all())
-    sub_category = serializers.SlugRelatedField(slug_field='name', queryset=SubCategory.objects.all())
-    promote = serializers.SlugRelatedField(slug_field='name', queryset=Promote.objects.all())
-    city = serializers.SlugRelatedField(slug_field='name', queryset=City.objects.all())
+    category = serializers.SlugRelatedField(
+        slug_field="name", queryset=Category.objects.all()
+    )
+    sub_category = serializers.SlugRelatedField(
+        slug_field="name", queryset=SubCategory.objects.all()
+    )
+    promote = serializers.SlugRelatedField(
+        slug_field="name", queryset=Promote.objects.all()
+    )
+    city = serializers.SlugRelatedField(slug_field="name", queryset=City.objects.all())
     advert_image = serializers.ImageField()
 
     class Meta:

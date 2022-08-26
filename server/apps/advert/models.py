@@ -17,7 +17,6 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-
     @staticmethod
     def set_advert_count(cls, number):
         cls.advert_count = number
@@ -150,8 +149,12 @@ class Advert(models.Model):
 
             client.incr(self.category.name)
             client.incr(self.sub_category.name)
-            self.category.set_advert_count(self.category, client.get(self.category.name))
-            self.sub_category.set_advert_count(self.category, client.get(self.sub_category.name))
+            self.category.set_advert_count(
+                self.category, client.get(self.category.name)
+            )
+            self.sub_category.set_advert_count(
+                self.category, client.get(self.sub_category.name)
+            )
 
         super(Advert, self).save(*args, **kwargs)
 

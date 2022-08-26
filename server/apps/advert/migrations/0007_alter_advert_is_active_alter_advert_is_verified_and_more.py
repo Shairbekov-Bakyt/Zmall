@@ -6,23 +6,23 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('advert', '0006_alter_advert_image_count'),
+        ("advert", "0006_alter_advert_image_count"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='advert',
-            name='is_active',
+            model_name="advert",
+            name="is_active",
             field=models.BooleanField(default=False),
         ),
         migrations.AlterField(
-            model_name='advert',
-            name='is_verified',
+            model_name="advert",
+            name="is_verified",
             field=models.BooleanField(default=False),
         ),
         migrations.AlterField(
-            model_name='advert',
-            name='view',
-            field=models.IntegerField(default=0, verbose_name='просмотры'),
+            model_name="advert",
+            name="view",
+            field=models.IntegerField(default=0, verbose_name="просмотры"),
         ),
     ]

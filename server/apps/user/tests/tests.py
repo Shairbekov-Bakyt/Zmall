@@ -44,8 +44,7 @@ class UserTest(TestCase):
         url = BASE_API + "user/activation/?token=" + token
         response = client.get(url)
 
-        after_activate = CustomUser.objects.get(email='admin@gmail.com')
+        after_activate = CustomUser.objects.get(email="admin@gmail.com")
         success_data = {"email": "Successfully activated"}
         self.assertEqual(success_data, response.data)
         self.assertEqual(after_activate.is_active, True)
-

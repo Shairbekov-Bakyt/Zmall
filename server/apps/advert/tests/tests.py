@@ -4,6 +4,7 @@ from config.settings.local import BASE_API
 from advert.api.serializers import AdvertListSerializer, AdvertCreateSerializer
 from advert.models import Advert, Promote, Category, SubCategory
 from user.models import CustomUser
+
 # from advert.utils import get_token_by_user
 
 client = Client()
@@ -18,11 +19,8 @@ class AdvertTest(TestCase):
             last_name="test",
             phone_number="996500123456",
             email="test@gmail.com",
-
         )
-        Category.objects.create(
-
-        )
+        Category.objects.create()
 
     def test_advert_post(self):
         Advert.objects.create(
@@ -37,8 +35,7 @@ class AdvertTest(TestCase):
             email="test@gmail.com",
             phone_number="996500123123",
             wa_number="996500123456",
-            promote="Test promote"
-
+            promote="Test promote",
         )
 
         response = client.post(self.USER_API, self.data_for_post)
@@ -46,7 +43,6 @@ class AdvertTest(TestCase):
         data_from_db = RegisterSerializer(data_for_check).data
 
         self.assertEqual(data_from_db, data_from_url)
-
 
     def test_client_verification(self):
         del self.data_for_post["policy_agreement"]
@@ -58,8 +54,7 @@ class AdvertTest(TestCase):
         url = BASE_API + "activation/?token=" + token
         response = client.get(url)
 
-        after_activate = CustomUser.objects.get(email='admin@gmail.com')
+        after_activate = CustomUser.objects.get(email="admin@gmail.com")
         success_data = {"email": "Successfully activated"}
         self.assertEqual(success_data, response.data)
         self.assertEqual(after_activate.is_active, True)
-
