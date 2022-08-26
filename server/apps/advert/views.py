@@ -1,15 +1,23 @@
 from django.http import HttpRequest
-from django_filters.rest_framework import DjangoFilterBackend, NumericRangeFilter
+from django_filters.rest_framework import DjangoFilterBackend, FilterSet
+# from django_filters import rest_framework as filter
+from rest_framework import filters
 
-from rest_framework.filters import OrderingFilter
+from rest_framework.filters import OrderingFilter, BaseFilterBackend
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
 
 from advert.api import serializers
 from advert.models import Advert
-
 from advert.selectors import get_advert
+
+
+class PriceFilter(FilterSet):
+    # from_price = filter.RangeFilter()
+
+    class Meta:
+        model = Advert
+        fields = ('from_price', 'city')
 
 
 class AdvertViewSet(ModelViewSet):
@@ -17,7 +25,9 @@ class AdvertViewSet(ModelViewSet):
     serializer_class = serializers.AdvertCreateSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]
 
-    filterset_fields = ['city', 'from_price', 'to_price', 'is_active']
+    filterset_fields = ['city']
+    # filterset_fields = ['city']
+    # filterset_class = PriceFilter
     ordering_fields = ['created_date', 'to_price']
     ordering = ['created_date']
 
@@ -34,5 +44,10 @@ class AdvertViewSet(ModelViewSet):
         return Response(serializer.data)
 
     def create(self, request, *args, **kwargs):
-        request.data['owner'] = request.user
+        ad_data = request.data
+
+        # serializer = serializers.AdvertCreateSerializer(data=ad_data)
+        # if serializer.is_valid():
+        #     serializer.save()
         super().create(request)
+        return Response({'success': f'Advertisement {ad_data["name"]} created successfully!'})

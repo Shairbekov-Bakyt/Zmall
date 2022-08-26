@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "advert",
 
     "rest_framework",
+
     "django_filters",
 ]
 
