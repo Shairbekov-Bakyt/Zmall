@@ -1,8 +1,9 @@
 from django.http import HttpRequest
-from django_filters.rest_framework import DjangoFilterBackend, FilterSet
-# from django_filters import rest_framework as filter
+# from django_filters.rest_framework import DjangoFilterBackend, FilterSet,
+from django_filters import rest_framework as filter
 from rest_framework import filters
 
+from rest_framework import status
 from rest_framework.filters import OrderingFilter, BaseFilterBackend
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
@@ -12,8 +13,8 @@ from advert.models import Advert
 from advert.selectors import get_advert
 
 
-class PriceFilter(FilterSet):
-    # from_price = filter.RangeFilter()
+class PriceFilter(filter.FilterSet):
+    from_price = filter.RangeFilter()
 
     class Meta:
         model = Advert
@@ -21,20 +22,18 @@ class PriceFilter(FilterSet):
 
 
 class AdvertViewSet(ModelViewSet):
-    queryset = Advert.objects.all()
+    queryset = Advert.objects.filter(is_active=True)
     serializer_class = serializers.AdvertCreateSerializer
-    filter_backends = [DjangoFilterBackend, OrderingFilter]
+    filter_backends = [filter.DjangoFilterBackend, OrderingFilter]
 
-    filterset_fields = ['city']
-    # filterset_fields = ['city']
-    # filterset_class = PriceFilter
+    filterset_class = PriceFilter
     ordering_fields = ['created_date', 'to_price']
     ordering = ['created_date']
 
-    def list(self, request: HttpRequest) -> Response:
-        adverts = Advert.objects.filter(is_active=True).order_by('-created_date')
-        serializer = serializers.AdvertListSerializer(adverts, many=True)
-        return Response(serializer.data)
+    def get_serializer_class(self):
+        if self.action == 'list':
+            return serializers.AdvertListSerializer
+        return super().get_serializer_class()
 
     def retrieve(self, request: HttpRequest, pk=None) -> Response:
         advert = get_advert(pk)
@@ -44,10 +43,4 @@ class AdvertViewSet(ModelViewSet):
         return Response(serializer.data)
 
     def create(self, request, *args, **kwargs):
-        ad_data = request.data
-
-        # serializer = serializers.AdvertCreateSerializer(data=ad_data)
-        # if serializer.is_valid():
-        #     serializer.save()
-        super().create(request)
-        return Response({'success': f'Advertisement {ad_data["name"]} created successfully!'})
+        obj = request

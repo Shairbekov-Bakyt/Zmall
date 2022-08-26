@@ -21,7 +21,7 @@ class AdvertContactSerailzer(serializers.ModelSerializer):
 class AdvertImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = AdvertImage
-        fields = ("image")
+        fields = ("image",)
 
 
 class AdvertCreateSerializer(serializers.ModelSerializer):
@@ -29,6 +29,7 @@ class AdvertCreateSerializer(serializers.ModelSerializer):
     sub_category = serializers.SlugRelatedField(slug_field='name', queryset=SubCategory.objects.all())
     promote = serializers.SlugRelatedField(slug_field='name', queryset=Promote.objects.all())
     city = serializers.SlugRelatedField(slug_field='name', queryset=City.objects.all())
+    advert_image = serializers.ImageField()
 
     class Meta:
         model = Advert
@@ -45,6 +46,7 @@ class AdvertCreateSerializer(serializers.ModelSerializer):
             "phone_number",
             "wa_number",
             "promote",
+            "advert_image",
         )
 
 
