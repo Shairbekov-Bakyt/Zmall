@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     "web_scraping",
 
     "rest_framework",
-
+    "celery",
     "django_filters",
 ]
 
@@ -123,7 +123,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
 LANGUAGE_CODE = "en-us"
-
+CELERY_TASK_TRACK_STARTED = True
+CELERY_TASK_TIME_LIMIT = 30 * 60
 TIME_ZONE = "UTC"
 
 USE_I18N = True
@@ -133,6 +134,14 @@ USE_TZ = True
 
 REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
+CELERY_BROKER_URL = "redis://" + REDIS_HOST + ":" + str(REDIS_PORT)
+CELERY_RESULT_BACKEND = "redis://" + REDIS_HOST + ":" + str(REDIS_PORT)
+CELERY_BROKER_TRANSPORT_OPTIONS = {"visibility_timeout": 3600}
+CELERY_RESULT_BACKEND = "redis://" + REDIS_HOST + ":" + str(REDIS_PORT)
+CELERY_ACCEPT_CONTENT = ["application/json"]
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+
 
 
 # Static files (CSS, JavaScript, Images)
