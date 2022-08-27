@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
     "user",
     "advert",
+    "web_scraping",
 
     "rest_framework",
 
