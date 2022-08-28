@@ -58,7 +58,6 @@ class AdvertTest(TestCase):
         self.assertEqual(data_from_db, data_from_url)
 
 
-"""
     def test_client_verification(self):
         del self.data_for_post["policy_agreement"]
         del self.data_for_post["password2"]
@@ -74,4 +73,4 @@ class AdvertTest(TestCase):
         self.assertEqual(success_data, response.data)
         self.assertEqual(after_activate.is_active, True)
 
-        """
+

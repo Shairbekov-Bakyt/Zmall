@@ -3,6 +3,7 @@ from django.test import TestCase, Client
 from config.settings.local import BASE_API
 from user.api.serializers import RegisterSerializer
 from user.models import CustomUser
+from user.selectors import get_user_by_email
 from user.utils import get_token_by_user
 
 client = Client()
@@ -44,7 +45,7 @@ class UserTest(TestCase):
         url = BASE_API + "user/activation/?token=" + token
         response = client.get(url)
 
-        after_activate = CustomUser.objects.get(email="admin@gmail.com")
+        after_activate = get_user_by_email("admin@gmail.com")
         success_data = {"email": "Successfully activated"}
         self.assertEqual(success_data, response.data)
         self.assertEqual(after_activate.is_active, True)
