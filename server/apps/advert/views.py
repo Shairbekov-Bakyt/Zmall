@@ -1,16 +1,17 @@
 from django.http import HttpRequest
-# from django_filters.rest_framework import DjangoFilterBackend, FilterSet,
 from django_filters import rest_framework as filter
-from rest_framework import filters
 
 from rest_framework import status
+from rest_framework.decorators import action
 from rest_framework.filters import OrderingFilter, BaseFilterBackend
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 
 from advert.api import serializers
-from advert.models import Advert
+from advert.models import Advert, AdvertImage
 from advert.selectors import get_advert
+
+from user.models import CustomUser
 
 
 class PriceFilter(filter.FilterSet):
@@ -41,6 +42,3 @@ class AdvertViewSet(ModelViewSet):
         advert.view += 1
         advert.save()
         return Response(serializer.data)
-
-    def create(self, request, *args, **kwargs):
-        obj = request
