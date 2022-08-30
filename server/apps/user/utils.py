@@ -1,4 +1,4 @@
-from django.core.mail import EmailMessage, send_mail
+from django.core.mail import send_mail
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from config.settings.base import EMAIL_HOST_USER

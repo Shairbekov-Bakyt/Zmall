@@ -50,7 +50,7 @@ class AdvertCreateSerializer(serializers.ModelSerializer):
             "view",
             "is_active",
             "is_verified",
-        )
+            )
 
 
 class AdvertListSerializer(serializers.ModelSerializer):
@@ -67,6 +67,15 @@ class AdvertListSerializer(serializers.ModelSerializer):
             "promote",
             "advert_image",
         )
+
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        advert = AdvertImage.objects.filter(advert=instance).first()
+        if advert:
+            representation["image"] = advert.image.url
+
+        return representation
+        
 
 
 class AdvertDetailSerializer(serializers.ModelSerializer):

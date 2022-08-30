@@ -9,6 +9,15 @@ from user.models import CustomUser
 User = CustomUser
 
 
+class ForgotPasswordSerializer(serializers.Serializer):
+    new_password = serializers.CharField(required=True, validators=[validate_password])
+    confirm_password = serializers.CharField(required=True, validators=[validate_password])
+
+
+class EmailSerializer(serializers.Serializer):
+    email = serializers.EmailField(required=True)
+
+
 class ChangePasswordSerializer(serializers.Serializer):
     old_password = serializers.CharField(required=True, validators=[validate_password])
     new_password = serializers.CharField(required=True, validators=[validate_password])
