@@ -1,9 +1,4 @@
 from django.http import HttpRequest
-from django_filters import rest_framework as filter
-
-from rest_framework import status
-from rest_framework.decorators import action
-from rest_framework.filters import OrderingFilter, BaseFilterBackend
 
 from django_filters import rest_framework as rest_filters
 from rest_framework import status, filters
@@ -11,12 +6,9 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 
 from advert.api import serializers
-from advert.models import Advert, AdvertImage
-from advert.selectors import get_advert
 from advert.models import Advert
 from advert.selectors import get_advert_by_id
 from advert.task import task_send_advert_to_email
-from user.models import CustomUser
 
 from user.models import CustomUser
 
@@ -57,7 +49,7 @@ class AdvertViewSet(ModelViewSet):
         serializer = self.get_serializer(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        advert = Advert.objects.get(id=1)
+        advert = get_advert_by_id(1)
         for user in CustomUser.objects.all():
             task_send_advert_to_email.delay(user.email, advert.id, advert.name)
 
