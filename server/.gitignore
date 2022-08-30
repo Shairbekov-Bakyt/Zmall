@@ -3,3 +3,8 @@ media
 __pycache__
 *.sqlite3
 .env
+<<<<<<< HEAD
+*.csv
+=======
+.idea
+>>>>>>> 9d80c67d5c179eae6fd8754deb865459e6c6b213
