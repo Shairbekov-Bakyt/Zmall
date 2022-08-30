@@ -21,3 +21,4 @@ class CustomUser(AbstractUser):
     USERNAME_FIELD = "email"
 
     objects = UserManager()
+

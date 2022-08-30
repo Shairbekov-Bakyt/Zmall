@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "user",
     "advert",
     "web_scraping",
+    "chat",
 
     "rest_framework",
     "celery",
