@@ -24,7 +24,7 @@ class AdvertViewSet(ModelViewSet):
     queryset = Advert.objects.filter(is_active=True)
     serializer_class = serializers.AdvertCreateSerializer
     filter_backends = [rest_filters.DjangoFilterBackend, filters.OrderingFilter]
-
+    permission_classes = []
     filterset_class = PriceFilter
     ordering_fields = ["created_date", "to_price"]
     ordering = ["created_date"]
