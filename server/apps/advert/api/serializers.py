@@ -12,51 +12,35 @@ from advert.models import (
 )
 
 
-class PromoteSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Promote
-        fields = ("id", "icon", "types")
-
-
-class CitySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = City
-        fields = ("id", "name")
-
-
-class CategorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Category
-        fields = ("id", "name", "advert_count", "icon")
-
-
-class SubCategorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = SubCategory
-        fields = ("id", "category", "name", "advert_count")
-
-
 class AdvertContactSerailzer(serializers.ModelSerializer):
     class Meta:
         model = AdvertContact
-        fields = ("id", "phone_number")
+        fields = "phone_number"
 
 
 class AdvertImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = AdvertImage
-        fields = ("id", "image")
+        fields = ("image",)
 
 
 class AdvertCreateSerializer(serializers.ModelSerializer):
-    category = CategorySerializer()
-    sub_category = SubCategorySerializer()
-    promote = PromoteSerializer()
-    city = CitySerializer()
+    category = serializers.SlugRelatedField(
+        slug_field="name", queryset=Category.objects.all()
+    )
+    sub_category = serializers.SlugRelatedField(
+        slug_field="name", queryset=SubCategory.objects.all()
+    )
+    promote = serializers.SlugRelatedField(
+        slug_field="name", queryset=Promote.objects.all()
+    )
+    city = serializers.SlugRelatedField(slug_field="name", queryset=City.objects.all())
+    #advert_image = serializers.ImageField()
 
     class Meta:
         model = Advert
         fields = (
+            "owner",
             "name",
             "category",
             "sub_category",
@@ -68,20 +52,17 @@ class AdvertCreateSerializer(serializers.ModelSerializer):
             "phone_number",
             "wa_number",
             "promote",
-            "created_date",
-            "image_count",
-            "view",
-            "is_active",
-            "is_verified",
+            #"advert_image",
         )
 
 
 class AdvertListSerializer(serializers.ModelSerializer):
-    promote = PromoteSerializer()
+    promote = serializers.SlugRelatedField(slug_field="types", read_only=True)
+    advert_image = AdvertImageSerializer(many=True)
 
     class Meta:
         model = Advert
-        fields = ("name", "from_price", "sub_category", "promote")
+        fields = ("id", "name", "from_price", "sub_category", "promote", "advert_image")
 
     def to_representation(self, instance):
         representation = super().to_representation(instance)
@@ -90,12 +71,13 @@ class AdvertListSerializer(serializers.ModelSerializer):
             representation["image"] = advert.image.url
 
         return representation
+        
 
 
 class AdvertDetailSerializer(serializers.ModelSerializer):
-    promote = PromoteSerializer()
+    promote = serializers.SlugRelatedField(slug_field="types", read_only=True)
     advert_contact = AdvertContactSerailzer(many=True)
-    city = CitySerializer()
+    city = serializers.SlugRelatedField(slug_field="name", read_only=True)
     advert_image = AdvertImageSerializer(many=True)
 
     class Meta:
