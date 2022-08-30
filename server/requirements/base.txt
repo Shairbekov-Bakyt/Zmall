@@ -10,3 +10,4 @@ django-filter==22.1
 redis==4.3.4
 beautifulsoup4==4.11.1
 requests==2.28.1
+celery==5.2.7
