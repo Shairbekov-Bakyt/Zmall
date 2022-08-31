@@ -28,12 +28,11 @@ sys.path.insert(0, os.path.join(PROJECT_ROOT, "apps"))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '*'
 ]
-
 
 # Application definition
 
@@ -52,7 +51,6 @@ INSTALLED_APPS = [
     "chat",
 
     "rest_framework",
-
     "corsheaders",
     'drf_yasg',
     "celery",
@@ -72,9 +70,8 @@ MIDDLEWARE = [
     "config.middleware.XForwardedForMiddleware",
 ]
 
-
 ROOT_URLCONF = "config.urls"
-
+PREVIOUS_PASSWORD_COUNT = 2
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -93,7 +90,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -103,7 +99,7 @@ DATABASES = {
         'NAME': config('DB_NAME'),
         'USER': config('DB_USER'),
         'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
+        'HOST': 'localhost',
         'PORT': 5432,
     }
 }
@@ -127,22 +123,21 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
 LANGUAGE_CODE = "en-us"
-CELERY_TASK_TRACK_STARTED = True
-CELERY_TASK_TIME_LIMIT = 30 * 60
+
 TIME_ZONE = "UTC"
 
 USE_I18N = True
 
 USE_TZ = True
 
-
 REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
+CELERY_TASK_TRACK_STARTED = True
+CELERY_TASK_TIME_LIMIT = 30 * 60
 CELERY_BROKER_URL = "redis://" + REDIS_HOST + ":" + str(REDIS_PORT)
 CELERY_RESULT_BACKEND = "redis://" + REDIS_HOST + ":" + str(REDIS_PORT)
 CELERY_BROKER_TRANSPORT_OPTIONS = {"visibility_timeout": 3600}
@@ -151,16 +146,13 @@ CELERY_ACCEPT_CONTENT = ["application/json"]
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 
-
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "/staticfiles/"
-STATIC_ROOT = ('/'.join(str(BASE_DIR).split('/')[:-1]) + '/staticfiles')
+STATIC_URL = "/static/"
+STATIC_ROOT = (str(BASE_DIR.parent) + '/staticfiles')
 
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = (str(BASE_DIR.parent) + '/media')
 MEDIA_URL = '/media/'
 
 # Default primary key field type
@@ -173,9 +165,6 @@ EMAIL_HOST_USER = config("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 EMAIL_PORT = 587
 
-
 JAZZMIN_SETTINGS = {
-            "site_brand": "ZeonMall",
-        }
-
-print(STATIC_ROOT)
+    "site_brand": "ZeonMall",
+}

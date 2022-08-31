@@ -16,8 +16,5 @@ migrate:
 create:
 	python3 -m venv env
 
-activate:
-	. ./env/bin/activate
-
 install:
 	pip install -r requirements/local.txt

@@ -7,7 +7,7 @@ from .base import *
 #     }
 # }
 DEBUG = True
-BASE_API = 'http://127.0.0.1:8000/api/v1/'
+BASE_API = 'http://0.0.0.0:8000/api/v1/'
 
 CORS_ALLOW_HEADERS = [
     "accept",
