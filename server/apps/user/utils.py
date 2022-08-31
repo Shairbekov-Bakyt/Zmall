@@ -1,6 +1,7 @@
-from django.core.mail import EmailMessage, send_mail
-from rest_framework_simplejwt.tokens import RefreshToken
+import random
+import string
 
+from django.core.mail import send_mail
 from config.settings.base import EMAIL_HOST_USER
 
 
@@ -14,10 +15,12 @@ class Util:
             recipient_list=[
                 data["to_whom"],
             ],
-            fail_silently=True,
         )
 
+    @staticmethod
+    def get_random_string(length):
+        # choose from all lowercase letter
+        letters = string.ascii_lowercase
+        result_str = ''.join(random.choice(letters) for i in range(length))
+        return result_str
 
-def get_token_by_user(user):
-    token = RefreshToken.for_user(user).access_token
-    return str(token)

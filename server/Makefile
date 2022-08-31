@@ -13,9 +13,8 @@ migrate:
 	python3 manage.py migrate
 
 
-active:
+create:
 	python3 -m venv env
-	source env/bin/activate
 
 install:
-	pip install -r requirements.txt
+	pip install -r requirements/local.txt
