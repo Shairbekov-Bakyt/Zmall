@@ -1,5 +1,5 @@
 version: "3.9"
-   
+
 services:
 
   backend:
@@ -10,7 +10,7 @@ services:
     restart: always
     entrypoint: /entrypoint.sh
     volumes:
-      - staticfiles:/backend/staticfiles
+      - static_volume:/backend/staticfiles
     depends_on:
       - db
 
@@ -27,7 +27,7 @@ services:
     image: nginx:1.19.8
     volumes:
       - ./webserver/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-      - static_volume:/app/static
+      - static_volume:/backend/staticfiles
     ports:
       - 80:80
     depends_on:
@@ -35,5 +35,4 @@ services:
 
 volumes:
   static_volume:
-  staticfiles:
   postgres_data:
