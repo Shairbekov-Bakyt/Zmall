@@ -66,6 +66,6 @@ DB_HOST="db"
 ```
 
 ### Special thanks
-- #### [Jarkyn](https://github.com/Zharkyn20)
+- #### [Zharkyn](https://github.com/Zharkyn20)
 - #### [Sardor](https://github.com/IsrailovSardor)
 - #### [Talgat](https://github.com/slice312)
