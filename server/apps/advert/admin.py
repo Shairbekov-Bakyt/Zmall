@@ -12,6 +12,7 @@ from advert.models import (
 )
 
 admin.site.register(City)
+admin.site.register(AdvertImage)
 
 
 class AdvertImageInline(admin.TabularInline):

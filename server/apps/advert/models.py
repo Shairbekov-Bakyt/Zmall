@@ -48,7 +48,7 @@ class SubCategory(models.Model):
 
 
 class AdvertImage(models.Model):
-    advert = models.ForeignKey(
+    advert_id = models.ForeignKey(
         "Advert",
         on_delete=models.CASCADE,
         verbose_name="объявления",

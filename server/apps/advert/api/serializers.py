@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from rest_framework.validators import ValidationError
 
 from user.models import CustomUser
 from advert.models import (
@@ -21,7 +22,14 @@ class AdvertContactSerailzer(serializers.ModelSerializer):
 class AdvertImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = AdvertImage
-        fields = ["image"]
+        fields = ["advert_id", "image"]
+
+
+    def validate(self, attrs):
+        if AdvertImage.objects.filter(advert_id=attrs['advert_id']).count() > 7:
+            raise ValidationError("exception")
+
+        return attrs
 
 
 class AdvertCreateSerializer(serializers.ModelSerializer):
