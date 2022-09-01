@@ -1,0 +1,4 @@
+server/env
+server/media
+server/pyrightconfig.json
+server/staticfiles
