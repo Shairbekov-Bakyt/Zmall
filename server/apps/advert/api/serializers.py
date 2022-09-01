@@ -25,13 +25,6 @@ class AdvertImageSerializer(serializers.ModelSerializer):
         fields = ["advert_id", "image"]
 
 
-    def validate(self, attrs):
-        if AdvertImage.objects.filter(advert_id=attrs['advert_id']).count() > 7:
-            raise ValidationError("exception")
-
-        return attrs
-
-
 class AdvertCreateSerializer(serializers.ModelSerializer):
     owner = serializers.SlugRelatedField(slug_field='email', queryset=CustomUser.objects.all())
     category = serializers.SlugRelatedField(slug_field='name', queryset=Category.objects.all())
