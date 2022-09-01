@@ -9,18 +9,14 @@ from advert.utils import connect
 
 class Category(models.Model):
     icon = models.ImageField(
-        upload_to="category/icon/%Y/%m/%d", verbose_name="изображение категории"
+        upload_to="category/icon/%Y/%m/%d",
+        verbose_name="иконка категории"
     )
     name = models.CharField(max_length=100, verbose_name="название категории")
-    advert_count = models.IntegerField(verbose_name="количество объявлении", default=0)
+    advert_count = models.IntegerField(verbose_name="количество объявлений", default=0)
 
     def __str__(self):
         return self.name
-
-    @staticmethod
-    def set_advert_count(cls, number):
-        cls.advert_count = number
-        cls.save()
 
     class Meta:
         verbose_name = "Категория"
@@ -29,18 +25,15 @@ class Category(models.Model):
 
 class SubCategory(models.Model):
     category = models.ForeignKey(
-        Category, on_delete=models.CASCADE, verbose_name="Категория"
+        Category,
+        on_delete=models.CASCADE,
+        verbose_name="Под-категория",
+        related_name="category_sub_category"
     )
     name = models.CharField(max_length=100, verbose_name="название подкатегори")
-    advert_count = models.IntegerField(verbose_name="количество объявлении", default=0)
 
     def __str__(self):
         return self.name
-
-    @staticmethod
-    def set_advert_count(cls, number):
-        cls.advert_count = number
-        cls.save()
 
     class Meta:
         verbose_name = "Подкатегория"
@@ -60,8 +53,8 @@ class AdvertImage(models.Model):
         return self.image.url
 
     class Meta:
-        verbose_name = "изображение для объявлении"
-        verbose_name_plural = "изображении для объявлении"
+        verbose_name = "изображение для объявления"
+        verbose_name_plural = "изображения для объявления"
 
 
 class City(models.Model):
@@ -79,7 +72,7 @@ class AdvertContact(models.Model):
     advert = models.ForeignKey(
         "Advert",
         on_delete=models.CASCADE,
-        verbose_name="объявления",
+        verbose_name="объявление",
         related_name="advert_contact",
     )
     phone_number = PhoneNumberField(verbose_name="номер телефона")
@@ -87,6 +80,17 @@ class AdvertContact(models.Model):
     class Meta:
         verbose_name = "номер для объявления"
         verbose_name_plural = "номера для объявлении"
+
+
+class AdvertView(models.Model):
+    advert = models.OneToOneField(
+        "Advert",
+        on_delete=models.CASCADE,
+        verbose_name="объявление",
+        related_name="advert_view"
+    )
+    users = models.ManyToManyField(CustomUser)
+    view = models.IntegerField(default=0)
 
 
 class Promote(models.Model):
@@ -108,56 +112,61 @@ class Promote(models.Model):
         verbose_name_plural = "Рекламы"
 
 
+class StatusChoice(models.TextChoices):
+    active = "act", "Активный"
+    inactive = "inact", "Неактивный"
+    on_review = "on_r", "На проверке"
+
+
 class Advert(models.Model):
     owner = models.ForeignKey(
-        CustomUser, on_delete=models.CASCADE, verbose_name="владелец"
+        CustomUser,
+        on_delete=models.CASCADE,
+        verbose_name="владелец",
+        related_name="owner_advert"
     )
-    name = models.CharField(max_length=150, verbose_name="название объявления")
     category = models.ForeignKey(
-        Category, on_delete=models.CASCADE, verbose_name="категория"
+        Category,
+        on_delete=models.CASCADE,
+        verbose_name="категория",
+        related_name="category_advert"
     )
     sub_category = models.ForeignKey(
-        SubCategory, on_delete=models.CASCADE, verbose_name="подкатегория"
+        SubCategory,
+        on_delete=models.CASCADE,
+        verbose_name="подкатегория",
+        related_name="sub_category_product"
     )
-    from_price = models.IntegerField(verbose_name="от цены")
-    to_price = models.IntegerField(verbose_name="до цены")
+    city = models.ForeignKey(
+        City,
+        on_delete=models.PROTECT,
+        verbose_name="город",
+        related_name="city_product"
+    )
+    promote = models.ForeignKey(
+        Promote,
+        on_delete=models.PROTECT,
+        verbose_name="реклама",
+        blank=True, null=True,
+        related_name="promote_advert"
+    )
+
+    name = models.CharField(max_length=150, verbose_name="название объявления")
     description = models.TextField(verbose_name="описание")
-    city = models.ForeignKey(City, on_delete=models.PROTECT, verbose_name="город")
+    start_price = models.IntegerField(verbose_name="от цены")
+    end_price = models.IntegerField(verbose_name="до цены")
+
     email = models.EmailField(verbose_name="E-mail")
     phone_number = PhoneNumberField(verbose_name="номер телефона")
     wa_number = PhoneNumberField(verbose_name="WhatsApp номер")
-    promote = models.ForeignKey(
-        Promote, on_delete=models.PROTECT, verbose_name="реклама", blank=True, null=True
-    )
+
     created_date = models.DateTimeField(auto_now_add=True)
-    image_count = models.IntegerField(verbose_name="количество изображений", default=0)
-    view = models.IntegerField(verbose_name="просмотры", default=0)
-    is_active = models.BooleanField(default=False)
-    is_verified = models.BooleanField(default=False)
+    status = models.CharField(max_length=10, verbose_name="статус",
+                              choices=StatusChoice.choices, default=StatusChoice.on_review)
 
     def __str__(self):
         return self.name
 
-    def save(self, *args, **kwargs):
-        if not self.pk and self.is_active and self.is_verified:
-            client = connect(REDIS_HOST, REDIS_PORT)
-            if not client.exists(self.category.name):
-                client.set(self.category.name, 0)
-
-            if not client.exists(self.sub_category.name):
-                client.set(self.sub_category.name, 0)
-
-            client.incr(self.category.name)
-            client.incr(self.sub_category.name)
-            self.category.set_advert_count(
-                self.category, client.get(self.category.name)
-            )
-            self.sub_category.set_advert_count(
-                self.category, client.get(self.sub_category.name)
-            )
-
-        super(Advert, self).save(*args, **kwargs)
-
     class Meta:
         verbose_name = "объявление"
-        verbose_name_plural = "объявлении"
+        verbose_name_plural = "объявления"
