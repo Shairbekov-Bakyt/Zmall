@@ -31,9 +31,8 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '127.0.0.1'
+    '*'
 ]
-
 
 # Application definition
 
@@ -48,22 +47,31 @@ INSTALLED_APPS = [
 
     "user",
     "advert",
+    "web_scraping",
+    "chat",
 
     "rest_framework",
+    "corsheaders",
+    'drf_yasg',
+    "celery",
+    "django_filters",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+
+    "config.middleware.XForwardedForMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
-
+PREVIOUS_PASSWORD_COUNT = 2
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -82,18 +90,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
-
-
 AUTH_USER_MODEL = "user.CustomUser"
 
 # Password validation
@@ -114,7 +123,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -126,18 +134,25 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
-
+CELERY_TASK_TRACK_STARTED = True
+CELERY_TASK_TIME_LIMIT = 30 * 60
+CELERY_BROKER_URL = "redis://" + REDIS_HOST + ":" + str(REDIS_PORT)
+CELERY_RESULT_BACKEND = "redis://" + REDIS_HOST + ":" + str(REDIS_PORT)
+CELERY_BROKER_TRANSPORT_OPTIONS = {"visibility_timeout": 3600}
+CELERY_RESULT_BACKEND = "redis://" + REDIS_HOST + ":" + str(REDIS_PORT)
+CELERY_ACCEPT_CONTENT = ["application/json"]
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "static/"
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = "/static/"
+STATIC_ROOT = (str(BASE_DIR.parent) + '/staticfiles')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = (str(BASE_DIR.parent) + '/media')
 MEDIA_URL = '/media/'
 
 # Default primary key field type
@@ -150,7 +165,6 @@ EMAIL_HOST_USER = config("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 EMAIL_PORT = 587
 
-
 JAZZMIN_SETTINGS = {
-            "site_brand": "ZeonMall",
-        }
+    "site_brand": "ZeonMall",
+}

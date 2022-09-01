@@ -3,13 +3,14 @@ from django.test import TestCase, Client
 from config.settings.local import BASE_API
 from user.api.serializers import RegisterSerializer
 from user.models import CustomUser
+from user.selectors import get_user_by_email
 from user.utils import get_token_by_user
 
 client = Client()
 
 
 class UserTest(TestCase):
-    USER_API = BASE_API + "register/"
+    USER_API = BASE_API + "user/register/"
     data_for_post = {
         "last_name": "test_last_name",
         "first_name": "test_first_name",
@@ -41,11 +42,10 @@ class UserTest(TestCase):
         before_activate = CustomUser.objects.create_user(**self.data_for_post)
         token = get_token_by_user(before_activate)
         self.assertEqual(before_activate.is_active, False)
-        url = BASE_API + "activation/?token=" + token
+        url = BASE_API + "user/activation/?token=" + token
         response = client.get(url)
 
-        after_activate = CustomUser.objects.get(email='admin@gmail.com')
+        after_activate = get_user_by_email("admin@gmail.com")
         success_data = {"email": "Successfully activated"}
         self.assertEqual(success_data, response.data)
         self.assertEqual(after_activate.is_active, True)
-

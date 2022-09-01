@@ -1,12 +1,31 @@
+from django.contrib.auth.hashers import check_password
 from django.contrib.auth.password_validation import validate_password
 
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
 
-from user.models import CustomUser
+from user.models import CustomUser as User
 
-User = CustomUser
+
+class ForgotPasswordSerializer(serializers.Serializer):
+    new_password = serializers.CharField(required=True, validators=[validate_password])
+    confirm_password = serializers.CharField(required=True, validators=[validate_password])
+
+    def validate(self, attrs):
+        if attrs["new_password"] != attrs["confirm_password"]:
+            raise serializers.ValidationError(
+                {"password": "Password fields didn't match."}
+            )
+
+
+class EmailSerializer(serializers.Serializer):
+    email = serializers.EmailField(required=True)
+
+
+class ChangePasswordSerializer(serializers.Serializer):
+    old_password = serializers.CharField(required=True, validators=[validate_password])
+    new_password = serializers.CharField(required=True, validators=[validate_password])
 
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):

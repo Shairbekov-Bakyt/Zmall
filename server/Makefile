@@ -12,10 +12,14 @@ migrate:
 	python3 manage.py makemigrations
 	python3 manage.py migrate
 
+web:
+	python3 manage.py web_scraping
 
-active:
+run_local:
+    python3 manage.py runserver --settings config.settings.local 192.168.31.119:8000
+
+create:
 	python3 -m venv env
-	source env/bin/activate
 
 install:
-	pip install -r requirements.txt
+	pip install -r requirements/local.txt
