@@ -1,7 +1,7 @@
 from django.test import TestCase, Client
 
 from config.settings.local import BASE_API
-from advert.api.serializers import AdvertListSerializer, AdvertCreateSerializer
+from advert.serializers.advert_serializers import AdvertListSerializer, AdvertCreateSerializer
 from advert.models import Advert, Promote, Category, SubCategory, City
 from user.models import CustomUser
 

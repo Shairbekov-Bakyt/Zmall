@@ -4,7 +4,7 @@ from user.utils import Util
 
 
 def send_advert_to_email(email, advert_id, advert_name):
-    absurl = "http://" + "127.0.0.1:800/api/v1/advert/1"
+    absurl = "http://" + "127.0.0.1:800/serializers/v1/advert/1"
     email_body = f"Hi username in Zeon Mall new advert link below\n{absurl}"
     data = {
         "email_body": email_body,

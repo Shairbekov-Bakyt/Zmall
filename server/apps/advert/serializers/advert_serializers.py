@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from rest_framework.validators import ValidationError
 
 from user.models import CustomUser
 from advert.models import (
@@ -10,6 +9,7 @@ from advert.models import (
     SubCategory,
     City,
     Promote,
+    AdvertView
 )
 
 
@@ -19,10 +19,24 @@ class AdvertContactSerailzer(serializers.ModelSerializer):
         fields = ("phone_number",)
 
 
+class AdvertViewSerailzer(serializers.ModelSerializer):
+    class Meta:
+        model = AdvertView
+        fields = ("view", "users")
+
+
 class AdvertImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = AdvertImage
-        fields = ["advert_id", "image"]
+        fields = ["image"]
+
+
+class PromoteSerailzer(serializers.ModelSerializer):
+    types_display = serializers.CharField(source="get_types_display")
+
+    class Meta:
+        model = Promote
+        fields = ("icon", "types_display")
 
 
 class AdvertCreateSerializer(serializers.ModelSerializer):
@@ -31,74 +45,52 @@ class AdvertCreateSerializer(serializers.ModelSerializer):
     sub_category = serializers.SlugRelatedField(slug_field='name', queryset=SubCategory.objects.all())
     promote = serializers.SlugRelatedField(slug_field='name', queryset=Promote.objects.all())
     city = serializers.SlugRelatedField(slug_field='name', queryset=City.objects.all())
-    advert_image = AdvertImageSerializer(write_only=True)
-    # advert_image = AdvertImageSerializer(write_only=True, required=False)
-    # advert_contact = AdvertContactSerailzer(write_only=True, required=False)
-
-    def create(self, validated_data):
-        print(validated_data)
-        advert_image = validated_data.pop('advert_image')
-        advert = Advert.objects.create(**validated_data)
-        AdvertImage.objects.create(advert=advert, **advert_image)
-        return advert
 
     class Meta:
         model = Advert
 
         exclude = (
             "created_date",
-            "image_count",
-            "view",
-            "is_active",
-            "is_verified",
+            "status"
             )
 
 
 class AdvertListSerializer(serializers.ModelSerializer):
-    promote = serializers.SlugRelatedField(slug_field="types", read_only=True)
+    promote = PromoteSerailzer()
+    sub_category = serializers.SlugRelatedField(slug_field='name', read_only=True)
+    advert_contact = AdvertContactSerailzer(many=True)
     advert_image = AdvertImageSerializer(many=True)
+    advert_image_count = serializers.IntegerField(
+        source='advert_image.count',
+        read_only=True
+    )
 
     class Meta:
         model = Advert
         fields = (
             "id",
             "name",
-            "from_price",
             "sub_category",
+            "start_price",
             "promote",
             "advert_image",
+            "advert_image_count",
+            "advert_contact",
         )
-
-    def to_representation(self, instance):
-        representation = super().to_representation(instance)
-        advert = AdvertImage.objects.filter(advert=instance).first()
-        if advert:
-            representation["image"] = advert.image.url
-
-        return representation
         
-
 
 class AdvertDetailSerializer(serializers.ModelSerializer):
     promote = serializers.SlugRelatedField(slug_field="types", read_only=True)
     advert_contact = AdvertContactSerailzer(many=True)
     city = serializers.SlugRelatedField(slug_field="name", read_only=True)
     advert_image = AdvertImageSerializer(many=True)
+    advert_view = AdvertViewSerailzer()
 
     class Meta:
         model = Advert
-        fields = [
-            "id",
-            "name",
-            "owner",
-            "from_price",
-            "description",
-            "wa_number",
-            "phone_number",
-            "view",
-            "created_date",
-            "city",
-            "promote",
-            "advert_image",
-            "advert_contact",
-        ]
+        exclude = (
+            "email",
+        )
+
+
+
