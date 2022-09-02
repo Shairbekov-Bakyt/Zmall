@@ -28,7 +28,15 @@ class AdvertViewSerailzer(serializers.ModelSerializer):
 class AdvertImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = AdvertImage
-        fields = "__all__"
+        fields = ["image"]
+
+
+class PromoteSerailzer(serializers.ModelSerializer):
+    types_display = serializers.CharField(source="get_types_display")
+
+    class Meta:
+        model = Promote
+        fields = ("icon", "types_display")
 
 
 class AdvertCreateSerializer(serializers.ModelSerializer):
@@ -48,20 +56,25 @@ class AdvertCreateSerializer(serializers.ModelSerializer):
 
 
 class AdvertListSerializer(serializers.ModelSerializer):
-    promote = serializers.SlugRelatedField(slug_field="types", read_only=True)
+    promote = PromoteSerailzer()
     sub_category = serializers.SlugRelatedField(slug_field='name', read_only=True)
     advert_contact = AdvertContactSerailzer(many=True)
     advert_image = AdvertImageSerializer(many=True)
+    advert_image_count = serializers.IntegerField(
+        source='advert_image.count',
+        read_only=True
+    )
 
     class Meta:
         model = Advert
         fields = (
             "id",
             "name",
-            "start_price",
             "sub_category",
+            "start_price",
             "promote",
             "advert_image",
+            "advert_image_count",
             "advert_contact",
         )
         
@@ -80,9 +93,4 @@ class AdvertDetailSerializer(serializers.ModelSerializer):
         )
 
 
-class PromoteSerializer(serializers.ModelSerializer):
-    types_display = serializers.CharField(source="get_types_display")
 
-    class Meta:
-        model = Promote
-        fields = "__all__"

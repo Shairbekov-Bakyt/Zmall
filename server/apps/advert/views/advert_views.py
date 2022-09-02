@@ -5,10 +5,10 @@ from rest_framework import status, filters
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 
-from advert.api import serializers
-from advert.models import Advert, AdvertImage, AdvertView, Promote
+from advert.serializers import advert_serializers as serializers
+from advert.models import Advert, AdvertImage, AdvertView
 
-from advert.api import permissions
+from advert.serializers import permissions
 
 
 class PriceFilter(rest_filters.FilterSet):
@@ -65,7 +65,4 @@ class AdvertViewSet(ModelViewSet):
         return super().get_serializer_class()
 
 
-class PromoteViewSet(ModelViewSet):
-    queryset = Promote.objects.all()
-    serializer_class = serializers.PromoteSerializer
-    http_method_names = ["get"]
+

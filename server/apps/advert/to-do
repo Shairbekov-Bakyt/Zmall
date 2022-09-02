@@ -6,3 +6,74 @@
 - test advert views
 - comments
 - test comments
+
+
+                                                - promote views
+                                                    "_all_"
+
+advert views:
+ - premium adverts (filter by promote)
+    * promote [types, icon]
+    * advert image
+    * from_price
+    * name
+    * sub_category
+
+ - new adverts (filter by date)
+    * promote [types, icon]
+    * advert image
+    * from_price
+    * name
+    * sub_category
+
+ - retrieve
+    * id
+    * images
+    * description
+    * name
+    * careted date
+    * views
+    * contacts
+    * city
+    * user
+    * promote
+    * wa number
+
+ - similars (filter by ?)
+    * image
+    * name
+    * promote [name, icon]
+    * created date
+    * city
+    * description
+    * imgs count
+
+
+
+ category views:
+ - view adverts(filter by category)
+    (need pagination = 10)
+    - filter by multiple cities
+    - filter by price
+    - filter by img existence
+    - order by date
+    - order by price
+    * promote [types, icon]
+    * advert image
+    * from_price
+    * description
+    * description
+    * sub_category
+    * created_date
+    * city
+    ** images quantity
+
+
+ - view sub_categories (filter by category)
+    * name
+    ** count adverts
+
+ - view categories (all)
+    (need pagination)
+    * icon
+    * name

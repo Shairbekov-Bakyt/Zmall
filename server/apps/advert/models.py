@@ -2,9 +2,7 @@ from django.db import models
 
 from phonenumber_field.modelfields import PhoneNumberField
 
-from config.settings.base import REDIS_HOST, REDIS_PORT
 from user.models import CustomUser
-from advert.utils import connect
 
 
 class Category(models.Model):
@@ -13,7 +11,6 @@ class Category(models.Model):
         verbose_name="иконка категории"
     )
     name = models.CharField(max_length=100, verbose_name="название категории")
-    advert_count = models.IntegerField(verbose_name="количество объявлений", default=0)
 
     def __str__(self):
         return self.name
@@ -97,11 +94,12 @@ class Promote(models.Model):
     class PromoteType(models.TextChoices):
         vip = "vip", "VIP"
         urgently = "urgently", "Срочно"
-        highlighted = "highlighted", "выделенить"
+        highlighted = "highlighted", "Выделить"
 
     icon = models.ImageField(upload_to="promote/%Y/%m/%d", blank=True)
     name = models.CharField(max_length=50)
     description = models.TextField(verbose_name="описание")
+    price = models.IntegerField(verbose_name="цена")
     types = models.CharField(max_length=50, choices=PromoteType.choices)
 
     def __str__(self):
@@ -157,7 +155,6 @@ class Advert(models.Model):
     end_price = models.IntegerField(verbose_name="до цены")
 
     email = models.EmailField(verbose_name="E-mail")
-    phone_number = PhoneNumberField(verbose_name="номер телефона")
     wa_number = PhoneNumberField(verbose_name="WhatsApp номер")
 
     created_date = models.DateTimeField(auto_now_add=True)

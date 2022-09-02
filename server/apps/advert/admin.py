@@ -51,7 +51,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
     img_tag.short_description = "Image"
 
-    readonly_fields = ["img_tag", "advert_count"]
+    readonly_fields = ["img_tag"]
 
     class Meta:
         model = Category
