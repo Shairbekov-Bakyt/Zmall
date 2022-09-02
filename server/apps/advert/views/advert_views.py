@@ -6,7 +6,7 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 
 from advert.api import serializers
-from advert.models import Advert, AdvertImage, AdvertView
+from advert.models import Advert, AdvertImage, AdvertView, Promote
 
 from advert.api import permissions
 
@@ -27,11 +27,6 @@ class AdvertViewSet(ModelViewSet):
     filterset_class = PriceFilter
     ordering_fields = ["created_date", "end_price"]
     ordering = ["created_date"]
-
-    def get_serializer_class(self):
-        if self.action == "list":
-            return serializers.AdvertListSerializer
-        return super().get_serializer_class()
 
     def retrieve(self, request: HttpRequest, pk) -> Response:
         advert = self.get_object()
@@ -63,3 +58,14 @@ class AdvertViewSet(ModelViewSet):
         AdvertImage.objects.bulk_create(img_objects)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    def get_serializer_class(self):
+        if self.action == "list":
+            return serializers.AdvertListSerializer
+        return super().get_serializer_class()
+
+
+class PromoteViewSet(ModelViewSet):
+    queryset = Promote.objects.all()
+    serializer_class = serializers.PromoteSerializer
+    http_method_names = ["get"]
