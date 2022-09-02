@@ -9,10 +9,12 @@ from advert.models import (
     City,
     Promote,
     SubCategory,
+    AdvertView,
 )
 
 admin.site.register(City)
-admin.site.register(AdvertImage)
+admin.site.register(SubCategory)
+admin.site.register(AdvertView)
 
 
 class AdvertImageInline(admin.TabularInline):
@@ -25,22 +27,14 @@ class AdvertContactInline(admin.TabularInline):
     max_num = 8
 
 
+class AdvertViewInline(admin.StackedInline):
+    model = AdvertView
+    readonly_fields = ("users", "view")
+
+
 @admin.register(Advert)
 class AdvertAdmin(admin.ModelAdmin):
-    inlines = [AdvertImageInline, AdvertContactInline]
-
-    def img_tag(self, obj):
-        return format_html(
-            '<img src="{url}" width="{width}" height={height}/>'.format(
-                url=obj.advert_image.url, width=150, height=150
-            )
-        )
-
-    img_tag.short_description = "Image"
-
-    readonly_fields = [
-        "img_tag",
-    ]
+    inlines = [AdvertImageInline, AdvertContactInline, AdvertViewInline]
 
     class Meta:
         model = Advert
@@ -57,19 +51,10 @@ class CategoryAdmin(admin.ModelAdmin):
 
     img_tag.short_description = "Image"
 
-    readonly_fields = ["img_tag", "advert_count"]
+    readonly_fields = ["img_tag"]
 
     class Meta:
         model = Category
-
-
-@admin.register(SubCategory)
-class SubCategoryAdmin(admin.ModelAdmin):
-
-    readonly_fields = ["advert_count"]
-
-    class Meta:
-        model = SubCategory
 
 
 @admin.register(Promote)
