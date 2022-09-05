@@ -10,7 +10,9 @@ from user.models import CustomUser as User
 
 class ForgotPasswordSerializer(serializers.Serializer):
     new_password = serializers.CharField(required=True, validators=[validate_password])
-    confirm_password = serializers.CharField(required=True, validators=[validate_password])
+    confirm_password = serializers.CharField(
+        required=True, validators=[validate_password]
+    )
 
     def validate(self, attrs):
         if attrs["new_password"] != attrs["confirm_password"]:

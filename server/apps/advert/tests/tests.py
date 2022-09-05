@@ -1,7 +1,10 @@
 from django.test import TestCase, Client
 
 from config.settings.local import BASE_API
-from advert.serializers.advert_serializers import AdvertListSerializer, AdvertCreateSerializer
+from advert.serializers.advert_serializers import (
+    AdvertListSerializer,
+    AdvertCreateSerializer,
+)
 from advert.models import Advert, Promote, Category, SubCategory, City
 from user.models import CustomUser
 
@@ -57,7 +60,6 @@ class AdvertTest(TestCase):
         print(data_from_db)
         self.assertEqual(data_from_db, data_from_url)
 
-
     def test_client_verification(self):
         del self.data_for_post["policy_agreement"]
         del self.data_for_post["password2"]
@@ -72,5 +74,3 @@ class AdvertTest(TestCase):
         success_data = {"email": "Successfully activated"}
         self.assertEqual(success_data, response.data)
         self.assertEqual(after_activate.is_active, True)
-
-

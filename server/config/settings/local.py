@@ -7,7 +7,7 @@ from .base import *
 #     }
 # }
 DEBUG = True
-BASE_API = 'http://0.0.0.0:8000/api/v1/'
+BASE_API = "http://0.0.0.0:8000/api/v1/"
 
 CORS_ALLOW_HEADERS = [
     "accept",
@@ -41,5 +41,4 @@ CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1:3000",
 ]
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
