@@ -3,7 +3,7 @@ from web_scraping.web_scraping import main
 
 
 class Command(BaseCommand):
-    help ="""
+    help = """
             command web scraping will scraping site kivano
           """
 

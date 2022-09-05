@@ -8,8 +8,8 @@ from advert.views.subcategory_views import SubCategoryView
 
 
 router = DefaultRouter()
-router.register("advert", AdvertViewSet, basename='advert')
-router.register("promote", PromoteViewSet, basename='promote')
+router.register("advert", AdvertViewSet, basename="advert")
+router.register("promote", PromoteViewSet, basename="promote")
 
 urlpatterns = [
     path("", include(router.urls)),

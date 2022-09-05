@@ -3,7 +3,12 @@ from .utils import Util
 
 def send_password_with_email(user):
     password = Util.get_random_string(12)
-    email_body = "Hi " + user.first_name + " use password below to change your password \n" + password
+    email_body = (
+        "Hi "
+        + user.first_name
+        + " use password below to change your password \n"
+        + password
+    )
 
     user.set_password(password)
     user.save()
@@ -17,7 +22,7 @@ def send_password_with_email(user):
 
 
 def send_url_with_mail(user):
-    absurl = "http://" + 'localhost:3000/activation/' + "?email=" + user.email
+    absurl = "http://" + "localhost:3000/activation/" + "?email=" + user.email
 
     email_body = "Hi " + user.first_name + " use link below to verify email \n" + absurl
 

@@ -12,19 +12,24 @@ from advert.serializers import permissions
 
 
 class AdvertFilter(django_filters.FilterSet):
-    min_price = django_filters.NumberFilter(field_name="start_price", lookup_expr='gte')
-    max_price = django_filters.NumberFilter(field_name="start_price", lookup_expr='lte')
-    image = django_filters.BooleanFilter(lookup_expr='isnull', field_name='advert_image')
+    min_price = django_filters.NumberFilter(field_name="start_price", lookup_expr="gte")
+    max_price = django_filters.NumberFilter(field_name="start_price", lookup_expr="lte")
+    image = django_filters.BooleanFilter(
+        lookup_expr="isnull", field_name="advert_image"
+    )
+
     class Meta:
         model = Advert
-        fields = ['min_price', 'max_price', 'image', 'city']
-
+        fields = ["min_price", "max_price", "image", "city"]
 
 
 class AdvertViewSet(ModelViewSet):
     queryset = Advert.objects.all()
     serializer_class = serializers.AdvertCreateSerializer
-    filter_backends = [django_filters.rest_framework.DjangoFilterBackend, filters.OrderingFilter]
+    filter_backends = [
+        django_filters.rest_framework.DjangoFilterBackend,
+        filters.OrderingFilter,
+    ]
     permission_classes = [permissions.IsOwnerOrReadOnly]
     filterset_class = AdvertFilter
     ordering_fields = ["created_date", "end_price"]
@@ -45,7 +50,7 @@ class AdvertViewSet(ModelViewSet):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def create(self, request, *args, **kwargs):
-        imgs = request.FILES.getlist('image')
+        imgs = request.FILES.getlist("image")
         if len(imgs) > 8:
             raise serializers.ValidationError("Максимальное кол-во изображений: 8")
 
@@ -65,6 +70,3 @@ class AdvertViewSet(ModelViewSet):
         if self.action == "list":
             return serializers.AdvertListSerializer
         return super().get_serializer_class()
-
-
-

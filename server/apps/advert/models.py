@@ -7,8 +7,7 @@ from user.models import CustomUser
 
 class Category(models.Model):
     icon = models.ImageField(
-        upload_to="category/icon/%Y/%m/%d",
-        verbose_name="иконка категории"
+        upload_to="category/icon/%Y/%m/%d", verbose_name="иконка категории"
     )
     name = models.CharField(max_length=100, verbose_name="название категории")
 
@@ -25,7 +24,7 @@ class SubCategory(models.Model):
         Category,
         on_delete=models.CASCADE,
         verbose_name="Под-категория",
-        related_name="category_sub_category"
+        related_name="category_sub_category",
     )
     name = models.CharField(max_length=100, verbose_name="название подкатегори")
 
@@ -84,7 +83,7 @@ class AdvertView(models.Model):
         "Advert",
         on_delete=models.CASCADE,
         verbose_name="объявление",
-        related_name="advert_view"
+        related_name="advert_view",
     )
     users = models.ManyToManyField(CustomUser)
     view = models.IntegerField(default=0)
@@ -121,32 +120,33 @@ class Advert(models.Model):
         CustomUser,
         on_delete=models.CASCADE,
         verbose_name="владелец",
-        related_name="owner_advert"
+        related_name="owner_advert",
     )
     category = models.ForeignKey(
         Category,
         on_delete=models.CASCADE,
         verbose_name="категория",
-        related_name="category_advert"
+        related_name="category_advert",
     )
     sub_category = models.ForeignKey(
         SubCategory,
         on_delete=models.CASCADE,
         verbose_name="подкатегория",
-        related_name="sub_category_product"
+        related_name="sub_category_product",
     )
     city = models.ForeignKey(
         City,
         on_delete=models.PROTECT,
         verbose_name="город",
-        related_name="city_product"
+        related_name="city_product",
     )
     promote = models.ForeignKey(
         Promote,
         on_delete=models.PROTECT,
         verbose_name="реклама",
-        blank=True, null=True,
-        related_name="promote_advert"
+        blank=True,
+        null=True,
+        related_name="promote_advert",
     )
 
     name = models.CharField(max_length=150, verbose_name="название объявления")
@@ -158,8 +158,12 @@ class Advert(models.Model):
     wa_number = PhoneNumberField(verbose_name="WhatsApp номер")
 
     created_date = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(max_length=10, verbose_name="статус",
-                              choices=StatusChoice.choices, default=StatusChoice.on_review)
+    status = models.CharField(
+        max_length=10,
+        verbose_name="статус",
+        choices=StatusChoice.choices,
+        default=StatusChoice.on_review,
+    )
 
     def __str__(self):
         return self.name

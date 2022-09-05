@@ -10,6 +10,7 @@ class ChatView(GenericAPIView):
     """
     an endpoint messanger with customer
     """
+
     serializer_class = ChatSerializer
 
     def post(self, request, *args, **kwargs) -> Response:
