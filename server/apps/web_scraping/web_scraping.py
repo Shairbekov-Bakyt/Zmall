@@ -6,7 +6,6 @@ from user.models import CustomUser
 from .utils import get_price_from_description
 
 main_url = 'https://salexy.kg/bishkek/rabota'
-page_url = "?page="
 
 
 def setUp():
@@ -41,10 +40,9 @@ def get_page_data(html: str) -> None:
         setup = setUp()
         data = {'owner': setup['owner'],
                 'name': title,
-                'to_price': price,
-                'from_price': price,
+                'start_price': price,
+                'end_price': price,
                 'email': 'otsasi991@gmail.com',
-                'phone_number': '+996999312292',
                 'wa_number': '+996999312292',
                 'description': description,
                 'category': setup['category'],

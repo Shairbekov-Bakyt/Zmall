@@ -1,6 +1,6 @@
 from django.http import HttpRequest
 
-from django_filters import rest_framework as rest_filters
+import django_filters
 from rest_framework import status, filters
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
@@ -11,20 +11,22 @@ from advert.models import Advert, AdvertImage, AdvertView
 from advert.serializers import permissions
 
 
-class PriceFilter(rest_filters.FilterSet):
-    from_price = rest_filters.RangeFilter()
-
+class AdvertFilter(django_filters.FilterSet):
+    min_price = django_filters.NumberFilter(field_name="start_price", lookup_expr='gte')
+    max_price = django_filters.NumberFilter(field_name="start_price", lookup_expr='lte')
+    image = django_filters.BooleanFilter(lookup_expr='isnull', field_name='advert_image')
     class Meta:
         model = Advert
-        fields = ("start_price", "city")
+        fields = ['min_price', 'max_price', 'image', 'city']
+
 
 
 class AdvertViewSet(ModelViewSet):
     queryset = Advert.objects.all()
     serializer_class = serializers.AdvertCreateSerializer
-    filter_backends = [rest_filters.DjangoFilterBackend, filters.OrderingFilter]
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend, filters.OrderingFilter]
     permission_classes = [permissions.IsOwnerOrReadOnly]
-    filterset_class = PriceFilter
+    filterset_class = AdvertFilter
     ordering_fields = ["created_date", "end_price"]
     ordering = ["created_date"]
 

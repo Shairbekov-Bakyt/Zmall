@@ -72,6 +72,7 @@ class AdvertListSerializer(serializers.ModelSerializer):
             "name",
             "sub_category",
             "start_price",
+            "end_price",
             "promote",
             "advert_image",
             "advert_image_count",
