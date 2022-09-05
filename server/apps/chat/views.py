@@ -17,7 +17,7 @@ class ChatView(GenericAPIView):
         seralizer = self.get_serializer(data=data)
         seralizer.is_valid(raise_exception=True)
         seralizer.save()
-        chat = Chat.objects.get(id=seralizer.data["id"])
+        chat = seralizer.chat
         pusher_client.trigger(
             "my_channel",
             str(chat.id),
