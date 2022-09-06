@@ -108,13 +108,15 @@ class Promote(models.Model):
         verbose_name_plural = "Рекламы"
 
 
-class StatusChoice(models.TextChoices):
-    active = "act", "Активный"
-    inactive = "inact", "Неактивный"
-    on_review = "on_r", "На проверке"
+
 
 
 class Advert(models.Model):
+    class StatusChoice(models.TextChoices):
+        active = "act", "Активный"
+        inactive = "inact", "Неактивный"
+        on_review = "on_r", "На проверке"
+
     owner = models.ForeignKey(
         CustomUser,
         on_delete=models.CASCADE,

@@ -10,7 +10,7 @@ from advert.serializers import advert_serializers as serializers
 from advert.models import Advert, AdvertImage, AdvertView, City, AdvertContact
 
 from advert.serializers import permissions
-from apps.advert.task import task_send_advert_to_email
+from advert.task import task_send_advert_to_email
 from phonenumber_field.validators import validate_international_phonenumber
 
 
@@ -98,4 +98,5 @@ class AdvertViewSet(ModelViewSet):
 class PremiumAdvertView(ListAPIView):
     queryset = Advert.objects.filter(status="act", promote__isnull=False)
     serializer_class = serializers.AdvertListSerializer
+
 

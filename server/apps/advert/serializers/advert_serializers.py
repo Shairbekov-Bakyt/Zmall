@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from user.models import CustomUser
+from advert.serializers.promote_serializers import PromoteSerializer
 from advert.models import (
     Advert,
     AdvertContact,
@@ -8,7 +9,6 @@ from advert.models import (
     Category,
     SubCategory,
     City,
-    Promote,
     AdvertView,
 )
 
@@ -35,13 +35,6 @@ class AdvertImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = AdvertImage
         fields = ["image"]
-
-
-class PromoteSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Promote
-        fields = ("types", )
 
 
 class AdvertCreateSerializer(serializers.ModelSerializer):
