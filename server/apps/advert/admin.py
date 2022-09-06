@@ -10,10 +10,12 @@ from advert.models import (
     Promote,
     SubCategory,
     AdvertView,
+    FavoriteAdvert,
 )
 
 admin.site.register(City)
 admin.site.register(SubCategory)
+admin.site.register(FavoriteAdvert)
 
 
 class AdvertImageInline(admin.TabularInline):

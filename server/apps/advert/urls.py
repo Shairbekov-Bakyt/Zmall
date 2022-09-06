@@ -4,11 +4,13 @@ from rest_framework.routers import DefaultRouter
 from advert.views.advert_views import AdvertViewSet, CityListView, PremiumAdvertView
 from advert.views.promote_views import PromoteViewSet
 from advert.views.category_views import CategoryView
+from advert.views.favorite_view import FavoriteAdvertView
 from advert.views.subcategory_views import SubCategoryView
 
 
 router = DefaultRouter()
 router.register("advert", AdvertViewSet, basename="advert")
+router.register("favorite", FavoriteAdvertView, basename="favorite_advert")
 router.register("promote", PromoteViewSet, basename="promote")
 
 
