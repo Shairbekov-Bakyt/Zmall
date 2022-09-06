@@ -18,6 +18,7 @@ class CitySerializer(serializers.ModelSerializer):
         model = City
         fields = ('__all__')
 
+
 class AdvertContactSerailzer(serializers.ModelSerializer):
     class Meta:
         model = AdvertContact
@@ -36,12 +37,11 @@ class AdvertImageSerializer(serializers.ModelSerializer):
         fields = ["image"]
 
 
-class PromoteSerailzer(serializers.ModelSerializer):
-    types_display = serializers.CharField(source="get_types_display")
+class PromoteSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Promote
-        fields = ("icon", "types_display")
+        fields = ("types", )
 
 
 class AdvertCreateSerializer(serializers.ModelSerializer):
@@ -54,9 +54,7 @@ class AdvertCreateSerializer(serializers.ModelSerializer):
     sub_category = serializers.SlugRelatedField(
         slug_field="name", queryset=SubCategory.objects.all()
     )
-    promote = serializers.SlugRelatedField(
-        slug_field="name", queryset=Promote.objects.all()
-    )
+    promote = PromoteSerializer(many=True, required=False)
     city = serializers.SlugRelatedField(slug_field="name", queryset=City.objects.all())
 
     class Meta:
@@ -66,7 +64,7 @@ class AdvertCreateSerializer(serializers.ModelSerializer):
 
 
 class AdvertListSerializer(serializers.ModelSerializer):
-    promote = PromoteSerailzer()
+    promote = PromoteSerializer(many=True)
     sub_category = serializers.SlugRelatedField(slug_field="name", read_only=True)
     advert_contact = AdvertContactSerailzer(many=True)
     advert_image = AdvertImageSerializer(many=True)

@@ -37,7 +37,7 @@ class SubCategory(models.Model):
 
 
 class AdvertImage(models.Model):
-    advert_id = models.ForeignKey(
+    advert = models.ForeignKey(
         "Advert",
         on_delete=models.CASCADE,
         verbose_name="объявления",
@@ -96,13 +96,12 @@ class Promote(models.Model):
         highlighted = "highlighted", "Выделить"
 
     icon = models.ImageField(upload_to="promote/%Y/%m/%d", blank=True)
-    name = models.CharField(max_length=50)
     description = models.TextField(verbose_name="описание")
     price = models.IntegerField(verbose_name="цена")
     types = models.CharField(max_length=50, choices=PromoteType.choices)
 
     def __str__(self):
-        return self.name
+        return self.types
 
     class Meta:
         verbose_name = "Реклама"
@@ -140,13 +139,11 @@ class Advert(models.Model):
         verbose_name="город",
         related_name="city_product",
     )
-    promote = models.ForeignKey(
+    promote = models.ManyToManyField(
         Promote,
-        on_delete=models.PROTECT,
-        verbose_name="реклама",
-        blank=True,
-        null=True,
         related_name="promote_advert",
+        blank=True,
+        verbose_name="реклама"
     )
 
     name = models.CharField(max_length=150, verbose_name="название объявления")
