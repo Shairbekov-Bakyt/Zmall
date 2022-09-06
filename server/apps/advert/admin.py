@@ -15,7 +15,6 @@ from advert.models import (
 
 admin.site.register(City)
 admin.site.register(SubCategory)
-admin.site.register(AdvertView)
 admin.site.register(FavoriteAdvert)
 
 
