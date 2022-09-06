@@ -10,6 +10,7 @@ from advert.serializers import advert_serializers as serializers
 from advert.models import Advert, AdvertImage, AdvertView, City
 
 from advert.serializers import permissions
+from apps.advert.task import task_send_advert_to_email
 
 
 class AdvertFilter(django_filters.FilterSet):
@@ -62,14 +63,16 @@ class AdvertViewSet(ModelViewSet):
             raise serializers.ValidationError("Максимальное кол-во изображений: 8")
 
         serializer = self.get_serializer(data=request.data)
-        if serializer.is_valid():
-            advert = serializer.save()
+        serializer.is_valid(raise_exception=True)
+        advert = serializer.save()
 
         img_objects = []
         for img in imgs:
             img_objects.append(AdvertImage(advert_id=advert, image=img))
 
         AdvertImage.objects.bulk_create(img_objects)
+
+        task_send_advert_to_email.delay(advert.id, advert.name)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
