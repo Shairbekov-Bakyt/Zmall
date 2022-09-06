@@ -30,4 +30,4 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         list_serializer_class = FilterCommentListSerializer
         model = Comment
-        fields = ("message", "user", "children")
+        fields = ("text", "user", "children")
