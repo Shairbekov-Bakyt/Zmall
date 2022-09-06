@@ -163,3 +163,30 @@ EMAIL_PORT = 587
 JAZZMIN_SETTINGS = {
     "site_brand": "ZeonMall",
 }
+
+LOGGING = {
+    'version': 1,  # the dictConfig format version
+    'disable_existing_loggers': False,  # retain the default loggers
+    'handlers': {
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': 'general.log',
+            'level': 'DEBUG',
+            'formatter': 'verbose',
+        },
+
+    },
+    'loggers': {
+        '': {
+            'level': 'DEBUG',
+            'handlers': ['file'],
+        },
+    },
+    'formatters': {
+        'verbose': {
+            'format': 'level: {levelname} time: {asctime} module: {name}-{funcName}-{lineno}-{message}',
+            'style': '{',
+        },
+    },
+
+}
