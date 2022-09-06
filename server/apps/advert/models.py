@@ -181,3 +181,36 @@ class FavoriteAdvert(models.Model):
         verbose_name = 'Избранный продукт'
         verbose_name_plural = 'Избранные продукты'
 
+
+class Comment(models.Model):
+    advert = models.ForeignKey(
+        Advert,
+        on_delete=models.CASCADE,
+        related_name="advert_comment",
+        verbose_name="объявление"
+    )
+    user = models.ForeignKey(
+        CustomUser,
+        on_delete=models.CASCADE,
+        related_name="user_comment",
+        verbose_name="пользователь"
+
+    )
+    parent = models.ForeignKey(
+        'self',
+        verbose_name="Комментарий-родитель ",
+        on_delete=models.SET_NULL,
+        blank=True, null=True,
+        related_name="children"
+    )
+    text = models.TextField(
+        verbose_name="текст комментария",
+        max_length=5000
+    )
+
+    def __str__(self):
+        return f"{self.advert} - comment"
+
+    class Meta:
+        verbose_name = "Комментарий"
+        verbose_name_plural = "Комментарии"

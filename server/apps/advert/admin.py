@@ -11,6 +11,7 @@ from advert.models import (
     SubCategory,
     AdvertView,
     FavoriteAdvert,
+    Comment,
 )
 
 admin.site.register(City)
@@ -33,9 +34,15 @@ class AdvertViewInline(admin.StackedInline):
     readonly_fields = ("users", "view")
 
 
+class CommentInline(admin.TabularInline):
+    model = Comment
+    readonly_fields = ("user", "text", "parent")
+
+
 @admin.register(Advert)
 class AdvertAdmin(admin.ModelAdmin):
-    inlines = [AdvertImageInline, AdvertContactInline, AdvertViewInline]
+    inlines = [AdvertImageInline, AdvertContactInline,
+               AdvertViewInline, CommentInline]
 
     class Meta:
         model = Advert

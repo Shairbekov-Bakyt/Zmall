@@ -94,6 +94,7 @@ class AdvertDetailSerializer(serializers.ModelSerializer):
     advert_image = AdvertImageSerializer(many=True)
     advert_view = AdvertViewSerailzer()
 
+
     class Meta:
         model = Advert
         exclude = ("email",)

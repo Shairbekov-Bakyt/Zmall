@@ -13,6 +13,7 @@ from advert.serializers import permissions
 from apps.advert.task import task_send_advert_to_email
 from phonenumber_field.validators import validate_international_phonenumber
 
+
 class AdvertFilter(django_filters.FilterSet):
     min_price = django_filters.NumberFilter(field_name="start_price", lookup_expr="gte")
     max_price = django_filters.NumberFilter(field_name="start_price", lookup_expr="lte")
