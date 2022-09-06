@@ -13,6 +13,11 @@ from advert.models import (
 )
 
 
+class CitySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = City
+        fields = ('__all__')
+
 class AdvertContactSerailzer(serializers.ModelSerializer):
     class Meta:
         model = AdvertContact

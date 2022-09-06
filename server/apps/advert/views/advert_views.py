@@ -2,11 +2,12 @@ from django.http import HttpRequest
 
 import django_filters
 from rest_framework import status, filters
+from rest_framework.generics import ListAPIView
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 
 from advert.serializers import advert_serializers as serializers
-from advert.models import Advert, AdvertImage, AdvertView
+from advert.models import Advert, AdvertImage, AdvertView, City
 
 from advert.serializers import permissions
 
@@ -21,6 +22,12 @@ class AdvertFilter(django_filters.FilterSet):
     class Meta:
         model = Advert
         fields = ["min_price", "max_price", "image", "city"]
+
+
+class CityListView(ListAPIView):
+    queryset = City.objects.all()
+    serializer_class = serializers.CitySerializer
+
 
 
 class AdvertViewSet(ModelViewSet):

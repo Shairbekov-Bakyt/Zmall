@@ -83,7 +83,7 @@ class RegisterView(generics.GenericAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         user = serializer.user
-        send_url_with_mail(user, request)
+        send_url_with_mail(user)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
