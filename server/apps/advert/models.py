@@ -171,3 +171,16 @@ class Advert(models.Model):
     class Meta:
         verbose_name = "объявление"
         verbose_name_plural = "объявления"
+
+
+class FavoriteAdvert(models.Model):
+    adverts = models.ManyToManyField(Advert, related_name='favorite_adverts', verbose_name='объявление')
+    user_id = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='favorite_user', verbose_name='клиент', unique=True)
+    
+    def __str__(self):
+        return f"id : {self.id}"
+
+    class Meta:
+        verbose_name = 'Избранный продукт'
+        verbose_name_plural = 'Избранные продукты'
+
