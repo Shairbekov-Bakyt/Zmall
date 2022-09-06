@@ -9,9 +9,14 @@ from advert.models import (
     SubCategory,
     City,
     Promote,
-    AdvertView
+    AdvertView,
 )
 
+
+class CitySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = City
+        fields = ('__all__')
 
 class AdvertContactSerailzer(serializers.ModelSerializer):
     class Meta:
@@ -40,29 +45,33 @@ class PromoteSerailzer(serializers.ModelSerializer):
 
 
 class AdvertCreateSerializer(serializers.ModelSerializer):
-    owner = serializers.SlugRelatedField(slug_field='email', queryset=CustomUser.objects.all())
-    category = serializers.SlugRelatedField(slug_field='name', queryset=Category.objects.all())
-    sub_category = serializers.SlugRelatedField(slug_field='name', queryset=SubCategory.objects.all())
-    promote = serializers.SlugRelatedField(slug_field='name', queryset=Promote.objects.all())
-    city = serializers.SlugRelatedField(slug_field='name', queryset=City.objects.all())
+    owner = serializers.SlugRelatedField(
+        slug_field="email", queryset=CustomUser.objects.all()
+    )
+    category = serializers.SlugRelatedField(
+        slug_field="name", queryset=Category.objects.all()
+    )
+    sub_category = serializers.SlugRelatedField(
+        slug_field="name", queryset=SubCategory.objects.all()
+    )
+    promote = serializers.SlugRelatedField(
+        slug_field="name", queryset=Promote.objects.all()
+    )
+    city = serializers.SlugRelatedField(slug_field="name", queryset=City.objects.all())
 
     class Meta:
         model = Advert
 
-        exclude = (
-            "created_date",
-            "status"
-            )
+        exclude = ("created_date", "status")
 
 
 class AdvertListSerializer(serializers.ModelSerializer):
     promote = PromoteSerailzer()
-    sub_category = serializers.SlugRelatedField(slug_field='name', read_only=True)
+    sub_category = serializers.SlugRelatedField(slug_field="name", read_only=True)
     advert_contact = AdvertContactSerailzer(many=True)
     advert_image = AdvertImageSerializer(many=True)
     advert_image_count = serializers.IntegerField(
-        source='advert_image.count',
-        read_only=True
+        source="advert_image.count", read_only=True
     )
 
     class Meta:
@@ -72,12 +81,13 @@ class AdvertListSerializer(serializers.ModelSerializer):
             "name",
             "sub_category",
             "start_price",
+            "end_price",
             "promote",
             "advert_image",
             "advert_image_count",
             "advert_contact",
         )
-        
+
 
 class AdvertDetailSerializer(serializers.ModelSerializer):
     promote = serializers.SlugRelatedField(slug_field="types", read_only=True)
@@ -88,9 +98,4 @@ class AdvertDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Advert
-        exclude = (
-            "email",
-        )
-
-
-
+        exclude = ("email",)

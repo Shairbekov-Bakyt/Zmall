@@ -20,13 +20,14 @@ class ForgotPasswordView(generics.CreateAPIView):
     """
     an endpoint forgot password
     """
+
     serializer_class = EmailSerializer
 
     def post(self, request, *args, **kwargs):
         email = request.data
         serializer = EmailSerializer(data=email)
         serializer.is_valid(raise_exception=True)
-        email = serializer.data['email']
+        email = serializer.data["email"]
 
         user = get_user_by_email(email)
         send_password_with_email(user)
@@ -82,7 +83,7 @@ class RegisterView(generics.GenericAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         user = serializer.user
-        send_url_with_mail(user, request)
+        send_url_with_mail(user)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
