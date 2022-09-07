@@ -63,6 +63,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "config.middleware.XForwardedForMiddleware",
+    "config.middleware.AdvertCountMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -136,7 +137,6 @@ CELERY_TASK_TIME_LIMIT = 30 * 60
 CELERY_BROKER_URL = "redis://" + REDIS_HOST + ":" + str(REDIS_PORT)
 CELERY_RESULT_BACKEND = "redis://" + REDIS_HOST + ":" + str(REDIS_PORT)
 CELERY_BROKER_TRANSPORT_OPTIONS = {"visibility_timeout": 3600}
-CELERY_RESULT_BACKEND = "redis://" + REDIS_HOST + ":" + str(REDIS_PORT)
 CELERY_ACCEPT_CONTENT = ["application/json"]
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
@@ -164,29 +164,70 @@ JAZZMIN_SETTINGS = {
     "site_brand": "ZeonMall",
 }
 
+# LOGGING = {
+#     'version': 1,  # the dictConfig format version
+#     'disable_existing_loggers': False,  # retain the default loggers
+#     'handlers': {
+#         'file': {
+#             'class': 'logging.FileHandler',
+#             'filename': 'general.log',
+#             'level': 'DEBUG',
+#             'formatter': 'verbose',
+#         },
+#
+#     },
+#     'loggers': {
+#         '': {
+#             'level': 'DEBUG',
+#             'handlers': ['file'],
+#         },
+#     },
+#     'formatters': {
+#         'verbose': {
+#             'format': 'level: {levelname} time: {asctime} module: {name}-{funcName}-{lineno}-{message}',
+#             'style': '{',
+#         },
+#     },
+#
+# }
 LOGGING = {
-    'version': 1,  # the dictConfig format version
-    'disable_existing_loggers': False,  # retain the default loggers
-    'handlers': {
-        'file': {
-            'class': 'logging.FileHandler',
-            'filename': 'general.log',
-            'level': 'DEBUG',
-            'formatter': 'verbose',
-        },
-
-    },
+    'version': 1,
+    'disable_existing_loggers' : False,
     'loggers': {
         '': {
+            'handlers': ['error', 'info', 'debug'],
+            'level': 1
+        }
+    },
+    'handlers': {
+        'std_err': {
+            'class': 'logging.StreamHandler'
+        },
+        'info': {
+            'class': 'logging.FileHandler',
+            'filename': 'log/info.log',
+            'level': 'INFO',
+            'formatter': 'default',
+        },
+        'error': {
+            'class': 'logging.FileHandler',
+            'filename': 'log/error.log',
+            'level': 'ERROR',
+            'formatter': 'error',
+        },
+        'debug': {
+            'class': 'logging.FileHandler',
+            'filename': 'log/debug.log',
             'level': 'DEBUG',
-            'handlers': ['file'],
+            'formatter': 'default',
         },
     },
     'formatters': {
-        'verbose': {
-            'format': 'level: {levelname} time: {asctime} module: {name}-{funcName}-{lineno}-{message}',
-            'style': '{',
+        'default': {
+            'format': '%(asctime)s [%(module)s | %(levelname)s] %(message)s',
+        },
+        'error': {
+            'format': '%(asctime)s [%(module)s | %(levelname)s] %(message)s @ %(pathname)s : %(lineno)d : %(funcName)s',
         },
     },
-
 }
