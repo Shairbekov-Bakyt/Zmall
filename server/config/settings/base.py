@@ -63,6 +63,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "config.middleware.XForwardedForMiddleware",
+    "config.middleware.AdvertCountMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"

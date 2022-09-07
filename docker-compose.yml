@@ -10,7 +10,7 @@ services:
     restart: always
     entrypoint: /entrypoint.sh
     volumes:
-      - static_volume:/backend/staticfiles
+      - ./server:/backend
     depends_on:
       - db
     command: ["./server/healthy-check.sh", "db:5432"]

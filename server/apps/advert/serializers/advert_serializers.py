@@ -77,11 +77,12 @@ class AdvertListSerializer(serializers.ModelSerializer):
             "advert_image",
             "advert_image_count",
             "advert_contact",
+            "views",
         )
 
 
 class AdvertDetailSerializer(serializers.ModelSerializer):
-    promote = serializers.SlugRelatedField(slug_field="types", read_only=True)
+    # promote = serializers.SlugRelatedField(slug_field="types", read_only=True)
     advert_contact = AdvertContactSerailzer(many=True)
     city = serializers.SlugRelatedField(slug_field="name", read_only=True)
     advert_image = AdvertImageSerializer(many=True)

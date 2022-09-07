@@ -16,9 +16,7 @@ def setUp():
         email="test@gmail.com",
     )[0]
     category = Category.objects.get_or_create(icon="icon.png", name="rabota")[0]
-    sub_cateogry = SubCategory.objects.get_or_create(category=category, name="rabota")[
-        0
-    ]
+    sub_cateogry = SubCategory.objects.get_or_create(category=category, name="rabota")[0]
     city = City.objects.get_or_create(name="Bishkek")[0]
     return {"category": category, "sub": sub_cateogry, "city": city, "owner": owner}
 
@@ -68,16 +66,16 @@ def get_page_data(html: str) -> None:
             "category": setup["category"],
             "sub_category": setup["sub"],
             "city": setup["city"],
+            'status': "act",
         }
         advert = Advert.objects.create(**data)
-        AdvertImage.objects.create(advert_id=advert, image=img)
+        AdvertImage.objects.create(advert_id=advert.id, image=img)
 
 
 def main():
     html = get_html(main_url)
     # print(html)
     get_page_data(html)
-
 
 #
 

@@ -1,5 +1,17 @@
-from django.core.validators import validate_ipv46_address
-from django.core.exceptions import ValidationError, SuspiciousOperation
+import pathlib
+
+from django.core.exceptions import SuspiciousOperation
+
+from advert.services import set_advert_count
+
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
 
 
 class XForwardedForMiddleware:
@@ -32,10 +44,24 @@ class XForwardedForMiddleware:
 
         return self.get_response(request)
 
-    def _validated_ip(self, ip):
-        ip = ip.strip()
-        try:
-            validate_ipv46_address(ip)
-        except ValidationError:
-            return None
-        return ip
+
+class AdvertCountMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        advert_url = '/api/v1/advert/'
+        request_url = request.path
+        if request_url is None:
+            return self.get_response(request)
+
+        path = pathlib.Path(request_url)
+        if str(path.parent) + '/' != advert_url:
+            return self.get_response(request)
+
+        client_ip = get_client_ip(request)
+        set_advert_count(int(path.name))
+        return self.get_response(request)
+
+
+
