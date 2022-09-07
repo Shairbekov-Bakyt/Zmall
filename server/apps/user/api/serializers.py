@@ -6,7 +6,7 @@ from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
 
 from user.models import CustomUser as User
-
+from user.selectors import get_user_by_email
 
 class ForgotPasswordSerializer(serializers.Serializer):
     new_password = serializers.CharField(required=True, validators=[validate_password])
@@ -39,6 +39,11 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token["username"] = user.username
         return token
 
+    def validate(self, attrs):
+        data = super(MyTokenObtainPairSerializer, self).validate(attrs)
+        user = get_user_by_email(attrs['email'])
+        data['is_superuser'] = user.is_superuser
+        return data
 
 class RegisterSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(

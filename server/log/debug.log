@@ -1,0 +1,47 @@
+2022-09-07 18:19:33,035 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-07 18:19:34,995 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-07 18:20:01,477 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/user/api/serializers.py changed, reloading.
+2022-09-07 18:20:01,934 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-07 18:21:16,658 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/user/api/serializers.py changed, reloading.
+2022-09-07 18:21:17,126 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-07 18:21:18,443 [log | ERROR] Internal Server Error: /api/v1/user/login/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework_simplejwt/views.py", line 43, in post
+    serializer.is_valid(raise_exception=True)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 429, in run_validation
+    value = self.validate(value)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/user/api/serializers.py", line 43, in validate
+    data = super(MyTokenObtainPairSerializer, self).validate()
+TypeError: TokenObtainPairSerializer.validate() missing 1 required positional argument: 'attrs'
+2022-09-07 18:21:29,867 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/user/api/serializers.py changed, reloading.
+2022-09-07 18:21:30,324 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-07 18:22:18,049 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/user/api/serializers.py changed, reloading.
+2022-09-07 18:22:18,501 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-07 18:22:28,125 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/user/api/serializers.py changed, reloading.
+2022-09-07 18:22:28,546 [autoreload | INFO] Watching for file changes with StatReloader
