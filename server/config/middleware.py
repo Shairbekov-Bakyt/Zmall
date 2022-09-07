@@ -32,16 +32,16 @@ class XForwardedForMiddleware:
             redis.set(client_count, 0)
             redis.set(client_date, today)
 
-        redis.incr(client_count)
-        client_date = str(redis.get(client_date))[2:-1]
-        client_count = int(str(redis.get(client_count))[2:-1])
-
-        if client_date < today:
-            client_date = today
-            client_count = 0
-
-        if int(client_count) > 10 and client_date == today:
-            raise ValueError("rate limit")
+        # redis.incr(client_count)
+        # client_date = str(redis.get(client_date))[2:-1]
+        # client_count = int(str(redis.get(client_count))[2:-1])
+        #
+        # if client_date < today:
+        #     client_date = today
+        #     client_count = 0
+        #
+        # if int(client_count) > 10 and client_date == today:
+        #     raise ValueError("rate limit")
 
         return self.get_response(request)
 
