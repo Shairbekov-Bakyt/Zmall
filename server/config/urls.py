@@ -39,6 +39,7 @@ urlpatterns = [
     path("api/v1/user/", include("user.urls")),
     path("api/v1/", include("advert.urls")),
     path("api/v1/", include("chat.urls")),
+    # path("api/v1/", include("custom_admin.urls")),
 ]
 
 urlpatterns += static(base.MEDIA_URL, document_root=base.MEDIA_ROOT)

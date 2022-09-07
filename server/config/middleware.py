@@ -1,8 +1,12 @@
 import pathlib
+from datetime import date
 
 from django.core.exceptions import SuspiciousOperation
+from rest_framework.response import Response
+from rest_framework import status
 
 from advert.services import set_advert_count
+from advert.utils import connect_to_redis
 
 
 def get_client_ip(request):
@@ -15,32 +19,29 @@ def get_client_ip(request):
 
 
 class XForwardedForMiddleware:
-    """
-    Set REMOTE_ADDR if it's missing because of a reverse proxy (nginx + gunicorn) deployment.
-    https://stackoverflow.com/questions/34251298/empty-remote-addr-value-in-django-application-when-using-nginx-as-reverse-proxy
-    """
-
     def __init__(self, get_response):
         self.get_response = get_response
 
     def __call__(self, request):
-        if "HTTP_X_FORWARDED_FOR" in request.META:
-            remote_addrs = request.META["HTTP_X_FORWARDED_FOR"].split(",")
-            remote_addr = None
+        redis = connect_to_redis()
+        client_ip = get_client_ip(request)
+        today = date.today().strftime("%d/%m/%Y")
+        client_count = client_ip + '_count'
+        client_date = client_ip + '_date'
+        if not redis.exists(client_count) and not redis.exists(client_date):
+            redis.set(client_count, 0)
+            redis.set(client_date, today)
 
-            # for some bots, 'unknown' was prepended as the first value: `unknown, ***.***.***.***`
-            # in which case the second value actually is the correct one
-            for ip in remote_addrs:
-                ip = self._validated_ip(ip)
-                if ip is not None:
-                    remote_addr = ip
-                    break
+        redis.incr(client_count)
+        client_date = str(redis.get(client_date))[2:-1]
+        client_count = int(str(redis.get(client_count))[2:-1])
 
-            if remote_addr is None:
-                raise SuspiciousOperation("Malformed X-Forwarded-For.")
+        if client_date < today:
+            client_date = today
+            client_count = 0
 
-            request.META["HTTP_X_PROXY_REMOTE_ADDR"] = request.META["REMOTE_ADDR"]
-            request.META["REMOTE_ADDR"] = remote_addr
+        if int(client_count) > 10 and client_date == today:
+            raise ValueError("rate limit")
 
         return self.get_response(request)
 
@@ -62,6 +63,3 @@ class AdvertCountMiddleware:
         client_ip = get_client_ip(request)
         set_advert_count(int(path.name))
         return self.get_response(request)
-
-
-
