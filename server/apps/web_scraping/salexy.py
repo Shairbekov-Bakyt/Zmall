@@ -1,4 +1,5 @@
 import requests
+import re
 from bs4 import BeautifulSoup
 
 from advert.models import Category, SubCategory, City, Advert, AdvertImage
@@ -6,6 +7,14 @@ from user.models import CustomUser
 from .utils import get_price_from_description
 
 main_url = "https://salexy.kg/bishkek/rabota"
+page_url = "?page="
+
+
+def get_price_from_description(data: str) -> int:
+    new_data = re.findall(r"\d+", data)
+    if new_data:
+        return int("".join(new_data))
+    return 0
 
 
 def setUp():
@@ -29,7 +38,6 @@ def get_html(url: str) -> str:
 def get_page_data(html: str) -> None:
     soup = BeautifulSoup(html, "html.parser")
     table = soup.find("ul", class_="product-list").find_all("li", class_="")
-
     for element in table:
         title = (
             element.find("div", class_="content")
@@ -74,32 +82,8 @@ def get_page_data(html: str) -> None:
 
 def main():
     html = get_html(main_url)
-    # print(html)
     get_page_data(html)
-
-#
-
-#
-# def write_csv(data: dict) -> None:
-#     with open('kivano.csv', 'a') as file:
-#         writer = csv.writer(file)
-#         writer.writerow((data['title'],
-#                          data['price'],
-#                          data['img']))
-#
-#
-#
-#
-#
-# def main():
-#     start = datetime.datetime.now()
-#     total_pages = get_total_pages(get_html(main_url))
-#
-#     for each_page in range(1, total_pages + 1):
-#         url_gen = main_url + page_url + str(each_page)
-#         html = get_html(url_gen)
-#         get_page_data(html)
-#     end = datetime.datetime.now()
-#     print('Completed in', end - start)
-#
-#
+    for each_page in range(1, 4):
+        url_gen = main_url + page_url + str(each_page)
+        html = get_html(url_gen)
+        get_page_data(html)

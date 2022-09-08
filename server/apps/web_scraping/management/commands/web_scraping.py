@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from web_scraping.web_scraping import main
+from web_scraping.salexy import main
 
 
 class Command(BaseCommand):
