@@ -60,7 +60,8 @@ class AdvertCountMiddleware:
             return self.get_response(request)
 
         client_ip = get_client_ip(request)
-        set_advert_count(int(path.name))
+        user = request.user
+        set_advert_count(int(path.name), str(user), client_ip)
         return self.get_response(request)
 
 
