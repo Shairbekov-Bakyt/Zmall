@@ -58,3 +58,443 @@ Traceback (most recent call last):
     assert self.serializer_class is not None, (
 AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
 2022-09-08 05:45:22,972 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-08 11:33:33,297 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-08 11:34:19,032 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-08 11:34:20,205 [log | WARNING] Not Found: /
+2022-09-08 11:34:28,802 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-08 11:35:16,896 [log | ERROR] Internal Server Error: /api/v1/advert/1/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 65, in __call__
+    set_advert_count(int(path.name), str(user), client_ip)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 42, in set_advert_count
+    elif dates_difference(view.get(f'{id}_datetime'), format) >= 1:
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 49, in dates_difference
+    dt_object = datetime.strptime(str(date).replace('b', '').replace("'", ''), format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data 'None' does not match format '%Y-%m-%d, %H:%M'
+2022-09-08 11:36:34,609 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-08 11:36:36,955 [log | ERROR] Internal Server Error: /api/v1/advert/1/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 65, in __call__
+    set_advert_count(int(path.name), str(user), client_ip)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 42, in set_advert_count
+    elif dates_difference(view.get(f'{id}_datetime'), format) >= 1:
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 49, in dates_difference
+    dt_object = datetime.strptime(str(date).replace('b', '').replace("'", ''), format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data 'None' does not match format '%Y-%m-%d, %H:%M'
+2022-09-08 11:41:15,716 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-08 11:41:18,981 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-08 11:41:25,076 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-08 11:41:28,067 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-08 11:41:28,347 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-08 11:42:01,518 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-08 11:42:03,517 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-08 11:44:39,740 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-08 11:44:44,014 [log | WARNING] Not Found: /
+2022-09-08 11:44:58,936 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-08 11:45:00,160 [log | ERROR] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 28, in __call__
+    today = time.localtime(time.time()).tm_second
+AttributeError: 'time.struct_time' object has no attribute 'tm_second'
+2022-09-08 11:45:18,410 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-08 11:45:20,840 [log | WARNING] Not Found: /
+2022-09-08 11:45:21,280 [log | WARNING] Not Found: /
+2022-09-08 11:46:19,332 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-08 11:46:22,851 [log | WARNING] Not Found: /
+2022-09-08 11:46:26,661 [log | WARNING] Not Found: /
+2022-09-08 11:46:30,035 [log | WARNING] Not Found: /
+2022-09-08 11:46:30,261 [log | WARNING] Not Found: /
+2022-09-08 11:46:30,438 [log | WARNING] Not Found: /
+2022-09-08 11:46:34,028 [log | WARNING] Not Found: /
+2022-09-08 11:46:34,193 [log | WARNING] Not Found: /
+2022-09-08 11:46:34,380 [log | WARNING] Not Found: /
+2022-09-08 11:46:34,560 [log | WARNING] Not Found: /
+2022-09-08 11:46:34,743 [log | WARNING] Not Found: /
+2022-09-08 11:46:34,915 [log | WARNING] Not Found: /
+2022-09-08 11:46:35,097 [log | WARNING] Not Found: /
+2022-09-08 11:46:35,260 [log | WARNING] Not Found: /
+2022-09-08 11:46:35,444 [log | WARNING] Not Found: /
+2022-09-08 11:46:35,614 [log | WARNING] Not Found: /
+2022-09-08 11:46:35,782 [log | WARNING] Not Found: /
+2022-09-08 11:46:35,963 [log | WARNING] Not Found: /
+2022-09-08 11:46:36,121 [log | WARNING] Not Found: /
+2022-09-08 11:46:36,289 [log | WARNING] Not Found: /
+2022-09-08 11:46:36,459 [log | WARNING] Not Found: /
+2022-09-08 11:46:36,629 [log | WARNING] Not Found: /
+2022-09-08 11:46:36,794 [log | WARNING] Not Found: /
+2022-09-08 11:46:36,976 [log | WARNING] Not Found: /
+2022-09-08 11:46:37,145 [log | WARNING] Not Found: /
+2022-09-08 11:46:37,295 [log | WARNING] Not Found: /
+2022-09-08 11:46:37,450 [log | WARNING] Not Found: /
+2022-09-08 11:46:37,611 [log | WARNING] Not Found: /
+2022-09-08 11:46:37,755 [log | WARNING] Not Found: /
+2022-09-08 11:46:37,944 [log | WARNING] Not Found: /
+2022-09-08 11:46:38,045 [log | WARNING] Not Found: /
+2022-09-08 11:46:38,160 [log | WARNING] Not Found: /
+2022-09-08 11:46:38,460 [log | WARNING] Not Found: /
+2022-09-08 11:46:38,624 [log | WARNING] Not Found: /
+2022-09-08 11:46:38,745 [log | WARNING] Not Found: /
+2022-09-08 11:46:38,877 [log | WARNING] Not Found: /
+2022-09-08 11:46:38,994 [log | WARNING] Not Found: /
+2022-09-08 11:46:39,110 [log | WARNING] Not Found: /
+2022-09-08 11:46:39,208 [log | WARNING] Not Found: /
+2022-09-08 11:46:57,019 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-08 11:46:58,535 [log | WARNING] Not Found: /
+2022-09-08 11:46:58,653 [log | WARNING] Not Found: /
+2022-09-08 11:46:58,804 [log | WARNING] Not Found: /
+2022-09-08 11:46:58,954 [log | WARNING] Not Found: /
+2022-09-08 11:46:59,067 [log | WARNING] Not Found: /
+2022-09-08 11:46:59,219 [log | WARNING] Not Found: /
+2022-09-08 11:46:59,330 [log | WARNING] Not Found: /
+2022-09-08 11:47:17,773 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-08 11:47:19,676 [log | ERROR] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 36, in __call__
+    client_date = int(redis.get(client_date))[2:-1]
+TypeError: 'int' object is not subscriptable
+2022-09-08 11:47:19,880 [log | ERROR] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 36, in __call__
+    client_date = int(redis.get(client_date))[2:-1]
+TypeError: 'int' object is not subscriptable
+2022-09-08 11:48:07,111 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-08 11:48:07,874 [log | WARNING] Not Found: /
+2022-09-08 11:48:08,060 [log | WARNING] Not Found: /
+2022-09-08 11:48:08,235 [log | WARNING] Not Found: /
+2022-09-08 11:48:08,391 [log | WARNING] Not Found: /
+2022-09-08 11:48:08,566 [log | WARNING] Not Found: /
+2022-09-08 11:48:08,719 [log | WARNING] Not Found: /
+2022-09-08 11:48:08,881 [log | WARNING] Not Found: /
+2022-09-08 12:04:51,169 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-08 12:04:56,100 [log | WARNING] Not Found: /
+2022-09-08 12:05:06,675 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-08 12:05:25,793 [log | ERROR] Internal Server Error: /api/v1/advert/53/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 65, in __call__
+    set_advert_count(int(path.name), str(user), client_ip)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 42, in set_advert_count
+    elif dates_difference(view.get(f'{id}_datetime'), format) >= 1:
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 49, in dates_difference
+    dt_object = datetime.strptime(str(date).replace('b', '').replace("'", ''), format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data 'None' does not match format '%Y-%m-%d, %H:%M'
+2022-09-08 12:06:17,301 [log | ERROR] Internal Server Error: /admin/advert/advert/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 686, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1964, in changelist_view
+    response = self.response_action(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1593, in response_action
+    response = func(self, request, queryset)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/actions.py", line 39, in delete_selected
+    ) = modeladmin.get_deleted_objects(queryset, request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2104, in get_deleted_objects
+    return get_deleted_objects(objs, request, self.admin_site)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 153, in get_deleted_objects
+    to_delete = collector.nested(format_callback)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 220, in nested
+    roots.extend(self._nested(root, seen, format_callback))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 204, in _nested
+    children.extend(self._nested(child, seen, format_callback))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 206, in _nested
+    ret = [format_callback(obj)]
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 128, in format_callback
+    no_edit_link = "%s: %s" % (capfirst(opts.verbose_name), obj)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/models.py", line 49, in __str__
+    return self.image.url
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/fields/files.py", line 65, in url
+    self._require_file()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/fields/files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'image' attribute has no file associated with it.
+2022-09-08 12:06:25,650 [log | ERROR] Internal Server Error: /admin/advert/advert/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 686, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1964, in changelist_view
+    response = self.response_action(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1593, in response_action
+    response = func(self, request, queryset)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/actions.py", line 39, in delete_selected
+    ) = modeladmin.get_deleted_objects(queryset, request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2104, in get_deleted_objects
+    return get_deleted_objects(objs, request, self.admin_site)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 153, in get_deleted_objects
+    to_delete = collector.nested(format_callback)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 220, in nested
+    roots.extend(self._nested(root, seen, format_callback))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 204, in _nested
+    children.extend(self._nested(child, seen, format_callback))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 206, in _nested
+    ret = [format_callback(obj)]
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 128, in format_callback
+    no_edit_link = "%s: %s" % (capfirst(opts.verbose_name), obj)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/models.py", line 49, in __str__
+    return self.image.url
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/fields/files.py", line 65, in url
+    self._require_file()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/fields/files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'image' attribute has no file associated with it.
+2022-09-08 12:06:49,566 [log | ERROR] Internal Server Error: /admin/advert/advert/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 686, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1964, in changelist_view
+    response = self.response_action(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1593, in response_action
+    response = func(self, request, queryset)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/actions.py", line 39, in delete_selected
+    ) = modeladmin.get_deleted_objects(queryset, request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2104, in get_deleted_objects
+    return get_deleted_objects(objs, request, self.admin_site)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 153, in get_deleted_objects
+    to_delete = collector.nested(format_callback)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 220, in nested
+    roots.extend(self._nested(root, seen, format_callback))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 204, in _nested
+    children.extend(self._nested(child, seen, format_callback))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 206, in _nested
+    ret = [format_callback(obj)]
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 128, in format_callback
+    no_edit_link = "%s: %s" % (capfirst(opts.verbose_name), obj)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/models.py", line 49, in __str__
+    return self.image.url
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/fields/files.py", line 65, in url
+    self._require_file()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/fields/files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'image' attribute has no file associated with it.
+2022-09-08 12:07:24,967 [log | ERROR] Internal Server Error: /admin/advert/advert/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 686, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1964, in changelist_view
+    response = self.response_action(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1593, in response_action
+    response = func(self, request, queryset)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/actions.py", line 39, in delete_selected
+    ) = modeladmin.get_deleted_objects(queryset, request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2104, in get_deleted_objects
+    return get_deleted_objects(objs, request, self.admin_site)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 153, in get_deleted_objects
+    to_delete = collector.nested(format_callback)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 220, in nested
+    roots.extend(self._nested(root, seen, format_callback))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 204, in _nested
+    children.extend(self._nested(child, seen, format_callback))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 206, in _nested
+    ret = [format_callback(obj)]
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 128, in format_callback
+    no_edit_link = "%s: %s" % (capfirst(opts.verbose_name), obj)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/models.py", line 49, in __str__
+    return self.image.url
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/fields/files.py", line 65, in url
+    self._require_file()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/fields/files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'image' attribute has no file associated with it.
+2022-09-08 12:08:56,847 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-08 12:09:05,951 [log | WARNING] Not Found: /
+2022-09-08 12:09:16,671 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-08 12:09:18,473 [log | WARNING] Not Found: /
+2022-09-08 12:09:25,099 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-08 12:09:32,208 [log | ERROR] Internal Server Error: /api/v1/advert/1/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 65, in __call__
+    set_advert_count(int(path.name), str(user), client_ip)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 42, in set_advert_count
+    elif dates_difference(view.get(f'{id}_datetime'), format) >= 1:
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 49, in dates_difference
+    dt_object = datetime.strptime(str(date).replace('b', '').replace("'", ''), format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data 'None' does not match format '%Y-%m-%d, %H:%M'
+2022-09-08 12:09:41,360 [log | ERROR] Internal Server Error: /api/v1/advert/20/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 65, in __call__
+    set_advert_count(int(path.name), str(user), client_ip)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 42, in set_advert_count
+    elif dates_difference(view.get(f'{id}_datetime'), format) >= 1:
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 49, in dates_difference
+    dt_object = datetime.strptime(str(date).replace('b', '').replace("'", ''), format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data 'None' does not match format '%Y-%m-%d, %H:%M'
+2022-09-08 12:14:14,932 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-08 12:14:17,795 [log | ERROR] Internal Server Error: /api/v1/advert/20/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 56, in retrieve
+    return Response(serializer.data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/fields.py", line 1886, in to_representation
+    return method(value)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/serializers/advert_serializers.py", line 98, in get_views
+    view = connect_to_redis(REDIS_HOST, REDIS_PORT)
+TypeError: connect_to_redis() takes 0 positional arguments but 2 were given
+2022-09-08 12:18:45,757 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-08 12:18:58,371 [autoreload | INFO] Watching for file changes with StatReloader

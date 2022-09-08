@@ -1,6 +1,8 @@
 from rest_framework import serializers
 
 from user.models import CustomUser
+from config.settings.base import REDIS_HOST, REDIS_PORT
+from apps.advert.utils import connect_to_redis
 from advert.serializers.promote_serializers import PromoteSerializer
 from advert.models import (
     Advert,
@@ -82,13 +84,19 @@ class AdvertListSerializer(serializers.ModelSerializer):
 
 
 class AdvertDetailSerializer(serializers.ModelSerializer):
-    # promote = serializers.SlugRelatedField(slug_field="types", read_only=True)
+    promote = PromoteSerializer(many=True, read_only=True)
     advert_contact = AdvertContactSerailzer(many=True)
     city = serializers.SlugRelatedField(slug_field="name", read_only=True)
     advert_image = AdvertImageSerializer(many=True)
-    advert_view = AdvertViewSerailzer()
-
+    views = serializers.SerializerMethodField(source='get_views', read_only=True)
 
     class Meta:
         model = Advert
         exclude = ("email",)
+
+    def get_views(self, instance):
+        view = connect_to_redis()
+        ad_views = view.get(f'{instance.id}_view')
+
+        return ad_views
+

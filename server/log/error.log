@@ -25,3 +25,302 @@ Traceback (most recent call last):
   File "/Users/c0mrade/Documents/Zmall/server/apps/user/api/serializers.py", line 43, in validate
     data = super(MyTokenObtainPairSerializer, self).validate()
 TypeError: TokenObtainPairSerializer.validate() missing 1 required positional argument: 'attrs'
+2022-09-08 11:35:16,896 [log | ERROR] Internal Server Error: /api/v1/advert/1/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 65, in __call__
+    set_advert_count(int(path.name), str(user), client_ip)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 42, in set_advert_count
+    elif dates_difference(view.get(f'{id}_datetime'), format) >= 1:
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 49, in dates_difference
+    dt_object = datetime.strptime(str(date).replace('b', '').replace("'", ''), format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data 'None' does not match format '%Y-%m-%d, %H:%M'
+2022-09-08 11:36:36,955 [log | ERROR] Internal Server Error: /api/v1/advert/1/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 65, in __call__
+    set_advert_count(int(path.name), str(user), client_ip)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 42, in set_advert_count
+    elif dates_difference(view.get(f'{id}_datetime'), format) >= 1:
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 49, in dates_difference
+    dt_object = datetime.strptime(str(date).replace('b', '').replace("'", ''), format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data 'None' does not match format '%Y-%m-%d, %H:%M'
+2022-09-08 11:45:00,160 [log | ERROR] Internal Server Error: / @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 28, in __call__
+    today = time.localtime(time.time()).tm_second
+AttributeError: 'time.struct_time' object has no attribute 'tm_second'
+2022-09-08 11:47:19,676 [log | ERROR] Internal Server Error: / @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 36, in __call__
+    client_date = int(redis.get(client_date))[2:-1]
+TypeError: 'int' object is not subscriptable
+2022-09-08 11:47:19,880 [log | ERROR] Internal Server Error: / @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 36, in __call__
+    client_date = int(redis.get(client_date))[2:-1]
+TypeError: 'int' object is not subscriptable
+2022-09-08 12:05:25,793 [log | ERROR] Internal Server Error: /api/v1/advert/53/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 65, in __call__
+    set_advert_count(int(path.name), str(user), client_ip)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 42, in set_advert_count
+    elif dates_difference(view.get(f'{id}_datetime'), format) >= 1:
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 49, in dates_difference
+    dt_object = datetime.strptime(str(date).replace('b', '').replace("'", ''), format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data 'None' does not match format '%Y-%m-%d, %H:%M'
+2022-09-08 12:06:17,301 [log | ERROR] Internal Server Error: /admin/advert/advert/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 686, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1964, in changelist_view
+    response = self.response_action(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1593, in response_action
+    response = func(self, request, queryset)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/actions.py", line 39, in delete_selected
+    ) = modeladmin.get_deleted_objects(queryset, request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2104, in get_deleted_objects
+    return get_deleted_objects(objs, request, self.admin_site)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 153, in get_deleted_objects
+    to_delete = collector.nested(format_callback)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 220, in nested
+    roots.extend(self._nested(root, seen, format_callback))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 204, in _nested
+    children.extend(self._nested(child, seen, format_callback))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 206, in _nested
+    ret = [format_callback(obj)]
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 128, in format_callback
+    no_edit_link = "%s: %s" % (capfirst(opts.verbose_name), obj)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/models.py", line 49, in __str__
+    return self.image.url
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/fields/files.py", line 65, in url
+    self._require_file()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/fields/files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'image' attribute has no file associated with it.
+2022-09-08 12:06:25,650 [log | ERROR] Internal Server Error: /admin/advert/advert/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 686, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1964, in changelist_view
+    response = self.response_action(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1593, in response_action
+    response = func(self, request, queryset)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/actions.py", line 39, in delete_selected
+    ) = modeladmin.get_deleted_objects(queryset, request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2104, in get_deleted_objects
+    return get_deleted_objects(objs, request, self.admin_site)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 153, in get_deleted_objects
+    to_delete = collector.nested(format_callback)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 220, in nested
+    roots.extend(self._nested(root, seen, format_callback))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 204, in _nested
+    children.extend(self._nested(child, seen, format_callback))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 206, in _nested
+    ret = [format_callback(obj)]
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 128, in format_callback
+    no_edit_link = "%s: %s" % (capfirst(opts.verbose_name), obj)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/models.py", line 49, in __str__
+    return self.image.url
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/fields/files.py", line 65, in url
+    self._require_file()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/fields/files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'image' attribute has no file associated with it.
+2022-09-08 12:06:49,566 [log | ERROR] Internal Server Error: /admin/advert/advert/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 686, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1964, in changelist_view
+    response = self.response_action(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1593, in response_action
+    response = func(self, request, queryset)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/actions.py", line 39, in delete_selected
+    ) = modeladmin.get_deleted_objects(queryset, request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2104, in get_deleted_objects
+    return get_deleted_objects(objs, request, self.admin_site)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 153, in get_deleted_objects
+    to_delete = collector.nested(format_callback)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 220, in nested
+    roots.extend(self._nested(root, seen, format_callback))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 204, in _nested
+    children.extend(self._nested(child, seen, format_callback))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 206, in _nested
+    ret = [format_callback(obj)]
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 128, in format_callback
+    no_edit_link = "%s: %s" % (capfirst(opts.verbose_name), obj)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/models.py", line 49, in __str__
+    return self.image.url
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/fields/files.py", line 65, in url
+    self._require_file()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/fields/files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'image' attribute has no file associated with it.
+2022-09-08 12:07:24,967 [log | ERROR] Internal Server Error: /admin/advert/advert/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 686, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1964, in changelist_view
+    response = self.response_action(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1593, in response_action
+    response = func(self, request, queryset)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/actions.py", line 39, in delete_selected
+    ) = modeladmin.get_deleted_objects(queryset, request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2104, in get_deleted_objects
+    return get_deleted_objects(objs, request, self.admin_site)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 153, in get_deleted_objects
+    to_delete = collector.nested(format_callback)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 220, in nested
+    roots.extend(self._nested(root, seen, format_callback))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 204, in _nested
+    children.extend(self._nested(child, seen, format_callback))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 206, in _nested
+    ret = [format_callback(obj)]
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 128, in format_callback
+    no_edit_link = "%s: %s" % (capfirst(opts.verbose_name), obj)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/models.py", line 49, in __str__
+    return self.image.url
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/fields/files.py", line 65, in url
+    self._require_file()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/fields/files.py", line 40, in _require_file
+    raise ValueError(
+ValueError: The 'image' attribute has no file associated with it.
+2022-09-08 12:09:32,208 [log | ERROR] Internal Server Error: /api/v1/advert/1/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 65, in __call__
+    set_advert_count(int(path.name), str(user), client_ip)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 42, in set_advert_count
+    elif dates_difference(view.get(f'{id}_datetime'), format) >= 1:
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 49, in dates_difference
+    dt_object = datetime.strptime(str(date).replace('b', '').replace("'", ''), format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data 'None' does not match format '%Y-%m-%d, %H:%M'
+2022-09-08 12:09:41,360 [log | ERROR] Internal Server Error: /api/v1/advert/20/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 65, in __call__
+    set_advert_count(int(path.name), str(user), client_ip)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 42, in set_advert_count
+    elif dates_difference(view.get(f'{id}_datetime'), format) >= 1:
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 49, in dates_difference
+    dt_object = datetime.strptime(str(date).replace('b', '').replace("'", ''), format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data 'None' does not match format '%Y-%m-%d, %H:%M'
+2022-09-08 12:14:17,795 [log | ERROR] Internal Server Error: /api/v1/advert/20/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 56, in retrieve
+    return Response(serializer.data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/fields.py", line 1886, in to_representation
+    return method(value)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/serializers/advert_serializers.py", line 98, in get_views
+    view = connect_to_redis(REDIS_HOST, REDIS_PORT)
+TypeError: connect_to_redis() takes 0 positional arguments but 2 were given

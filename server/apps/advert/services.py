@@ -1,5 +1,8 @@
-from advert.models import Advert
 from user.utils import Util
+from datetime import datetime
+
+from apps.advert.utils import connect_to_redis
+
 
 
 def send_advert_to_email(emails):
@@ -13,10 +16,37 @@ def send_advert_to_email(emails):
     Util.send_email(data)
 
 
-def set_advert_count(id: int):
-    advert = Advert.objects.get(pk=id)
-    advert.views += 1
-    advert.save()
+def set_advert_count(id: int, user, ip):
+    view = connect_to_redis()
+    format = "%Y-%m-%d, %H:%M"
+    date = str(datetime.now().strftime(format))
 
-# ip :{user: user.email, date: }
-#
+    if not view.exists(f'{id}_{user}_last_view'):
+        d = {
+            f'{id}_ip': ip,
+            f'{id}_user': user,
+            f'{id}_view': 0,
+            f'{id}_{user}_last_view': date,
+        }
+        view.mset(d)
+
+    if user == 'AnonymousUser':
+        if bytes(ip, 'utf-8') not in view.get(f'{id}_ip'):
+            view.incr(f'{id}_view')
+            view.append(f'{id}_ip', ip)
+
+    if bytes(user, 'utf-8') not in view.get(f'{id}_user'):
+        view.incr(f'{id}_view')
+        view.append(f'{id}_user', user)
+
+    elif dates_difference(view.get(f'{id}_{user}_last_view'), format) >= 1:
+        view.incr(f'{id}_view')
+        view.set(f'{id}_{user}_last_view', date)
+
+
+def dates_difference(date, format):
+    now = datetime.now()
+    dt_object = datetime.strptime(str(date).replace('b', '').replace("'", ''), format)
+    diff = now - dt_object
+
+    return diff.days

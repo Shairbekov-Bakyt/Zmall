@@ -5,6 +5,7 @@ from rest_framework import status, filters
 from rest_framework.generics import ListAPIView
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from advert.serializers import advert_serializers as serializers
 from advert.models import Advert, AdvertImage, AdvertView, City, AdvertContact
@@ -44,20 +45,6 @@ class AdvertViewSet(ModelViewSet):
     ordering = ["created_date"]
     search_fields = ["name"]
 
-    def retrieve(self, request: HttpRequest, pk) -> Response:
-        advert = self.get_object()
-        serializer = serializers.AdvertDetailSerializer(advert)
-
-        user = request.user
-        advert_view, _ = AdvertView.objects.get_or_create(advert=advert)
-
-        if user not in advert_view.users.all():
-            advert_view.users.add(user)
-            advert_view.view += 1
-            advert_view.save()
-
-        return Response(serializer.data, status=status.HTTP_200_OK)
-
     def create(self, request, *args, **kwargs):
         imgs = request.FILES.getlist("image")
         if len(imgs) > 8:
@@ -92,6 +79,8 @@ class AdvertViewSet(ModelViewSet):
     def get_serializer_class(self):
         if self.action == "list":
             return serializers.AdvertListSerializer
+        if self.action == 'retrieve':
+            return serializers.AdvertDetailSerializer
         return super().get_serializer_class()
 
 
