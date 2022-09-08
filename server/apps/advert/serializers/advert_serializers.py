@@ -61,33 +61,22 @@ class AdvertListSerializer(serializers.ModelSerializer):
     sub_category = serializers.SlugRelatedField(slug_field="name", read_only=True)
     advert_contact = AdvertContactSerailzer(many=True)
     advert_image = AdvertImageSerializer(many=True)
+    city = serializers.SlugRelatedField(slug_field="name", read_only=True)
     advert_image_count = serializers.IntegerField(
         source="advert_image.count", read_only=True
     )
 
     class Meta:
         model = Advert
-        fields = (
-            "id",
-            "name",
-            "sub_category",
-            "start_price",
-            "end_price",
-            "promote",
-            "advert_image",
-            "advert_image_count",
-            "advert_contact",
-            "views",
-        )
+        fields = "__all__"
 
 
 class AdvertDetailSerializer(serializers.ModelSerializer):
-    # promote = serializers.SlugRelatedField(slug_field="types", read_only=True)
+    promote = PromoteSerializer(many=True)
     advert_contact = AdvertContactSerailzer(many=True)
     city = serializers.SlugRelatedField(slug_field="name", read_only=True)
     advert_image = AdvertImageSerializer(many=True)
     advert_view = AdvertViewSerailzer()
-
 
     class Meta:
         model = Advert

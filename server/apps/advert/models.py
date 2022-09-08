@@ -108,9 +108,6 @@ class Promote(models.Model):
         verbose_name_plural = "Рекламы"
 
 
-
-
-
 class Advert(models.Model):
     class StatusChoice(models.TextChoices):
         active = "act", "Активный"
@@ -147,7 +144,12 @@ class Advert(models.Model):
         blank=True,
         verbose_name="реклама"
     )
-
+    status = models.CharField(
+        max_length=10,
+        verbose_name="статус",
+        choices=StatusChoice.choices,
+        default=StatusChoice.on_review,
+    )
     name = models.CharField(max_length=150, verbose_name="название объявления")
     description = models.TextField(verbose_name="описание")
     start_price = models.IntegerField(verbose_name="от цены")
@@ -158,12 +160,7 @@ class Advert(models.Model):
 
     created_date = models.DateTimeField(auto_now_add=True)
     views = models.IntegerField(default=0, verbose_name='просмотры')
-    status = models.CharField(
-        max_length=10,
-        verbose_name="статус",
-        choices=StatusChoice.choices,
-        default=StatusChoice.on_review,
-    )
+
 
     def __str__(self):
         return self.name
