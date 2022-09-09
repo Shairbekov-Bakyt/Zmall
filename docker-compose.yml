@@ -11,6 +11,7 @@ services:
     entrypoint: /entrypoint.sh
     volumes:
       - ./server:/backend
+      - static_volume:/backend/staticfiles
     depends_on:
       - db
     command: ["./server/healthy-check.sh", "db:5432"]
@@ -24,7 +25,23 @@ services:
     env_file: server/.env
     ports:
       - 172.17.0.1:5432:5432
-
+  redis:
+    container_name: redis
+    image: redis:alpine
+  celery:
+      container_name: celery
+      restart: always
+      build:
+        context: ./server
+      command: celery -A app worker -l info
+      volumes:
+        - ./server:/backend
+      env_file:
+        - ./server/.env
+      depends_on:
+        - db
+        - redis
+        - backend
   nginx:
     container_name: dev_web
     restart: on-failure
