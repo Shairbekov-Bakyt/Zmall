@@ -98,7 +98,7 @@ DATABASES = {
         "NAME": config("DB_NAME"),
         "USER": config("DB_USER"),
         "PASSWORD": config("DB_PASSWORD"),
-        "HOST": 'localhost',
+        "HOST": config('DB_HOST'),
         "PORT": 5432,
     }
 }
@@ -133,7 +133,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-REDIS_HOST = "localhost"
+REDIS_HOST = "redis"
 REDIS_PORT = 6379
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
@@ -167,32 +167,6 @@ JAZZMIN_SETTINGS = {
     "site_brand": "ZeonMall",
 }
 
-# LOGGING = {
-#     'version': 1,  # the dictConfig format version
-#     'disable_existing_loggers': False,  # retain the default loggers
-#     'handlers': {
-#         'file': {
-#             'class': 'logging.FileHandler',
-#             'filename': 'general.log',
-#             'level': 'DEBUG',
-#             'formatter': 'verbose',
-#         },
-#
-#     },
-#     'loggers': {
-#         '': {
-#             'level': 'DEBUG',
-#             'handlers': ['file'],
-#         },
-#     },
-#     'formatters': {
-#         'verbose': {
-#             'format': 'level: {levelname} time: {asctime} module: {name}-{funcName}-{lineno}-{message}',
-#             'style': '{',
-#         },
-#     },
-#
-# }
 LOGGING = {
     'version': 1,
     'disable_existing_loggers' : False,
