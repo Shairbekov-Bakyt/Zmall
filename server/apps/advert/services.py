@@ -1,13 +1,14 @@
 from user.utils import Util
 from datetime import datetime
 
-from apps.advert.utils import connect_to_redis
-
+from advert.utils import connect_to_redis
+from advert.models import Advert
 
 
 def send_advert_to_email(emails):
-    absurl = "http://" + "127.0.0.1:800/api/v1/advert/"
-    email_body = f"Hi username in Zeon Mall new advert link below\n{absurl}"
+    absurl = [f"http://" + "127.0.0.1:800/api/v1/advert/{i}" for i in Advert.objects.filter(status='act').order_by('-created_date').values_list('id', flat=True)]
+    urls = '\n'.join(absurl)
+    email_body = f"Hi username in Zeon Mall new advert link below\n{urls}"
     data = {
         "email_body": email_body,
         "email_subject": f"News Advert",

@@ -11,7 +11,6 @@ from advert.serializers import advert_serializers as serializers
 from advert.models import Advert, AdvertImage, AdvertView, City, AdvertContact
 
 from advert.serializers import permissions
-from advert.task import task_send_advert_to_email
 from phonenumber_field.validators import validate_international_phonenumber
 
 
@@ -72,7 +71,6 @@ class AdvertViewSet(ModelViewSet):
 
         AdvertContact.objects.bulk_create(ad_contacts)
 
-        task_send_advert_to_email.delay(advert.id, advert.name)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 

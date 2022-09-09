@@ -3698,3 +3698,142 @@ Traceback (most recent call last):
     raise AssertionError(msg)
 AssertionError: When a serializer is passed a `data` keyword argument you must call `.is_valid()` before attempting to access the serialized `.data` representation.
 You should either call `.is_valid()` first, or access `.initial_data` instead.
+2022-09-09 23:13:30,837 [signal | ERROR] Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x1025edf60>> raised: ModuleNotFoundError("No module named 'advert.task'")
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/celery/fixups/django.py", line 121, in validate_models
+    run_checks()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/urls/resolvers.py", line 476, in check
+    for pattern in self.url_patterns:
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/urls/resolvers.py", line 690, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/urls/resolvers.py", line 683, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/c0mrade/Documents/Zmall/server/config/urls.py", line 40, in <module>
+    path("api/v1/", include("advert.urls")),
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/urls.py", line 4, in <module>
+    from advert.views.advert_views import AdvertViewSet, CityListView, PremiumAdvertView
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/views/advert_views.py", line 14, in <module>
+    from advert.task import task_send_advert_to_email
+ModuleNotFoundError: No module named 'advert.task'
+2022-09-09 23:13:30,839 [signal | ERROR] Signal handler <promise@0x1025f23b0 --> <bound method Celery._autodiscover_tasks of <Celery config at 0x1025ed510>>> raised: SyntaxError('unexpected character after line continuation character', ('/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py', 10, 71, '    email_body = f"Hi username in Zeon Mall new advert link below\\n{"\\n".join(absurl)}"\n', 10, 0))
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/vine/promises.py", line 160, in __call__
+    return self.throw()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/vine/promises.py", line 157, in __call__
+    retval = fun(*final_args, **final_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/celery/app/base.py", line 689, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/celery/app/base.py", line 698, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/celery/app/base.py", line 693, in _autodiscover_tasks_from_names
+    return self.loader.autodiscover_tasks(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/celery/loaders/base.py", line 221, in autodiscover_tasks
+    mod.__name__ for mod in autodiscover_tasks(packages or (),
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/celery/loaders/base.py", line 247, in autodiscover_tasks
+    return [find_related_module(pkg, related_name) for pkg in packages]
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/celery/loaders/base.py", line 247, in <listcomp>
+    return [find_related_module(pkg, related_name) for pkg in packages]
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/celery/loaders/base.py", line 268, in find_related_module
+    return importlib.import_module(module_name)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/tasks.py", line 5, in <module>
+    from advert.services import send_advert_to_email
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 10
+    email_body = f"Hi username in Zeon Mall new advert link below\n{"\n".join(absurl)}"
+                                                                      ^
+SyntaxError: unexpected character after line continuation character
+2022-09-09 23:13:55,666 [signal | ERROR] Signal handler <promise@0x1020f23b0 --> <bound method Celery._autodiscover_tasks of <Celery config at 0x1020ed510>>> raised: SyntaxError('unexpected character after line continuation character', ('/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py', 10, 71, '    email_body = f"Hi username in Zeon Mall new advert link below\\n{"\\n".join(absurl)}"\n', 10, 0))
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/vine/promises.py", line 160, in __call__
+    return self.throw()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/vine/promises.py", line 157, in __call__
+    retval = fun(*final_args, **final_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/celery/app/base.py", line 689, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/celery/app/base.py", line 698, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/celery/app/base.py", line 693, in _autodiscover_tasks_from_names
+    return self.loader.autodiscover_tasks(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/celery/loaders/base.py", line 221, in autodiscover_tasks
+    mod.__name__ for mod in autodiscover_tasks(packages or (),
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/celery/loaders/base.py", line 247, in autodiscover_tasks
+    return [find_related_module(pkg, related_name) for pkg in packages]
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/celery/loaders/base.py", line 247, in <listcomp>
+    return [find_related_module(pkg, related_name) for pkg in packages]
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/celery/loaders/base.py", line 268, in find_related_module
+    return importlib.import_module(module_name)
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/tasks.py", line 5, in <module>
+    from advert.services import send_advert_to_email
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/services.py", line 10
+    email_body = f"Hi username in Zeon Mall new advert link below\n{"\n".join(absurl)}"
+                                                                      ^
+SyntaxError: unexpected character after line continuation character
+2022-09-09 23:15:25,746 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-09 23:17:36,880 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-09 23:18:18,847 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-09 23:18:30,063 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-09 23:18:55,071 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-09 23:20:00,629 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-09 23:20:10,719 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-09 23:21:10,773 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-09 23:21:26,351 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-09 23:22:38,220 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-09 23:40:31,167 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-09 23:41:40,833 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-09 23:42:05,174 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-09 23:43:18,100 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-09 23:43:45,876 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-09 23:46:27,902 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-09 23:47:06,432 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-09 23:50:54,211 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.

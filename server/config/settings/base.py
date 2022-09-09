@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from celery.schedules import crontab
 import os, sys
 
 from decouple import config
@@ -98,7 +99,7 @@ DATABASES = {
         "NAME": config("DB_NAME"),
         "USER": config("DB_USER"),
         "PASSWORD": config("DB_PASSWORD"),
-        "HOST": config('DB_HOST'),
+        "HOST": 'localhost',
         "PORT": 5432,
     }
 }
@@ -133,7 +134,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-REDIS_HOST = "redis"
+REDIS_HOST = "127.0.0.1"
 REDIS_PORT = 6379
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
@@ -143,6 +144,18 @@ CELERY_BROKER_TRANSPORT_OPTIONS = {"visibility_timeout": 3600}
 CELERY_ACCEPT_CONTENT = ["application/json"]
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
+
+CELERY_BEAT_SCHEDULE = {
+      'add-every-30-seconds': {
+        'task': 'advert.tasks.task_send_advert_to_email',
+        'schedule': crontab(hours=23),
+        'args': '',
+        'options': {
+            'expires': 15.0,
+        },
+    },
+}
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -208,3 +221,7 @@ LOGGING = {
         },
     },
 }
+
+
+
+
