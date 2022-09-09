@@ -33,7 +33,7 @@ services:
       restart: always
       build:
         context: ./server
-      command: celery -A app worker -l info
+      command: ccelery -A config worker -l info
       volumes:
         - ./server:/backend
       env_file:
