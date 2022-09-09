@@ -77,7 +77,7 @@ def get_page_data(html: str) -> None:
             'status': "act",
         }
         advert = Advert.objects.create(**data)
-        AdvertImage.objects.create(advert_id=advert.id, image=img)
+        AdvertImage.objects.create(advert_id=advert.id, image.url=img)
 
 
 def main():

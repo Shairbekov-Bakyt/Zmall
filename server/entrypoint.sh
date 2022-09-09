@@ -4,10 +4,6 @@
 echo "Collect static files"
 python3 manage.py collectstatic --no-input
 
-# Make migrations
-echo "Make migrations"
-python3 manage.py makemigrations
-
 # migrate
 echo "migrate"
 python3 manage.py migrate

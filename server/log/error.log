@@ -3297,3 +3297,54 @@ django.db.utils.ProgrammingError: relation "advert_comment" does not exist
 LINE 1: ...omment"."parent_id", "advert_comment"."text" FROM "advert_co...
                                                              ^
 
+2022-09-09 09:16:14,225 [log | ERROR] Internal Server Error: /api/v1/favorite/ @ /usr/local/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/backend/apps/advert/views/favorite_view.py", line 18, in create
+    data['user_id'] = request.user.id
+  File "/usr/local/lib/python3.9/site-packages/django/http/request.py", line 526, in __setitem__
+    self._assert_mutable()
+  File "/usr/local/lib/python3.9/site-packages/django/http/request.py", line 523, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+2022-09-09 09:29:23,910 [log | ERROR] Internal Server Error: /api/v1/user/get_user/ @ /usr/local/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/backend/apps/user/views.py", line 51, in get
+    return Response(serializer.data)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 249, in data
+    raise AssertionError(msg)
+AssertionError: When a serializer is passed a `data` keyword argument you must call `.is_valid()` before attempting to access the serialized `.data` representation.
+You should either call `.is_valid()` first, or access `.initial_data` instead.

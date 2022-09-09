@@ -3592,3 +3592,109 @@ Traceback (most recent call last):
 AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
 2022-09-09 06:05:55,333 [log | WARNING] Not Found: /favicon.ico
 2022-09-09 06:06:00,836 [log | WARNING] Forbidden: /api/v1/favorite/
+2022-09-09 06:14:23,347 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-09 06:15:07,959 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-09 06:36:40,073 [log | WARNING] Not Found: /
+2022-09-09 07:29:20,216 [log | WARNING] Not Found: /
+2022-09-09 07:29:22,935 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-09 09:12:06,563 [log | WARNING] Forbidden: /api/v1/favorite/
+2022-09-09 09:15:05,464 [log | WARNING] Not Found: /damin
+2022-09-09 09:15:05,498 [log | WARNING] Not Found: /favicon.ico
+2022-09-09 09:15:59,106 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-09 09:16:04,100 [log | WARNING] Not Found: /api/v1/favorite/
+2022-09-09 09:16:10,081 [log | WARNING] Not Found: /api/v1/favorite/
+2022-09-09 09:16:14,225 [log | ERROR] Internal Server Error: /api/v1/favorite/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/backend/apps/advert/views/favorite_view.py", line 18, in create
+    data['user_id'] = request.user.id
+  File "/usr/local/lib/python3.9/site-packages/django/http/request.py", line 526, in __setitem__
+    self._assert_mutable()
+  File "/usr/local/lib/python3.9/site-packages/django/http/request.py", line 523, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+2022-09-09 09:16:15,991 [log | WARNING] Not Found: /api/v1/favorite/
+2022-09-09 09:16:25,747 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-09 09:17:14,635 [log | WARNING] Not Found: /api/v1/favorite/
+2022-09-09 09:29:18,139 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-09 09:29:23,910 [log | ERROR] Internal Server Error: /api/v1/user/get_user/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/backend/apps/user/views.py", line 51, in get
+    return Response(serializer.data)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 249, in data
+    raise AssertionError(msg)
+AssertionError: When a serializer is passed a `data` keyword argument you must call `.is_valid()` before attempting to access the serialized `.data` representation.
+You should either call `.is_valid()` first, or access `.initial_data` instead.
