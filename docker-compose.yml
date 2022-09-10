@@ -5,8 +5,8 @@ services:
   backend:
     container_name: backend
     build: ./server
-    ports:
-      - "8000:8000"
+#    ports:
+#      - "8000:8000"
     restart: always
     entrypoint: /entrypoint.sh
     volumes:
@@ -23,17 +23,15 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file: server/.env
-    ports:
-      - 172.17.0.1:5432:5432
+#    ports:
+#      - 172.17.0.1:5432:5432
   redis:
-    container_name: redis
     image: redis:alpine
   celery:
-      container_name: celery
       restart: always
       build:
         context: ./server
-      command: celery -A config worker -l info && celery -A config.celery beat
+      command: celery -A config.celery beat && celery -A config worker -l info
       volumes:
         - ./server:/backend
       env_file:
@@ -50,7 +48,7 @@ services:
       - ./webserver/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       - static_volume:/backend/staticfiles
     ports:
-      - 80:80
+      - 8000:80
     depends_on:
       - backend
 

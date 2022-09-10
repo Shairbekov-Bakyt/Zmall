@@ -6,6 +6,7 @@ from advert.views.promote_views import PromoteViewSet
 from advert.views.category_views import CategoryView
 from advert.views.favorite_view import FavoriteAdvertView
 from advert.views.subcategory_views import SubCategoryView
+from advert.views.feedback_view import FeedbackView
 from advert.views.comment_views import CommentView
 
 
@@ -14,6 +15,7 @@ router.register("advert", AdvertViewSet, basename="advert")
 router.register("favorite", FavoriteAdvertView, basename="favorite_advert")
 router.register("promote", PromoteViewSet, basename="promote")
 router.register("comment", CommentView, basename="comment")
+router.register("feedback", FeedbackView, basename="comment")
 
 
 urlpatterns = [

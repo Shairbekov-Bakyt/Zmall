@@ -229,3 +229,13 @@ class Comment(models.Model):
     class Meta:
         verbose_name = "Комментарий"
         verbose_name_plural = "Комментарии"
+
+
+class Feedback(models.Model):
+    name = models.CharField(max_length=100, verbose_name='имя')
+    email = models.EmailField(max_length=100, verbose_name='E-mail')
+    feedback_title = models.CharField(max_length=150, verbose_name='тема сообщение')
+    message = models.TextField(verbose_name='сообщение')
+
+    def __str__(self):
+        return self.name

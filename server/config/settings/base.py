@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "social_auth",
 
     "rest_framework",
+    'rest_framework_simplejwt',
     "corsheaders",
     "drf_yasg",
     "celery",
@@ -100,7 +101,8 @@ DATABASES = {
         "NAME": config("DB_NAME"),
         "USER": config("DB_USER"),
         "PASSWORD": config("DB_PASSWORD"),
-        "HOST": config("DB_HOST"),
+        # "HOST": config("DB_HOST"),
+        "HOST": "localhost",
         "PORT": 5432,
     }
 }
@@ -124,6 +126,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -135,7 +144,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-REDIS_HOST = "127.0.0.1"
+REDIS_HOST = "redis"
 REDIS_PORT = 6379
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60

@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 
 from advert.models import FavoriteAdvert
 from advert.serializers.favorite_serializer import FavoriteSerializer
-
+from advert.utils import get_request_data_for_favorite
 
 class FavoriteAdvertView(ModelViewSet):
     queryset = FavoriteAdvert.objects.all()
@@ -14,15 +14,19 @@ class FavoriteAdvertView(ModelViewSet):
     permission_classes = [IsAuthenticated]
 
     def create(self, request):
-        data = request.data
-        data['user_id'] = request.user.id
-        serializer = self.get_serializer(data=request.data)
+
+        data = get_request_data_for_favorite(request)
+        serializer = self.get_serializer(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
 
     def list(self, request):
-        query = get_object_or_404(FavoriteAdvert, user_id=request.user.id)
+        try:
+            query = FavoriteAdvert.objects.get(user_id=request.user.id)
+        except:
+            return Response({"favorite": "empty"})
+
         serializer = self.get_serializer(query)
         return Response(serializer.data)
 

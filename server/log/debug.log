@@ -4697,3 +4697,1439 @@ AssertionError: 'VerifyEmail' should either include a `serializer_class` attribu
 2022-09-10 07:42:14,708 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-10 07:42:25,396 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
 2022-09-10 07:42:25,873 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:49:19,678 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:49:21,899 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-10 07:49:27,928 [log | WARNING] Forbidden: /api/v1/favorite/
+2022-09-10 07:50:24,039 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-10 07:50:44,307 [log | WARNING] Forbidden: /api/v1/user/get_user/
+2022-09-10 07:52:13,798 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/user/api/serializers.py changed, reloading.
+2022-09-10 07:52:14,346 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:52:48,778 [log | WARNING] Forbidden: /api/v1/favorite/
+2022-09-10 07:54:18,157 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/views/favorite_view.py changed, reloading.
+2022-09-10 07:54:18,668 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:54:23,396 [log | WARNING] Forbidden: /api/v1/favorite/
+2022-09-10 07:54:46,980 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-10 07:55:03,842 [log | WARNING] Forbidden: /api/v1/favorite/
+2022-09-10 07:55:04,612 [log | WARNING] Forbidden: /api/v1/favorite/
+2022-09-10 07:56:03,783 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/views/favorite_view.py changed, reloading.
+2022-09-10 07:56:04,315 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:56:49,344 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 07:57:05,573 [log | ERROR] Internal Server Error: /api/v1/favorite/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/views/favorite_view.py", line 18, in create
+    data['user_id'] = request.user.id
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/http/request.py", line 526, in __setitem__
+    self._assert_mutable()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/http/request.py", line 523, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+2022-09-10 07:58:56,732 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/views/favorite_view.py changed, reloading.
+2022-09-10 07:58:57,265 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:00:23,013 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/utils.py changed, reloading.
+2022-09-10 08:00:23,540 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:01:01,534 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/utils.py changed, reloading.
+2022-09-10 08:01:02,012 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:01:05,430 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/utils.py changed, reloading.
+2022-09-10 08:01:05,754 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:01:22,666 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/views/favorite_view.py changed, reloading.
+2022-09-10 08:01:23,029 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:01:31,188 [log | ERROR] Internal Server Error: /api/v1/favorite/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/views/favorite_view.py", line 18, in create
+    data = get_request_data_for_favorite(request)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/utils.py", line 16, in get_request_data_for_favorite
+    request.data['user_id'] = request.user.id
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/http/request.py", line 526, in __setitem__
+    self._assert_mutable()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/http/request.py", line 523, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+2022-09-10 08:01:32,368 [log | ERROR] Internal Server Error: /api/v1/favorite/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/views/favorite_view.py", line 18, in create
+    data = get_request_data_for_favorite(request)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/utils.py", line 16, in get_request_data_for_favorite
+    request.data['user_id'] = request.user.id
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/http/request.py", line 526, in __setitem__
+    self._assert_mutable()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/http/request.py", line 523, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+2022-09-10 08:01:36,551 [log | ERROR] Internal Server Error: /api/v1/favorite/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/views/favorite_view.py", line 18, in create
+    data = get_request_data_for_favorite(request)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/utils.py", line 16, in get_request_data_for_favorite
+    request.data['user_id'] = request.user.id
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/http/request.py", line 526, in __setitem__
+    self._assert_mutable()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/http/request.py", line 523, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+2022-09-10 08:01:42,354 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:01:44,697 [log | ERROR] Internal Server Error: /api/v1/favorite/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/views/favorite_view.py", line 18, in create
+    data = get_request_data_for_favorite(request)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/utils.py", line 16, in get_request_data_for_favorite
+    request.data['user_id'] = request.user.id
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/http/request.py", line 526, in __setitem__
+    self._assert_mutable()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/http/request.py", line 523, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+2022-09-10 08:02:31,891 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/utils.py changed, reloading.
+2022-09-10 08:02:32,365 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:02:36,977 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:02:39,714 [log | ERROR] Internal Server Error: /api/v1/favorite/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/views/favorite_view.py", line 18, in create
+    data = get_request_data_for_favorite(request)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/utils.py", line 10, in get_request_data_for_favorite
+    data['user_id'] = request.user.id
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/http/request.py", line 526, in __setitem__
+    self._assert_mutable()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/http/request.py", line 523, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+2022-09-10 08:02:46,671 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/utils.py changed, reloading.
+2022-09-10 08:02:47,092 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:02:50,914 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:02:53,257 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 08:03:10,551 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 08:03:19,567 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/views/favorite_view.py changed, reloading.
+2022-09-10 08:03:20,047 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:03:31,634 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 08:03:49,727 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 08:04:26,537 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/user/api/serializers.py changed, reloading.
+2022-09-10 08:04:27,018 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:04:49,253 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/user/api/serializers.py changed, reloading.
+2022-09-10 08:04:49,670 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:04:51,426 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:04:54,428 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:05:09,611 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 08:05:15,142 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 08:05:15,680 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 08:05:17,253 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 08:05:45,076 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/user/api/serializers.py changed, reloading.
+2022-09-10 08:05:45,568 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:05:56,310 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/user/api/serializers.py changed, reloading.
+2022-09-10 08:05:56,734 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:05:59,513 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 08:06:00,229 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 08:06:03,590 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 08:06:10,230 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:06:44,011 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/views/favorite_view.py changed, reloading.
+2022-09-10 08:06:44,512 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:06:47,129 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:06:49,934 [log | WARNING] Forbidden: /api/v1/favorite/
+2022-09-10 08:06:51,156 [log | WARNING] Forbidden: /api/v1/favorite/
+2022-09-10 08:06:51,730 [log | WARNING] Forbidden: /api/v1/favorite/
+2022-09-10 08:12:56,055 [log | WARNING] Forbidden: /api/v1/favorite/
+2022-09-10 08:12:56,597 [log | WARNING] Forbidden: /api/v1/favorite/
+2022-09-10 08:12:57,843 [log | WARNING] Forbidden: /api/v1/favorite/
+2022-09-10 08:13:12,800 [log | WARNING] Forbidden: /api/v1/favorite/
+2022-09-10 08:13:13,481 [log | WARNING] Forbidden: /api/v1/favorite/
+2022-09-10 08:13:34,547 [log | WARNING] Forbidden: /api/v1/favorite/
+2022-09-10 08:13:35,085 [log | WARNING] Forbidden: /api/v1/favorite/
+2022-09-10 08:13:35,372 [log | WARNING] Forbidden: /api/v1/favorite/
+2022-09-10 08:14:47,920 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 08:14:48,502 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:15:16,067 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 08:15:16,498 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:15:25,112 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:15:28,325 [log | WARNING] Unauthorized: /api/v1/favorite/
+2022-09-10 08:15:29,026 [log | WARNING] Unauthorized: /api/v1/favorite/
+2022-09-10 08:15:29,543 [log | WARNING] Unauthorized: /api/v1/favorite/
+2022-09-10 08:15:41,561 [log | WARNING] Unauthorized: /api/v1/favorite/
+2022-09-10 08:16:22,347 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:16:25,701 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:16:45,655 [log | WARNING] Unauthorized: /api/v1/favorite/
+2022-09-10 08:16:46,340 [log | WARNING] Unauthorized: /api/v1/favorite/
+2022-09-10 08:17:57,390 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/user/api/serializers.py changed, reloading.
+2022-09-10 08:17:57,920 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:17:59,727 [log | WARNING] Not Found: /
+2022-09-10 08:18:28,091 [log | WARNING] Unauthorized: /api/v1/favorite/
+2022-09-10 08:18:29,123 [log | WARNING] Unauthorized: /api/v1/favorite/
+2022-09-10 08:18:33,350 [log | WARNING] Unauthorized: /api/v1/favorite/
+2022-09-10 08:18:40,340 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 08:18:40,804 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:19:29,490 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 08:19:29,991 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:19:33,396 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 08:19:33,744 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:26:05,248 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-10 08:26:05,862 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:27:09,779 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-10 08:27:10,363 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:29:09,201 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-10 08:29:09,787 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:29:40,413 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-10 08:29:40,950 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:31:55,467 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/urls.py changed, reloading.
+2022-09-10 08:31:56,076 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 08:32:26,351 [signal | ERROR] Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0xffffb00e2040>> raised: ModuleNotFoundError("No module named 'facebook'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 121, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 476, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 690, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 683, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/config/urls.py", line 43, in <module>
+    path("api/v1/social_auth/", include("social_auth.urls")),
+  File "/usr/local/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/apps/social_auth/urls.py", line 3, in <module>
+    from .views import GoogleSocialAuthView, FacebookSocialAuthView
+  File "/backend/apps/social_auth/views.py", line 4, in <module>
+    from .serializers import GoogleSocialAuthSerializer, FacebookSocialAuthSerializer
+  File "/backend/apps/social_auth/serializers.py", line 3, in <module>
+    from . import google, facebook
+  File "/backend/apps/social_auth/facebook.py", line 2, in <module>
+    import facebook
+ModuleNotFoundError: No module named 'facebook'
+2022-09-10 08:32:27,848 [signal | ERROR] Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0xffffb8976040>> raised: ModuleNotFoundError("No module named 'facebook'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 121, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 476, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 690, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 683, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/config/urls.py", line 43, in <module>
+    path("api/v1/social_auth/", include("social_auth.urls")),
+  File "/usr/local/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/apps/social_auth/urls.py", line 3, in <module>
+    from .views import GoogleSocialAuthView, FacebookSocialAuthView
+  File "/backend/apps/social_auth/views.py", line 4, in <module>
+    from .serializers import GoogleSocialAuthSerializer, FacebookSocialAuthSerializer
+  File "/backend/apps/social_auth/serializers.py", line 3, in <module>
+    from . import google, facebook
+  File "/backend/apps/social_auth/facebook.py", line 2, in <module>
+    import facebook
+ModuleNotFoundError: No module named 'facebook'
+2022-09-10 08:32:29,323 [signal | ERROR] Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0xffffb0d35040>> raised: ModuleNotFoundError("No module named 'facebook'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 121, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 476, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 690, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 683, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/config/urls.py", line 43, in <module>
+    path("api/v1/social_auth/", include("social_auth.urls")),
+  File "/usr/local/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/apps/social_auth/urls.py", line 3, in <module>
+    from .views import GoogleSocialAuthView, FacebookSocialAuthView
+  File "/backend/apps/social_auth/views.py", line 4, in <module>
+    from .serializers import GoogleSocialAuthSerializer, FacebookSocialAuthSerializer
+  File "/backend/apps/social_auth/serializers.py", line 3, in <module>
+    from . import google, facebook
+  File "/backend/apps/social_auth/facebook.py", line 2, in <module>
+    import facebook
+ModuleNotFoundError: No module named 'facebook'
+2022-09-10 08:32:31,059 [signal | ERROR] Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0xffff99be7040>> raised: ModuleNotFoundError("No module named 'facebook'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 121, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 476, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 690, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 683, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/config/urls.py", line 43, in <module>
+    path("api/v1/social_auth/", include("social_auth.urls")),
+  File "/usr/local/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/apps/social_auth/urls.py", line 3, in <module>
+    from .views import GoogleSocialAuthView, FacebookSocialAuthView
+  File "/backend/apps/social_auth/views.py", line 4, in <module>
+    from .serializers import GoogleSocialAuthSerializer, FacebookSocialAuthSerializer
+  File "/backend/apps/social_auth/serializers.py", line 3, in <module>
+    from . import google, facebook
+  File "/backend/apps/social_auth/facebook.py", line 2, in <module>
+    import facebook
+ModuleNotFoundError: No module named 'facebook'
+2022-09-10 08:32:33,280 [signal | ERROR] Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0xffff8d921040>> raised: ModuleNotFoundError("No module named 'facebook'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 121, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 476, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 690, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 683, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/config/urls.py", line 43, in <module>
+    path("api/v1/social_auth/", include("social_auth.urls")),
+  File "/usr/local/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/apps/social_auth/urls.py", line 3, in <module>
+    from .views import GoogleSocialAuthView, FacebookSocialAuthView
+  File "/backend/apps/social_auth/views.py", line 4, in <module>
+    from .serializers import GoogleSocialAuthSerializer, FacebookSocialAuthSerializer
+  File "/backend/apps/social_auth/serializers.py", line 3, in <module>
+    from . import google, facebook
+  File "/backend/apps/social_auth/facebook.py", line 2, in <module>
+    import facebook
+ModuleNotFoundError: No module named 'facebook'
+2022-09-10 08:32:36,319 [signal | ERROR] Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0xffff82b28040>> raised: ModuleNotFoundError("No module named 'facebook'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 121, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 476, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 690, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 683, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/config/urls.py", line 43, in <module>
+    path("api/v1/social_auth/", include("social_auth.urls")),
+  File "/usr/local/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/apps/social_auth/urls.py", line 3, in <module>
+    from .views import GoogleSocialAuthView, FacebookSocialAuthView
+  File "/backend/apps/social_auth/views.py", line 4, in <module>
+    from .serializers import GoogleSocialAuthSerializer, FacebookSocialAuthSerializer
+  File "/backend/apps/social_auth/serializers.py", line 3, in <module>
+    from . import google, facebook
+  File "/backend/apps/social_auth/facebook.py", line 2, in <module>
+    import facebook
+ModuleNotFoundError: No module named 'facebook'
+2022-09-10 08:32:41,101 [signal | ERROR] Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0xffff90d28040>> raised: ModuleNotFoundError("No module named 'facebook'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 121, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 476, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 690, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 683, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/config/urls.py", line 43, in <module>
+    path("api/v1/social_auth/", include("social_auth.urls")),
+  File "/usr/local/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/apps/social_auth/urls.py", line 3, in <module>
+    from .views import GoogleSocialAuthView, FacebookSocialAuthView
+  File "/backend/apps/social_auth/views.py", line 4, in <module>
+    from .serializers import GoogleSocialAuthSerializer, FacebookSocialAuthSerializer
+  File "/backend/apps/social_auth/serializers.py", line 3, in <module>
+    from . import google, facebook
+  File "/backend/apps/social_auth/facebook.py", line 2, in <module>
+    import facebook
+ModuleNotFoundError: No module named 'facebook'
+2022-09-10 08:32:48,787 [signal | ERROR] Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0xffffb427d040>> raised: ModuleNotFoundError("No module named 'facebook'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 121, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 476, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 690, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 683, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/config/urls.py", line 43, in <module>
+    path("api/v1/social_auth/", include("social_auth.urls")),
+  File "/usr/local/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/apps/social_auth/urls.py", line 3, in <module>
+    from .views import GoogleSocialAuthView, FacebookSocialAuthView
+  File "/backend/apps/social_auth/views.py", line 4, in <module>
+    from .serializers import GoogleSocialAuthSerializer, FacebookSocialAuthSerializer
+  File "/backend/apps/social_auth/serializers.py", line 3, in <module>
+    from . import google, facebook
+  File "/backend/apps/social_auth/facebook.py", line 2, in <module>
+    import facebook
+ModuleNotFoundError: No module named 'facebook'
+2022-09-10 08:32:50,378 [signal | ERROR] Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0xffff89ba2040>> raised: ModuleNotFoundError("No module named 'facebook'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 121, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 476, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 690, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 683, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/config/urls.py", line 43, in <module>
+    path("api/v1/social_auth/", include("social_auth.urls")),
+  File "/usr/local/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/apps/social_auth/urls.py", line 3, in <module>
+    from .views import GoogleSocialAuthView, FacebookSocialAuthView
+  File "/backend/apps/social_auth/views.py", line 4, in <module>
+    from .serializers import GoogleSocialAuthSerializer, FacebookSocialAuthSerializer
+  File "/backend/apps/social_auth/serializers.py", line 3, in <module>
+    from . import google, facebook
+  File "/backend/apps/social_auth/facebook.py", line 2, in <module>
+    import facebook
+ModuleNotFoundError: No module named 'facebook'
+2022-09-10 08:32:51,893 [signal | ERROR] Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0xffff9bdb5040>> raised: ModuleNotFoundError("No module named 'facebook'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 121, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 476, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 690, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 683, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/config/urls.py", line 43, in <module>
+    path("api/v1/social_auth/", include("social_auth.urls")),
+  File "/usr/local/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/apps/social_auth/urls.py", line 3, in <module>
+    from .views import GoogleSocialAuthView, FacebookSocialAuthView
+  File "/backend/apps/social_auth/views.py", line 4, in <module>
+    from .serializers import GoogleSocialAuthSerializer, FacebookSocialAuthSerializer
+  File "/backend/apps/social_auth/serializers.py", line 3, in <module>
+    from . import google, facebook
+  File "/backend/apps/social_auth/facebook.py", line 2, in <module>
+    import facebook
+ModuleNotFoundError: No module named 'facebook'
+2022-09-10 08:32:53,589 [signal | ERROR] Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0xffffba49d040>> raised: ModuleNotFoundError("No module named 'facebook'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 121, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 476, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 690, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 683, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/config/urls.py", line 43, in <module>
+    path("api/v1/social_auth/", include("social_auth.urls")),
+  File "/usr/local/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/apps/social_auth/urls.py", line 3, in <module>
+    from .views import GoogleSocialAuthView, FacebookSocialAuthView
+  File "/backend/apps/social_auth/views.py", line 4, in <module>
+    from .serializers import GoogleSocialAuthSerializer, FacebookSocialAuthSerializer
+  File "/backend/apps/social_auth/serializers.py", line 3, in <module>
+    from . import google, facebook
+  File "/backend/apps/social_auth/facebook.py", line 2, in <module>
+    import facebook
+ModuleNotFoundError: No module named 'facebook'
+2022-09-10 08:32:55,687 [signal | ERROR] Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0xffff8d0d2040>> raised: ModuleNotFoundError("No module named 'facebook'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 121, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 476, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 690, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 683, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/config/urls.py", line 43, in <module>
+    path("api/v1/social_auth/", include("social_auth.urls")),
+  File "/usr/local/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/apps/social_auth/urls.py", line 3, in <module>
+    from .views import GoogleSocialAuthView, FacebookSocialAuthView
+  File "/backend/apps/social_auth/views.py", line 4, in <module>
+    from .serializers import GoogleSocialAuthSerializer, FacebookSocialAuthSerializer
+  File "/backend/apps/social_auth/serializers.py", line 3, in <module>
+    from . import google, facebook
+  File "/backend/apps/social_auth/facebook.py", line 2, in <module>
+    import facebook
+ModuleNotFoundError: No module named 'facebook'
+2022-09-10 08:32:58,622 [signal | ERROR] Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0xffffb5c7f040>> raised: ModuleNotFoundError("No module named 'facebook'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 121, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 476, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 690, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 683, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/config/urls.py", line 43, in <module>
+    path("api/v1/social_auth/", include("social_auth.urls")),
+  File "/usr/local/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/apps/social_auth/urls.py", line 3, in <module>
+    from .views import GoogleSocialAuthView, FacebookSocialAuthView
+  File "/backend/apps/social_auth/views.py", line 4, in <module>
+    from .serializers import GoogleSocialAuthSerializer, FacebookSocialAuthSerializer
+  File "/backend/apps/social_auth/serializers.py", line 3, in <module>
+    from . import google, facebook
+  File "/backend/apps/social_auth/facebook.py", line 2, in <module>
+    import facebook
+ModuleNotFoundError: No module named 'facebook'
+2022-09-10 08:33:03,141 [signal | ERROR] Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0xffff9b8a5040>> raised: ModuleNotFoundError("No module named 'facebook'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 121, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 476, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 690, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 683, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/config/urls.py", line 43, in <module>
+    path("api/v1/social_auth/", include("social_auth.urls")),
+  File "/usr/local/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/apps/social_auth/urls.py", line 3, in <module>
+    from .views import GoogleSocialAuthView, FacebookSocialAuthView
+  File "/backend/apps/social_auth/views.py", line 4, in <module>
+    from .serializers import GoogleSocialAuthSerializer, FacebookSocialAuthSerializer
+  File "/backend/apps/social_auth/serializers.py", line 3, in <module>
+    from . import google, facebook
+  File "/backend/apps/social_auth/facebook.py", line 2, in <module>
+    import facebook
+ModuleNotFoundError: No module named 'facebook'
+2022-09-10 08:33:10,865 [signal | ERROR] Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0xffffb8744040>> raised: ModuleNotFoundError("No module named 'facebook'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 121, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 476, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 690, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 683, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/config/urls.py", line 43, in <module>
+    path("api/v1/social_auth/", include("social_auth.urls")),
+  File "/usr/local/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/apps/social_auth/urls.py", line 3, in <module>
+    from .views import GoogleSocialAuthView, FacebookSocialAuthView
+  File "/backend/apps/social_auth/views.py", line 4, in <module>
+    from .serializers import GoogleSocialAuthSerializer, FacebookSocialAuthSerializer
+  File "/backend/apps/social_auth/serializers.py", line 3, in <module>
+    from . import google, facebook
+  File "/backend/apps/social_auth/facebook.py", line 2, in <module>
+    import facebook
+ModuleNotFoundError: No module named 'facebook'
+2022-09-10 08:33:24,983 [signal | ERROR] Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0xffffb072a040>> raised: ModuleNotFoundError("No module named 'facebook'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 121, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 476, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 690, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 683, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/config/urls.py", line 43, in <module>
+    path("api/v1/social_auth/", include("social_auth.urls")),
+  File "/usr/local/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/apps/social_auth/urls.py", line 3, in <module>
+    from .views import GoogleSocialAuthView, FacebookSocialAuthView
+  File "/backend/apps/social_auth/views.py", line 4, in <module>
+    from .serializers import GoogleSocialAuthSerializer, FacebookSocialAuthSerializer
+  File "/backend/apps/social_auth/serializers.py", line 3, in <module>
+    from . import google, facebook
+  File "/backend/apps/social_auth/facebook.py", line 2, in <module>
+    import facebook
+ModuleNotFoundError: No module named 'facebook'
+2022-09-10 08:33:51,972 [signal | ERROR] Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0xffff808f1040>> raised: ModuleNotFoundError("No module named 'facebook'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 121, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 476, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 690, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 683, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/config/urls.py", line 43, in <module>
+    path("api/v1/social_auth/", include("social_auth.urls")),
+  File "/usr/local/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/apps/social_auth/urls.py", line 3, in <module>
+    from .views import GoogleSocialAuthView, FacebookSocialAuthView
+  File "/backend/apps/social_auth/views.py", line 4, in <module>
+    from .serializers import GoogleSocialAuthSerializer, FacebookSocialAuthSerializer
+  File "/backend/apps/social_auth/serializers.py", line 3, in <module>
+    from . import google, facebook
+  File "/backend/apps/social_auth/facebook.py", line 2, in <module>
+    import facebook
+ModuleNotFoundError: No module named 'facebook'
+2022-09-10 08:34:54,410 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 08:34:54,944 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 09:27:57,956 [log | ERROR] Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/backend/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/usr/local/lib/python3.9/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2022-09-10 09:28:01,626 [log | ERROR] Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/backend/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/usr/local/lib/python3.9/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2022-09-10 09:28:15,817 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 09:28:16,459 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 09:28:25,065 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-10 09:29:47,911 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/urls.py changed, reloading.
+2022-09-10 09:29:48,493 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 09:29:52,733 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/urls.py changed, reloading.
+2022-09-10 09:29:53,179 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 09:29:54,275 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/urls.py changed, reloading.
+2022-09-10 09:29:54,619 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 09:29:57,787 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/urls.py changed, reloading.
+2022-09-10 09:29:58,194 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 09:30:11,757 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-10 09:34:11,867 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/urls.py changed, reloading.
+2022-09-10 09:34:12,339 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 09:34:24,135 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 09:34:24,636 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 09:34:31,140 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 09:34:31,574 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 09:34:32,887 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 09:34:33,223 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 09:34:54,388 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 09:34:54,888 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 09:35:08,143 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 09:35:18,584 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 09:35:22,765 [log | ERROR] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 645, in _connect
+    for res in socket.getaddrinfo(
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2022-09-10 09:35:25,346 [log | ERROR] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 645, in _connect
+    for res in socket.getaddrinfo(
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2022-09-10 09:35:38,766 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 09:35:39,350 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 09:35:39,935 [log | ERROR] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:6379. Connection refused.
+2022-09-10 09:35:41,033 [log | ERROR] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:6379. Connection refused.
+2022-09-10 09:35:53,711 [log | WARNING] Not Found: /
+2022-09-10 09:35:56,176 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-10 09:36:26,770 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 09:36:27,380 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 09:37:22,225 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/local.py changed, reloading.
+2022-09-10 09:37:22,750 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 09:37:27,192 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/local.py changed, reloading.
+2022-09-10 09:37:27,553 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 09:37:31,901 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/local.py changed, reloading.
+2022-09-10 09:37:32,247 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 09:37:50,286 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/local.py changed, reloading.
+2022-09-10 09:37:50,713 [autoreload | INFO] Watching for file changes with StatReloader
