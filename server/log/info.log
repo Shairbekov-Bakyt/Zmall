@@ -4136,3 +4136,7 @@ AssertionError: 'VerifyEmail' should either include a `serializer_class` attribu
 2022-09-10 07:40:35,711 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-10 07:40:39,063 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/services.py changed, reloading.
 2022-09-10 07:40:39,390 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:42:14,148 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 07:42:14,708 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:42:25,396 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 07:42:25,873 [autoreload | INFO] Watching for file changes with StatReloader

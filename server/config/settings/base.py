@@ -100,7 +100,7 @@ DATABASES = {
         "NAME": config("DB_NAME"),
         "USER": config("DB_USER"),
         "PASSWORD": config("DB_PASSWORD"),
-        "HOST": 'localhost',
+        "HOST": config("DB_HOST"),
         "PORT": 5432,
     }
 }
@@ -149,7 +149,7 @@ CELERY_RESULT_SERIALIZER = "json"
 CELERY_BEAT_SCHEDULE = {
       'advert_task_start_every_day': {
         'task': 'advert.tasks.task_send_advert_to_email',
-        'schedule': crontab(minute='*'),
+        'schedule': crontab(hour=23),
         'args': '',
         'options': {
             'expires': 15.0,
