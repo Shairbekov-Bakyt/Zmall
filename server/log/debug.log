@@ -6263,3 +6263,142 @@ AssertionError: 'VerifyEmail' should either include a `serializer_class` attribu
 2022-09-10 11:35:55,006 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-10 11:36:33,000 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/views/help_view.py changed, reloading.
 2022-09-10 11:36:33,480 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 15:08:55,168 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 15:08:56,179 [log | WARNING] Not Found: /
+2022-09-10 15:08:56,487 [log | WARNING] Not Found: /favicon.ico
+2022-09-10 15:08:59,151 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-10 15:10:00,822 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-10 15:10:01,416 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 15:10:02,715 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/views/favorite_view.py changed, reloading.
+2022-09-10 15:10:03,050 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 15:10:08,037 [log | WARNING] Unauthorized: /api/v1/favorite/
+2022-09-10 15:10:44,684 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 15:10:56,716 [connectionpool | DEBUG] Starting new HTTP connection (1): resume.doska.kg:80
+2022-09-10 15:10:56,754 [connectionpool | DEBUG] http://resume.doska.kg:80 "GET /vacancy/ HTTP/1.1" 200 None
+2022-09-10 15:10:56,908 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:56,946 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/60/1638266260.80.jpg HTTP/1.1" 200 2302
+2022-09-10 15:10:56,957 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:56,969 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/76/1649925976.80.jpg HTTP/1.1" 200 1815
+2022-09-10 15:10:56,979 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:56,992 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/34/1645417834.80.jpg HTTP/1.1" 200 1815
+2022-09-10 15:10:57,005 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,019 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/80/1646128680.80.jpg HTTP/1.1" 200 2200
+2022-09-10 15:10:57,031 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,044 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/72/1649925972.80.jpg HTTP/1.1" 200 1815
+2022-09-10 15:10:57,056 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,068 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/69/1638265669.80.jpg HTTP/1.1" 200 2577
+2022-09-10 15:10:57,081 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,093 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/22/1638266522.80.jpg HTTP/1.1" 200 2241
+2022-09-10 15:10:57,113 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,128 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/11/1659772011.80.jpg HTTP/1.1" 200 2177
+2022-09-10 15:10:57,140 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,152 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/36/1659549236.80.jpg HTTP/1.1" 200 1449
+2022-09-10 15:10:57,179 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,193 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/16/1662631916.80.jpg HTTP/1.1" 200 2391
+2022-09-10 15:10:57,204 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,217 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/97/1661856197.80.jpg HTTP/1.1" 200 3080
+2022-09-10 15:10:57,230 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,243 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/29/1660545729.80.jpg HTTP/1.1" 200 3695
+2022-09-10 15:10:57,257 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,272 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/37/1660028037.80.jpg HTTP/1.1" 200 3504
+2022-09-10 15:10:57,286 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,302 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/34/1658580434.80.jpg HTTP/1.1" 200 3005
+2022-09-10 15:10:57,317 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,331 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/24/1655379924.80.jpg HTTP/1.1" 200 2662
+2022-09-10 15:10:57,345 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,363 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/72/1661943672.80.jpg HTTP/1.1" 200 3294
+2022-09-10 15:10:57,377 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,402 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/12/1660544412.80.jpg HTTP/1.1" 200 2865
+2022-09-10 15:10:57,417 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,438 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/26/1656939626.80.jpg HTTP/1.1" 200 2609
+2022-09-10 15:10:57,453 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,469 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/92/1662368492.80.jpg HTTP/1.1" 200 2830
+2022-09-10 15:10:57,482 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,496 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/10/1662372710.80.jpg HTTP/1.1" 200 3059
+2022-09-10 15:10:57,510 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,523 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/81/1662746181.80.jpg HTTP/1.1" 200 2002
+2022-09-10 15:10:57,536 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,560 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/0/1662747300.80.jpg HTTP/1.1" 200 2859
+2022-09-10 15:10:57,598 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,616 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/29/1597729329.80.jpg HTTP/1.1" 200 1484
+2022-09-10 15:10:57,641 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,698 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/8/1662438008.80.jpg HTTP/1.1" 200 2731
+2022-09-10 15:10:57,714 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,728 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/85/1662538185.80.jpg HTTP/1.1" 200 2332
+2022-09-10 15:10:57,741 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,760 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/23/1658544523.80.jpg HTTP/1.1" 200 1958
+2022-09-10 15:10:57,774 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,787 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/90/1648032490.80.jpg HTTP/1.1" 200 1617
+2022-09-10 15:10:57,802 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,814 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/79/1662785779.80.jpg HTTP/1.1" 200 3006
+2022-09-10 15:10:57,828 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,841 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/39/1662784139.80.jpg HTTP/1.1" 200 2895
+2022-09-10 15:10:57,854 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,873 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/78/1662780978.80.jpg HTTP/1.1" 200 3158
+2022-09-10 15:10:57,886 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,898 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/65/1573759865.80.jpg HTTP/1.1" 200 1430
+2022-09-10 15:10:57,914 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,928 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/42/1584471142.80.jpg HTTP/1.1" 200 2183
+2022-09-10 15:10:57,945 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,962 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/31/1500927231.80.jpg HTTP/1.1" 200 2256
+2022-09-10 15:10:57,979 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:57,994 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/42/1575406642.80.jpg HTTP/1.1" 200 2166
+2022-09-10 15:10:58,031 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:58,046 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/19/1584472019.80.jpg HTTP/1.1" 200 2260
+2022-09-10 15:10:58,064 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:58,084 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/16/1584471516.80.jpg HTTP/1.1" 200 2386
+2022-09-10 15:10:58,101 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:58,118 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/47/1573760047.80.jpg HTTP/1.1" 200 2388
+2022-09-10 15:10:58,139 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:58,154 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/4/1632252804.80.jpg HTTP/1.1" 200 2327
+2022-09-10 15:10:58,169 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:58,181 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/62/1573759162.80.jpg HTTP/1.1" 200 2059
+2022-09-10 15:10:58,194 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:58,231 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/41/1573759941.80.jpg HTTP/1.1" 200 1621
+2022-09-10 15:10:58,247 [connectionpool | DEBUG] Starting new HTTP connection (1): static.akipress.org:80
+2022-09-10 15:10:58,263 [connectionpool | DEBUG] http://static.akipress.org:80 "GET /st_resume/83/1573759383.80.jpg HTTP/1.1" 200 1877
+2022-09-10 15:10:58,352 [connectionpool | DEBUG] Starting new HTTPS connection (1): salexy.kg:443
+2022-09-10 15:10:59,096 [connectionpool | DEBUG] https://salexy.kg:443 "GET /bishkek/rabota HTTP/1.1" 200 None
+2022-09-10 15:10:59,140 [connectionpool | DEBUG] Starting new HTTPS connection (1): salexy.kg:443
+2022-09-10 15:10:59,505 [connectionpool | DEBUG] https://salexy.kg:443 "GET /images/img_kg/124x124/6d/17/6d1750f39fe5c28241c2730895aa63b1.webp HTTP/1.1" 200 4642
+2022-09-10 15:10:59,524 [connectionpool | DEBUG] Starting new HTTPS connection (1): salexy.kg:443
+2022-09-10 15:10:59,873 [connectionpool | DEBUG] https://salexy.kg:443 "GET /images/img_kg/124x124/c9/a4/c9a46bc8d04768d8f97a2b70c0fa4e3c.webp HTTP/1.1" 200 6174
+2022-09-10 15:10:59,892 [connectionpool | DEBUG] Starting new HTTPS connection (1): salexy.kg:443
+2022-09-10 15:11:00,440 [connectionpool | DEBUG] https://salexy.kg:443 "GET /images/img_kg/124x124/ba/c8/bac8fc9894390ad55788975802cb0685.webp HTTP/1.1" 200 5912
+2022-09-10 15:11:00,459 [connectionpool | DEBUG] Starting new HTTPS connection (1): salexy.kg:443
+2022-09-10 15:11:01,144 [connectionpool | DEBUG] https://salexy.kg:443 "GET /images/img_kg/124x124/bd/44/bd443244e8765afd109332eb526c8ce0.webp HTTP/1.1" 200 4892
+2022-09-10 15:11:01,165 [connectionpool | DEBUG] Starting new HTTPS connection (1): salexy.kg:443
+2022-09-10 15:11:01,919 [connectionpool | DEBUG] https://salexy.kg:443 "GET /images/img_kg/124x124/82/f3/82f35fa7c5575cf50e78a98a52da2aa5.jpg HTTP/1.1" 200 2689
+2022-09-10 15:11:01,940 [connectionpool | DEBUG] Starting new HTTPS connection (1): salexy.kg:443
+2022-09-10 15:11:02,324 [connectionpool | DEBUG] https://salexy.kg:443 "GET /images/img_kg/124x124/04/17/0417c0286518a7fadcec61f264e179ee.jpg HTTP/1.1" 200 3828
+2022-09-10 15:11:02,344 [connectionpool | DEBUG] Starting new HTTPS connection (1): salexy.kg:443
+2022-09-10 15:11:02,707 [connectionpool | DEBUG] https://salexy.kg:443 "GET /images/img_kg/124x124/45/f5/45f5eb9afe71efb9e9af8a8fc1b19eff.webp HTTP/1.1" 200 5030
+2022-09-10 15:11:02,732 [connectionpool | DEBUG] Starting new HTTPS connection (1): salexy.kg:443
+2022-09-10 15:11:03,091 [connectionpool | DEBUG] https://salexy.kg:443 "GET /images/img_kg/124x124/f7/19/f719ff9ce8de031d3990cec4ff7b367b.jpg HTTP/1.1" 200 2659
+2022-09-10 15:11:03,122 [connectionpool | DEBUG] Starting new HTTPS connection (1): salexy.kg:443
+2022-09-10 15:11:03,511 [connectionpool | DEBUG] https://salexy.kg:443 "GET /images/img_kg/124x124/8b/7c/8b7cbeb7078a34606156ef23451fa9cb.webp HTTP/1.1" 200 2850
+2022-09-10 15:11:03,530 [connectionpool | DEBUG] Starting new HTTPS connection (1): salexy.kg:443
+2022-09-10 15:11:03,883 [connectionpool | DEBUG] https://salexy.kg:443 "GET /images/img_kg/124x124/e5/2e/e52eb19b9ff0953575aa092608b1b0eb.jpg HTTP/1.1" 200 5763
+2022-09-10 15:11:03,899 [connectionpool | DEBUG] Starting new HTTPS connection (1): salexy.kg:443
+2022-09-10 15:11:04,629 [connectionpool | DEBUG] https://salexy.kg:443 "GET /images/img_kg/124x124/fd/6b/fd6b325a880e16971d70e884f5421729.jpg HTTP/1.1" 200 3948
+2022-09-10 15:11:04,661 [connectionpool | DEBUG] Starting new HTTPS connection (1): salexy.kg:443
+2022-09-10 15:11:05,020 [connectionpool | DEBUG] https://salexy.kg:443 "GET /images/img_kg/124x124/cf/15/cf15eca2a7149987c43f57fa2684a60c.webp HTTP/1.1" 200 5030
+2022-09-10 15:11:05,040 [connectionpool | DEBUG] Starting new HTTPS connection (1): salexy.kg:443
+2022-09-10 15:11:07,028 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 15:11:17,210 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 15:11:30,603 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 15:11:52,391 [log | WARNING] Unsupported Media Type: /api/v1/favorite/
+2022-09-10 15:12:02,109 [log | WARNING] Unsupported Media Type: /api/v1/favorite/
+2022-09-10 15:12:11,044 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 15:12:17,724 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 15:12:26,158 [log | WARNING] Unauthorized: /api/v1/favorite/
+2022-09-10 15:14:01,563 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 15:14:03,975 [log | WARNING] Unauthorized: /api/v1/favorite/

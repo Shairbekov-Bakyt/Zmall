@@ -5706,3 +5706,31 @@ AssertionError: 'VerifyEmail' should either include a `serializer_class` attribu
 2022-09-10 11:35:55,006 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-10 11:36:33,000 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/views/help_view.py changed, reloading.
 2022-09-10 11:36:33,480 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 15:08:55,168 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 15:08:56,179 [log | WARNING] Not Found: /
+2022-09-10 15:08:56,487 [log | WARNING] Not Found: /favicon.ico
+2022-09-10 15:08:59,151 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-10 15:10:00,822 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-10 15:10:01,416 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 15:10:02,715 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/views/favorite_view.py changed, reloading.
+2022-09-10 15:10:03,050 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 15:10:08,037 [log | WARNING] Unauthorized: /api/v1/favorite/
+2022-09-10 15:10:44,684 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 15:11:07,028 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 15:11:17,210 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 15:11:30,603 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 15:11:52,391 [log | WARNING] Unsupported Media Type: /api/v1/favorite/
+2022-09-10 15:12:02,109 [log | WARNING] Unsupported Media Type: /api/v1/favorite/
+2022-09-10 15:12:11,044 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 15:12:17,724 [log | WARNING] Bad Request: /api/v1/favorite/
+2022-09-10 15:12:26,158 [log | WARNING] Unauthorized: /api/v1/favorite/
+2022-09-10 15:14:01,563 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 15:14:03,975 [log | WARNING] Unauthorized: /api/v1/favorite/

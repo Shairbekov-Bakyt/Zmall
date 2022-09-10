@@ -7,12 +7,12 @@ from advert.serializers.help_serializer import HelpSerializer, HelpCategorySeria
 
 
 class FAQListView(ListAPIView):
-    queryset = Help.objects.order_by('-view')[:10]
+    queryset = Help.objects.select_related('help_category').order_by('-view')[:10]
     serializer_class = HelpSerializer
 
 
 class HelpViewSet(ModelViewSet):
-    queryset = Help.objects.all()
+    queryset = Help.objects.select_related('help_category').all()
     serializer_class = HelpSerializer
     filter_backends = [
         django_filters.rest_framework.DjangoFilterBackend,

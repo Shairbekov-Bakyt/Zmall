@@ -187,7 +187,7 @@ class Advert(models.Model):
 
 class FavoriteAdvert(models.Model):
     adverts = models.ManyToManyField(Advert, related_name='favorite_adverts', verbose_name='объявление')
-    user_id = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='favorite_user', verbose_name='клиент', unique=True)
+    user_id = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name='favorite_user', verbose_name='клиент')
     
     def __str__(self):
         return f"id : {self.id}"
