@@ -2,3 +2,6 @@ dump.rdb
 .idea
 log/*.log
 *.rdb
+celerybeat-schedule
+server/apps/*/migrations/000*
+.DS_Store
