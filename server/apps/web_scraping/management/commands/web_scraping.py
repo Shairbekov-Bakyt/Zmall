@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
-from web_scraping.salexy import main
-
+from web_scraping.salexy import salexy
+from web_scraping.doska import doska
 
 class Command(BaseCommand):
     help = """
@@ -8,4 +8,5 @@ class Command(BaseCommand):
           """
 
     def handle(self, *args, **kwargs):
-        main()
+        doska()
+        salexy()

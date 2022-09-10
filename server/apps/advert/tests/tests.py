@@ -56,8 +56,6 @@ class AdvertTest(TestCase):
         response = client.post(self.USER_API, data_for_post)
         data_from_url = response.data
         data_from_db = AdvertCreateSerializer(advert).data
-        print(data_from_url)
-        print(data_from_db)
         self.assertEqual(data_from_db, data_from_url)
 
     def test_client_verification(self):

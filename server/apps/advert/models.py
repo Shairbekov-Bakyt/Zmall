@@ -1,4 +1,9 @@
+import os
+import requests
+from django.core.files.temp import NamedTemporaryFile
+
 from django.db import models
+from django.core.files import File
 
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -43,7 +48,7 @@ class AdvertImage(models.Model):
         verbose_name="объявления",
         related_name="advert_image",
     )
-    image = models.ImageField(upload_to="advert/images/%Y/%m/%d")
+    image = models.ImageField()
 
     def __str__(self):
         return self.image.url
@@ -51,7 +56,14 @@ class AdvertImage(models.Model):
     class Meta:
         verbose_name = "изображение для объявления"
         verbose_name_plural = "изображения для объявления"
+    
+    def get_remote_image(self, url):
+        result = requests.get(url)
+        img_temp = NamedTemporaryFile(delete=True)
+        img_temp.write(result.content)
+        img_temp.flush()
 
+        self.image.save(os.path.basename(url), File(img_temp), save=True)
 
 class City(models.Model):
     name = models.CharField(max_length=150, verbose_name="название города")
@@ -148,7 +160,7 @@ class Advert(models.Model):
         verbose_name="реклама"
     )
 
-    name = models.CharField(max_length=150, verbose_name="название объявления")
+    name = models.CharField(max_length=250, verbose_name="название объявления")
     description = models.TextField(verbose_name="описание")
     start_price = models.IntegerField(verbose_name="от цены")
     end_price = models.IntegerField(verbose_name="до цены")

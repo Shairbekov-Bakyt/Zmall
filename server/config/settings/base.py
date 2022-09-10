@@ -99,7 +99,7 @@ DATABASES = {
         "NAME": config("DB_NAME"),
         "USER": config("DB_USER"),
         "PASSWORD": config("DB_PASSWORD"),
-        "HOST": 'localhost',
+        "HOST": config("DB_HOST"),
         "PORT": 5432,
     }
 }
@@ -146,15 +146,35 @@ CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
 
 CELERY_BEAT_SCHEDULE = {
-      'add-every-30-seconds': {
+      'advert_task_start_every_day': {
         'task': 'advert.tasks.task_send_advert_to_email',
-        'schedule': crontab(hours=23),
+        'schedule': crontab(hour=23),
         'args': '',
         'options': {
             'expires': 15.0,
         },
     },
 }
+
+'''
+      'scraping_salexy_task_start_four_hour': {
+        'task': 'web_scraping.tasks.task_salexy',
+        'schedule': crontab(hour=4),
+        'args': '',
+        'options': {
+            'expires': 15.0,
+        },
+    },
+      'scraping_salexy_task_start_four_hour': {
+        'task': 'web_scraping.tasks.task_doska',
+        'schedule': crontab(hour=4),
+        'args': '',
+        'options': {
+            'expires': 15.0,
+        },
+    },
+}
+'''
 
 
 # Static files (CSS, JavaScript, Images)

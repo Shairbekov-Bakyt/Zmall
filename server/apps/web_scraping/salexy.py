@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 
 from advert.models import Category, SubCategory, City, Advert, AdvertImage
 from user.models import CustomUser
+from config.celery import app
 from .utils import get_price_from_description
 
 main_url = "https://salexy.kg/bishkek/rabota"
@@ -77,10 +78,13 @@ def get_page_data(html: str) -> None:
             'status': "act",
         }
         advert = Advert.objects.create(**data)
-        AdvertImage.objects.create(advert_id=advert.id, image.url=img)
+        image = AdvertImage.objects.create(advert_id=advert.id, image=img)
+        if img.startswith('https://salexy.kg/'):
+            image.get_remote_image(img)
+    
 
-
-def main():
+@app.task
+def salexy():
     html = get_html(main_url)
     get_page_data(html)
     for each_page in range(1, 4):

@@ -3837,3 +3837,66 @@ SyntaxError: unexpected character after line continuation character
 2022-09-09 23:46:27,902 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-09 23:47:06,432 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-09 23:50:54,211 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 00:05:16,031 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 00:05:49,534 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 00:05:50,495 [log | WARNING] Not Found: /
+2022-09-10 00:05:50,788 [log | WARNING] Not Found: /favicon.ico
+2022-09-10 00:06:10,722 [log | WARNING] Not Found: /media/themes/2017/images/nf.png
+2022-09-10 00:07:43,643 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 00:07:44,532 [log | WARNING] Not Found: /media/advert/images/2022/09/10
+2022-09-10 00:09:29,585 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 00:09:33,423 [log | WARNING] Not Found: /media/themes/2017/images/nf.png
+2022-09-10 00:10:02,112 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 00:10:36,974 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 00:18:34,345 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 00:18:40,398 [log | WARNING] Not Found: /media/https:/salexy.kg/images/img_kg/124x124/85/65/856558e5e3f81a7d21cf89bde40558b2.webp
+2022-09-10 00:18:40,443 [log | WARNING] Not Found: /favicon.ico
+2022-09-10 00:18:50,734 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-10 00:19:12,050 [log | WARNING] Not Found: /media/856558e5e3f81a7d21cf89bde40558b2.webp
+2022-09-10 00:19:12,108 [log | WARNING] Not Found: /favicon.ico
+2022-09-10 00:20:03,514 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 00:20:11,510 [log | WARNING] Not Found: /favicon.ico
+2022-09-10 00:20:17,339 [log | WARNING] Not Found: /favicon.ico
+2022-09-10 00:20:20,646 [log | WARNING] Not Found: /favicon.ico
+2022-09-10 00:21:57,952 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 00:22:04,796 [log | WARNING] Not Found: /media/856558e5e3f81a7d21cf89bde40558b2.webp"
+2022-09-10 00:24:55,916 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 00:25:11,578 [log | WARNING] Not Found: /media/themes/2017/images/nf.png
+2022-09-10 00:25:11,627 [log | WARNING] Not Found: /favicon.ico
+2022-09-10 00:25:12,797 [log | WARNING] Not Found: /media/themes/2017/images/nf.png
+2022-09-10 00:26:54,490 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 00:27:28,955 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 00:27:59,381 [log | WARNING] Not Found: /favicon.ico
+2022-09-10 00:33:22,788 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 00:33:25,497 [log | WARNING] Not Found: /
+2022-09-10 00:33:25,808 [log | WARNING] Not Found: /favicon.ico
+2022-09-10 00:33:31,483 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-10 00:34:15,207 [log | WARNING] Not Found: /favicon.ico
+2022-09-10 00:40:08,377 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 00:42:51,290 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 00:42:51,713 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 00:43:47,513 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 00:43:47,917 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 00:48:16,994 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 00:48:17,418 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 00:48:38,641 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 00:48:38,966 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 00:48:45,409 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 00:48:45,720 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 00:49:57,709 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.

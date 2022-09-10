@@ -5,7 +5,7 @@ import cssutils
 
 from web_scraping.salexy import setUp
 from advert.models import Advert, AdvertImage
-
+from config.celery import app
 
 headers = {
     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
@@ -68,7 +68,11 @@ def get_page_data(html: str) -> None:
             'status': "act",
         }
         advert = Advert.objects.create(**data)
-        AdvertImage.objects.create(advert_id=advert.id, image=img)
 
-def main():
+        image = AdvertImage.objects.create(advert_id=advert.id, image=img)
+        if img.startswith('http://static.akipress.org'):
+            image.get_remote_image(img)
+    
+@app.task
+def doska():
     get_page_data(get_html(URL))
