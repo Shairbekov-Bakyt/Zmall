@@ -3900,3 +3900,213 @@ AssertionError: 'VerifyEmail' should either include a `serializer_class` attribu
 2022-09-10 00:48:45,409 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
 2022-09-10 00:48:45,720 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-10 00:49:57,709 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 07:21:23,505 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:21:24,378 [log | ERROR] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:6379. Connection refused.
+2022-09-10 07:21:28,413 [log | ERROR] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:6379. Connection refused.
+2022-09-10 07:21:30,190 [log | ERROR] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:6379. Connection refused.
+2022-09-10 07:21:36,470 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:21:38,350 [log | ERROR] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:6379. Connection refused.
+2022-09-10 07:22:04,650 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 07:22:05,065 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:22:06,453 [log | ERROR] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 645, in _connect
+    for res in socket.getaddrinfo(
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2022-09-10 07:22:13,618 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-10 07:22:13,977 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:22:15,071 [log | ERROR] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:6379. Connection refused.
+2022-09-10 07:22:41,054 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:22:41,762 [log | WARNING] Not Found: /
+2022-09-10 07:22:45,204 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-10 07:23:05,087 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/urls.py changed, reloading.
+2022-09-10 07:23:05,493 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:23:06,214 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-10 07:23:17,635 [log | WARNING] Bad Request: /api/v1/social_auth/facebook/
+2022-09-10 07:23:26,485 [log | WARNING] Bad Request: /api/v1/social_auth/google/

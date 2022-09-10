@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "web_scraping",
     "chat",
     "custom_admin",
+    "social_auth",
 
     "rest_framework",
     "corsheaders",
@@ -99,7 +100,7 @@ DATABASES = {
         "NAME": config("DB_NAME"),
         "USER": config("DB_USER"),
         "PASSWORD": config("DB_PASSWORD"),
-        "HOST": config("DB_HOST"),
+        "HOST": 'localhost',
         "PORT": 5432,
     }
 }
