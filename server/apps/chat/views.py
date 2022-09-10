@@ -1,16 +1,21 @@
-from rest_framework.generics import GenericAPIView
-from rest_framework.response import Response
+from itertools import chain
 
-from chat.api.serializers import ChatSerializer
+from rest_framework.generics import GenericAPIView, RetrieveAPIView
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+
+from chat.api.serializers import ChatSerializer, ChatListSerializer
 from chat.web_socket import pusher_client
 from chat.models import Chat
+from chat.selectors import get_messages_from_user, get_messages_to_user
 
 
 class ChatView(GenericAPIView):
     """
-    an endpoint messanger with customer
+    an endpoint messanger with customer message detail
     """
 
+    permission_classes = [IsAuthenticated]
     serializer_class = ChatSerializer
 
     def post(self, request, *args, **kwargs) -> Response:
@@ -20,7 +25,7 @@ class ChatView(GenericAPIView):
         seralizer.save()
         chat = seralizer.chat
         pusher_client.trigger(
-            "my_channel",
+            f"{chat.advert.id}-{chat.from_user}",
             str(chat.id),
             {
                 "message": chat.message,
@@ -30,3 +35,25 @@ class ChatView(GenericAPIView):
             },
         )
         return Response(seralizer.data)
+
+
+    def get(self, request):
+        obj = Chat.objects.select_related('from_user', 'to_user', 'advert').filter(to_user=request.user)
+        serializer = self.get_serializer(obj)
+        return Response(serializer.data)
+
+
+class ChatDetailAPIView(RetrieveAPIView):
+    """an endpoint list messages"""
+    queryset = Chat.objects.all()
+    serializer_class = ChatListSerializer
+    permission_classes = [IsAuthenticated]
+
+    def retrieve(self, request, pk, *args, **kwargs):
+        messages_from_user = get_messages_from_user(request, pk)
+        messages_to_user = get_messages_to_user(request, pk)
+        all_messages = list(chain(messages_to_user, messages_from_user))
+        serializer = self.get_serializer(all_messages, many=True)
+        return Response(serializer.data)
+
+

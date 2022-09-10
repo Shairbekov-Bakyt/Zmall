@@ -13,3 +13,9 @@ class ChatSerializer(serializers.ModelSerializer):
         chat.save()
         self.chat = chat
         return self.chat
+
+
+class ChatListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Chat
+        fields = ("id", "from_user", "message", "date", "advert")
