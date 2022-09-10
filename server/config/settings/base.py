@@ -149,7 +149,7 @@ CELERY_RESULT_SERIALIZER = "json"
 CELERY_BEAT_SCHEDULE = {
       'advert_task_start_every_day': {
         'task': 'advert.tasks.task_send_advert_to_email',
-        'schedule': crontab(hour=23),
+        'schedule': crontab(minute='*'),
         'args': '',
         'options': {
             'expires': 15.0,

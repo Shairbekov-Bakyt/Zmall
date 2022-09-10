@@ -6,7 +6,7 @@ from advert.models import Advert
 
 
 def send_advert_to_email(emails):
-    absurl = [f"http://" + "127.0.0.1:800/api/v1/advert/{i}" for i in Advert.objects.filter(status='act').order_by('-created_date').values_list('id', flat=True)]
+    absurl = ["http://" + f"127.0.0.1:800/api/v1/advert/{i}" for i in Advert.objects.filter(status='act').order_by('-created_date').values_list('id', flat=True)[:11]]
     urls = '\n'.join(absurl)
     email_body = f"Hi username in Zeon Mall new advert link below\n{urls}"
     data = {

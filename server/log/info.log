@@ -4122,3 +4122,17 @@ Traceback (most recent call last):
 AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
 2022-09-10 07:24:46,389 [log | WARNING] Bad Request: /api/v1/social_auth/facebook/
 2022-09-10 07:24:52,021 [log | WARNING] Bad Request: /api/v1/social_auth/google/
+2022-09-10 07:31:12,520 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:32:40,641 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:33:53,352 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:36:20,811 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/user/utils.py changed, reloading.
+2022-09-10 07:36:21,272 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:36:25,650 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/user/utils.py changed, reloading.
+2022-09-10 07:36:25,997 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:36:30,707 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:38:16,051 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/user/utils.py changed, reloading.
+2022-09-10 07:38:18,379 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:40:35,257 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/services.py changed, reloading.
+2022-09-10 07:40:35,711 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 07:40:39,063 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/services.py changed, reloading.
+2022-09-10 07:40:39,390 [autoreload | INFO] Watching for file changes with StatReloader

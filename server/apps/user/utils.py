@@ -15,6 +15,7 @@ class Util:
             recipient_list=[
                 data["to_whom"],
             ],
+            fail_silently=True,
         )
 
     @staticmethod
