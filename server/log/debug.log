@@ -6133,3 +6133,133 @@ AssertionError: 'VerifyEmail' should either include a `serializer_class` attribu
 2022-09-10 09:37:32,247 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-10 09:37:50,286 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/local.py changed, reloading.
 2022-09-10 09:37:50,713 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 09:38:35,239 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 11:29:08,087 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 11:29:09,317 [log | WARNING] Not Found: /
+2022-09-10 11:29:09,624 [log | WARNING] Not Found: /favicon.ico
+2022-09-10 11:29:12,225 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-10 11:29:26,983 [log | WARNING] Unauthorized: /api/v1/user/get_user/
+2022-09-10 11:30:08,710 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/user/views.py changed, reloading.
+2022-09-10 11:30:09,265 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 11:30:16,500 [log | ERROR] Internal Server Error: /api/v1/help/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "advert_help" does not exist
+LINE 1: ..."advert_help"."answer", "advert_help"."view" FROM "advert_he...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/query.py", line 394, in __iter__
+    self._fetch_all()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/query.py", line 1866, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "advert_help" does not exist
+LINE 1: ..."advert_help"."answer", "advert_help"."view" FROM "advert_he...
+                                                             ^
+
+2022-09-10 11:30:52,716 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 11:30:56,433 [log | WARNING] Bad Request: /api/v1/help/
+2022-09-10 11:31:14,686 [log | ERROR] Internal Server Error: /api/v1/help_category/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+TypeError: 'ModelBase' object is not iterable
+2022-09-10 11:32:11,157 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/views/help_view.py changed, reloading.
+2022-09-10 11:32:11,691 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 11:32:44,107 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/views/help_view.py changed, reloading.
+2022-09-10 11:32:44,759 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 11:33:38,939 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/views/help_view.py changed, reloading.
+2022-09-10 11:33:39,490 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 11:33:58,368 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/views/help_view.py changed, reloading.
+2022-09-10 11:33:58,810 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 11:34:21,703 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/views/help_view.py changed, reloading.
+2022-09-10 11:34:22,175 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 11:34:23,055 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-10 11:35:14,499 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 11:35:40,753 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/admin.py changed, reloading.
+2022-09-10 11:35:41,265 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 11:35:55,006 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-10 11:36:33,000 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/views/help_view.py changed, reloading.
+2022-09-10 11:36:33,480 [autoreload | INFO] Watching for file changes with StatReloader

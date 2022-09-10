@@ -5,10 +5,9 @@ from rest_framework import status, filters
 from rest_framework.generics import ListAPIView
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from advert.serializers import advert_serializers as serializers
-from advert.models import Advert, AdvertImage, AdvertView, City, AdvertContact
+from advert.models import Advert, AdvertImage, City, AdvertContact
 
 from advert.serializers import permissions
 from phonenumber_field.validators import validate_international_phonenumber

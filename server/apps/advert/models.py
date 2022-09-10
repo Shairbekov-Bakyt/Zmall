@@ -239,3 +239,19 @@ class Feedback(models.Model):
 
     def __str__(self):
         return self.name
+
+class HelpCategory(models.Model):
+    title = models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.title
+
+
+class Help(models.Model):
+    help_category = models.ForeignKey(HelpCategory, on_delete=models.CASCADE)
+    question = models.CharField(max_length=150, verbose_name='вопрос')
+    answer = models.TextField(verbose_name='ответ')
+    view = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.question

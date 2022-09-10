@@ -8,6 +8,7 @@ from advert.views.favorite_view import FavoriteAdvertView
 from advert.views.subcategory_views import SubCategoryView
 from advert.views.feedback_view import FeedbackView
 from advert.views.comment_views import CommentView
+from advert.views.help_view import HelpCategoryViewSet, HelpViewSet, FAQListView
 
 
 router = DefaultRouter()
@@ -15,7 +16,9 @@ router.register("advert", AdvertViewSet, basename="advert")
 router.register("favorite", FavoriteAdvertView, basename="favorite_advert")
 router.register("promote", PromoteViewSet, basename="promote")
 router.register("comment", CommentView, basename="comment")
-router.register("feedback", FeedbackView, basename="comment")
+router.register("feedback", FeedbackView, basename="feedback")
+router.register("help", HelpViewSet, basename="help")
+router.register("help_category", HelpCategoryViewSet, basename="helpcategory")
 
 
 urlpatterns = [
@@ -24,4 +27,5 @@ urlpatterns = [
     path("sub_category/", SubCategoryView.as_view()),
     path("city/", CityListView.as_view()),
     path("premium_advert/", PremiumAdvertView.as_view()),
+    path("FAQ/", FAQListView.as_view()),
 ]

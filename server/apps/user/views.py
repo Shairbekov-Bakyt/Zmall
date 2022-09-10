@@ -5,10 +5,8 @@ from rest_framework import generics, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
-from rest_framework.authtoken.models import Token
 
 from user.services import send_url_with_mail, send_password_with_email
-from user.models import CustomUser
 from user.selectors import get_user_by_email
 from user.api.serializers import (
     MyTokenObtainPairSerializer,
@@ -38,17 +36,6 @@ class ForgotPasswordView(generics.CreateAPIView):
             {"forgot password": "check your email"}, status=status.HTTP_200_OK
         )
 
-
-
-class UserGetView(generics.ListAPIView):
-    queryset = CustomUser.objects.all()
-    permission_classes = [IsAuthenticated]
-    serializer_class = RegisterSerializer
-
-    def get(self, request, *args, **kwargs):
-        user = get_user_by_email(request.user.email)
-        serializer = self.get_serializer(user)
-        return Response(serializer.data)
 
 class ChangePasswordView(generics.UpdateAPIView):
     """

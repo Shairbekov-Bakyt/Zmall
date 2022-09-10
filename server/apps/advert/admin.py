@@ -12,11 +12,15 @@ from advert.models import (
     AdvertView,
     FavoriteAdvert,
     Comment,
+    Help,
+    HelpCategory
 )
 
 admin.site.register(City)
 admin.site.register(SubCategory)
 admin.site.register(FavoriteAdvert)
+admin.site.register(Help)
+admin.site.register(HelpCategory)
 
 
 class AdvertImageInline(admin.TabularInline):
