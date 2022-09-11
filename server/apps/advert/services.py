@@ -1,8 +1,9 @@
+import json
+
 from user.utils import Util
 from datetime import datetime
 
 from apps.advert.utils import connect_to_redis
-
 
 
 def send_advert_to_email(emails):
@@ -21,27 +22,42 @@ def set_advert_count(id: int, user, ip):
     format = "%Y-%m-%d, %H:%M"
     date = str(datetime.now().strftime(format))
 
-    if not view.exists(f'{id}_{user}_last_view'):
-        d = {
-            f'{id}_ip': ip,
-            f'{id}_user': user,
-            f'{id}_view': 0,
-            f'{id}_{user}_last_view': date,
-        }
-        view.mset(d)
+    view_info = \
+        {
+            'ip': [],
+            'user': [],
+            'views_counter': 0,
+            'last_view': {}
+    }
+    if not view.exists(id):
+        view.set(id, json.dumps(view_info))
+
+    advert_views = json.loads(view.get(id).decode("utf-8"))
 
     if user == 'AnonymousUser':
-        if bytes(ip, 'utf-8') not in view.get(f'{id}_ip'):
-            view.incr(f'{id}_view')
-            view.append(f'{id}_ip', ip)
+        if ip not in advert_views['ip']:
+            advert_views['views_counter'] += 1
+            advert_views['ip'] += [ip]
+            advert_views['last_view'][f'{user}-{ip}'] = date
 
-    if bytes(user, 'utf-8') not in view.get(f'{id}_user'):
-        view.incr(f'{id}_view')
-        view.append(f'{id}_user', user)
+        else:
+            user_last_view = advert_views["last_view"][f'{user}-{ip}']
+            if dates_difference(user_last_view, format) > 1:
+                advert_views['views_counter'] += 1
+                advert_views['last_view'][f'{user}-{ip}'] = datetime.now()
 
-    elif dates_difference(view.get(f'{id}_{user}_last_view'), format) >= 1:
-        view.incr(f'{id}_view')
-        view.set(f'{id}_{user}_last_view', date)
+    elif user not in advert_views['user']:
+        advert_views['views_counter'] += 1
+        advert_views['user'] += [user]
+        advert_views['last_view'][f'{user}'] = date
+
+    else:
+        user_last_view = advert_views["last_view"][f'{user}']
+        if dates_difference(user_last_view, format) > 1:
+            advert_views['views_counter'] += 1
+            advert_views['last_view'][f'{user}-{ip}'] = datetime.now()
+
+    view.set(id, json.dumps(advert_views))
 
 
 def dates_difference(date, format):
