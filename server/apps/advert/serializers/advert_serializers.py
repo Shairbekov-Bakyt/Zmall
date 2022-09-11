@@ -81,7 +81,9 @@ class AdvertListSerializer(serializers.ModelSerializer):
             "advert_image_count",
             "advert_contact",
             "views",
-            "city"
+            "city",
+            "created_date",
+            "description"
         )
 
 
