@@ -5,6 +5,8 @@ from rest_framework import status, filters
 from rest_framework.generics import ListAPIView
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
+from rest_framework import pagination
+
 
 from advert.serializers import advert_serializers as serializers
 from advert.models import Advert, AdvertImage, City, AdvertContact
@@ -33,6 +35,7 @@ class CityListView(ListAPIView):
 class AdvertViewSet(ModelViewSet):
     queryset = Advert.objects.filter(status="act")
     serializer_class = serializers.AdvertCreateSerializer
+    pagination_class = pagination.LimitOffsetPagination
     filter_backends = [
         django_filters.rest_framework.DjangoFilterBackend,
         filters.OrderingFilter, filters.SearchFilter,
