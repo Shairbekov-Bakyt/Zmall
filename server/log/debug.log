@@ -6758,3 +6758,30 @@ The serializer field might be named incorrectly and not match any attribute or k
 Original exception text was: 'list' object has no attribute 'from_user'.
 2022-09-11 08:56:39,289 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/views.py changed, reloading.
 2022-09-11 08:56:39,758 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-11 09:57:49,834 [log | WARNING] Not Found: /
+2022-09-11 09:57:49,901 [log | WARNING] Not Found: /favicon.ico
+2022-09-11 09:57:54,087 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-11 09:58:23,578 [log | WARNING] Not Found: /favicon.ico
+2022-09-11 09:58:25,146 [log | WARNING] Not Found: /favicon.ico
+2022-09-11 09:58:38,073 [log | WARNING] Not Found: /favicon.ico
+2022-09-11 09:58:48,192 [log | WARNING] Not Found: /favicon.ico
+2022-09-11 09:58:49,202 [log | WARNING] Not Found: /favicon.ico
+2022-09-11 10:00:10,349 [log | WARNING] Not Found: /favicon.ico
+2022-09-11 10:00:35,239 [log | WARNING] Not Found: /favicon.ico
+2022-09-11 10:01:50,492 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
