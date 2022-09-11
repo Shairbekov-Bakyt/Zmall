@@ -7,7 +7,7 @@ from rest_framework.permissions import IsAuthenticated
 from chat.api.serializers import ChatSerializer, ChatListSerializer
 from chat.web_socket import pusher_client
 from chat.models import Chat
-from chat.selectors import get_messages_from_user, get_messages_to_user
+from chat.selectors import get_messages_from_user, get_messages_from_advert_id, get_messages_to_user
 
 
 class ChatView(GenericAPIView):
@@ -38,8 +38,10 @@ class ChatView(GenericAPIView):
 
 
     def get(self, request):
-        obj = Chat.objects.select_related('from_user', 'to_user', 'advert').filter(to_user=request.user)
-        serializer = self.get_serializer(obj)
+        messages_from_user = get_messages_from_user(request)
+        messages_to_user = get_messages_to_user(request)
+        obj = list(chain(messages_to_user, messages_from_user))
+        serializer = self.get_serializer(obj, many=True)
         return Response(serializer.data)
 
 
@@ -49,11 +51,9 @@ class ChatDetailAPIView(RetrieveAPIView):
     serializer_class = ChatListSerializer
     permission_classes = [IsAuthenticated]
 
-    def retrieve(self, request, pk, *args, **kwargs):
-        messages_from_user = get_messages_from_user(request, pk)
-        messages_to_user = get_messages_to_user(request, pk)
-        all_messages = list(chain(messages_to_user, messages_from_user))
-        serializer = self.get_serializer(all_messages, many=True)
+    def retrieve(self, request, advert_id, *args, **kwargs):
+        messages_from_advert_id = get_messages_from_advert_id(request, advert_id)
+        serializer = self.get_serializer(messages_from_advert_id, many=True)
         return Response(serializer.data)
 
 
