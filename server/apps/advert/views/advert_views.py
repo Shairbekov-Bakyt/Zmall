@@ -22,7 +22,7 @@ class AdvertFilter(django_filters.FilterSet):
 
     class Meta:
         model = Advert
-        fields = ["min_price", "max_price", "image", "city"]
+        fields = ["min_price", "max_price", "image", "city", "category", "sub_category"]
 
 
 class CityListView(ListAPIView):
@@ -69,7 +69,6 @@ class AdvertViewSet(ModelViewSet):
             ad_contacts.append(AdvertContact(advert=advert, phone_number=contact))
 
         AdvertContact.objects.bulk_create(ad_contacts)
-
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
