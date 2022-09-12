@@ -6,7 +6,7 @@ from django.db import models
 from django.core.files import File
 
 from phonenumber_field.modelfields import PhoneNumberField
-
+from advert.advert_views_services import set_advert_views
 from user.models import CustomUser
 
 
@@ -56,7 +56,7 @@ class AdvertImage(models.Model):
     class Meta:
         verbose_name = "изображение для объявления"
         verbose_name_plural = "изображения для объявления"
-    
+
     def get_remote_image(self, url):
         result = requests.get(url)
         img_temp = NamedTemporaryFile(delete=True)
@@ -64,6 +64,7 @@ class AdvertImage(models.Model):
         img_temp.flush()
 
         self.image.save(os.path.basename(url), File(img_temp), save=True)
+
 
 class City(models.Model):
     name = models.CharField(max_length=150, verbose_name="название города")
@@ -106,6 +107,7 @@ class Promote(models.Model):
         vip = "vip", "VIP"
         urgently = "urgently", "Срочно"
         highlighted = "highlighted", "Выделить"
+
     title = models.CharField(max_length=150)
     description = models.TextField(verbose_name="описание")
     price = models.IntegerField(verbose_name="цена")
@@ -180,11 +182,16 @@ class Advert(models.Model):
         verbose_name = "объявление"
         verbose_name_plural = "объявления"
 
+    def save(self):
+        self.views = set_advert_views(self.id)
+        super().save()
+
 
 class FavoriteAdvert(models.Model):
     adverts = models.ManyToManyField(Advert, related_name='favorite_adverts', verbose_name='объявление')
-    user_id = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name='favorite_user', verbose_name='клиент')
-    
+    user_id = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name='favorite_user',
+                                   verbose_name='клиент')
+
     def __str__(self):
         return f"id : {self.id}"
 
@@ -270,3 +277,22 @@ class FooterLink(models.Model):
 
     def __str__(self):
         return self.link
+
+
+class AdvertStatistics(models.Model):
+    advert = models.ForeignKey(
+        Advert,
+        on_delete=models.CASCADE,
+        related_name="advert_statistics",
+        verbose_name="объявление"
+    )
+    date = models.DateTimeField(auto_now=True)
+    advert_contacts_view = models.IntegerField()
+    advert_views = models.IntegerField()
+
+    def __str__(self):
+        return f'{self.advert.id}-{self.date}'
+
+    class Meta:
+        verbose_name = "статистика объявления"
+        verbose_name_plural = "статистика объявлений"

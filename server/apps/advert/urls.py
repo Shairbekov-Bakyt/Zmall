@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from advert.views.advert_views import AdvertViewSet, CityListView, PremiumAdvertView
+from advert.views.advert_views import AdvertViewSet, CityListView, PremiumAdvertView, ContactView
 from advert.views.promote_views import PromoteViewSet
 from advert.views.category_views import CategoryView
 from advert.views.favorite_view import FavoriteAdvertView, FavoriteUpdateDelete
@@ -9,7 +9,7 @@ from advert.views.subcategory_views import SubCategoryView
 from advert.views.feedback_view import FeedbackView
 from advert.views.comment_views import CommentView
 from advert.views.help_view import HelpCategoryViewSet, HelpViewSet, FAQListView
-
+from advert.views.statistics_views import StatisticsView
 
 router = DefaultRouter()
 router.register("advert", AdvertViewSet, basename="advert")
@@ -29,4 +29,6 @@ urlpatterns = [
     path("premium_advert/", PremiumAdvertView.as_view()),
     path("FAQ/", FAQListView.as_view()),
     path("favorite/<int:advert_id>/<int:delete>/", FavoriteUpdateDelete.as_view()),
+    path("advert_contacts/<int:advert_id>/", ContactView.as_view()),
+    path("statistics/", StatisticsView.as_view()),
 ]

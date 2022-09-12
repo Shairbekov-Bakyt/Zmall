@@ -164,6 +164,10 @@ CELERY_BEAT_SCHEDULE = {
             'expires': 15.0,
         },
     },
+    'add-every-morning': {
+        'task': 'advert.tasks.task_save_advert_statistics',
+        'schedule': crontab(minute=0, hour=0)
+    },
 }
 
 '''

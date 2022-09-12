@@ -13,7 +13,8 @@ from advert.models import (
     FavoriteAdvert,
     Comment,
     Help,
-    HelpCategory
+    HelpCategory,
+    AdvertStatistics
 )
 
 admin.site.register(City)
@@ -22,6 +23,7 @@ admin.site.register(FavoriteAdvert)
 admin.site.register(Help)
 admin.site.register(HelpCategory)
 admin.site.register(Comment)
+admin.site.register(AdvertStatistics)
 
 
 class AdvertImageInline(admin.TabularInline):
