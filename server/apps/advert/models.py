@@ -6,7 +6,7 @@ from django.db import models
 from django.core.files import File
 
 from phonenumber_field.modelfields import PhoneNumberField
-
+from advert.advert_views_services import set_advert_views
 from user.models import CustomUser
 
 
@@ -180,6 +180,9 @@ class Advert(models.Model):
         verbose_name = "объявление"
         verbose_name_plural = "объявления"
 
+    def save(self):
+        self.views = set_advert_views(self.id)
+
 
 class FavoriteAdvert(models.Model):
     adverts = models.ManyToManyField(Advert, related_name='favorite_adverts', verbose_name='объявление')
@@ -270,3 +273,22 @@ class FooterLink(models.Model):
 
     def __str__(self):
         return self.link
+
+
+class AdvertStatistics(models.Model):
+    advert = models.ForeignKey(
+        Advert,
+        on_delete=models.CASCADE,
+        related_name="advert_statistics",
+        verbose_name="объявление"
+    )
+    date = models.DateTimeField(auto_now=True)
+    advert_contacts_view = models.IntegerField()
+    advert_views = models.IntegerField()
+
+    def __str__(self):
+        return f'{self.advert.id}-{self.date}'
+
+    class Meta:
+        verbose_name = "статистика объявления"
+        verbose_name_plural = "статистика объявлений"

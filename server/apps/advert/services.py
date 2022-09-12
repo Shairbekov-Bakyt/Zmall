@@ -55,9 +55,51 @@ def set_advert_count(id: int, user, ip):
         user_last_view = advert_views["last_view"][f'{user}']
         if dates_difference(user_last_view, format) > 1:
             advert_views['views_counter'] += 1
-            advert_views['last_view'][f'{user}-{ip}'] = datetime.now()
+            advert_views['last_view'][f'{user}'] = datetime.now()
 
     view.set(id, json.dumps(advert_views))
+
+
+def set_advert_contacts_count(id: int, user, ip):
+    view = connect_to_redis()
+    format = "%Y-%m-%d, %H:%M"
+    date = str(datetime.now().strftime(format))
+    key = f'{id}-contacts'
+
+    view_info = {
+        'ip': [],
+        'user': [],
+        'views_counter': 0,
+        'last_view': {}
+    }
+    if not view.exists(key):
+        view.set(key, json.dumps(view_info))
+
+    contacts_views = json.loads(view.get(key).decode("utf-8"))
+
+    if user == 'AnonymousUser':
+        if ip not in contacts_views['ip']:
+            contacts_views['views_counter'] += 1
+            contacts_views['ip'] += [ip]
+            contacts_views['last_view'][f'{user}-{ip}'] = date
+
+        else:
+            user_last_view = contacts_views["last_view"][f'{user}-{ip}']
+            if dates_difference(user_last_view, format) > 1:
+                contacts_views['views_counter'] += 1
+                contacts_views['last_view'][f'{user}-{ip}'] = datetime.now()
+
+    elif user not in contacts_views['user']:
+        contacts_views['views_counter'] += 1
+        contacts_views['user'] += [user]
+        contacts_views['last_view'][f'{user}'] = date
+
+    else:
+        user_last_view = contacts_views["last_view"][f'{user}']
+        if dates_difference(user_last_view, format) > 1:
+            contacts_views['views_counter'] += 1
+            contacts_views['last_view'][f'{user}'] = datetime.now()
+    view.set(id, json.dumps(contacts_views))
 
 
 def dates_difference(date, format):
