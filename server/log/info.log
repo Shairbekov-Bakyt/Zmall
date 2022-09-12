@@ -12786,3 +12786,5 @@ TypeError: ModelMultipleChoiceField.__init__() missing 1 required positional arg
 2022-09-12 10:45:45,531 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-12 10:47:24,268 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/models.py changed, reloading.
 2022-09-12 10:47:24,796 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 10:49:14,667 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-12 10:49:15,228 [autoreload | INFO] Watching for file changes with StatReloader
