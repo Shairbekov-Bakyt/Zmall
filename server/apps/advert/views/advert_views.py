@@ -1,8 +1,9 @@
 from django.http import HttpRequest
+import json
 
 import django_filters
 from rest_framework import status, filters
-from rest_framework.generics import ListAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 
@@ -12,6 +13,8 @@ from advert.models import Advert, AdvertImage, City, AdvertContact
 from advert.serializers import permissions
 from phonenumber_field.validators import validate_international_phonenumber
 from advert.pagination import AdvertPagination
+from config.middleware import get_client_ip
+from advert.services import set_advert_contacts_count
 
 
 class AdvertFilter(django_filters.FilterSet):
@@ -96,3 +99,11 @@ class PremiumAdvertView(ListAPIView):
     search_fields = ["name"]
 
 
+class ContactView(CreateAPIView):
+    queryset = AdvertContact.objects.all()
+
+    def post(self, request, advert_id:int,  *args, **kwargs):
+        user = request.user
+        ip = get_client_ip(request)
+        set_advert_contacts_count(advert_id, str(user), ip)
+        return Response({"advert_contact": "counter updated"}, status=status.HTTP_200_OK)
