@@ -23,6 +23,7 @@ class AdvertFilter(django_filters.FilterSet):
     image = django_filters.BooleanFilter(
         lookup_expr="isnull", field_name="advert_image"
     )
+    city = django_filters.ModelMultipleChoiceFilter(field_name='city', queryset=City.objects.all())
 
     class Meta:
         model = Advert
