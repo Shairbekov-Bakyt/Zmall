@@ -4,7 +4,7 @@ from rest_framework.routers import DefaultRouter
 from advert.views.advert_views import AdvertViewSet, CityListView, PremiumAdvertView
 from advert.views.promote_views import PromoteViewSet
 from advert.views.category_views import CategoryView
-from advert.views.favorite_view import FavoriteAdvertView
+from advert.views.favorite_view import FavoriteAdvertView, FavoriteUpdateDelete
 from advert.views.subcategory_views import SubCategoryView
 from advert.views.feedback_view import FeedbackView
 from advert.views.comment_views import CommentView
@@ -28,4 +28,5 @@ urlpatterns = [
     path("city/", CityListView.as_view()),
     path("premium_advert/", PremiumAdvertView.as_view()),
     path("FAQ/", FAQListView.as_view()),
+    path("favorite/<int:advert_id>/<int:delete>/", FavoriteUpdateDelete.as_view()),
 ]

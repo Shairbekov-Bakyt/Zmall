@@ -266,7 +266,7 @@ class FooterLink(models.Model):
 
     link = models.URLField(verbose_name='cсылка')
     status = models.CharField(
-        max_length=10,
+        max_length=100,
         verbose_name="статус",
         choices=SocialNetworkChoice.choices,
     )

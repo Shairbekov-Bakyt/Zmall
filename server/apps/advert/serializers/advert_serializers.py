@@ -66,6 +66,7 @@ class AdvertListSerializer(serializers.ModelSerializer):
     advert_image_count = serializers.IntegerField(
         source="advert_image.count", read_only=True
     )
+    city = serializers.SlugRelatedField(slug_field="name", queryset=City.objects.all())
 
     class Meta:
         model = Advert
@@ -80,6 +81,9 @@ class AdvertListSerializer(serializers.ModelSerializer):
             "advert_image_count",
             "advert_contact",
             "views",
+            "city",
+            "created_date",
+            "description"
         )
 
 
