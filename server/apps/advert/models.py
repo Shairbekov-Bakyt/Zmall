@@ -65,6 +65,7 @@ class AdvertImage(models.Model):
 
         self.image.save(os.path.basename(url), File(img_temp), save=True)
 
+
 class City(models.Model):
     name = models.CharField(max_length=150, verbose_name="название города")
 
@@ -256,6 +257,24 @@ class Help(models.Model):
 
     def __str__(self):
         return self.question
+
+
+class FooterLink(models.Model):
+    class SocialNetworkChoice(models.TextChoices):
+        instagram = "instagram", "instagram"
+        facebook = "facebook", "facebook"
+        ok = "ok", "ok"
+        google_play = 'google_play', 'google_play'
+
+    link = models.URLField(verbose_name='cсылка')
+    status = models.CharField(
+        max_length=100,
+        verbose_name="статус",
+        choices=SocialNetworkChoice.choices,
+    )
+
+    def __str__(self):
+        return self.link
 
 
 class AdvertStatistics(models.Model):

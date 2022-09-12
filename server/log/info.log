@@ -6086,6 +6086,11 @@ The serializer field might be named incorrectly and not match any attribute or k
 Original exception text was: 'list' object has no attribute 'from_user'.
 2022-09-11 08:56:39,289 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/views.py changed, reloading.
 2022-09-11 08:56:39,758 [autoreload | INFO] Watching for file changes with StatReloader
+<<<<<<< HEAD
+2022-09-11 09:57:49,834 [log | WARNING] Not Found: /
+2022-09-11 09:57:49,901 [log | WARNING] Not Found: /favicon.ico
+2022-09-11 09:57:54,087 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+=======
 2022-09-11 10:35:21,892 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-11 10:36:31,840 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-11 10:37:38,557 [autoreload | INFO] Watching for file changes with StatReloader
@@ -6093,6 +6098,7 @@ Original exception text was: 'list' object has no attribute 'from_user'.
 2022-09-11 11:14:40,244 [log | WARNING] Not Found: /
 2022-09-11 11:14:46,796 [log | WARNING] Not Found: /
 2022-09-11 11:14:47,518 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+>>>>>>> 5befb4e27ca357f237869ffe12f632353de9cd8a
 Traceback (most recent call last):
   File "/usr/local/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
     return view_method()
@@ -6101,6 +6107,16 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
     assert self.serializer_class is not None, (
 AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+<<<<<<< HEAD
+2022-09-11 09:58:23,578 [log | WARNING] Not Found: /favicon.ico
+2022-09-11 09:58:25,146 [log | WARNING] Not Found: /favicon.ico
+2022-09-11 09:58:38,073 [log | WARNING] Not Found: /favicon.ico
+2022-09-11 09:58:48,192 [log | WARNING] Not Found: /favicon.ico
+2022-09-11 09:58:49,202 [log | WARNING] Not Found: /favicon.ico
+2022-09-11 10:00:10,349 [log | WARNING] Not Found: /favicon.ico
+2022-09-11 10:00:35,239 [log | WARNING] Not Found: /favicon.ico
+2022-09-11 10:01:50,492 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+=======
 2022-09-11 11:16:18,845 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
 Traceback (most recent call last):
   File "/usr/local/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
@@ -11172,6 +11188,7 @@ Traceback (most recent call last):
     assert self.serializer_class is not None, (
 AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
 2022-09-11 12:43:05,232 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+>>>>>>> 5befb4e27ca357f237869ffe12f632353de9cd8a
 Traceback (most recent call last):
   File "/usr/local/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
     return view_method()
@@ -11180,6 +11197,501 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
     assert self.serializer_class is not None, (
 AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+<<<<<<< HEAD
+2022-09-12 04:38:08,699 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 04:38:17,944 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 04:38:37,915 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-12 04:38:38,351 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 04:38:39,901 [log | ERROR] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 645, in _connect
+    for res in socket.getaddrinfo(
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2022-09-12 04:38:40,023 [log | ERROR] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 645, in _connect
+    for res in socket.getaddrinfo(
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2022-09-12 04:38:43,714 [log | ERROR] Internal Server Error: /swagger/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 645, in _connect
+    for res in socket.getaddrinfo(
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2022-09-12 04:38:43,791 [log | ERROR] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 645, in _connect
+    for res in socket.getaddrinfo(
+  File "/opt/homebrew/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2022-09-12 04:41:56,644 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-12 04:42:23,919 [log | WARNING] Unauthorized: /api/v1/favorite/1/True
+2022-09-12 04:45:22,395 [log | WARNING] Unauthorized: /api/v1/favorite/1/True/
+2022-09-12 04:45:47,363 [log | ERROR] Internal Server Error: /api/v1/favorite/1/True/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/backend/apps/advert/views/favorite_view.py", line 25, in put
+    adverts.remove(advert_id)
+AttributeError: 'QuerySet' object has no attribute 'remove'
+2022-09-12 04:46:02,470 [log | ERROR] Internal Server Error: /api/v1/favorite/1/alse/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/backend/apps/advert/views/favorite_view.py", line 25, in put
+    adverts.remove(advert_id)
+AttributeError: 'QuerySet' object has no attribute 'remove'
+2022-09-12 04:46:05,908 [log | ERROR] Internal Server Error: /api/v1/favorite/1/false/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/backend/apps/advert/views/favorite_view.py", line 25, in put
+    adverts.remove(advert_id)
+AttributeError: 'QuerySet' object has no attribute 'remove'
+2022-09-12 04:46:23,122 [log | ERROR] Internal Server Error: /api/v1/favorite/1/false/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/backend/apps/advert/views/favorite_view.py", line 23, in put
+    adverts.add(advert_id)
+AttributeError: 'QuerySet' object has no attribute 'add'
+2022-09-12 04:47:07,030 [log | ERROR] Internal Server Error: /api/v1/favorite/2/false/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/base/base.py", line 306, in _commit
+    return self.connection.commit()
+psycopg2.errors.ForeignKeyViolation: insert or update on table "advert_favoriteadvert_adverts" violates foreign key constraint "advert_favoriteadver_advert_id_4d4626b0_fk_advert_ad"
+DETAIL:  Key (advert_id)=(2) is not present in table "advert_advert".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/backend/apps/advert/views/favorite_view.py", line 22, in put
+    advert.adverts.add(advert_id)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/fields/related_descriptors.py", line 1102, in add
+    self._add_items(
+  File "/usr/local/lib/python3.9/site-packages/django/db/transaction.py", line 262, in __exit__
+    connection.commit()
+  File "/usr/local/lib/python3.9/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/base/base.py", line 330, in commit
+    self._commit()
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/base/base.py", line 306, in _commit
+    return self.connection.commit()
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/base/base.py", line 306, in _commit
+    return self.connection.commit()
+django.db.utils.IntegrityError: insert or update on table "advert_favoriteadvert_adverts" violates foreign key constraint "advert_favoriteadver_advert_id_4d4626b0_fk_advert_ad"
+DETAIL:  Key (advert_id)=(2) is not present in table "advert_advert".
+
+2022-09-12 04:49:20,244 [log | WARNING] Not Found: /api/v1/favorite/2/false/
+2022-09-12 04:49:29,193 [log | WARNING] Not Found: /api/v1/favorite/2//
+2022-09-12 04:49:41,711 [log | WARNING] Not Found: /api/v1/favorite/2/false/
+2022-09-12 04:53:43,465 [log | WARNING] Unauthorized: /api/v1/favorite/1/0/
+2022-09-12 04:54:44,957 [log | WARNING] Not Found: /api/v1/favorite/2/1/
+2022-09-12 04:55:30,009 [log | WARNING] Forbidden (Origin checking failed - http://127.0.0.1:8000 does not match any trusted origins.): /admin/login/
+2022-09-12 04:59:04,787 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-12 04:59:04,948 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-12 04:59:05,106 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-12 04:59:05,235 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-12 04:59:05,518 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-12 05:05:23,973 [log | WARNING] Method Not Allowed: /api/v1/help/1/
+2022-09-12 05:05:27,782 [log | ERROR] Internal Server Error: /api/v1/help/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "advert_help" does not exist
+LINE 1: ..."advert_help"."answer", "advert_help"."view" FROM "advert_he...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/backend/apps/advert/views/help_view.py", line 25, in retrieve
+    obj = Help.objects.get(pk=pk)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 646, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1866, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "advert_help" does not exist
+LINE 1: ..."advert_help"."answer", "advert_help"."view" FROM "advert_he...
+                                                             ^
+
+2022-09-12 05:06:01,507 [log | ERROR] Internal Server Error: /api/v1/help/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "advert_help" does not exist
+LINE 1: ..."advert_help"."answer", "advert_help"."view" FROM "advert_he...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/backend/apps/advert/views/help_view.py", line 25, in retrieve
+    obj = Help.objects.get(pk=pk)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 646, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1866, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "advert_help" does not exist
+LINE 1: ..."advert_help"."answer", "advert_help"."view" FROM "advert_he...
+                                                             ^
+
+2022-09-12 05:06:03,482 [log | ERROR] Internal Server Error: /api/v1/help/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "advert_help" does not exist
+LINE 1: ...ategory"."id", "advert_helpcategory"."title" FROM "advert_he...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 394, in __iter__
+    self._fetch_all()
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1866, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "advert_help" does not exist
+LINE 1: ...ategory"."id", "advert_helpcategory"."title" FROM "advert_he...
+                                                             ^
+
+=======
 2022-09-12 04:14:30,508 [signal | ERROR] Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0xffff9590c580>> raised: ModuleNotFoundError("No module named 'pagination'")
 Traceback (most recent call last):
   File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
@@ -12067,6 +12579,207 @@ ModuleNotFoundError: No module named 'pagination'
 2022-09-12 04:18:45,339 [log | WARNING] Not Found: /
 2022-09-12 04:24:41,097 [log | WARNING] Forbidden (Origin checking failed - http://127.0.0.1:8000 does not match any trusted origins.): /admin/login/
 2022-09-12 04:25:01,641 [log | WARNING] Forbidden (Origin checking failed - http://127.0.0.1:8000 does not match any trusted origins.): /admin/login/
+<<<<<<< HEAD
+>>>>>>> 65af356b84bdbb2fe9c429580af83da7a66e4008
+2022-09-12 05:20:53,916 [log | ERROR] Internal Server Error: /api/v1/help/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/base/base.py", line 282, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/base/base.py", line 263, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/postgresql/base.py", line 215, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/usr/local/lib/python3.9/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  database "zeon_1" does not exist
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 394, in __iter__
+    self._fetch_all()
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1866, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1393, in execute_sql
+    cursor = self.connection.cursor()
+  File "/usr/local/lib/python3.9/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/base/base.py", line 323, in cursor
+    return self._cursor()
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/base/base.py", line 299, in _cursor
+    self.ensure_connection()
+  File "/usr/local/lib/python3.9/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/base/base.py", line 282, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/base/base.py", line 282, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/base/base.py", line 263, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/postgresql/base.py", line 215, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/usr/local/lib/python3.9/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: FATAL:  database "zeon_1" does not exist
+
+2022-09-12 05:21:15,698 [log | ERROR] Internal Server Error: /api/v1/help/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "advert_help" does not exist
+LINE 1: ...ategory"."id", "advert_helpcategory"."title" FROM "advert_he...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 394, in __iter__
+    self._fetch_all()
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1866, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "advert_help" does not exist
+LINE 1: ...ategory"."id", "advert_helpcategory"."title" FROM "advert_he...
+                                                             ^
+
+2022-09-12 05:21:15,916 [log | ERROR] Internal Server Error: /api/v1/help/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "advert_help" does not exist
+LINE 1: ...ategory"."id", "advert_helpcategory"."title" FROM "advert_he...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 394, in __iter__
+    self._fetch_all()
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1866, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "advert_help" does not exist
+LINE 1: ...ategory"."id", "advert_helpcategory"."title" FROM "advert_he...
+                                                             ^
+
+=======
 2022-09-12 05:11:32,996 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-12 05:11:45,387 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-12 05:12:45,616 [autoreload | INFO] Watching for file changes with StatReloader
@@ -12495,6 +13208,489 @@ Traceback (most recent call last):
 AssertionError: 'ContactView' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
 2022-09-12 06:52:39,823 [base | WARNING] view's ContactView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
 Traceback (most recent call last):
+<<<<<<< HEAD
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 121, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 476, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 690, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 683, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/config/urls.py", line 40, in <module>
+    path("api/v1/", include("advert.urls")),
+  File "/usr/local/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/backend/apps/advert/urls.py", line 4, in <module>
+    from advert.views.advert_views import AdvertViewSet, CityListView, PremiumAdvertView
+  File "/backend/apps/advert/views/advert_views.py", line 9, in <module>
+    from pagination import AdvertPagination
+ModuleNotFoundError: No module named 'pagination'
+2022-09-12 04:18:32,652 [log | WARNING] Not Found: /
+2022-09-12 04:18:42,223 [log | WARNING] Not Found: /
+2022-09-12 04:18:45,339 [log | WARNING] Not Found: /
+2022-09-12 04:24:41,097 [log | WARNING] Forbidden (Origin checking failed - http://127.0.0.1:8000 does not match any trusted origins.): /admin/login/
+2022-09-12 04:25:01,641 [log | WARNING] Forbidden (Origin checking failed - http://127.0.0.1:8000 does not match any trusted origins.): /admin/login/
+2022-09-12 05:11:32,996 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:11:45,387 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:12:45,616 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:15:28,709 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-12 05:15:29,246 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:15:37,781 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-12 05:15:38,223 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:18:25,555 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-12 05:18:26,112 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:19:33,311 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-12 05:19:33,786 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:20:27,886 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-12 05:20:28,417 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:26:08,276 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:28:08,198 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-12 05:29:23,018 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:31:41,043 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-12 05:31:41,584 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:31:47,834 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:33:02,969 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:43:26,550 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py changed, reloading.
+2022-09-12 05:43:27,072 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:52:04,325 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py changed, reloading.
+2022-09-12 05:52:04,903 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:56:41,340 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 05:56:41,989 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:57:08,019 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 05:57:08,507 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:57:28,330 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 05:57:28,805 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:58:04,684 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 05:58:05,233 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:58:16,720 [log | WARNING] Not Found: /
+2022-09-12 05:59:16,669 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 05:59:38,968 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 05:59:39,470 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:00:21,035 [log | WARNING] Not Found: /
+2022-09-12 06:00:24,818 [log | WARNING] Not Found: /
+2022-09-12 06:00:29,342 [log | ERROR] Internal Server Error: /api/v1/advert/1/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/config/middleware.py", line 65, in __call__
+    set_advert_count(int(path.name), str(user), client_ip)
+  File "/Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py", line 45, in set_advert_count
+    user_last_view = advert_views["last_view"][f'{user}-{ip}']
+KeyError: 'AnonymousUser-127.0.0.1'
+2022-09-12 06:00:29,679 [log | ERROR] Internal Server Error: /api/v1/advert/1/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/config/middleware.py", line 65, in __call__
+    set_advert_count(int(path.name), str(user), client_ip)
+  File "/Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py", line 45, in set_advert_count
+    user_last_view = advert_views["last_view"][f'{user}-{ip}']
+KeyError: 'AnonymousUser-127.0.0.1'
+2022-09-12 06:01:42,832 [log | ERROR] Internal Server Error: /api/v1/advert/1/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/config/middleware.py", line 65, in __call__
+    set_advert_count(int(path.name), str(user), client_ip)
+  File "/Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py", line 45, in set_advert_count
+    user_last_view = advert_views["last_view"][f'{user}-{ip}']
+KeyError: 'AnonymousUser-127.0.0.1'
+2022-09-12 06:01:43,616 [log | ERROR] Internal Server Error: /api/v1/advert/2/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/config/middleware.py", line 65, in __call__
+    set_advert_count(int(path.name), str(user), client_ip)
+  File "/Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py", line 46, in set_advert_count
+    if dates_difference(user_last_view, format) > 1:
+  File "/Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py", line 66, in dates_difference
+    dt_object = datetime.strptime(str(date).replace('b', '').replace("'", ''), format)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '[AnonymousUser-127.0.0.1]' does not match format '%Y-%m-%d, %H:%M'
+2022-09-12 06:01:48,907 [log | ERROR] Internal Server Error: /api/v1/advert/2/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/config/middleware.py", line 65, in __call__
+    set_advert_count(int(path.name), str(user), client_ip)
+  File "/Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py", line 46, in set_advert_count
+    if dates_difference(user_last_view, format) > 1:
+  File "/Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py", line 66, in dates_difference
+    dt_object = datetime.strptime(str(date).replace('b', '').replace("'", ''), format)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '[AnonymousUser-127.0.0.1]' does not match format '%Y-%m-%d, %H:%M'
+2022-09-12 06:01:49,784 [log | ERROR] Internal Server Error: /api/v1/advert/4/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/config/middleware.py", line 65, in __call__
+    set_advert_count(int(path.name), str(user), client_ip)
+  File "/Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py", line 46, in set_advert_count
+    if dates_difference(user_last_view, format) > 1:
+  File "/Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py", line 66, in dates_difference
+    dt_object = datetime.strptime(str(date).replace('b', '').replace("'", ''), format)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '[2022-09-09, 12:10]' does not match format '%Y-%m-%d, %H:%M'
+2022-09-12 06:15:54,129 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/admin.py changed, reloading.
+2022-09-12 06:15:54,750 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:21:52,232 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-12 06:21:52,791 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:22:42,695 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-12 06:22:43,282 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:23:19,219 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-12 06:23:19,806 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:23:40,008 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-12 06:23:40,504 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:23:53,336 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-12 06:23:53,862 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:24:06,622 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-12 06:24:07,186 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:36:34,122 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 06:36:34,691 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:41:56,696 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/urls.py changed, reloading.
+2022-09-12 06:41:57,241 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:42:34,629 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/urls.py changed, reloading.
+2022-09-12 06:42:35,080 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:42:40,788 [log | WARNING] Not Found: /
+2022-09-12 06:42:42,613 [log | WARNING] Not Found: /
+2022-09-12 06:42:46,475 [log | WARNING] Not Found: /advert_contacts
+2022-09-12 06:43:03,855 [log | WARNING] Not Found: /advert_contacts
+2022-09-12 06:43:42,224 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 06:43:42,727 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:43:45,742 [log | WARNING] Not Found: /advert_contacts
+2022-09-12 06:43:46,416 [log | WARNING] Not Found: /advert_contacts
+2022-09-12 06:43:47,192 [log | WARNING] Not Found: /advert_contacts
+2022-09-12 06:43:55,515 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 06:43:55,953 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:44:52,668 [log | WARNING] Not Found: /advert_contacts
+2022-09-12 06:45:20,796 [log | ERROR] Internal Server Error: /api/v1/advert_contacts
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/v1/advert_contacts/?advert_id=1 (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2022-09-12 06:45:29,991 [log | ERROR] Internal Server Error: /api/v1/advert_contacts
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/v1/advert_contacts/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2022-09-12 06:45:34,156 [log | ERROR] Internal Server Error: /api/v1/advert_contacts/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: ContactView.post() missing 1 required positional argument: 'request'
+2022-09-12 06:46:29,177 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 06:46:29,660 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:46:31,041 [log | ERROR] Internal Server Error: /api/v1/advert_contacts/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: ContactView.post() missing 1 required positional argument: 'advert_id'
+2022-09-12 06:46:32,886 [log | ERROR] Internal Server Error: /api/v1/advert_contacts/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: ContactView.post() missing 1 required positional argument: 'advert_id'
+2022-09-12 06:46:41,802 [log | ERROR] Internal Server Error: /api/v1/advert_contacts/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: ContactView.post() missing 1 required positional argument: 'advert_id'
+2022-09-12 06:46:42,546 [log | ERROR] Internal Server Error: /api/v1/advert_contacts/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: ContactView.post() missing 1 required positional argument: 'advert_id'
+2022-09-12 06:46:43,154 [log | ERROR] Internal Server Error: /api/v1/advert_contacts/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: ContactView.post() missing 1 required positional argument: 'advert_id'
+2022-09-12 06:48:47,422 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 06:48:48,091 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:49:09,332 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-12 06:49:09,875 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:50:10,894 [log | ERROR] Internal Server Error: /api/v1/advert_contacts/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: ContactView.post() missing 1 required positional argument: 'request'
+2022-09-12 06:50:28,424 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 06:50:28,976 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:50:30,947 [log | WARNING] Not Found: /api/v1/advert_contacts/
+2022-09-12 06:50:35,047 [log | WARNING] Not Found: /api/v1/advert_contacts/advert_id=1
+2022-09-12 06:50:39,165 [log | WARNING] Not Found: /api/v1/advert_contacts/1/
+2022-09-12 06:51:24,535 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 06:51:25,204 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:51:33,803 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 06:51:34,374 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:51:39,204 [log | WARNING] Not Found: /api/v1/advert_contacts/1/
+2022-09-12 06:51:39,825 [log | WARNING] Not Found: /api/v1/advert_contacts/1/
+2022-09-12 06:51:49,332 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 06:51:49,906 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:52:01,639 [log | WARNING] Not Found: /
+2022-09-12 06:52:02,392 [log | WARNING] Not Found: /
+2022-09-12 06:52:02,696 [base | WARNING] view's ContactView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'ContactView' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-12 06:52:02,698 [base | WARNING] view's ContactView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'ContactView' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-12 06:52:02,711 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-12 06:52:03,723 [log | WARNING] Not Found: /swaggeer
+2022-09-12 06:52:07,750 [base | WARNING] view's ContactView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'ContactView' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-12 06:52:07,750 [base | WARNING] view's ContactView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'ContactView' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-12 06:52:07,759 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-12 06:52:19,694 [log | ERROR] Internal Server Error: /api/v1/advert_contacts/1
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py", line 107, in post
+    set_advert_contacts_count(advert_id, user, ip)
+  File "/Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py", line 104, in set_advert_contacts_count
+    view.set(id, json.dumps(advert_views))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AnonymousUser is not JSON serializable
+2022-09-12 06:52:33,292 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/urls.py changed, reloading.
+2022-09-12 06:52:33,952 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 06:52:34,974 [log | ERROR] Internal Server Error: /api/v1/advert_contacts/1
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/v1/advert_contacts/1/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2022-09-12 06:52:39,822 [base | WARNING] view's ContactView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'ContactView' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-12 06:52:39,823 [base | WARNING] view's ContactView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+=======
+>>>>>>> refs/remotes/origin/master
   File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
     return view_method()
   File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
@@ -12628,6 +13824,7 @@ AssertionError: 'VerifyEmail' should either include a `serializer_class` attribu
 2022-09-12 07:14:34,488 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-12 07:20:11,818 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/config/settings/base.py changed, reloading.
 2022-09-12 07:20:12,385 [autoreload | INFO] Watching for file changes with StatReloader
+<<<<<<< HEAD
 2022-09-12 07:22:50,719 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-12 10:16:50,092 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-12 10:17:24,677 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
@@ -12792,3 +13989,9 @@ TypeError: ModelMultipleChoiceField.__init__() missing 1 required positional arg
 2022-09-12 10:49:14,667 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/config/settings/base.py changed, reloading.
 2022-09-12 10:49:15,228 [autoreload | INFO] Watching for file changes with StatReloader
 >>>>>>> dev
+=======
+>>>>>>> 98f0145 (add adverts statistics)
+2022-09-12 07:23:41,288 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 07:26:43,338 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-12 07:26:43,898 [autoreload | INFO] Watching for file changes with StatReloader
+>>>>>>> refs/remotes/origin/master

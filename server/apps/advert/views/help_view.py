@@ -1,5 +1,6 @@
 import django_filters
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.response import Response
 from rest_framework.generics import ListAPIView
 
 from advert.models import Help, HelpCategory
@@ -24,7 +25,8 @@ class HelpViewSet(ModelViewSet):
         obj = Help.objects.get(pk=pk)
         obj.view += 1
         obj.save()
-        super().retrieve(self, request, pk, *args, **kwargs)
+        serialzier = self.get_serializer(obj)
+        return Response(serialzier.data)
 
 
 class HelpCategoryViewSet(ModelViewSet):

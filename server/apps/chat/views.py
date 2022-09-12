@@ -26,7 +26,7 @@ class ChatView(GenericAPIView):
         chat = seralizer.chat
         pusher_client.trigger(
             f"{chat.advert.id}-{chat.from_user}",
-            str(chat.id),
+            f"{chat.from_user}-{chat.advert.id}",
             {
                 "message": chat.message,
                 "date": str(chat.date),
