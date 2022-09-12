@@ -4,6 +4,10 @@ from user.models import CustomUser
 from advert.models import Advert
 
 
+class Room(models.Model):
+    pass
+
+
 class Chat(models.Model):
     from_user = models.ForeignKey(
         CustomUser,

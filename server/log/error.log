@@ -11564,3 +11564,63 @@ django.db.utils.ProgrammingError: relation "advert_help" does not exist
 LINE 1: ...ategory"."id", "advert_helpcategory"."title" FROM "advert_he...
                                                              ^
 
+2022-09-12 17:20:09,240 [log | ERROR] Internal Server Error: / @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:6379. Connection refused.
+2022-09-12 17:20:09,559 [log | ERROR] Internal Server Error: /favicon.ico @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.10/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:6379. Connection refused.

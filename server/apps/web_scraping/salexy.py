@@ -77,8 +77,8 @@ def get_page_data(html: str) -> None:
             "city": setup["city"],
             'status': "act",
         }
-        advert = Advert.objects.create(**data)
-        image = AdvertImage.objects.create(advert_id=advert.id, image=img)
+        advert = Advert.objects.update_or_create(**data)
+        image = AdvertImage.objects.update_or_create(advert_id=advert.id, image=img)
         if img.startswith('https://salexy.kg/'):
             image.get_remote_image(img)
     
