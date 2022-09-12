@@ -101,8 +101,8 @@ DATABASES = {
         "NAME": config("DB_NAME"),
         "USER": config("DB_USER"),
         "PASSWORD": config("DB_PASSWORD"),
-        "HOST": config("DB_HOST"),
-        # "HOST": "localhost",
+        # "HOST": config("DB_HOST"),
+        "HOST": "localhost",
         "PORT": 5432,
     }
 }
@@ -163,6 +163,10 @@ CELERY_BEAT_SCHEDULE = {
         'options': {
             'expires': 15.0,
         },
+    },
+    'add-every-morning': {
+        'task': 'advert.tasks.task_save_advert_statistics',
+        'schedule': crontab(minute=0, hour=0)
     },
 }
 
