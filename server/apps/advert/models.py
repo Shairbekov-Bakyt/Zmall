@@ -182,6 +182,7 @@ class Advert(models.Model):
 
     def save(self):
         self.views = set_advert_views(self.id)
+        super().save()
 
 
 class FavoriteAdvert(models.Model):
