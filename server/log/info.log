@@ -12636,3 +12636,4 @@ AssertionError: 'VerifyEmail' should either include a `serializer_class` attribu
 2022-09-12 10:17:35,384 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-12 10:18:25,434 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
 2022-09-12 10:18:25,960 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 10:54:57,517 [autoreload | INFO] Watching for file changes with StatReloader
