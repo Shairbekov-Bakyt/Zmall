@@ -13864,3 +13864,155 @@ AssertionError: 'VerifyEmail' should either include a `serializer_class` attribu
 2022-09-12 10:17:35,384 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-12 10:18:25,434 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
 2022-09-12 10:18:25,960 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 10:31:46,472 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-12 10:31:47,156 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 10:32:04,021 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 10:35:55,977 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 10:35:56,621 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 10:36:01,067 [log | WARNING] Not Found: /
+2022-09-12 10:36:04,016 [log | WARNING] Not Found: /
+2022-09-12 10:37:58,473 [log | WARNING] Bad Request: /api/v1/advert/
+2022-09-12 10:38:04,912 [log | WARNING] Bad Request: /api/v1/advert/
+2022-09-12 10:38:31,317 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 10:38:31,864 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 10:38:34,208 [log | ERROR] Internal Server Error: /api/v1/advert/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 150, in filter_queryset
+    queryset = backend().filter_queryset(self.request, queryset, self)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/rest_framework/backends.py", line 72, in filter_queryset
+    if not filterset.is_valid() and self.raise_exception:
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/filterset.py", line 195, in is_valid
+    return self.is_bound and self.form.is_valid()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/filterset.py", line 250, in form
+    Form = self.get_form_class()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/filterset.py", line 242, in get_form_class
+    [(name, filter_.field) for name, filter_ in self.filters.items()]
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/filterset.py", line 242, in <listcomp>
+    [(name, filter_.field) for name, filter_ in self.filters.items()]
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/filters.py", line 532, in field
+    return super().field
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/filters.py", line 149, in field
+    self._field = self.field_class(label=self.label, **field_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/fields.py", line 286, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/fields.py", line 258, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/forms/fields.py", line 861, in __init__
+    super().__init__(**kwargs)
+TypeError: Field.__init__() got an unexpected keyword argument 'queryset'
+2022-09-12 10:38:50,968 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 10:38:51,633 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 10:41:02,190 [log | WARNING] Bad Request: /api/v1/advert/
+2022-09-12 10:41:12,268 [log | WARNING] Bad Request: /api/v1/advert/
+2022-09-12 10:42:04,820 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 10:42:05,365 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 10:42:09,382 [log | ERROR] Internal Server Error: /api/v1/advert/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 150, in filter_queryset
+    queryset = backend().filter_queryset(self.request, queryset, self)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/rest_framework/backends.py", line 72, in filter_queryset
+    if not filterset.is_valid() and self.raise_exception:
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/filterset.py", line 195, in is_valid
+    return self.is_bound and self.form.is_valid()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/filterset.py", line 250, in form
+    Form = self.get_form_class()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/filterset.py", line 242, in get_form_class
+    [(name, filter_.field) for name, filter_ in self.filters.items()]
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/filterset.py", line 242, in <listcomp>
+    [(name, filter_.field) for name, filter_ in self.filters.items()]
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/filters.py", line 532, in field
+    return super().field
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/filters.py", line 149, in field
+    self._field = self.field_class(label=self.label, **field_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/fields.py", line 286, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/fields.py", line 258, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/forms/fields.py", line 861, in __init__
+    super().__init__(**kwargs)
+TypeError: Field.__init__() got an unexpected keyword argument 'qs'
+2022-09-12 10:42:53,502 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 10:42:54,116 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 10:45:12,983 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 10:45:13,565 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 10:45:16,088 [log | ERROR] Internal Server Error: /api/v1/advert/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 150, in filter_queryset
+    queryset = backend().filter_queryset(self.request, queryset, self)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/rest_framework/backends.py", line 72, in filter_queryset
+    if not filterset.is_valid() and self.raise_exception:
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/filterset.py", line 195, in is_valid
+    return self.is_bound and self.form.is_valid()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/filterset.py", line 250, in form
+    Form = self.get_form_class()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/filterset.py", line 242, in get_form_class
+    [(name, filter_.field) for name, filter_ in self.filters.items()]
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/filterset.py", line 242, in <listcomp>
+    [(name, filter_.field) for name, filter_ in self.filters.items()]
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/filters.py", line 360, in field
+    return super().field
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/filters.py", line 149, in field
+    self._field = self.field_class(label=self.label, **field_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django_filters/fields.py", line 258, in __init__
+    super().__init__(*args, **kwargs)
+TypeError: ModelMultipleChoiceField.__init__() missing 1 required positional argument: 'queryset'
+2022-09-12 10:45:45,059 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-12 10:45:45,531 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 10:47:24,268 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-12 10:47:24,796 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 10:49:14,667 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-12 10:49:15,228 [autoreload | INFO] Watching for file changes with StatReloader
