@@ -12628,3 +12628,4 @@ AssertionError: 'VerifyEmail' should either include a `serializer_class` attribu
 2022-09-12 07:14:34,488 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-12 07:20:11,818 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/config/settings/base.py changed, reloading.
 2022-09-12 07:20:12,385 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-12 07:22:50,719 [autoreload | INFO] Watching for file changes with StatReloader
