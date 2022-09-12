@@ -106,8 +106,7 @@ class Promote(models.Model):
         vip = "vip", "VIP"
         urgently = "urgently", "Срочно"
         highlighted = "highlighted", "Выделить"
-
-    icon = models.ImageField(upload_to="promote/%Y/%m/%d", blank=True)
+    title = models.CharField(max_length=150)
     description = models.TextField(verbose_name="описание")
     price = models.IntegerField(verbose_name="цена")
     types = models.CharField(max_length=50, choices=PromoteType.choices)
@@ -118,9 +117,6 @@ class Promote(models.Model):
     class Meta:
         verbose_name = "Реклама"
         verbose_name_plural = "Рекламы"
-
-
-
 
 
 class Advert(models.Model):
@@ -239,6 +235,7 @@ class Feedback(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class HelpCategory(models.Model):
     title = models.CharField(max_length=150)
