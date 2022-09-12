@@ -35,7 +35,7 @@ class CityListView(ListAPIView):
 
 
 class AdvertViewSet(ModelViewSet):
-    queryset = Advert.objects.filter(status="act")
+    queryset = Advert.objects.select_related('category', 'sub_category').filter(status="act")
     serializer_class = serializers.AdvertCreateSerializer
     pagination_class = AdvertPagination
     filter_backends = [
@@ -100,7 +100,7 @@ class PremiumAdvertView(ListAPIView):
 
 
 class ContactView(CreateAPIView):
-    queryset = AdvertContact.objects.all()
+    queryset = AdvertContact.objects.select_related('category', 'sub_category').all()
 
     def post(self, request, advert_id:int,  *args, **kwargs):
         user = request.user
