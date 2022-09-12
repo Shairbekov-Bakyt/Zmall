@@ -13,6 +13,7 @@ from advert.serializers import permissions
 from phonenumber_field.validators import validate_international_phonenumber
 from advert.pagination import AdvertPagination
 
+
 class AdvertFilter(django_filters.FilterSet):
     min_price = django_filters.NumberFilter(field_name="start_price", lookup_expr="gte")
     max_price = django_filters.NumberFilter(field_name="start_price", lookup_expr="lte")
@@ -84,5 +85,14 @@ class AdvertViewSet(ModelViewSet):
 class PremiumAdvertView(ListAPIView):
     queryset = Advert.objects.filter(status="act", promote__isnull=False)
     serializer_class = serializers.AdvertListSerializer
+    pagination_class = AdvertPagination
+    filter_backends = [
+        django_filters.rest_framework.DjangoFilterBackend,
+        filters.OrderingFilter, filters.SearchFilter,
+    ]
+    filterset_class = AdvertFilter
+    ordering_fields = ["created_date", "end_price"]
+    ordering = ["created_date"]
+    search_fields = ["name"]
 
 
