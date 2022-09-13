@@ -22,6 +22,7 @@ admin.site.register(SubCategory)
 admin.site.register(FavoriteAdvert)
 admin.site.register(Help)
 admin.site.register(HelpCategory)
+admin.site.register(Comment)
 admin.site.register(AdvertStatistics)
 
 
