@@ -1,5 +1,6 @@
 from advert.models import Comment
 
+
 def recrursive_sql_query():
     query = '''with recursive tree (id, text, advert_id, parent_id, user_id)
             as (select id, text, advert_id, parent_id, user_id from advert_comment
@@ -13,5 +14,3 @@ def recrursive_sql_query():
     comments = Comment.objects.raw(query)
     for comment in comments:
         print(comment)
-
-
