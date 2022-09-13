@@ -34,6 +34,7 @@ def set_advert_count(id: int, user, ip):
         view.set(id, json.dumps(view_info))
 
     advert_views = json.loads(view.get(id).decode("utf-8"))
+    ad = Advert.objects.get(id=id)
 
     if user == 'AnonymousUser':
         if ip not in advert_views['ip']:
@@ -58,6 +59,7 @@ def set_advert_count(id: int, user, ip):
             advert_views['views_counter'] += 1
             advert_views['last_view'][f'{user}'] = datetime.now()
 
+    ad.views = advert_views['views_counter']
     view.set(id, json.dumps(advert_views))
 
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2022-09-07 18:19:33,035 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-07 18:19:34,995 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
 Traceback (most recent call last):
@@ -18416,3 +18417,6 @@ AttributeError: 'ListSerializer' object has no attribute 'chat'
 2022-09-13 11:36:24,264 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
 2022-09-13 11:36:24,766 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-13 15:41:17,276 [autoreload | INFO] Watching for file changes with StatReloader
+=======
+>>>>>>> b74720884b797585b2cf7b9b8db870bb657796a9
+2022-09-13 15:41:41,182 [autoreload | INFO] Watching for file changes with StatReloader
