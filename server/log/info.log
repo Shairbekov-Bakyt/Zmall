@@ -13575,3 +13575,58 @@ TypeError: ModelMultipleChoiceField.__init__() missing 1 required positional arg
 2022-09-12 18:28:32,810 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-12 18:28:44,222 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/admin.py changed, reloading.
 2022-09-12 18:28:44,673 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-13 10:31:51,241 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-13 10:35:38,294 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-13 10:35:38,841 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-13 10:36:14,384 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py changed, reloading.
+2022-09-13 10:36:14,945 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-13 10:36:21,412 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-13 10:36:21,877 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-13 10:37:41,242 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/views/advert_views.py changed, reloading.
+2022-09-13 10:37:41,819 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-13 10:37:45,876 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-13 10:37:52,088 [log | WARNING] Not Found: /
+2022-09-13 10:37:58,497 [log | WARNING] Not Found: /
+2022-09-13 10:37:59,262 [base | WARNING] view's ContactView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'ContactView' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-13 10:37:59,263 [base | WARNING] view's ContactView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'ContactView' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-13 10:37:59,280 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-13 10:58:07,074 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py changed, reloading.
+2022-09-13 10:58:07,745 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-13 10:59:32,811 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py changed, reloading.
+2022-09-13 10:59:33,316 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-13 11:01:52,166 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py changed, reloading.
+2022-09-13 11:01:52,691 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-13 11:02:20,271 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py changed, reloading.
+2022-09-13 11:02:20,732 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-13 11:02:39,756 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py changed, reloading.
+2022-09-13 11:02:40,261 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-13 11:04:13,481 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-13 11:04:14,192 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-13 11:04:45,697 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py changed, reloading.
+2022-09-13 11:04:46,220 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-13 11:05:18,833 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/services.py changed, reloading.
+2022-09-13 11:05:19,374 [autoreload | INFO] Watching for file changes with StatReloader

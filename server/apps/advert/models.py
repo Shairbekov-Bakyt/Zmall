@@ -182,10 +182,6 @@ class Advert(models.Model):
         verbose_name = "объявление"
         verbose_name_plural = "объявления"
 
-    def save(self):
-        self.views = set_advert_views(self.id)
-        super().save()
-
 
 class FavoriteAdvert(models.Model):
     adverts = models.ManyToManyField(Advert, related_name='favorite_adverts', verbose_name='объявление')
