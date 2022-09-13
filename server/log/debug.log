@@ -18415,3 +18415,4 @@ AttributeError: 'ListSerializer' object has no attribute 'chat'
 2022-09-13 11:32:38,327 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-13 11:36:24,264 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/base.py changed, reloading.
 2022-09-13 11:36:24,766 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-13 15:41:17,276 [autoreload | INFO] Watching for file changes with StatReloader
