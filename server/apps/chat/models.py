@@ -5,10 +5,28 @@ from advert.models import Advert
 
 
 class Room(models.Model):
-    pass
+    owner = models.ForeignKey(
+        CustomUser,
+        on_delete=models.CASCADE,
+        verbose_name="получатель",
+        related_name="room_owner_user",)
+    user = models.OneToOneField(
+        CustomUser,
+        on_delete=models.CASCADE,
+        verbose_name="отправитель",
+        related_name="from_user_room",
+    )
+    advert = models.ForeignKey(
+        Advert, on_delete=models.CASCADE, verbose_name="объявление"
+    )
 
 
 class Chat(models.Model):
+    room = models.ForeignKey(
+        Room,
+        on_delete=models.CASCADE,
+        verbose_name='канал')
+
     from_user = models.ForeignKey(
         CustomUser,
         on_delete=models.CASCADE,
@@ -23,10 +41,7 @@ class Chat(models.Model):
     )
     message = models.TextField(verbose_name="сообщение")
     date = models.DateTimeField(auto_now=True, verbose_name="дата отправки")
-    advert = models.ForeignKey(
-        Advert, on_delete=models.CASCADE, verbose_name="объявление"
-    )
-    file = models.FileField(
+    file = models.ImageField(
         upload_to="chat/files/%Y/%m/%d/", blank=True, verbose_name="файл"
     )
 
