@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from advert.views.advert_views import AdvertViewSet, CityListView, PremiumAdvertView, ContactView
+from advert.views.advert_views import AdvertViewSet, CityListView, PremiumAdvertView, ContactView, AdvertReportView
 from advert.views.promote_views import PromoteViewSet
 from advert.views.category_views import CategoryView
 from advert.views.favorite_view import FavoriteAdvertView, FavoriteUpdateDelete
@@ -31,4 +31,5 @@ urlpatterns = [
     path("favorite/<int:advert_id>/<int:delete>/", FavoriteUpdateDelete.as_view()),
     path("advert_contacts/<int:advert_id>/", ContactView.as_view()),
     path("statistics/", StatisticsView.as_view()),
+    path("advert_report/", AdvertReportView.as_view()),
 ]
