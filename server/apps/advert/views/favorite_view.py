@@ -18,11 +18,11 @@ class FavoriteUpdateDelete(UpdateAPIView):
 
     def put(self,request, advert_id, delete, *args, **kwargs):
         try:
-            Advert.objects.get(pk=advert_id)
+            Advert.objects.get_or_create(pk=advert_id)
         except:
             return Response({"advert" : f"with id {advert_id} does not exists"}, status=status.HTTP_404_NOT_FOUND)
 
-        advert = FavoriteAdvert.objects.get(user_id=request.user)
+        advert = FavoriteAdvert.objects.get_or_create(user_id=request.user)[0]
         if delete:
             advert.adverts.add(advert_id)
         else:
