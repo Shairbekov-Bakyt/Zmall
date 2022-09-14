@@ -9,7 +9,7 @@ from rest_framework.response import Response
 
 
 from advert.serializers import advert_serializers as serializers
-from advert.models import Advert, AdvertImage, City, AdvertContact
+from advert.models import Advert, AdvertImage, City, AdvertContact, AdvertReport
 from advert.serializers import permissions
 from phonenumber_field.validators import validate_international_phonenumber
 from advert.pagination import AdvertPagination
@@ -108,3 +108,9 @@ class ContactView(CreateAPIView):
         ip = get_client_ip(request)
         set_advert_contacts_count(advert_id, str(user), ip)
         return Response({"advert_contact": "counter updated"}, status=status.HTTP_200_OK)
+
+
+class AdvertReportView(CreateAPIView):
+    queryset = AdvertReport.objects.all()
+    serializer_class = serializers.AdvertReportSerializer
+

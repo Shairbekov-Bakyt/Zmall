@@ -292,3 +292,25 @@ class AdvertStatistics(models.Model):
     class Meta:
         verbose_name = "статистика объявления"
         verbose_name_plural = "статистика объявлений"
+
+
+class AdvertReport(models.Model):
+    class StatusChoice(models.TextChoices):
+        wrong = "wrong", "Неверная рубрика"
+        forbidden = "forbidden", "Запрещенный товар"
+        not_relevant = "not_relevant", "Объявление не актуально"
+        wrong_adress = "wrnog_adress", "Неверный адрес"
+
+    advert = models.ForeignKey(
+        Advert,
+        on_delete=models.CASCADE,
+        related_name="advert_reports",
+        verbose_name="объявление"
+    )
+    report_message = models.TextField(null=True, blank=True)
+    report = models.CharField(
+        max_length=12,
+        verbose_name="report_type",
+        choices=StatusChoice.choices,
+    )
+

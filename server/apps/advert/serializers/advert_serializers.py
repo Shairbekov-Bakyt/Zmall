@@ -1,7 +1,6 @@
 from rest_framework import serializers
 
 from user.models import CustomUser
-from config.settings.base import REDIS_HOST, REDIS_PORT
 from apps.advert.utils import connect_to_redis
 from advert.serializers.promote_serializers import PromoteSerializer
 from advert.models import (
@@ -12,13 +11,14 @@ from advert.models import (
     SubCategory,
     City,
     AdvertView,
+    AdvertReport,
 )
 
 
 class CitySerializer(serializers.ModelSerializer):
     class Meta:
         model = City
-        fields = ('__all__')
+        fields = '__all__'
 
 
 class AdvertContactSerailzer(serializers.ModelSerializer):
@@ -104,3 +104,8 @@ class AdvertDetailSerializer(serializers.ModelSerializer):
 
         return ad_views
 
+
+class AdvertReportSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AdvertReport
+        fields = '__all__'
