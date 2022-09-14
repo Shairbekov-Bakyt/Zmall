@@ -143,7 +143,7 @@ class Advert(models.Model):
         Promote,
         on_delete=models.CASCADE,
         related_name="promote_advert",
-        blank=True,
+        blank=True, null=True,
         verbose_name="реклама"
     )
 

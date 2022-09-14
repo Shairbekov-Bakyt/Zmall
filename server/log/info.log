@@ -758,3 +758,10 @@ AttributeError: 'FeedbackMessage' object has no attribute 'name'
 2022-09-14 16:35:49,281 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-14 16:36:32,097 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/config/settings/base.py changed, reloading.
 2022-09-14 16:36:32,857 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-14 17:23:08,579 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-14 17:24:09,947 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/models.py changed, reloading.
+2022-09-14 17:24:10,543 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-14 17:24:24,337 [autoreload | INFO] /Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/config/settings/base.py changed, reloading.
+2022-09-14 17:24:24,843 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-14 17:24:29,910 [log | WARNING] Unauthorized: /api/v1/advert/79/
+2022-09-14 17:24:43,374 [log | WARNING] Method Not Allowed: /api/v1/advert/79/
