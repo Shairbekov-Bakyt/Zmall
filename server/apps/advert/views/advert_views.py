@@ -1,6 +1,3 @@
-from django.http import HttpRequest
-import json
-
 import django_filters
 from rest_framework import status, filters
 from rest_framework.generics import ListAPIView, CreateAPIView
@@ -114,3 +111,22 @@ class AdvertReportView(CreateAPIView):
     queryset = AdvertReport.objects.all()
     serializer_class = serializers.AdvertReportSerializer
 
+
+class UserAdvertFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = Advert
+        fields = ["status"]
+
+
+class UserAdvertView(ListAPIView):
+    serializer_class = serializers.AdvertListSerializer
+    queryset = Advert.objects.all()
+    filterset_class = UserAdvertFilter
+    filter_backends = [
+        django_filters.rest_framework.DjangoFilterBackend
+    ]
+
+    def get_queryset(self):
+        user = self.request.user
+        return Advert.objects.filter(owner__email=user)
