@@ -91,17 +91,6 @@ class AdvertContact(models.Model):
         verbose_name_plural = "номера для объявлении"
 
 
-class AdvertView(models.Model):
-    advert = models.OneToOneField(
-        "Advert",
-        on_delete=models.CASCADE,
-        verbose_name="объявление",
-        related_name="advert_view",
-    )
-    users = models.ManyToManyField(CustomUser)
-    view = models.IntegerField(default=0)
-
-
 class Promote(models.Model):
     class PromoteType(models.TextChoices):
         vip = "vip", "VIP"
@@ -312,5 +301,9 @@ class AdvertReport(models.Model):
         max_length=12,
         verbose_name="report_type",
         choices=StatusChoice.choices,
+        null=True, blank=True
     )
 
+    class Meta:
+        verbose_name = "жалоба на объявление"
+        verbose_name_plural = "жалобы на объявление"
