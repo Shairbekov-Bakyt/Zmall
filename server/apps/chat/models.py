@@ -20,6 +20,8 @@ class Room(models.Model):
         Advert, on_delete=models.CASCADE, verbose_name="объявление"
     )
 
+    def __str__(self) -> str:
+        return f"{self.id}-{self.owner}-{self.user}"
 
 class Chat(models.Model):
     room = models.ForeignKey(
