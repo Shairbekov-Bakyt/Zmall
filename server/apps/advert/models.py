@@ -6,7 +6,6 @@ from django.db import models
 from django.core.files import File
 
 from phonenumber_field.modelfields import PhoneNumberField
-from advert.advert_views_services import set_advert_views
 from user.models import CustomUser
 
 
@@ -140,8 +139,9 @@ class Advert(models.Model):
         verbose_name="город",
         related_name="city_product",
     )
-    promote = models.ManyToManyField(
+    promote = models.ForeignKey(
         Promote,
+        on_delete=models.CASCADE,
         related_name="promote_advert",
         blank=True,
         verbose_name="реклама"
@@ -288,7 +288,7 @@ class AdvertReport(models.Model):
         wrong = "wrong", "Неверная рубрика"
         forbidden = "forbidden", "Запрещенный товар"
         not_relevant = "not_relevant", "Объявление не актуально"
-        wrong_adress = "wrnog_adress", "Неверный адрес"
+        wrong_address = "wrong_address", "Неверный адрес"
 
     advert = models.ForeignKey(
         Advert,
@@ -298,7 +298,7 @@ class AdvertReport(models.Model):
     )
     report_message = models.TextField(null=True, blank=True)
     report = models.CharField(
-        max_length=12,
+        max_length=13,
         verbose_name="report_type",
         choices=StatusChoice.choices,
         null=True, blank=True
