@@ -9,11 +9,11 @@ class ChatSerializer(serializers.ModelSerializer):
         model = Chat
         fields = '__all__'
 
-    def create(self, validated_data):
-        chat = Chat.objects.create(**validated_data)
-        chat.save()
-        self.chat = chat
-        return self.chat
+    # def create(self, validated_data):
+    #     chat = Chat.objects.create(**validated_data)
+    #     chat.save()
+    #     self.chat = chat
+    #     return self.chat
 
 
 class ChatListSerializer(serializers.ModelSerializer):
@@ -26,15 +26,13 @@ class ChatListSerializer(serializers.ModelSerializer):
         advert_id = instance.advert.id
 
         chat = Chat.objects.filter(room=instance).last()
-
-        username = chat.to_user if instance.user == chat.from_user else chat.from_user
-
-
         if chat is not None:
+
+            username = chat.to_user if instance.user == chat.from_user else chat.from_user
             data['message'] = chat.message
             data['date'] = chat.date
+            data['username'] = username.get_full_name()
 
-        data['username'] = username.get_full_name()
         data['advert_id'] = advert_id
         data['advert'] = Advert.objects.get(pk=advert_id).name
 
