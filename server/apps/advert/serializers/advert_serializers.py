@@ -10,7 +10,6 @@ from advert.models import (
     Category,
     SubCategory,
     City,
-    AdvertView,
     AdvertReport,
 )
 
@@ -25,12 +24,6 @@ class AdvertContactSerailzer(serializers.ModelSerializer):
     class Meta:
         model = AdvertContact
         fields = ("phone_number",)
-
-
-class AdvertViewSerailzer(serializers.ModelSerializer):
-    class Meta:
-        model = AdvertView
-        fields = ("view", "users")
 
 
 class AdvertImageSerializer(serializers.ModelSerializer):

@@ -9,12 +9,12 @@ from advert.models import (
     City,
     Promote,
     SubCategory,
-    AdvertView,
     FavoriteAdvert,
     Comment,
     Help,
     HelpCategory,
-    AdvertStatistics
+    AdvertStatistics,
+    AdvertReport
 )
 
 admin.site.register(City)
@@ -23,7 +23,6 @@ admin.site.register(FavoriteAdvert)
 admin.site.register(Help)
 admin.site.register(HelpCategory)
 admin.site.register(Comment)
-admin.site.register(AdvertStatistics)
 
 
 class AdvertImageInline(admin.TabularInline):
@@ -36,20 +35,26 @@ class AdvertContactInline(admin.TabularInline):
     max_num = 8
 
 
-class AdvertViewInline(admin.StackedInline):
-    model = AdvertView
-    readonly_fields = ("users", "view")
-
-
 class CommentInline(admin.TabularInline):
     model = Comment
     readonly_fields = ("user", "text", "parent")
 
 
+class AdvertStatisticsInline(admin.StackedInline):
+    model = AdvertStatistics
+    readonly_fields = ("advert_contacts_view", "advert_views", "date")
+
+
+class AdvertReportInline(admin.StackedInline):
+    model = AdvertReport
+    readonly_fields = ("report_message", "report")
+
+
 @admin.register(Advert)
 class AdvertAdmin(admin.ModelAdmin):
     inlines = [AdvertImageInline, AdvertContactInline,
-               AdvertViewInline, CommentInline]
+               CommentInline, AdvertReportInline,
+               AdvertStatisticsInline]
 
     class Meta:
         model = Advert
