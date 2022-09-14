@@ -9,20 +9,17 @@ from advert.models import (
     City,
     Promote,
     SubCategory,
-    FavoriteAdvert,
     Comment,
     Help,
     HelpCategory,
     AdvertStatistics,
-    AdvertReport
+    AdvertReport,
+    Feedback,
+    FeedbackMessage
 )
 
 admin.site.register(City)
-admin.site.register(SubCategory)
-admin.site.register(FavoriteAdvert)
-admin.site.register(Help)
-admin.site.register(HelpCategory)
-admin.site.register(Comment)
+admin.site.register(Feedback)
 
 
 class AdvertImageInline(admin.TabularInline):
@@ -35,7 +32,7 @@ class AdvertContactInline(admin.TabularInline):
     max_num = 8
 
 
-class CommentInline(admin.TabularInline):
+class CommentInline(admin.StackedInline):
     model = Comment
     readonly_fields = ("user", "text", "parent")
 
@@ -50,6 +47,15 @@ class AdvertReportInline(admin.StackedInline):
     readonly_fields = ("report_message", "report")
 
 
+class HelpInline(admin.StackedInline):
+    model = Help
+    readonly_fields = ("view",)
+
+
+class SubCategoryInline(admin.StackedInline):
+    model = SubCategory
+
+
 @admin.register(Advert)
 class AdvertAdmin(admin.ModelAdmin):
     inlines = [AdvertImageInline, AdvertContactInline,
@@ -60,8 +66,12 @@ class AdvertAdmin(admin.ModelAdmin):
         model = Advert
 
 
+
+
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
+    inlines = [SubCategoryInline]
+
     def img_tag(self, obj):
         return format_html(
             '<img src="{url}" width="{width}" height={height}/>'.format(
@@ -79,16 +89,33 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Promote)
 class PromoteAdmin(admin.ModelAdmin):
-    def img_tag(self, obj):
-        return format_html(
-            '<img src="{url}" width="{width}" height={height}/>'.format(
-                url=obj.icon.url, width=150, height=150
-            )
-        )
 
-    img_tag.short_description = "Image"
-
-    readonly_fields = ["img_tag"]
+    def has_add_permission(self, request):
+        has_add = super().has_add_permission(request)
+        if has_add and Promote.objects.count() >= 3:
+            has_add = False
+        return has_add
 
     class Meta:
         model = Promote
+
+
+@admin.register(HelpCategory)
+class HelpCategoryAdmin(admin.ModelAdmin):
+    inlines = [HelpInline]
+
+    class Meta:
+        model = HelpCategory
+
+
+@admin.register(FeedbackMessage)
+class FeedbackMessageAdmin(admin.ModelAdmin):
+
+    def has_add_permission(self, request):
+        has_add = super().has_add_permission(request)
+        if has_add and FeedbackMessage.objects.exists():
+            has_add = False
+        return has_add
+
+    class Meta:
+        model = FeedbackMessage

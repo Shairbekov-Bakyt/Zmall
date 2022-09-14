@@ -44,7 +44,9 @@ class AdvertCreateSerializer(serializers.ModelSerializer):
         slug_field="name", queryset=SubCategory.objects.all()
     )
     promote = serializers.SlugRelatedField(
-        slug_field="types", queryset=Promote.objects.all()
+        slug_field="types",
+        queryset=Promote.objects.all(),
+        allow_null=True
     )
     city = serializers.SlugRelatedField(slug_field="name", queryset=City.objects.all())
 

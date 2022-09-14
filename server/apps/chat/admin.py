@@ -2,6 +2,13 @@ from django.contrib import admin
 from .models import Chat, Room
 
 
-admin.site.register(Chat)
-admin.site.register(Room)
-# Register your models here.
+class ChatInline(admin.StackedInline):
+    model = Chat
+
+
+@admin.register(Room)
+class AdvertAdmin(admin.ModelAdmin):
+    inlines = [ChatInline]
+
+    class Meta:
+        model = Room

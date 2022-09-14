@@ -20,7 +20,7 @@ class Category(models.Model):
 
     class Meta:
         verbose_name = "Категория"
-        verbose_name_plural = "Категории"
+        verbose_name_plural = "Категории объявлений"
 
 
 class SubCategory(models.Model):
@@ -102,7 +102,7 @@ class Promote(models.Model):
     types = models.CharField(max_length=50, choices=PromoteType.choices)
 
     def __str__(self):
-        return self.types
+        return self.get_types_display()
 
     class Meta:
         verbose_name = "Реклама"
@@ -143,14 +143,14 @@ class Advert(models.Model):
         Promote,
         on_delete=models.CASCADE,
         related_name="promote_advert",
-        blank=True,
+        blank=True, null=True,
         verbose_name="реклама"
     )
 
     name = models.CharField(max_length=250, verbose_name="название объявления")
     description = models.TextField(verbose_name="описание")
     start_price = models.IntegerField(verbose_name="от цены")
-    end_price = models.IntegerField(verbose_name="до цены")
+    end_price = models.IntegerField(verbose_name="до цены", null=True, blank=True)
 
     email = models.EmailField(verbose_name="E-mail")
     wa_number = PhoneNumberField(verbose_name="WhatsApp номер")
@@ -219,6 +219,17 @@ class Comment(models.Model):
         verbose_name_plural = "Комментарии"
 
 
+class FeedbackMessage(models.Model):
+    text = models.TextField()
+
+    def __str__(self):
+        return 'Текст связи с администрацией'
+
+    class Meta:
+        verbose_name = "Текст связи с администрацией"
+        verbose_name_plural = "Текст связи с администрацией"
+
+
 class Feedback(models.Model):
     name = models.CharField(max_length=100, verbose_name='имя')
     email = models.EmailField(max_length=100, verbose_name='E-mail')
@@ -228,6 +239,10 @@ class Feedback(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = "Обращение"
+        verbose_name_plural = "Обращения"
+
 
 class HelpCategory(models.Model):
     title = models.CharField(max_length=150)
@@ -235,15 +250,23 @@ class HelpCategory(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name = "Категория помощи"
+        verbose_name_plural = "Категории помощи"
+
 
 class Help(models.Model):
-    help_category = models.ForeignKey(HelpCategory, on_delete=models.CASCADE)
+    help_category = models.ForeignKey(HelpCategory, on_delete=models.CASCADE, verbose_name='Категория помощи')
     question = models.CharField(max_length=150, verbose_name='вопрос')
     answer = models.TextField(verbose_name='ответ')
     view = models.IntegerField(default=0)
 
     def __str__(self):
         return self.question
+
+    class Meta:
+        verbose_name = "Помощь"
+        verbose_name_plural = "Помощь"
 
 
 class FooterLink(models.Model):
