@@ -1002,6 +1002,7 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 617, in connect
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 99 connecting to localhost:6379. Cannot assign requested address.
+<<<<<<< HEAD
 2022-09-15 08:05:57,157 [log | ERROR] Internal Server Error: /api/v1/advert/1/ @ /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/utils/log.py : 241 : log_response
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
@@ -1075,3 +1076,1249 @@ Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
     raise RuntimeError(
 RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/v1/user_advert_update/10/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+=======
+2022-09-15 09:25:56,985 [log | ERROR] Internal Server Error: /api/v1/chat_room/1/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 28, in retrieve
+    room = Room.objects.get(pk=pk)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+chat.models.Room.DoesNotExist: Room matching query does not exist.
+2022-09-15 09:27:39,118 [log | ERROR] Internal Server Error: /admin/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "advert_privacypolicy" does not exist
+LINE 1: SELECT 1 AS "a" FROM "advert_privacypolicy" LIMIT 1
+                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 552, in index
+    app_list = self.get_app_list(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 536, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 482, in _build_app_dict
+    perms = model_admin.get_model_perms(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/options.py", line 749, in get_model_perms
+    "add": self.has_add_permission(request),
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/admin.py", line 130, in has_add_permission
+    if has_add and PrivacyPolicy.objects.exists():
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 1225, in exists
+    return self.query.has_results(using=self.db)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/query.py", line 592, in has_results
+    return compiler.has_results()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1363, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "advert_privacypolicy" does not exist
+LINE 1: SELECT 1 AS "a" FROM "advert_privacypolicy" LIMIT 1
+                             ^
+
+2022-09-15 09:28:20,633 [log | ERROR] Internal Server Error: /admin/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "advert_privacypolicy" does not exist
+LINE 1: SELECT 1 AS "a" FROM "advert_privacypolicy" LIMIT 1
+                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 552, in index
+    app_list = self.get_app_list(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 536, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 482, in _build_app_dict
+    perms = model_admin.get_model_perms(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/options.py", line 749, in get_model_perms
+    "add": self.has_add_permission(request),
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/admin.py", line 130, in has_add_permission
+    if has_add and PrivacyPolicy.objects.exists():
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 1225, in exists
+    return self.query.has_results(using=self.db)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/query.py", line 592, in has_results
+    return compiler.has_results()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1363, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "advert_privacypolicy" does not exist
+LINE 1: SELECT 1 AS "a" FROM "advert_privacypolicy" LIMIT 1
+                             ^
+
+2022-09-15 09:28:21,579 [log | ERROR] Internal Server Error: /admin/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "advert_privacypolicy" does not exist
+LINE 1: SELECT 1 AS "a" FROM "advert_privacypolicy" LIMIT 1
+                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 552, in index
+    app_list = self.get_app_list(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 536, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 482, in _build_app_dict
+    perms = model_admin.get_model_perms(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/options.py", line 749, in get_model_perms
+    "add": self.has_add_permission(request),
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/admin.py", line 130, in has_add_permission
+    if has_add and PrivacyPolicy.objects.exists():
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 1225, in exists
+    return self.query.has_results(using=self.db)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/query.py", line 592, in has_results
+    return compiler.has_results()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1363, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "advert_privacypolicy" does not exist
+LINE 1: SELECT 1 AS "a" FROM "advert_privacypolicy" LIMIT 1
+                             ^
+
+2022-09-15 09:29:55,954 [log | ERROR] Internal Server Error: /admin/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "advert_privacypolicy" does not exist
+LINE 1: SELECT 1 AS "a" FROM "advert_privacypolicy" LIMIT 1
+                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 552, in index
+    app_list = self.get_app_list(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 536, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 482, in _build_app_dict
+    perms = model_admin.get_model_perms(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/options.py", line 749, in get_model_perms
+    "add": self.has_add_permission(request),
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/admin.py", line 130, in has_add_permission
+    if has_add and PrivacyPolicy.objects.exists():
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 1225, in exists
+    return self.query.has_results(using=self.db)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/query.py", line 592, in has_results
+    return compiler.has_results()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1363, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "advert_privacypolicy" does not exist
+LINE 1: SELECT 1 AS "a" FROM "advert_privacypolicy" LIMIT 1
+                             ^
+
+2022-09-15 09:31:39,317 [log | ERROR] Internal Server Error: /admin/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "advert_privacypolicy" does not exist
+LINE 1: SELECT 1 AS "a" FROM "advert_privacypolicy" LIMIT 1
+                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 552, in index
+    app_list = self.get_app_list(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 536, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 482, in _build_app_dict
+    perms = model_admin.get_model_perms(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/options.py", line 749, in get_model_perms
+    "add": self.has_add_permission(request),
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/admin.py", line 130, in has_add_permission
+    if has_add and PrivacyPolicy.objects.exists():
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 1225, in exists
+    return self.query.has_results(using=self.db)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/query.py", line 592, in has_results
+    return compiler.has_results()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1363, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "advert_privacypolicy" does not exist
+LINE 1: SELECT 1 AS "a" FROM "advert_privacypolicy" LIMIT 1
+                             ^
+
+2022-09-15 09:31:40,942 [log | ERROR] Internal Server Error: /admin/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "advert_privacypolicy" does not exist
+LINE 1: SELECT 1 AS "a" FROM "advert_privacypolicy" LIMIT 1
+                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 552, in index
+    app_list = self.get_app_list(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 536, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 482, in _build_app_dict
+    perms = model_admin.get_model_perms(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/options.py", line 749, in get_model_perms
+    "add": self.has_add_permission(request),
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/admin.py", line 130, in has_add_permission
+    if has_add and PrivacyPolicy.objects.exists():
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 1225, in exists
+    return self.query.has_results(using=self.db)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/query.py", line 592, in has_results
+    return compiler.has_results()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1363, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "advert_privacypolicy" does not exist
+LINE 1: SELECT 1 AS "a" FROM "advert_privacypolicy" LIMIT 1
+                             ^
+
+2022-09-15 09:31:41,962 [log | ERROR] Internal Server Error: /admin/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "advert_privacypolicy" does not exist
+LINE 1: SELECT 1 AS "a" FROM "advert_privacypolicy" LIMIT 1
+                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 552, in index
+    app_list = self.get_app_list(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 536, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 482, in _build_app_dict
+    perms = model_admin.get_model_perms(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/options.py", line 749, in get_model_perms
+    "add": self.has_add_permission(request),
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/admin.py", line 130, in has_add_permission
+    if has_add and PrivacyPolicy.objects.exists():
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 1225, in exists
+    return self.query.has_results(using=self.db)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/query.py", line 592, in has_results
+    return compiler.has_results()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1363, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "advert_privacypolicy" does not exist
+LINE 1: SELECT 1 AS "a" FROM "advert_privacypolicy" LIMIT 1
+                             ^
+
+2022-09-15 09:33:25,927 [log | ERROR] Internal Server Error: /admin/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "advert_privacypolicy" does not exist
+LINE 1: SELECT 1 AS "a" FROM "advert_privacypolicy" LIMIT 1
+                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 552, in index
+    app_list = self.get_app_list(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 536, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 482, in _build_app_dict
+    perms = model_admin.get_model_perms(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/contrib/admin/options.py", line 749, in get_model_perms
+    "add": self.has_add_permission(request),
+  File "/Users/c0mrade/Documents/Zmall/server/apps/advert/admin.py", line 130, in has_add_permission
+    if has_add and PrivacyPolicy.objects.exists():
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 1225, in exists
+    return self.query.has_results(using=self.db)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/query.py", line 592, in has_results
+    return compiler.has_results()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1363, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "advert_privacypolicy" does not exist
+LINE 1: SELECT 1 AS "a" FROM "advert_privacypolicy" LIMIT 1
+                             ^
+
+2022-09-15 09:35:53,178 [log | ERROR] Internal Server Error: /api/v1/chat_room/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NotNullViolation: null value in column "owner_id" of relation "chat_room" violates not-null constraint
+DETAIL:  Failing row contains (1, 1, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 671, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 831, in save
+    self.save_base(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 882, in save_base
+    updated = self._save_table(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 1025, in _save_table
+    results = self._do_insert(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 1066, in _do_insert
+    return manager._insert(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 1790, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1657, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "owner_id" of relation "chat_room" violates not-null constraint
+DETAIL:  Failing row contains (1, 1, null, null).
+
+2022-09-15 09:36:04,634 [log | ERROR] Internal Server Error: /api/v1/chat_room/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NotNullViolation: null value in column "owner_id" of relation "chat_room" violates not-null constraint
+DETAIL:  Failing row contains (2, 1, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 671, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 831, in save
+    self.save_base(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 882, in save_base
+    updated = self._save_table(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 1025, in _save_table
+    results = self._do_insert(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 1066, in _do_insert
+    return manager._insert(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 1790, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1657, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "owner_id" of relation "chat_room" violates not-null constraint
+DETAIL:  Failing row contains (2, 1, null, null).
+
+2022-09-15 09:38:21,532 [log | ERROR] Internal Server Error: /api/v1/chat_room/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NotNullViolation: null value in column "owner_id" of relation "chat_room" violates not-null constraint
+DETAIL:  Failing row contains (3, 1, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 671, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 831, in save
+    self.save_base(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 882, in save_base
+    updated = self._save_table(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 1025, in _save_table
+    results = self._do_insert(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 1066, in _do_insert
+    return manager._insert(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 1790, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1657, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "owner_id" of relation "chat_room" violates not-null constraint
+DETAIL:  Failing row contains (3, 1, null, null).
+
+2022-09-15 09:38:22,560 [log | ERROR] Internal Server Error: /api/v1/chat_room/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NotNullViolation: null value in column "owner_id" of relation "chat_room" violates not-null constraint
+DETAIL:  Failing row contains (4, 1, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 671, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 831, in save
+    self.save_base(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 882, in save_base
+    updated = self._save_table(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 1025, in _save_table
+    results = self._do_insert(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 1066, in _do_insert
+    return manager._insert(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 1790, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1657, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "owner_id" of relation "chat_room" violates not-null constraint
+DETAIL:  Failing row contains (4, 1, null, null).
+
+2022-09-15 09:38:59,352 [log | ERROR] Internal Server Error: /api/v1/chat_room/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/mixins.py", line 20, in create
+    headers = self.get_success_headers(serializer.data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/api/serializers.py", line 40, in to_representation
+    data['owner']['id'] = instance.owner.id
+TypeError: 'int' object does not support item assignment
+2022-09-15 09:39:13,568 [log | ERROR] Internal Server Error: /api/v1/chat_room/1/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 28, in retrieve
+    room = Room.objects.get(pk=pk)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+chat.models.Room.DoesNotExist: Room matching query does not exist.
+2022-09-15 09:39:30,471 [log | ERROR] Internal Server Error: /api/v1/chat_room/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 25, in list
+    return Response(serializer.data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/api/serializers.py", line 40, in to_representation
+    data['owner']['id'] = instance.owner.id
+TypeError: 'int' object does not support item assignment
+2022-09-15 09:39:43,556 [log | ERROR] Internal Server Error: /api/v1/chat_room/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 25, in list
+    return Response(serializer.data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/api/serializers.py", line 40, in to_representation
+    data['owner']['id'] = instance.owner.id
+TypeError: 'int' object does not support item assignment
+2022-09-15 09:39:44,146 [log | ERROR] Internal Server Error: /api/v1/chat_room/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 25, in list
+    return Response(serializer.data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/api/serializers.py", line 40, in to_representation
+    data['owner']['id'] = instance.owner.id
+TypeError: 'int' object does not support item assignment
+2022-09-15 09:40:15,584 [log | ERROR] Internal Server Error: /api/v1/chat_room/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 25, in list
+    return Response(serializer.data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/api/serializers.py", line 40, in to_representation
+    data['owner']['id'] = str(instance.owner.id)
+TypeError: 'int' object does not support item assignment
+2022-09-15 09:40:16,443 [log | ERROR] Internal Server Error: /api/v1/chat_room/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 25, in list
+    return Response(serializer.data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/api/serializers.py", line 40, in to_representation
+    data['owner']['id'] = str(instance.owner.id)
+TypeError: 'int' object does not support item assignment
+2022-09-15 09:40:16,811 [log | ERROR] Internal Server Error: /api/v1/chat_room/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 25, in list
+    return Response(serializer.data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/api/serializers.py", line 40, in to_representation
+    data['owner']['id'] = str(instance.owner.id)
+TypeError: 'int' object does not support item assignment
+2022-09-15 09:40:17,119 [log | ERROR] Internal Server Error: /api/v1/chat_room/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 25, in list
+    return Response(serializer.data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/api/serializers.py", line 40, in to_representation
+    data['owner']['id'] = str(instance.owner.id)
+TypeError: 'int' object does not support item assignment
+2022-09-15 09:42:00,006 [log | ERROR] Internal Server Error: /api/v1/chat_room/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 25, in list
+    return Response(serializer.data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/api/serializers.py", line 44, in to_representation
+    data['owner']['id'] = instance.owner.id
+KeyError: 'owner'
+2022-09-15 09:42:35,452 [log | ERROR] Internal Server Error: /api/v1/chat_room/1/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 28, in retrieve
+    room = Room.objects.get(pk=pk)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+chat.models.Room.DoesNotExist: Room matching query does not exist.
+2022-09-15 09:43:02,837 [log | ERROR] Internal Server Error: /api/v1/chat_room/2/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 28, in retrieve
+    room = Room.objects.get(pk=pk)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+chat.models.Room.DoesNotExist: Room matching query does not exist.
+2022-09-15 09:43:04,492 [log | ERROR] Internal Server Error: /api/v1/chat_room/3/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 28, in retrieve
+    room = Room.objects.get(pk=pk)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+chat.models.Room.DoesNotExist: Room matching query does not exist.
+2022-09-15 09:43:05,560 [log | ERROR] Internal Server Error: /api/v1/chat_room/4/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 28, in retrieve
+    room = Room.objects.get(pk=pk)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+chat.models.Room.DoesNotExist: Room matching query does not exist.
+2022-09-15 09:50:23,952 [log | ERROR] Internal Server Error: /api/v1/chat_room/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 35, in create
+    print(**request.data)
+TypeError: 'owner' is an invalid keyword argument for print()
+2022-09-15 09:50:45,601 [log | ERROR] Internal Server Error: /api/v1/chat_room/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 37, in create
+    super().create(self, request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/mixins.py", line 17, in create
+    serializer = self.get_serializer(data=request.data)
+AttributeError: 'RoomViewSet' object has no attribute 'data'
+2022-09-15 09:50:46,760 [log | ERROR] Internal Server Error: /api/v1/chat_room/ @ /Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 37, in create
+    super().create(self, request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/mixins.py", line 17, in create
+    serializer = self.get_serializer(data=request.data)
+AttributeError: 'RoomViewSet' object has no attribute 'data'
+>>>>>>> origin/bugfix/fix_admin/fix_chat

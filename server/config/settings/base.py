@@ -101,8 +101,8 @@ DATABASES = {
         "NAME": config("DB_NAME"),
         "USER": config("DB_USER"),
         "PASSWORD": config("DB_PASSWORD"),
-        "HOST": config("DB_HOST"),
-        # "HOST": "localhost",
+        # "HOST": config("DB_HOST"),
+        "HOST": "localhost",
         "PORT": 5432,
         'TEST': {
             'NAME': 'test',
@@ -147,7 +147,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-REDIS_HOST = "redis"
+REDIS_HOST = "127.0.0.1"
 REDIS_PORT = 6379
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
