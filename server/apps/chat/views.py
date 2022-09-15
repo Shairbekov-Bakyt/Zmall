@@ -30,12 +30,32 @@ class RoomViewSet(ModelViewSet):
         serializer = ChatSerializer(obj, many=True)
         return Response({'message': serializer.data, 'advert_name': room.advert.name, 'advert_price': room.advert.start_price})
 
+    def create(self, request, *args, **kwargs):
+        try:
+            obj = Room.objects.get(
+                owner=request.data['owner'],
+                user=request.data['user'],
+                advert=request.data['advert'])
+            serializer = self.get_serializer(obj)
+            return Response(serializer.data)
+
+        except:
+            serializer = self.get_serializer(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+            return Response(serializer.data)
+
 
 class ChatCreateView(CreateAPIView):
     serializer_class = ChatSerializer
     queryset = Chat.objects.all()
 
     def create(self, request, *args, **kwargs):
+        try:
+            Room.objects.get(pk=request.data['room'])
+        except:
+            Room.objects.create()
+
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         chat = serializer.save()
