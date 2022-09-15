@@ -104,6 +104,9 @@ DATABASES = {
         "HOST": config("DB_HOST"),
         # "HOST": "localhost",
         "PORT": 5432,
+        'TEST': {
+            'NAME': 'test',
+        },
     }
 }
 AUTH_USER_MODEL = "user.CustomUser"
@@ -216,7 +219,7 @@ JAZZMIN_SETTINGS = {
 
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers' : False,
+    'disable_existing_loggers': False,
     'loggers': {
         '': {
             'handlers': ['error', 'info', 'debug'],

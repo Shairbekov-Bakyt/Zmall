@@ -141,7 +141,7 @@ class Advert(models.Model):
     )
     promote = models.ForeignKey(
         Promote,
-        on_delete=models.CASCADE,
+        on_delete=models.PROTECT,
         related_name="promote_advert",
         blank=True, null=True,
         verbose_name="реклама"
