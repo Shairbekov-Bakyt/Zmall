@@ -10,7 +10,7 @@ class Room(models.Model):
         on_delete=models.CASCADE,
         verbose_name="получатель",
         related_name="room_owner_user",)
-    user = models.OneToOneField(
+    user = models.ForeignKey(
         CustomUser,
         on_delete=models.CASCADE,
         verbose_name="отправитель",

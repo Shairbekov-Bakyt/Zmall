@@ -65,5 +65,6 @@ class ChatCreateView(CreateAPIView):
                           "from_user": chat.from_user.get_full_name(),
                           "to_user": chat.to_user.get_full_name(),
                           "date": str(chat.date),
+                          "image"chat.file
                       })
         return Response({"message": serializer.data, "advert_name": chat.room.advert.name, "advert_price": chat.room.advert.start_price})
