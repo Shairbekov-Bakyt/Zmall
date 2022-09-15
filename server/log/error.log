@@ -522,3 +522,483 @@ Traceback (most recent call last):
   File "/Users/zharkynaskatkyzy/PycharmProjects/Zmall/server/apps/advert/models.py", line 226, in __str__
     return self.name
 AttributeError: 'FeedbackMessage' object has no attribute 'name'
+2022-09-15 03:01:04,883 [log | ERROR] Internal Server Error: /swagger/ @ /usr/local/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/backend/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/usr/local/lib/python3.9/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 99 connecting to localhost:6379. Cannot assign requested address.
+2022-09-15 03:01:16,144 [log | ERROR] Internal Server Error: /swagger/ @ /usr/local/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/backend/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/usr/local/lib/python3.9/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 99 connecting to localhost:6379. Cannot assign requested address.
+2022-09-15 03:01:20,755 [log | ERROR] Internal Server Error: /swagger/ @ /usr/local/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/backend/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/usr/local/lib/python3.9/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 99 connecting to localhost:6379. Cannot assign requested address.
+2022-09-15 03:01:30,827 [log | ERROR] Internal Server Error: /api/v1/city/ @ /usr/local/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/backend/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/usr/local/lib/python3.9/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 99 connecting to localhost:6379. Cannot assign requested address.
+2022-09-15 03:01:32,557 [log | ERROR] Internal Server Error: /api/v1/city/ @ /usr/local/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/backend/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/usr/local/lib/python3.9/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 99 connecting to localhost:6379. Cannot assign requested address.
+2022-09-15 03:01:33,423 [log | ERROR] Internal Server Error: /api/v1/city/ @ /usr/local/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/backend/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/usr/local/lib/python3.9/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 99 connecting to localhost:6379. Cannot assign requested address.
+2022-09-15 03:01:37,856 [log | ERROR] Internal Server Error: /api/v1/category/ @ /usr/local/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/backend/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/usr/local/lib/python3.9/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 99 connecting to localhost:6379. Cannot assign requested address.
+2022-09-15 03:01:45,550 [log | ERROR] Internal Server Error: /api/v1/category/ @ /usr/local/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/backend/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/usr/local/lib/python3.9/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 99 connecting to localhost:6379. Cannot assign requested address.
+2022-09-15 03:01:50,013 [log | ERROR] Internal Server Error: / @ /usr/local/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/backend/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/usr/local/lib/python3.9/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 99 connecting to localhost:6379. Cannot assign requested address.
+2022-09-15 03:02:19,402 [log | ERROR] Internal Server Error: / @ /usr/local/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/backend/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/usr/local/lib/python3.9/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 99 connecting to localhost:6379. Cannot assign requested address.
+2022-09-15 03:02:19,984 [log | ERROR] Internal Server Error: / @ /usr/local/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/backend/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/usr/local/lib/python3.9/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 99 connecting to localhost:6379. Cannot assign requested address.
+2022-09-15 03:02:20,635 [log | ERROR] Internal Server Error: / @ /usr/local/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/backend/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/usr/local/lib/python3.9/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 99 connecting to localhost:6379. Cannot assign requested address.
+2022-09-15 03:02:21,547 [log | ERROR] Internal Server Error: / @ /usr/local/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/backend/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/usr/local/lib/python3.9/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 99 connecting to localhost:6379. Cannot assign requested address.
+2022-09-15 03:02:22,208 [log | ERROR] Internal Server Error: / @ /usr/local/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/backend/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/usr/local/lib/python3.9/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 99 connecting to localhost:6379. Cannot assign requested address.
+2022-09-15 03:02:31,996 [log | ERROR] Internal Server Error: / @ /usr/local/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/backend/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/usr/local/lib/python3.9/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 99 connecting to localhost:6379. Cannot assign requested address.
+2022-09-15 03:02:32,620 [log | ERROR] Internal Server Error: / @ /usr/local/lib/python3.9/site-packages/django/utils/log.py : 241 : log_response
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 611, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 612, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 677, in _connect
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 665, in _connect
+    sock.connect(socket_address)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/backend/config/middleware.py", line 31, in __call__
+    if not redis.exists(client_count) and not redis.exists(client_date):
+  File "/usr/local/lib/python3.9/site-packages/redis/commands/core.py", line 1612, in exists
+    return self.execute_command("EXISTS", *names)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 1387, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 617, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 99 connecting to localhost:6379. Cannot assign requested address.

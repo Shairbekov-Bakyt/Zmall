@@ -1,17 +1,25 @@
 import django_filters
 from rest_framework import status, filters
-from rest_framework.generics import ListAPIView, CreateAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 
 
 from advert.serializers import advert_serializers as serializers
-from advert.models import Advert, AdvertImage, City, AdvertContact, AdvertReport
 from advert.serializers import permissions
 from phonenumber_field.validators import validate_international_phonenumber
 from advert.pagination import AdvertPagination
 from config.middleware import get_client_ip
 from advert.services import set_advert_contacts_count
+from advert.models import (
+    Advert,
+    AdvertImage,
+    City,
+    AdvertContact,
+    AdvertReport,
+    FeedbackMessage,
+    PrivacyPolicy
+)
 
 
 class AdvertFilter(django_filters.FilterSet):
@@ -42,7 +50,7 @@ class AdvertViewSet(ModelViewSet):
     ]
     permission_classes = [permissions.IsOwnerOrReadOnly]
     filterset_class = AdvertFilter
-    ordering_fields = ["created_date", "end_price"]
+    ordering_fields = ["created_date", "start_price"]
     ordering = ["created_date"]
     search_fields = ["name"]
 
@@ -130,3 +138,30 @@ class UserAdvertView(ListAPIView):
     def get_queryset(self):
         user = self.request.user
         return Advert.objects.filter(owner__email=user)
+
+
+class UserAdvertUpdateView(UpdateAPIView):
+    queryset = Advert.objects.all()
+    serializer_class = serializers.AdvertDetailSerializer
+    lookup_field = 'pk'
+
+    def update(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance, data=request.data, partial=True)
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response({"message": "advert updated successfully"})
+
+        else:
+            return Response({"message": "failed", "details": serializer.errors}, status=status.HTTP_304_NOT_MODIFIED)
+
+
+class FeedbackMessageView(ListAPIView):
+    serializer_class = serializers.FeedbackMessageSerializer
+    queryset = FeedbackMessage.objects.all()
+
+
+class PrivacyPolicyView(ListAPIView):
+    serializer_class = serializers.PrivacyPolicySerializer
+    queryset = PrivacyPolicy.objects.all()
