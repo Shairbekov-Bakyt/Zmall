@@ -1,81 +1,66 @@
-from rest_framework.serializers import ModelSerializer
+from rest_framework import serializers
 
 from user.models import CustomUser
-from chat.models import Chat
 from advert.models import (
     Advert,
+    City,
     AdvertImage,
     AdvertContact,
-    FavoriteAdvert,
-    City,
-    Comment,
+    Feedback,
     Category,
-    Promote,
     SubCategory,
+    Promote,
 )
 
 
-class UserSerializerAD(ModelSerializer):
+class UserSerializerAD(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = '__all__'
+        fields = ("first_name", "last_name", "phone_number", 'email')
 
 
-class CommentSerializerAD(ModelSerializer):
+class CustomerFeedbackSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Comment
-        fields = '__all__'
+        model = Feedback
+        fields = ('name', 'email', 'feedback_title', 'message')
 
 
-class CitySerializerAD(ModelSerializer):
+class CitySerializer(serializers.ModelSerializer):
     class Meta:
         model = City
         fields = '__all__'
 
 
-class FavoriteAdvertSerializerAD(ModelSerializer):
-    class Meta:
-        model = FavoriteAdvert
-        fields = '__all__'
-
-
-class AdvertSerializerAD(ModelSerializer):
-    class Meta:
-        model = Advert
-        fields = '__all__'
-
-
-class AdvertImageSerializerAD(ModelSerializer):
-    class Meta:
-        model = AdvertImage
-        fields = '__all__'
-
-
-class AdvertContactSerializerAD(ModelSerializer):
+class AdvertContactSerailzer(serializers.ModelSerializer):
     class Meta:
         model = AdvertContact
-        fields = '__all__'
+        fields = ("phone_number",)
 
 
-class CategorySerializerAD(ModelSerializer):
+class AdvertImageSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Category
-        fields = '__all__'
+        model = AdvertImage
+        fields = ["image"]
 
 
-class SubCategorySerializerAD(ModelSerializer):
+class AdvertCreateSerializer(serializers.ModelSerializer):
+    owner = serializers.SlugRelatedField(
+        slug_field="id", queryset=CustomUser.objects.all()
+    )
+    category = serializers.SlugRelatedField(
+        slug_field="id", queryset=Category.objects.all()
+    )
+    sub_category = serializers.SlugRelatedField(
+        slug_field="id", queryset=SubCategory.objects.all()
+    )
+    promote = serializers.SlugRelatedField(
+        slug_field="types",
+        queryset=Promote.objects.all(),
+        allow_null=True
+    )
+    city = serializers.SlugRelatedField(slug_field="id", queryset=City.objects.all())
+
     class Meta:
-        model = SubCategory
-        fields = '__all__'
+        model = Advert
 
-
-class PromoteSerializerAD(ModelSerializer):
-    class Meta:
-        model = Promote
-        fields = '__all__'
-
-
-class ChatSerializerAD(ModelSerializer):
-    class Meta:
-        model = Chat
-        fields = '__all__'
+        exclude = ("created_date", "status")
