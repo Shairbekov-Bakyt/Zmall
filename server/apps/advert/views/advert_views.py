@@ -23,8 +23,7 @@ from advert.models import (
 
 
 class AdvertFilter(django_filters.FilterSet):
-    min_price = django_filters.NumberFilter(field_name="start_price", lookup_expr="gte")
-    max_price = django_filters.NumberFilter(field_name="start_price", lookup_expr="lte")
+    start_price = django_filters.RangeFilter(field_name="start_price")
     image = django_filters.BooleanFilter(
         lookup_expr="isnull", field_name="advert_image"
     )
@@ -32,7 +31,7 @@ class AdvertFilter(django_filters.FilterSet):
 
     class Meta:
         model = Advert
-        fields = ["min_price", "max_price", "image", "city", "category", "sub_category"]
+        fields = ["category", "sub_category"]
 
 
 class CityListView(ListAPIView):
@@ -142,7 +141,7 @@ class UserAdvertView(ListAPIView):
 
 class UserAdvertUpdateView(UpdateAPIView):
     queryset = Advert.objects.all()
-    serializer_class = serializers.AdvertDetailSerializer
+    serializer_class = serializers.AdvertCreateSerializer
     lookup_field = 'pk'
 
     def update(self, request, *args, **kwargs):
