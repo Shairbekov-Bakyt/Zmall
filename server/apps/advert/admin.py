@@ -15,7 +15,8 @@ from advert.models import (
     AdvertStatistics,
     AdvertReport,
     Feedback,
-    FeedbackMessage
+    FeedbackMessage,
+    PrivacyPolicy
 )
 
 admin.site.register(City)
@@ -119,3 +120,16 @@ class FeedbackMessageAdmin(admin.ModelAdmin):
 
     class Meta:
         model = FeedbackMessage
+
+
+@admin.register(PrivacyPolicy)
+class PrivacyPolicyAdmin(admin.ModelAdmin):
+
+    def has_add_permission(self, request):
+        has_add = super().has_add_permission(request)
+        if has_add and PrivacyPolicy.objects.exists():
+            has_add = False
+        return has_add
+
+    class Meta:
+        model = PrivacyPolicy
