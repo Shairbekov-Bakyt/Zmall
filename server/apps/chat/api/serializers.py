@@ -1,7 +1,14 @@
 from rest_framework import serializers
 
 from chat.models import Chat, Room
+from user.models import CustomUser as User
 from advert.models import Advert
+
+
+class UserForChatSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'first_name', 'last_name')
 
 
 class ChatSerializer(serializers.ModelSerializer):
@@ -9,31 +16,36 @@ class ChatSerializer(serializers.ModelSerializer):
         model = Chat
         fields = '__all__'
 
-    # def create(self, validated_data):
-    #     chat = Chat.objects.create(**validated_data)
-    #     chat.save()
-    #     self.chat = chat
-    #     return self.chat
 
 
 class ChatListSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Room
         fields = '__all__'
 
     def to_representation(self, instance):
         data = super().to_representation(instance)
+
+        data['owner'] = {}
+        data['user'] = {}
+
+
         advert_id = instance.advert.id
 
         chat = Chat.objects.filter(room=instance).last()
         if chat is not None:
 
-            username = chat.to_user if instance.user == chat.from_user else chat.from_user
             data['message'] = chat.message
             data['date'] = chat.date
-            data['username'] = username.get_full_name()
 
         data['advert_id'] = advert_id
         data['advert'] = Advert.objects.get(pk=advert_id).name
 
+        data['owner']['id'] = instance.owner.id
+        data['owner']['first_name'] = instance.owner.first_name
+        data['owner']['last_name'] = instance.owner.last_name
+        data['user']['id'] = instance.user.id
+        data['user']['first_name'] = instance.user.first_name
+        data['user']['last_name'] = instance.user.last_name
         return data
