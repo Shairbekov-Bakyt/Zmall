@@ -330,3 +330,15 @@ class AdvertReport(models.Model):
     class Meta:
         verbose_name = "жалоба на объявление"
         verbose_name_plural = "жалобы на объявление"
+
+
+class PrivacyPolicy(models.Model):
+    title = models.CharField(max_length=250)
+    text = models.TextField()
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Политика конфиденциальности"
+        verbose_name_plural = "Политика конфиденциальности"
