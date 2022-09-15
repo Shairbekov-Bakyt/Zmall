@@ -45,7 +45,20 @@ class AdvertStatisticsInline(admin.StackedInline):
 
 class AdvertReportInline(admin.StackedInline):
     model = AdvertReport
-    readonly_fields = ("report_message", "report")
+    readonly_fields = ["report_message", "report"]
+
+    # def get_readonly_fields(self, request, obj=None):
+    #     if self.get_queryset(request).last().report_message is None:
+    #         return ['report', ]
+    #
+    #     return ['report_message', ]
+
+    def get_empty_value_display(self):
+        return "empty"
+
+
+
+
 
 
 class HelpInline(admin.StackedInline):

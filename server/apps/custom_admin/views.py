@@ -1,15 +1,14 @@
+import django_filters
 from rest_framework import status
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAdminUser
-from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView
 from phonenumber_field.validators import validate_international_phonenumber
 from rest_framework.response import Response
-
+from rest_framework.filters import BaseFilterBackend
 
 from advert.serializers.advert_serializers import *
 from custom_admin.serializers import UserSerializerAD
 from advert.pagination import AdvertPagination
-from config.middleware import get_client_ip
 from advert.models import (
     Advert,
     AdvertImage,
@@ -24,10 +23,18 @@ class UserViewSet(ModelViewSet):
     http_method_names = ["get", "put"]
 
 
+class AdvertFilter(django_filters.FilterSet):
+    advert_reports = django_filters.BooleanFilter(
+        lookup_expr="isnull", field_name="advert_reports"
+    )
+
+
 
 class AdvertViewSet(ModelViewSet):
     queryset = Advert.objects.select_related('category', 'sub_category').all()
     serializer_class = AdvertCreateSerializer
+    filterset_class = AdvertFilter
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
     pagination_class = AdvertPagination
     permission_classes = [IsAdminUser]
     http_method_names = ["get", 'put']
@@ -67,5 +74,3 @@ class AdvertViewSet(ModelViewSet):
         if self.action == 'retrieve':
             return AdvertDetailSerializer
         return super().get_serializer_class()
-
-
