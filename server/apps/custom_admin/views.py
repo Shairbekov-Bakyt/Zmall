@@ -20,7 +20,7 @@ class UserViewSet(ModelViewSet):
     serializer_class = UserSerializerAD
     queryset = CustomUser.objects.all()
     permission_classes = [IsAdminUser]
-    http_method_names = ["get", "put"]
+    http_method_names = ["get", "put", "delete"]
 
 
 class AdvertFilter(django_filters.FilterSet):
@@ -37,7 +37,7 @@ class AdvertViewSet(ModelViewSet):
     filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
     pagination_class = AdvertPagination
     permission_classes = [IsAdminUser]
-    http_method_names = ["get", 'put']
+    http_method_names = ["get", 'put', 'delete']
 
     def create(self, request, *args, **kwargs):
         imgs = request.FILES.getlist("image")

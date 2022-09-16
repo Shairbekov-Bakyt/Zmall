@@ -28,7 +28,21 @@ class RoomViewSet(ModelViewSet):
         room = Room.objects.get(pk=pk)
         obj = Chat.objects.filter(Q(to_user=request.user, room=room) | Q(from_user=request.user, room=room))
         serializer = ChatSerializer(obj, many=True)
-        return Response({'message': serializer.data, 'advert_name': room.advert.name, 'advert_price': room.advert.start_price})
+
+        return Response({
+            'messages': serializer.data,
+            'advert_id': room.advert.id,
+            'advert': room.advert.name,
+            'to_user': {
+                'id': room.user.id,
+                'first_name': room.user.first_name,
+                'last_name': room.user.last_name,
+                },
+            'from_user': {
+                'id': room.owner.id,
+                'first_name': room.owner.first_name,
+                'last_name': room.user.last_name,
+                }})
 
     def create(self, request, *args, **kwargs):
         try:
@@ -59,12 +73,14 @@ class ChatCreateView(CreateAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         chat = serializer.save()
-        pusher_client.trigger(f"{chat.room.id}", "message_create",
-                      {
+        data ={
                           "message": chat.message,
                           "from_user": chat.from_user.get_full_name(),
                           "to_user": chat.to_user.get_full_name(),
                           "date": str(chat.date),
-                          "image"chat.file
-                      })
+                    }
+        if chat.file:
+            data['image'] = chat.file.url
+
+        pusher_client.trigger(f"{chat.room.id}", "message_create", data)
         return Response({"message": serializer.data, "advert_name": chat.room.advert.name, "advert_price": chat.room.advert.start_price})
