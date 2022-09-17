@@ -1,6 +1,6 @@
 from rest_framework.generics import ListAPIView
 
-from advert.serializers.category_serializers import CategorySerializer
+from advert.api.category_serializers import CategorySerializer
 from advert.models import Category
 
 

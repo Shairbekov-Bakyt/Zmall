@@ -6,7 +6,7 @@ run_dev:
 	python3 manage.py runserver --settings config.settings.local
 
 run_prod:
-	python3 manage.py runserver
+	python3 manage.py runserver --settings config.settings.production
 
 migrate:
 	python3 manage.py makemigrations
@@ -15,8 +15,9 @@ migrate:
 web:
 	python3 manage.py web_scraping
 
-run_local:
-    python3 manage.py runserver --settings config.settings.local 192.168.31.119:8000
+# run_local:
+#     ip = ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}'
+#     python3 manage.py runserver --settings config.settings.local ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}':8000
 
 create:
 	python3 -m venv env

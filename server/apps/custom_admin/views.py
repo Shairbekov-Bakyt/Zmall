@@ -4,11 +4,10 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAdminUser
 from phonenumber_field.validators import validate_international_phonenumber
 from rest_framework.response import Response
-from rest_framework.filters import BaseFilterBackend
 
-from advert.serializers.advert_serializers import *
+from advert.api.advert_serializers import *
 from custom_admin.serializers import UserSerializerAD
-from advert.pagination import AdvertPagination
+from advert.api.pagination import AdvertPagination
 from advert.models import (
     Advert,
     AdvertImage,

@@ -4,22 +4,22 @@ from rest_framework.response import Response
 from rest_framework.generics import ListAPIView
 
 from advert.models import Help, HelpCategory
-from advert.serializers.help_serializer import HelpSerializer, HelpCategorySerializer
+from advert.api.help_serializers import HelpSerializer, HelpCategorySerializer
 
 
 class FAQListView(ListAPIView):
-    queryset = Help.objects.select_related('help_category').order_by('-view')[:10]
+    queryset = Help.objects.select_related("help_category").order_by("-view")[:10]
     serializer_class = HelpSerializer
 
 
 class HelpViewSet(ModelViewSet):
-    queryset = Help.objects.select_related('help_category').all()
+    queryset = Help.objects.select_related("help_category").all()
     serializer_class = HelpSerializer
     filter_backends = [
         django_filters.rest_framework.DjangoFilterBackend,
     ]
 
-    filterset_fields = ['help_category']
+    filterset_fields = ["help_category"]
 
     def retrieve(self, request, pk, *args, **kwargs):
         obj = Help.objects.get(pk=pk)

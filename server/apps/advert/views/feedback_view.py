@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 
 from advert.models import Feedback
-from advert.serializers.feedback_serializer import FeedbackSerializer
+from advert.api.feedback_serializers import FeedbackSerializer
 
 
 class FeedbackView(ModelViewSet):

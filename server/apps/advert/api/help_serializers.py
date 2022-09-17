@@ -6,10 +6,10 @@ from advert.models import HelpCategory, Help
 class HelpSerializer(ModelSerializer):
     class Meta:
         model = Help
-        fields = '__all__'
+        fields = "__all__"
 
 
 class HelpCategorySerializer(ModelSerializer):
     class Meta:
         model = HelpCategory
-        fields = '__all__'
+        fields = "__all__"

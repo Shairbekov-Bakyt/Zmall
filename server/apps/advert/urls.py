@@ -1,15 +1,15 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from advert.views.promote_views import PromoteViewSet
-from advert.views.category_views import CategoryView
+from advert.views.promote_view import PromoteViewSet
+from advert.views.category_view import CategoryView
 from advert.views.favorite_view import FavoriteAdvertView, FavoriteUpdateDelete
-from advert.views.subcategory_views import SubCategoryView
+from advert.views.subcategory_view import SubCategoryView
 from advert.views.feedback_view import FeedbackView
-from advert.views.comment_views import CommentView
+from advert.views.comment_view import CommentView
 from advert.views.help_view import HelpCategoryViewSet, HelpViewSet, FAQListView
-from advert.views.statistics_views import StatisticsView
-from advert.views.advert_views import (
+from advert.views.statistics_view import StatisticsView
+from advert.views.advert_view import (
     AdvertViewSet,
     CityListView,
     PremiumAdvertView,
@@ -18,7 +18,7 @@ from advert.views.advert_views import (
     UserAdvertView,
     UserAdvertUpdateView,
     FeedbackMessageView,
-    PrivacyPolicyView
+    PrivacyPolicyView,
 )
 
 router = DefaultRouter()
@@ -46,5 +46,4 @@ urlpatterns = [
     path("user_advert_update/<int:pk>/", UserAdvertUpdateView.as_view()),
     path("feedback_message/", FeedbackMessageView.as_view()),
     path("privacy_policy/", PrivacyPolicyView.as_view()),
-
 ]

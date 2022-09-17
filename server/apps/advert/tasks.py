@@ -18,10 +18,10 @@ app = Celery()
 
 
 app.conf.save_advert_statistics_schedule = {
-    'add-every-morning': {
-        'task': 'tasks.add',
-        'schedule': schedules.crontab(minute='*/2'),
-        'args': (16, 16),
+    "add-every-morning": {
+        "task": "tasks.add",
+        "schedule": schedules.crontab(minute="*/2"),
+        "args": (16, 16),
     },
 }
 
@@ -39,15 +39,17 @@ def task_save_advert_statistics():
             continue
 
         contacts_views = 0
-        if rd.exists(f'{id}-contacts'):
-            advert_contacts_views = json.loads(rd.get(f'{id}-contacts').decode("utf-8"))
-            contacts_views = advert_contacts_views['views_counter']
+        if rd.exists(f"{id}-contacts"):
+            advert_contacts_views = json.loads(rd.get(f"{id}-contacts").decode("utf-8"))
+            contacts_views = advert_contacts_views["views_counter"]
 
         advert_views = json.loads(rd.get(id).decode("utf-8"))
-        statistics.append(AdvertStatistics(
-            advert=advert,
-            advert_contacts_view=contacts_views,
-            advert_views=advert_views['views_counter']))
+        statistics.append(
+            AdvertStatistics(
+                advert=advert,
+                advert_contacts_view=contacts_views,
+                advert_views=advert_views["views_counter"],
+            )
+        )
 
     AdvertStatistics.objects.bulk_create(statistics)
-

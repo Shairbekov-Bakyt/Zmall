@@ -143,8 +143,9 @@ class Advert(models.Model):
         Promote,
         on_delete=models.PROTECT,
         related_name="promote_advert",
-        blank=True, null=True,
-        verbose_name="реклама"
+        blank=True,
+        null=True,
+        verbose_name="реклама",
     )
 
     name = models.CharField(max_length=250, verbose_name="название объявления")
@@ -156,7 +157,7 @@ class Advert(models.Model):
     wa_number = PhoneNumberField(verbose_name="WhatsApp номер")
 
     created_date = models.DateTimeField(auto_now_add=True)
-    views = models.IntegerField(default=0, verbose_name='просмотры')
+    views = models.IntegerField(default=0, verbose_name="просмотры")
     status = models.CharField(
         max_length=10,
         verbose_name="статус",
@@ -173,16 +174,22 @@ class Advert(models.Model):
 
 
 class FavoriteAdvert(models.Model):
-    adverts = models.ManyToManyField(Advert, related_name='favorite_adverts', verbose_name='объявление')
-    user_id = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name='favorite_user',
-                                   verbose_name='клиент')
+    adverts = models.ManyToManyField(
+        Advert, related_name="favorite_adverts", verbose_name="объявление"
+    )
+    user_id = models.OneToOneField(
+        CustomUser,
+        on_delete=models.CASCADE,
+        related_name="favorite_user",
+        verbose_name="клиент",
+    )
 
     def __str__(self):
         return f"id : {self.id}"
 
     class Meta:
-        verbose_name = 'Избранный продукт'
-        verbose_name_plural = 'Избранные продукты'
+        verbose_name = "Избранный продукт"
+        verbose_name_plural = "Избранные продукты"
 
 
 class Comment(models.Model):
@@ -190,26 +197,23 @@ class Comment(models.Model):
         Advert,
         on_delete=models.CASCADE,
         related_name="advert_comment",
-        verbose_name="объявление"
+        verbose_name="объявление",
     )
     user = models.ForeignKey(
         CustomUser,
         on_delete=models.CASCADE,
         related_name="user_comment",
-        verbose_name="пользователь"
-
+        verbose_name="пользователь",
     )
     parent = models.ForeignKey(
-        'self',
+        "self",
         verbose_name="Комментарий-родитель ",
         on_delete=models.SET_NULL,
-        blank=True, null=True,
-        related_name="children"
+        blank=True,
+        null=True,
+        related_name="children",
     )
-    text = models.TextField(
-        verbose_name="текст комментария",
-        max_length=5000
-    )
+    text = models.TextField(verbose_name="текст комментария", max_length=5000)
 
     def __str__(self):
         return f"{self.advert} - comment"
@@ -223,7 +227,7 @@ class FeedbackMessage(models.Model):
     text = models.TextField()
 
     def __str__(self):
-        return 'Текст связи с администрацией'
+        return "Текст связи с администрацией"
 
     class Meta:
         verbose_name = "Текст связи с администрацией"
@@ -231,10 +235,10 @@ class FeedbackMessage(models.Model):
 
 
 class Feedback(models.Model):
-    name = models.CharField(max_length=100, verbose_name='имя')
-    email = models.EmailField(max_length=100, verbose_name='E-mail')
-    feedback_title = models.CharField(max_length=150, verbose_name='тема сообщение')
-    message = models.TextField(verbose_name='сообщение')
+    name = models.CharField(max_length=100, verbose_name="имя")
+    email = models.EmailField(max_length=100, verbose_name="E-mail")
+    feedback_title = models.CharField(max_length=150, verbose_name="тема сообщение")
+    message = models.TextField(verbose_name="сообщение")
 
     def __str__(self):
         return self.name
@@ -256,9 +260,11 @@ class HelpCategory(models.Model):
 
 
 class Help(models.Model):
-    help_category = models.ForeignKey(HelpCategory, on_delete=models.CASCADE, verbose_name='Категория помощи')
-    question = models.CharField(max_length=150, verbose_name='вопрос')
-    answer = models.TextField(verbose_name='ответ')
+    help_category = models.ForeignKey(
+        HelpCategory, on_delete=models.CASCADE, verbose_name="Категория помощи"
+    )
+    question = models.CharField(max_length=150, verbose_name="вопрос")
+    answer = models.TextField(verbose_name="ответ")
     view = models.IntegerField(default=0)
 
     def __str__(self):
@@ -274,9 +280,9 @@ class FooterLink(models.Model):
         instagram = "instagram", "instagram"
         facebook = "facebook", "facebook"
         ok = "ok", "ok"
-        google_play = 'google_play', 'google_play'
+        google_play = "google_play", "google_play"
 
-    link = models.URLField(verbose_name='cсылка')
+    link = models.URLField(verbose_name="cсылка")
     status = models.CharField(
         max_length=100,
         verbose_name="статус",
@@ -292,14 +298,14 @@ class AdvertStatistics(models.Model):
         Advert,
         on_delete=models.CASCADE,
         related_name="advert_statistics",
-        verbose_name="объявление"
+        verbose_name="объявление",
     )
     date = models.DateTimeField(auto_now=True)
     advert_contacts_view = models.IntegerField()
     advert_views = models.IntegerField()
 
     def __str__(self):
-        return f'{self.advert.id}-{self.date}'
+        return f"{self.advert.id}-{self.date}"
 
     class Meta:
         verbose_name = "статистика объявления"
@@ -317,14 +323,15 @@ class AdvertReport(models.Model):
         Advert,
         on_delete=models.CASCADE,
         related_name="advert_reports",
-        verbose_name="объявление"
+        verbose_name="объявление",
     )
     report_message = models.TextField(null=True, blank=True)
     report = models.CharField(
         max_length=13,
         verbose_name="report_type",
         choices=StatusChoice.choices,
-        null=True, blank=True
+        null=True,
+        blank=True,
     )
 
     class Meta:

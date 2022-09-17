@@ -1,9 +1,9 @@
 from .base import *
 from decouple import config
 
-ALLOWED_HOSTS = ["*"]
-DEBUG = True
-BASE_API = "http://127.0.0.1:8000/api/v1/"
+DEBUG = False
+
+ALLOWED_HOSTS = ["188.225.83.42"]
 
 DATABASES = {
     "default": {
@@ -11,15 +11,13 @@ DATABASES = {
         "NAME": config("DB_NAME"),
         "USER": config("DB_USER"),
         "PASSWORD": config("DB_PASSWORD"),
-        "HOST": "localhost",
+        "HOST": config("DB_HOST"),
         "PORT": 5432,
-        'TEST': {
-            'NAME': 'test',
-        },
+
     }
 }
 
-REDIS_HOST = "localhost"
+REDIS_HOST = "redis"
 REDIS_PORT = 6379
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60

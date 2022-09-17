@@ -4,13 +4,13 @@ from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 
-
-from advert.serializers import advert_serializers as serializers
-from advert.serializers import permissions
+from advert.api import advert_serializers as serializers
 from phonenumber_field.validators import validate_international_phonenumber
-from advert.pagination import AdvertPagination
+from advert.selectors import advert_with_select_related_filter
+from advert.api.pagination import AdvertPagination
 from config.middleware import get_client_ip
 from advert.services import set_advert_contacts_count
+from advert.api import permissions
 from advert.models import (
     Advert,
     AdvertImage,
@@ -18,7 +18,7 @@ from advert.models import (
     AdvertContact,
     AdvertReport,
     FeedbackMessage,
-    PrivacyPolicy
+    PrivacyPolicy,
 )
 
 
@@ -27,7 +27,9 @@ class AdvertFilter(django_filters.FilterSet):
     image = django_filters.BooleanFilter(
         lookup_expr="isnull", field_name="advert_image"
     )
-    city = django_filters.ModelMultipleChoiceFilter(field_name='city', queryset=City.objects.all())
+    city = django_filters.ModelMultipleChoiceFilter(
+        field_name="city", queryset=City.objects.all()
+    )
 
     class Meta:
         model = Advert
@@ -40,12 +42,13 @@ class CityListView(ListAPIView):
 
 
 class AdvertViewSet(ModelViewSet):
-    queryset = Advert.objects.select_related('category', 'sub_category').filter(status="act")
+    queryset = advert_with_select_related_filter("act")
     serializer_class = serializers.AdvertCreateSerializer
     pagination_class = AdvertPagination
     filter_backends = [
         django_filters.rest_framework.DjangoFilterBackend,
-        filters.OrderingFilter, filters.SearchFilter,
+        filters.OrderingFilter,
+        filters.SearchFilter,
     ]
     permission_classes = [permissions.IsOwnerOrReadOnly]
     filterset_class = AdvertFilter
@@ -74,7 +77,7 @@ class AdvertViewSet(ModelViewSet):
         AdvertImage.objects.bulk_create(img_objects)
 
         ad_contacts = []
-        for contact in contacts[0].split(','):
+        for contact in contacts[0].split(","):
             validate_international_phonenumber(contact)
             ad_contacts.append(AdvertContact(advert=advert, phone_number=contact))
 
@@ -85,7 +88,7 @@ class AdvertViewSet(ModelViewSet):
     def get_serializer_class(self):
         if self.action == "list":
             return serializers.AdvertListSerializer
-        if self.action == 'retrieve':
+        if self.action == "retrieve":
             return serializers.AdvertDetailSerializer
         return super().get_serializer_class()
 
@@ -96,7 +99,8 @@ class PremiumAdvertView(ListAPIView):
     pagination_class = AdvertPagination
     filter_backends = [
         django_filters.rest_framework.DjangoFilterBackend,
-        filters.OrderingFilter, filters.SearchFilter,
+        filters.OrderingFilter,
+        filters.SearchFilter,
     ]
     filterset_class = AdvertFilter
     ordering_fields = ["created_date", "end_price"]
@@ -105,13 +109,15 @@ class PremiumAdvertView(ListAPIView):
 
 
 class ContactView(CreateAPIView):
-    queryset = AdvertContact.objects.select_related('category', 'sub_category').all()
+    queryset = AdvertContact.objects.select_related("category", "sub_category").all()
 
-    def post(self, request, advert_id:int,  *args, **kwargs):
+    def post(self, request, advert_id: int, *args, **kwargs):
         user = request.user
         ip = get_client_ip(request)
         set_advert_contacts_count(advert_id, str(user), ip)
-        return Response({"advert_contact": "counter updated"}, status=status.HTTP_200_OK)
+        return Response(
+            {"advert_contact": "counter updated"}, status=status.HTTP_200_OK
+        )
 
 
 class AdvertReportView(CreateAPIView):
@@ -120,7 +126,6 @@ class AdvertReportView(CreateAPIView):
 
 
 class UserAdvertFilter(django_filters.FilterSet):
-
     class Meta:
         model = Advert
         fields = ["status"]
@@ -130,9 +135,7 @@ class UserAdvertView(ListAPIView):
     serializer_class = serializers.AdvertListSerializer
     queryset = Advert.objects.all()
     filterset_class = UserAdvertFilter
-    filter_backends = [
-        django_filters.rest_framework.DjangoFilterBackend
-    ]
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
 
     def get_queryset(self):
         user = self.request.user
@@ -142,7 +145,7 @@ class UserAdvertView(ListAPIView):
 class UserAdvertUpdateView(UpdateAPIView):
     queryset = Advert.objects.all()
     serializer_class = serializers.AdvertCreateSerializer
-    lookup_field = 'pk'
+    lookup_field = "pk"
 
     def update(self, request, *args, **kwargs):
         instance = self.get_object()
@@ -153,7 +156,10 @@ class UserAdvertUpdateView(UpdateAPIView):
             return Response({"message": "advert updated successfully"})
 
         else:
-            return Response({"message": "failed", "details": serializer.errors}, status=status.HTTP_304_NOT_MODIFIED)
+            return Response(
+                {"message": "failed", "details": serializer.errors},
+                status=status.HTTP_304_NOT_MODIFIED,
+            )
 
 
 class FeedbackMessageView(ListAPIView):

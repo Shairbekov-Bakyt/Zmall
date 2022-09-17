@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
 from advert.models import FavoriteAdvert, Advert
-from advert.serializers.favorite_serializer import FavoriteSerializer
+from advert.api.favorite_serializers import FavoriteSerializer
 from advert.utils import get_request_data_for_favorite
 
 
@@ -16,11 +16,14 @@ class FavoriteUpdateDelete(UpdateAPIView):
     serializer_class = FavoriteSerializer
     permission_classes = [IsAuthenticated]
 
-    def put(self,request, advert_id, delete, *args, **kwargs):
+    def put(self, request, advert_id, delete, *args, **kwargs):
         try:
             Advert.objects.get_or_create(pk=advert_id)
         except:
-            return Response({"advert" : f"with id {advert_id} does not exists"}, status=status.HTTP_404_NOT_FOUND)
+            return Response(
+                {"advert": f"with id {advert_id} does not exists"},
+                status=status.HTTP_404_NOT_FOUND,
+            )
 
         advert = FavoriteAdvert.objects.get_or_create(user_id=request.user)[0]
         if delete:
@@ -33,11 +36,8 @@ class FavoriteUpdateDelete(UpdateAPIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-
-
-
 class FavoriteAdvertView(ModelViewSet):
-    queryset = FavoriteAdvert.objects.select_related('adverts', 'user_id').all()
+    queryset = FavoriteAdvert.objects.select_related("adverts", "user_id").all()
     serializer_class = FavoriteSerializer
     permission_classes = [IsAuthenticated]
 
@@ -51,7 +51,9 @@ class FavoriteAdvertView(ModelViewSet):
 
     def list(self, request):
         try:
-            query = FavoriteAdvert.objects.prefetch_related('adverts', 'user_id').get(user_id=request.user.id)
+            query = FavoriteAdvert.objects.prefetch_related("adverts", "user_id").get(
+                user_id=request.user.id
+            )
         except:
             return Response({"favorite": "empty"})
 

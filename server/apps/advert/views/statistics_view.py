@@ -3,7 +3,7 @@ from rest_framework.generics import ListAPIView
 from rest_framework import filters
 
 from advert.models import AdvertStatistics
-from advert.serializers import statistics_serializers as serializers
+from advert.api import statistics_serializers as serializers
 
 
 class AdvertStatisticsFilter(django_filters.FilterSet):
@@ -15,7 +15,7 @@ class StatisticsView(ListAPIView):
     serializer_class = serializers.StatisticsSerializer
     filter_backends = [
         django_filters.rest_framework.DjangoFilterBackend,
-        filters.OrderingFilter
+        filters.OrderingFilter,
     ]
     filterset_class = AdvertStatisticsFilter
     ordering_fields = ["date"]

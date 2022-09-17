@@ -3,7 +3,7 @@ import json
 from rest_framework import serializers
 
 from user.models import CustomUser
-from apps.advert.utils import connect_to_redis
+from advert.utils import connect_to_redis
 from advert.models import (
     Advert,
     AdvertContact,
@@ -14,14 +14,14 @@ from advert.models import (
     AdvertReport,
     Promote,
     FeedbackMessage,
-    PrivacyPolicy
+    PrivacyPolicy,
 )
 
 
 class CitySerializer(serializers.ModelSerializer):
     class Meta:
         model = City
-        fields = '__all__'
+        fields = "__all__"
 
 
 class AdvertContactSerailzer(serializers.ModelSerializer):
@@ -53,9 +53,7 @@ class AdvertCreateSerializer(serializers.ModelSerializer):
         slug_field="id", queryset=SubCategory.objects.all()
     )
     promote = serializers.SlugRelatedField(
-        slug_field="types",
-        queryset=Promote.objects.all(),
-        allow_null=True
+        slug_field="types", queryset=Promote.objects.all(), allow_null=True
     )
     city = serializers.SlugRelatedField(slug_field="id", queryset=City.objects.all())
 
@@ -92,7 +90,7 @@ class AdvertListSerializer(serializers.ModelSerializer):
             "views",
             "city",
             "created_date",
-            "description"
+            "description",
         )
 
 
@@ -102,9 +100,9 @@ class AdvertDetailSerializer(serializers.ModelSerializer):
     )
     owner = CustomUserSerializer()
     advert_contact = AdvertContactSerailzer(many=True)
-    city = serializers.SlugRelatedField(slug_field="name", read_only=True)
+    city = serializers.SlugRelatedField(slug_field="id", read_only=True)
     advert_image = AdvertImageSerializer(many=True)
-    views = serializers.SerializerMethodField(source='get_views', read_only=True)
+    views = serializers.SerializerMethodField(source="get_views", read_only=True)
 
     class Meta:
         model = Advert
@@ -113,23 +111,23 @@ class AdvertDetailSerializer(serializers.ModelSerializer):
     def get_views(self, instance):
         view = connect_to_redis()
         redis_views = json.loads(view.get(instance.id).decode("utf-8"))
-        ad_views = redis_views['views_counter']
+        ad_views = redis_views["views_counter"]
         return ad_views
 
 
 class AdvertReportSerializer(serializers.ModelSerializer):
     class Meta:
         model = AdvertReport
-        fields = '__all__'
+        fields = "__all__"
 
 
 class FeedbackMessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = FeedbackMessage
-        fields = ('text',)
+        fields = ("text",)
 
 
 class PrivacyPolicySerializer(serializers.ModelSerializer):
     class Meta:
         model = PrivacyPolicy
-        fields = ('title', 'text')
+        fields = ("title", "text")

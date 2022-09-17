@@ -16,11 +16,12 @@ from advert.models import (
     AdvertReport,
     Feedback,
     FeedbackMessage,
-    PrivacyPolicy
+    PrivacyPolicy,
 )
 
 admin.site.register(City)
 admin.site.register(Feedback)
+admin.site.register(Comment)
 
 
 class AdvertImageInline(admin.TabularInline):
@@ -57,10 +58,6 @@ class AdvertReportInline(admin.StackedInline):
         return "empty"
 
 
-
-
-
-
 class HelpInline(admin.StackedInline):
     model = Help
     readonly_fields = ("view",)
@@ -72,14 +69,16 @@ class SubCategoryInline(admin.StackedInline):
 
 @admin.register(Advert)
 class AdvertAdmin(admin.ModelAdmin):
-    inlines = [AdvertImageInline, AdvertContactInline,
-               CommentInline, AdvertReportInline,
-               AdvertStatisticsInline]
+    inlines = [
+        AdvertImageInline,
+        AdvertContactInline,
+        CommentInline,
+        AdvertReportInline,
+        AdvertStatisticsInline,
+    ]
 
     class Meta:
         model = Advert
-
-
 
 
 @admin.register(Category)
@@ -103,7 +102,6 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Promote)
 class PromoteAdmin(admin.ModelAdmin):
-
     def has_add_permission(self, request):
         has_add = super().has_add_permission(request)
         if has_add and Promote.objects.count() >= 3:
@@ -124,7 +122,6 @@ class HelpCategoryAdmin(admin.ModelAdmin):
 
 @admin.register(FeedbackMessage)
 class FeedbackMessageAdmin(admin.ModelAdmin):
-
     def has_add_permission(self, request):
         has_add = super().has_add_permission(request)
         if has_add and FeedbackMessage.objects.exists():
@@ -137,7 +134,6 @@ class FeedbackMessageAdmin(admin.ModelAdmin):
 
 @admin.register(PrivacyPolicy)
 class PrivacyPolicyAdmin(admin.ModelAdmin):
-
     def has_add_permission(self, request):
         has_add = super().has_add_permission(request)
         if has_add and PrivacyPolicy.objects.exists():
