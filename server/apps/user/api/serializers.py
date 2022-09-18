@@ -8,6 +8,7 @@ from rest_framework.validators import UniqueValidator
 from user.models import CustomUser as User
 from user.selectors import get_user_by_email
 
+
 class ForgotPasswordSerializer(serializers.Serializer):
     new_password = serializers.CharField(required=True, validators=[validate_password])
     confirm_password = serializers.CharField(
@@ -41,18 +42,22 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
     def validate(self, attrs):
         data = super(MyTokenObtainPairSerializer, self).validate(attrs)
-        user = get_user_by_email(attrs['email'])
-        data['is_superuser'] = user.is_superuser
-        data['user_id'] = user.id
-        data['first_name'] = user.first_name
-        data['last_name'] = user.last_name
-        data['phone_number'] = str(user.phone_number)
-        data['email'] = user.email
+        user = get_user_by_email(attrs["email"])
+        data["is_superuser"] = user.is_superuser
+        data["user_id"] = user.id
+        data["first_name"] = user.first_name
+        data["last_name"] = user.last_name
+        data["phone_number"] = str(user.phone_number)
+        data["email"] = user.email
         return data
+
 
 class RegisterSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(
-        required=True, validators=[UniqueValidator(queryset=User.objects.all(), message='email уже занят')]
+        required=True,
+        validators=[
+            UniqueValidator(queryset=User.objects.all(), message="email уже занят")
+        ],
     )
     password = serializers.CharField(
         write_only=True, required=True, validators=[validate_password]

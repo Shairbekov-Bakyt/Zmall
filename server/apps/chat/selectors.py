@@ -1,10 +1,13 @@
-from chat.models import Chat
+from django.db.models import Q
 
-def get_messages_from_user(request):
-    return Chat.objects.select_related('from_user', 'to_user', 'advert').filter(from_user=request.user)
+from chat.models import Chat, Room
 
-def get_messages_to_user(request):
-    return Chat.objects.select_related('from_user', 'to_user', 'advert').filter(to_user=request.user)
 
-def get_messages_from_advert_id(request, pk):
-    return Chat.objects.select_related('from_user', 'to_user', 'advert').filter(advert=pk).order_by('-date')
+def get_user_channels(user):
+    return Room.objects.filter(Q(owner=user) | Q(user=user))
+
+
+def get_user_messages_in_channels(user, channel):
+    return Chat.objects.filter(
+        Q(to_user=user, room=channel) | Q(from_user=user, room=channel)
+    )

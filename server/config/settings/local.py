@@ -1,5 +1,6 @@
 from .base import *
 from decouple import config
+import datetime
 
 ALLOWED_HOSTS = ["*"]
 DEBUG = True
@@ -13,8 +14,8 @@ DATABASES = {
         "PASSWORD": config("DB_PASSWORD"),
         "HOST": "localhost",
         "PORT": 5432,
-        'TEST': {
-            'NAME': 'test',
+        "TEST": {
+            "NAME": "test",
         },
     }
 }
@@ -29,3 +30,9 @@ CELERY_BROKER_TRANSPORT_OPTIONS = {"visibility_timeout": 3600}
 CELERY_ACCEPT_CONTENT = ["application/json"]
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
+
+JWT_AUTH = {
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(days=2),
+    'JWT_ALLOW_REFRESH': True,
+    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=7),
+}

@@ -49,5 +49,3 @@ class UserTest(TestCase):
         success_data = {"email": "Successfully activated"}
         self.assertEqual(success_data, response.data)
         self.assertEqual(after_activate.is_active, True)
-
-

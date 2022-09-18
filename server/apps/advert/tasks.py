@@ -1,29 +1,20 @@
 import json
+from celery import shared_task
 
-from celery import shared_task, Celery, schedules
-
-from advert.services import send_advert_to_email
 from advert.models import Advert, AdvertStatistics
 from advert.utils import connect_to_redis
-from user.models import CustomUser as User
-
-app = Celery()
-
-
-# @shared_task
-# def task_send_advert_to_email():
-#     emails = list(User.objects.filter(is_active=True).values_list('email', flat=True))
-#     send_advert_to_email(emails)
-#     return 1
+from advert.web_scraping.salexy import salexy
+from advert.web_scraping.doska import doska
 
 
-app.conf.save_advert_statistics_schedule = {
-    "add-every-morning": {
-        "task": "tasks.add",
-        "schedule": schedules.crontab(minute="*/2"),
-        "args": (16, 16),
-    },
-}
+@shared_task
+def task_salexy():
+    salexy()
+
+
+@shared_task
+def task_doska():
+    doska()
 
 
 @shared_task

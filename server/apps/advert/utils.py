@@ -1,3 +1,5 @@
+import re
+
 import redis
 from django.conf import settings
 
@@ -11,3 +13,10 @@ def get_request_data_for_favorite(request):
     data = dict(request.data)
     data["user_id"] = request.user.id
     return data
+
+
+def get_price_from_description(data: str) -> int:
+    new_data = re.findall(r"\d+", data)
+    if new_data:
+        return int("".join(new_data))
+    return 0

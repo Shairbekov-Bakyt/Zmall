@@ -41,16 +41,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     "user",
     "advert",
-    "web_scraping",
     "chat",
     "custom_admin",
     "social_auth",
-
     "rest_framework",
-    'rest_framework_simplejwt',
+    "rest_framework_simplejwt",
     "corsheaders",
     "drf_yasg",
     "celery",
@@ -115,8 +112,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
     )
 }
 
@@ -133,23 +130,22 @@ USE_I18N = True
 USE_TZ = True
 
 
-
 CELERY_BEAT_SCHEDULE = {
-      'advert_task_start_every_day': {
-        'task': 'advert.tasks.task_send_advert_to_email',
-        'schedule': crontab(hour=23),
-        'args': '',
-        'options': {
-            'expires': 15.0,
+    "advert_task_start_every_day": {
+        "task": "advert.tasks.task_send_advert_to_email",
+        "schedule": crontab(hour=23),
+        "args": "",
+        "options": {
+            "expires": 15.0,
         },
     },
-    'add-every-morning': {
-        'task': 'advert.tasks.task_save_advert_statistics',
-        'schedule': crontab(minute=0, hour=0)
+    "add-every-morning": {
+        "task": "advert.tasks.task_save_advert_statistics",
+        "schedule": crontab(minute=0, hour=0),
     },
 }
 
-'''
+"""
       'scraping_salexy_task_start_four_hour': {
         'task': 'web_scraping.tasks.task_salexy',
         'schedule': crontab(hour=4),
@@ -167,7 +163,7 @@ CELERY_BEAT_SCHEDULE = {
         },
     },
 }
-'''
+"""
 
 
 # Static files (CSS, JavaScript, Images)
@@ -194,47 +190,39 @@ JAZZMIN_SETTINGS = {
 }
 
 LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'loggers': {
-        '': {
-            'handlers': ['error', 'info', 'debug'],
-            'level': 1
-        }
-    },
-    'handlers': {
-        'std_err': {
-            'class': 'logging.StreamHandler'
+    "version": 1,
+    "disable_existing_loggers": False,
+    "loggers": {"": {"handlers": ["error", "info", "debug"], "level": 1}},
+    "handlers": {
+        "std_err": {"class": "logging.StreamHandler"},
+        "info": {
+            "class": "logging.FileHandler",
+            "filename": "log/info.log",
+            "level": "INFO",
+            "formatter": "default",
         },
-        'info': {
-            'class': 'logging.FileHandler',
-            'filename': 'log/info.log',
-            'level': 'INFO',
-            'formatter': 'default',
+        "error": {
+            "class": "logging.FileHandler",
+            "filename": "log/error.log",
+            "level": "ERROR",
+            "formatter": "error",
         },
-        'error': {
-            'class': 'logging.FileHandler',
-            'filename': 'log/error.log',
-            'level': 'ERROR',
-            'formatter': 'error',
-        },
-        'debug': {
-            'class': 'logging.FileHandler',
-            'filename': 'log/debug.log',
-            'level': 'DEBUG',
-            'formatter': 'default',
+        "debug": {
+            "class": "logging.FileHandler",
+            "filename": "log/debug.log",
+            "level": "DEBUG",
+            "formatter": "default",
         },
     },
-    'formatters': {
-        'default': {
-            'format': '%(asctime)s [%(module)s | %(levelname)s] %(message)s',
+    "formatters": {
+        "default": {
+            "format": "%(asctime)s [%(module)s | %(levelname)s] %(message)s",
         },
-        'error': {
-            'format': '%(asctime)s [%(module)s | %(levelname)s] %(message)s @ %(pathname)s : %(lineno)d : %(funcName)s',
+        "error": {
+            "format": "%(asctime)s [%(module)s | %(levelname)s] %(message)s @ %(pathname)s : %(lineno)d : %(funcName)s",
         },
     },
 }
-
 
 
 CORS_ALLOW_HEADERS = [
@@ -269,6 +257,4 @@ CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1:3000",
 ]
 
-CSRF_TRUSTED_ORIGINS = ['http://188.225.83.42:8000', 'http://127.0.0.1:8000']
-
-
+CSRF_TRUSTED_ORIGINS = ["http://188.225.83.42:8000", "http://127.0.0.1:8000"]

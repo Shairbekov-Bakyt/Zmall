@@ -9,7 +9,8 @@ class Room(models.Model):
         CustomUser,
         on_delete=models.CASCADE,
         verbose_name="получатель",
-        related_name="room_owner_user",)
+        related_name="room_owner_user",
+    )
     user = models.ForeignKey(
         CustomUser,
         on_delete=models.CASCADE,
@@ -23,11 +24,9 @@ class Room(models.Model):
     def __str__(self) -> str:
         return f"{self.id}-{self.owner}-{self.user}"
 
+
 class Chat(models.Model):
-    room = models.ForeignKey(
-        Room,
-        on_delete=models.CASCADE,
-        verbose_name='канал')
+    room = models.ForeignKey(Room, on_delete=models.CASCADE, verbose_name="канал")
 
     from_user = models.ForeignKey(
         CustomUser,

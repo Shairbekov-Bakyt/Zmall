@@ -5,7 +5,7 @@ from rest_framework.routers import DefaultRouter
 from chat.views import RoomViewSet, ChatCreateView
 
 router = DefaultRouter()
-router.register('chat_room', RoomViewSet)
+router.register("chat_room", RoomViewSet)
 
 
 urlpatterns = [

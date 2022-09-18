@@ -7380,3 +7380,98 @@ AttributeError: 'RawQuerySet' object has no attribute 'filter'
 2022-09-17 18:13:35,474 [autoreload | INFO] Watching for file changes with StatReloader
 2022-09-17 18:16:22,027 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/views/comment_view.py changed, reloading.
 2022-09-17 18:16:22,491 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-18 07:04:44,294 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-18 07:04:45,809 [log | WARNING] Not Found: /
+2022-09-18 07:04:46,102 [log | WARNING] Not Found: /favicon.ico
+2022-09-18 07:05:04,018 [PngImagePlugin | DEBUG] STREAM b'IHDR' 16 13
+2022-09-18 07:05:04,018 [PngImagePlugin | DEBUG] STREAM b'iCCP' 41 3137
+2022-09-18 07:05:04,018 [PngImagePlugin | DEBUG] iCCP profile name b'ICC Profile'
+2022-09-18 07:05:04,019 [PngImagePlugin | DEBUG] Compression method 0
+2022-09-18 07:05:04,019 [PngImagePlugin | DEBUG] STREAM b'eXIf' 3190 138
+2022-09-18 07:05:04,019 [PngImagePlugin | DEBUG] STREAM b'pHYs' 3340 9
+2022-09-18 07:05:04,019 [PngImagePlugin | DEBUG] STREAM b'iTXt' 3361 472
+2022-09-18 07:05:04,019 [PngImagePlugin | DEBUG] STREAM b'iDOT' 3845 28
+2022-09-18 07:05:04,019 [PngImagePlugin | DEBUG] b'iDOT' 3845 28 (unknown)
+2022-09-18 07:05:04,019 [PngImagePlugin | DEBUG] STREAM b'IDAT' 3885 16384
+2022-09-18 07:05:04,020 [Image | DEBUG] Importing BlpImagePlugin
+2022-09-18 07:05:04,021 [Image | DEBUG] Importing BmpImagePlugin
+2022-09-18 07:05:04,021 [Image | DEBUG] Importing BufrStubImagePlugin
+2022-09-18 07:05:04,021 [Image | DEBUG] Importing CurImagePlugin
+2022-09-18 07:05:04,022 [Image | DEBUG] Importing DcxImagePlugin
+2022-09-18 07:05:04,022 [Image | DEBUG] Importing DdsImagePlugin
+2022-09-18 07:05:04,023 [Image | DEBUG] Importing EpsImagePlugin
+2022-09-18 07:05:04,023 [Image | DEBUG] Importing FitsImagePlugin
+2022-09-18 07:05:04,024 [Image | DEBUG] Importing FitsStubImagePlugin
+2022-09-18 07:05:04,024 [Image | DEBUG] Importing FliImagePlugin
+2022-09-18 07:05:04,024 [Image | DEBUG] Importing FpxImagePlugin
+2022-09-18 07:05:04,025 [Image | DEBUG] Image: failed to import FpxImagePlugin: No module named 'olefile'
+2022-09-18 07:05:04,025 [Image | DEBUG] Importing FtexImagePlugin
+2022-09-18 07:05:04,025 [Image | DEBUG] Importing GbrImagePlugin
+2022-09-18 07:05:04,025 [Image | DEBUG] Importing GifImagePlugin
+2022-09-18 07:05:04,025 [Image | DEBUG] Importing GribStubImagePlugin
+2022-09-18 07:05:04,026 [Image | DEBUG] Importing Hdf5StubImagePlugin
+2022-09-18 07:05:04,026 [Image | DEBUG] Importing IcnsImagePlugin
+2022-09-18 07:05:04,027 [Image | DEBUG] Importing IcoImagePlugin
+2022-09-18 07:05:04,028 [Image | DEBUG] Importing ImImagePlugin
+2022-09-18 07:05:04,028 [Image | DEBUG] Importing ImtImagePlugin
+2022-09-18 07:05:04,029 [Image | DEBUG] Importing IptcImagePlugin
+2022-09-18 07:05:04,029 [Image | DEBUG] Importing JpegImagePlugin
+2022-09-18 07:05:04,029 [Image | DEBUG] Importing Jpeg2KImagePlugin
+2022-09-18 07:05:04,029 [Image | DEBUG] Importing McIdasImagePlugin
+2022-09-18 07:05:04,030 [Image | DEBUG] Importing MicImagePlugin
+2022-09-18 07:05:04,030 [Image | DEBUG] Image: failed to import MicImagePlugin: No module named 'olefile'
+2022-09-18 07:05:04,030 [Image | DEBUG] Importing MpegImagePlugin
+2022-09-18 07:05:04,030 [Image | DEBUG] Importing MpoImagePlugin
+2022-09-18 07:05:04,031 [Image | DEBUG] Importing MspImagePlugin
+2022-09-18 07:05:04,031 [Image | DEBUG] Importing PalmImagePlugin
+2022-09-18 07:05:04,033 [Image | DEBUG] Importing PcdImagePlugin
+2022-09-18 07:05:04,033 [Image | DEBUG] Importing PcxImagePlugin
+2022-09-18 07:05:04,033 [Image | DEBUG] Importing PdfImagePlugin
+2022-09-18 07:05:04,040 [Image | DEBUG] Importing PixarImagePlugin
+2022-09-18 07:05:04,041 [Image | DEBUG] Importing PngImagePlugin
+2022-09-18 07:05:04,041 [Image | DEBUG] Importing PpmImagePlugin
+2022-09-18 07:05:04,041 [Image | DEBUG] Importing PsdImagePlugin
+2022-09-18 07:05:04,041 [Image | DEBUG] Importing SgiImagePlugin
+2022-09-18 07:05:04,041 [Image | DEBUG] Importing SpiderImagePlugin
+2022-09-18 07:05:04,041 [Image | DEBUG] Importing SunImagePlugin
+2022-09-18 07:05:04,042 [Image | DEBUG] Importing TgaImagePlugin
+2022-09-18 07:05:04,042 [Image | DEBUG] Importing TiffImagePlugin
+2022-09-18 07:05:04,042 [Image | DEBUG] Importing WebPImagePlugin
+2022-09-18 07:05:04,923 [Image | DEBUG] Importing WmfImagePlugin
+2022-09-18 07:05:04,930 [Image | DEBUG] Importing XbmImagePlugin
+2022-09-18 07:05:04,934 [Image | DEBUG] Importing XpmImagePlugin
+2022-09-18 07:05:04,935 [Image | DEBUG] Importing XVThumbImagePlugin
+2022-09-18 07:06:43,907 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/views.py changed, reloading.
+2022-09-18 07:06:44,386 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-18 07:08:43,759 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/config/settings/local.py changed, reloading.
+2022-09-18 07:08:44,221 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-18 07:08:50,737 [log | WARNING] Not Found: /
+2022-09-18 07:08:51,028 [log | WARNING] Not Found: /favicon.ico
+2022-09-18 07:09:02,559 [base | WARNING] view's ContactView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'ContactView' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-18 07:09:02,564 [base | WARNING] view's ContactView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'ContactView' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-18 07:09:02,580 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-18 07:09:13,578 [log | WARNING] Unauthorized: /api/v1/chat_room/

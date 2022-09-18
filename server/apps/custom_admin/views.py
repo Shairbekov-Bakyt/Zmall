@@ -28,15 +28,14 @@ class AdvertFilter(django_filters.FilterSet):
     )
 
 
-
 class AdvertViewSet(ModelViewSet):
-    queryset = Advert.objects.select_related('category', 'sub_category').all()
+    queryset = Advert.objects.select_related("category", "sub_category").all()
     serializer_class = AdvertCreateSerializer
     filterset_class = AdvertFilter
     filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
     pagination_class = AdvertPagination
     permission_classes = [IsAdminUser]
-    http_method_names = ["get", 'put', 'delete']
+    http_method_names = ["get", "put", "delete"]
 
     def create(self, request, *args, **kwargs):
         imgs = request.FILES.getlist("image")
@@ -59,7 +58,7 @@ class AdvertViewSet(ModelViewSet):
         AdvertImage.objects.bulk_create(img_objects)
 
         ad_contacts = []
-        for contact in contacts[0].split(','):
+        for contact in contacts[0].split(","):
             validate_international_phonenumber(contact)
             ad_contacts.append(AdvertContact(advert=advert, phone_number=contact))
 
@@ -70,6 +69,6 @@ class AdvertViewSet(ModelViewSet):
     def get_serializer_class(self):
         if self.action == "list":
             return AdvertListSerializer
-        if self.action == 'retrieve':
+        if self.action == "retrieve":
             return AdvertDetailSerializer
         return super().get_serializer_class()
