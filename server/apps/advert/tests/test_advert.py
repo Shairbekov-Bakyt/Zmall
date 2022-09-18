@@ -1,21 +1,24 @@
+import json
+
 from django.test import TestCase, Client
+from rest_framework import status
 from rest_framework.reverse import reverse
 
 from config.settings.local import BASE_API
 from advert.serializers.advert_serializers import (
+    AdvertListSerializer,
     AdvertCreateSerializer,
     CitySerializer,
 )
 from advert.models import Advert, Category, SubCategory, City, Promote
 from user.models import CustomUser
 
-
 client = Client()
 
 
 class AdvertTest(TestCase):
     ADVERT_API = BASE_API + "advert/"
-    CITY_API = BASE_API + "city/"
+
 
     def setUp(self):
         CustomUser.objects.create_user(
@@ -26,6 +29,7 @@ class AdvertTest(TestCase):
             is_active=True,
             password='test'
         )
+
         self.owner = CustomUser.objects.get(email="test@gmail.com")
         Category.objects.create(
             id=1,
@@ -44,61 +48,67 @@ class AdvertTest(TestCase):
             name="Bishkek",
         )
         self.promote = Promote.objects.create(
+            id =1,
             title="test",
             description="test",
             price=200,
-            types="vip"
+            types="urgently"
         )
 
-    def test_advert_post(self):
-        print(self.category)
-        data_for_post = {
-            "owner": self.owner,
+        self.data_for_post = {
+            "id": 1,
+            "owner": self.owner.id,
             "name": "Test ad",
-            "category": self.category,
-            "sub_category": self.sub_category,
+            "category": self.category.id,
+            "sub_category": self.sub_category.id,
             "start_price": 20,
             "end_price": 200,
             "description": "Test description",
-            "city": self.city,
+            "city": self.city.id,
             "email": "test@gmail.com",
             "wa_number": "+996500123456",
-            "promote": self.promote
         }
-        advert = Advert.objects.create(
-            owner = self.owner,
-            name = "Test ad",
-            category = self.category,
-            sub_category = self.sub_category,
-            start_price = 20,
-            end_price = 200,
-            description = "Test description",
-            city = self.city,
-            email = "test@gmail.com",
-            wa_number = "+996500123456",
-            promote = self.promote
-        )
-        client.login(email='test@gmail.com', password='test')
 
-        response = client.post(self.ADVERT_API, data_for_post)
+    def test_advert_post(self):
+
+        client.login(email='test@gmail.com', password='test')
+        self.data_for_post['advert_contact'] = [
+                "+996500123456",
+                "+996500123456",
+                "+996500123456",
+            ]
+        self.data_for_post['promote'] = ''
+        response = client.post(self.ADVERT_API, self.data_for_post)
         data_from_url = response.data
+        advert = Advert.objects.get(pk=1)
         data_from_db = AdvertCreateSerializer(advert).data
-        print(data_from_url)
+        self.assertEqual(status.HTTP_201_CREATED, response.status_code)
         self.assertEqual(data_from_db, data_from_url)
 
-    # def test_city(self):
-    #     data_for_post = {
-    #         "name": "test"
+    def test_advert_get(self):
+        response = client.get(self.ADVERT_API)
+        data_from_url = response.data['results']
+        advert = Advert.objects.all()
+        data_from_db = AdvertListSerializer(advert, many=True).data
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+        self.assertEqual(data_from_db, data_from_url)
+
+    # def test_advert_patch(self):
+    #     self.data_for_post['advert_contact'] = [
+    #         "+996500123456",
+    #         "+996500123456",
+    #         "+996500123456",
+    #     ]
+    #     self.data_for_post['promote'] = ''
+    #     response = client.post(self.ADVERT_API, self.data_for_post)
+    #     ADVERT_API = self.ADVERT_API + '1/'
+    #     self.data_for_post['promote'] = {
+    #         "promote": self.promote.id,
     #     }
-    #     advert = City.objects.create(**data_for_post)
-    #
-    #     response = client.post(self.CITY_API, data_for_post)
+    #     response = client.put(ADVERT_API, self.data_for_post)
+    #     print(response.data)
     #     data_from_url = response.data
-    #     data_from_db = CitySerializer(advert).data
-    #     print(data_from_db)
-    #     print(data_from_url)
-    #     self.assertEqual(data_from_db, data_from_url)
-
-
-
-
+    #     # advert = Advert.objects.get(pk=1)
+    #     # data_from_db = AdvertCreateSerializer(advert).data
+    #     self.assertEqual(status.HTTP_200_OK, response.status_code)
+    #     # self.assertEqual(data_from_db, data_from_url)

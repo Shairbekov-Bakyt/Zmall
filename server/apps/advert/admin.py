@@ -40,7 +40,6 @@ class CommentInline(admin.StackedInline):
 
 class AdvertStatisticsInline(admin.StackedInline):
     model = AdvertStatistics
-    readonly_fields = ("advert_contacts_view", "advert_views", "date")
 
 
 class AdvertReportInline(admin.StackedInline):

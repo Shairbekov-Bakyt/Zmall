@@ -7,10 +7,15 @@ from rest_framework.response import Response
 
 from advert.serializers import advert_serializers as serializers
 from advert.serializers import permissions
-from phonenumber_field.validators import validate_international_phonenumber
 from advert.pagination import AdvertPagination
 from config.middleware import get_client_ip
-from advert.services import set_advert_contacts_count
+from advert.services import (
+    set_advert_contacts_count,
+    create_ad_imgs,
+    create_ad_contacts,
+    delete_ad_imgs,
+    delete_ad_contacts
+)
 from advert.models import (
     Advert,
     AdvertImage,
@@ -55,32 +60,33 @@ class AdvertViewSet(ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         imgs = request.FILES.getlist("image")
-        if len(imgs) > 8:
-            raise serializers.ValidationError("Максимальное кол-во изображений: 8")
-
         contacts = request.data.getlist("advert_contact")
-
-        if len(imgs) > 8:
-            raise serializers.ValidationError("Максимальное кол-во контактов: 8")
 
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         advert = serializer.save()
 
-        img_objects = []
-        for img in imgs:
-            img_objects.append(AdvertImage(advert=advert, image=img))
-
-        AdvertImage.objects.bulk_create(img_objects)
-
-        ad_contacts = []
-        for contact in contacts[0].split(','):
-            validate_international_phonenumber(contact)
-            ad_contacts.append(AdvertContact(advert=advert, phone_number=contact))
-
-        AdvertContact.objects.bulk_create(ad_contacts)
+        create_ad_imgs(advert, imgs)
+        create_ad_contacts(advert, contacts)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    def update(self, request, *args, **kwargs):
+        instance = self.get_object()
+        imgs = request.FILES.getlist("image")
+        contacts = request.data.getlist("advert_contact")
+
+        delete_ad_imgs(instance.id)
+        delete_ad_contacts(instance.id)
+
+        serializer = self.get_serializer(instance, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+
+        create_ad_imgs(instance, imgs)
+        create_ad_contacts(instance, contacts)
+
+        return Response(serializer.data)
 
     def get_serializer_class(self):
         if self.action == "list":
@@ -127,7 +133,7 @@ class UserAdvertFilter(django_filters.FilterSet):
 
 
 class UserAdvertView(ListAPIView):
-    serializer_class = serializers.AdvertListSerializer
+    serializer_class = serializers.UserAdvertDetailSerializer
     queryset = Advert.objects.all()
     filterset_class = UserAdvertFilter
     filter_backends = [
