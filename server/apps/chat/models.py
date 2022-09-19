@@ -2,7 +2,6 @@ from django.db import models
 
 from user.models import CustomUser
 from advert.models import Advert
-# from advert.selectors import get_all_messages_notification
 
 
 class Room(models.Model):
@@ -25,9 +24,10 @@ class Room(models.Model):
     def __str__(self) -> str:
         return f"{self.id}-{self.owner}-{self.user}"
 
-    # @property
-    # def get_notification(self):
-    #     all_notification = get_all_messages_notification()
+    @property
+    def get_notification(self):
+        all_notification = Chat.objects.filter(models.Q(to_user=self.user) | models.Q(to_user=self.owner), is_read=False).count()
+        return all_notification
 
 
 

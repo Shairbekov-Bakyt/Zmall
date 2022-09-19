@@ -14728,3 +14728,239 @@ AssertionError: 'VerifyEmail' should either include a `serializer_class` attribu
 2022-09-19 18:05:25,626 [log | WARNING] Unauthorized: /api/v1/user/change/user/
 2022-09-19 18:05:58,629 [log | WARNING] Bad Request: /api/v1/user/change/user/
 2022-09-19 18:06:29,405 [log | WARNING] Unauthorized: /api/v1/user/login/
+2022-09-19 18:11:34,886 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:11:59,422 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/advert/selectors.py changed, reloading.
+2022-09-19 18:11:59,843 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:12:08,886 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:12:17,443 [base | WARNING] view's ContactView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'ContactView' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-19 18:12:17,447 [base | WARNING] view's ContactView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'ContactView' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-19 18:12:17,466 [base | WARNING] view's VerifyEmail raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/generics.py", line 108, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/generics.py", line 122, in get_serializer_class
+    assert self.serializer_class is not None, (
+AssertionError: 'VerifyEmail' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+2022-09-19 18:12:33,836 [log | WARNING] Unauthorized: /api/v1/user/login/
+2022-09-19 18:13:04,726 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:13:10,028 [log | WARNING] Unauthorized: /api/v1/user/login/
+2022-09-19 18:13:14,550 [log | WARNING] Unauthorized: /api/v1/user/login/
+2022-09-19 18:14:44,052 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:15:34,585 [log | ERROR] Internal Server Error: /api/v1/chat_room/5/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 33, in retrieve
+    print(room.get_notification())
+TypeError: 'int' object is not callable
+2022-09-19 18:15:55,805 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/views.py changed, reloading.
+2022-09-19 18:15:56,407 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:16:42,385 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/views.py changed, reloading.
+2022-09-19 18:16:42,898 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:21:04,893 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/views.py changed, reloading.
+2022-09-19 18:21:05,396 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:21:19,095 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/views.py changed, reloading.
+2022-09-19 18:21:19,639 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:21:27,175 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/views.py changed, reloading.
+2022-09-19 18:21:27,662 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:21:28,554 [log | ERROR] Internal Server Error: /api/v1/chat_room/5/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 34, in retrieve
+    notificate_user(request.user)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/services.py", line 12, in notificate_user
+    rooms = get_user_channels.values_list('id', flat=True)
+AttributeError: 'function' object has no attribute 'values_list'
+2022-09-19 18:21:41,538 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/services.py changed, reloading.
+2022-09-19 18:21:42,071 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:21:43,215 [log | ERROR] Internal Server Error: /api/v1/chat_room/5/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 34, in retrieve
+    notificate_user(request.user)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/services.py", line 12, in notificate_user
+    rooms = get_user_channels().values_list('id', flat=True)
+TypeError: get_user_channels() missing 1 required positional argument: 'user'
+2022-09-19 18:21:49,623 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/services.py changed, reloading.
+2022-09-19 18:21:50,111 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:22:42,300 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/services.py changed, reloading.
+2022-09-19 18:22:42,789 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:22:47,208 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/services.py changed, reloading.
+2022-09-19 18:22:47,570 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:23:05,752 [log | WARNING] Forbidden: /api/v1/message/
+2022-09-19 18:23:28,082 [log | WARNING] Unauthorized: /api/v1/message/
+2022-09-19 18:24:02,409 [log | WARNING] Method Not Allowed: /api/v1/message/
+2022-09-19 18:25:01,292 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/services.py changed, reloading.
+2022-09-19 18:25:01,798 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:25:10,330 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/services.py changed, reloading.
+2022-09-19 18:25:10,794 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:25:12,054 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/services.py changed, reloading.
+2022-09-19 18:25:12,378 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:25:33,591 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/services.py changed, reloading.
+2022-09-19 18:25:34,102 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:26:37,237 [log | WARNING] Forbidden: /api/v1/chat_room/
+2022-09-19 18:26:41,156 [log | WARNING] Unauthorized: /api/v1/chat_room/
+2022-09-19 18:26:59,458 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/services.py changed, reloading.
+2022-09-19 18:26:59,944 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:27:13,541 [log | ERROR] Internal Server Error: /api/v1/chat_room/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 56, in create
+    obj = Room.objects.get(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+chat.models.Room.DoesNotExist: Room matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "chat_room_user_id_key"
+DETAIL:  Key (user_id)=(1) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/chat/views.py", line 67, in create
+    serializer.save()
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 671, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 831, in save
+    self.save_base(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 882, in save_base
+    updated = self._save_table(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 1025, in _save_table
+    results = self._do_insert(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/base.py", line 1066, in _do_insert
+    return manager._insert(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/query.py", line 1790, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1657, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "chat_room_user_id_key"
+DETAIL:  Key (user_id)=(1) already exists.
+
+2022-09-19 18:27:40,134 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/services.py changed, reloading.
+2022-09-19 18:27:40,655 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:29:21,218 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/models.py changed, reloading.
+2022-09-19 18:29:21,711 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:29:42,223 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/models.py changed, reloading.
+2022-09-19 18:29:42,651 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:30:05,125 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/models.py changed, reloading.
+2022-09-19 18:30:05,505 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:30:20,409 [log | WARNING] Forbidden: /api/v1/chat_room/
+2022-09-19 18:30:46,449 [log | WARNING] Unauthorized: /api/v1/message/
+2022-09-19 18:31:28,232 [log | WARNING] Unauthorized: /api/v1/chat_room/9/
+2022-09-19 18:32:25,784 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/services.py changed, reloading.
+2022-09-19 18:32:26,284 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:32:45,386 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/services.py changed, reloading.
+2022-09-19 18:32:45,864 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:34:08,005 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/services.py changed, reloading.
+2022-09-19 18:34:08,527 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:34:13,939 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/services.py changed, reloading.
+2022-09-19 18:34:14,274 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:34:19,673 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/services.py changed, reloading.
+2022-09-19 18:34:20,034 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-19 18:35:53,344 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/chat/views.py changed, reloading.
+2022-09-19 18:35:53,852 [autoreload | INFO] Watching for file changes with StatReloader

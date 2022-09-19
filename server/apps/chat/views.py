@@ -1,5 +1,3 @@
-from django.db.models import Q
-
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.generics import CreateAPIView
 from rest_framework.response import Response
@@ -8,6 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 from chat.web_socket import pusher_client
 from chat.api.serializers import ChatSerializer, ChatListSerializer
 from chat.models import Chat, Room
+from chat.services import notificate_user
 from chat.selectors import (
     get_user_channels,
     get_user_messages_in_channels,
@@ -30,6 +29,9 @@ class RoomViewSet(ModelViewSet):
 
     def retrieve(self, request, pk, *args, **kwargs):
         room = Room.objects.get(pk=pk)
+        print(room.get_notification)
+        Chat.objects.filter(room=room).update(is_read=True)
+        notificate_user(request.user)
         obj = get_user_messages_in_channels(request.user, room)
         serializer = ChatSerializer(obj, many=True)
         response_data = {
@@ -71,11 +73,6 @@ class ChatCreateView(CreateAPIView):
     queryset = Chat.objects.all()
 
     def create(self, request, *args, **kwargs):
-        try:
-            Room.objects.get(pk=request.data["room"])
-        except:
-            Room.objects.create()
-
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         chat = serializer.save()
@@ -90,7 +87,9 @@ class ChatCreateView(CreateAPIView):
         if chat.file:
             data["file"] = chat.file.url
 
+        notificate_user(chat.to_user)
         pusher_client.trigger(f"{chat.room.id}", "message_create", data)
+
         response_data = {
             "message": serializer.data,
             "advert_name": chat.room.advert.name,
