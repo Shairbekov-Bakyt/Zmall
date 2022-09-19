@@ -9,8 +9,8 @@ run_prod:
 	python3 manage.py runserver --settings config.settings.production
 
 migrate:
-	python3 manage.py makemigrations
-	python3 manage.py migrate
+	python3 manage.py makemigrations --settings config.settings.local
+	python3 manage.py migrate --settings config.settings.local
 
 web:
 	python3 manage.py web_scraping

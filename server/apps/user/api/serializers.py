@@ -1,4 +1,3 @@
-from django.contrib.auth.hashers import check_password
 from django.contrib.auth.password_validation import validate_password
 
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer

@@ -3,7 +3,7 @@ from decouple import config
 from . import google, facebook
 from .register import register_social_user
 from rest_framework.exceptions import AuthenticationFailed
-
+from google.oauth2 import id_token
 
 class FacebookSocialAuthSerializer(serializers.Serializer):
     """Handles serialization of facebook related data"""
@@ -31,6 +31,7 @@ class GoogleSocialAuthSerializer(serializers.Serializer):
     auth_token = serializers.CharField()
 
     def validate_auth_token(self, auth_token):
+
         user_data = google.Google.validate(auth_token)
         try:
             user_data["sub"]
@@ -45,5 +46,4 @@ class GoogleSocialAuthSerializer(serializers.Serializer):
 
         email = user_data["email"]
         provider = "google"
-
-        return register_social_user(provider=provider, email=email)
+        return register_social_user(provider=provider, email=email, user=user_data)

@@ -9,6 +9,7 @@ from advert.views.feedback_view import FeedbackView
 from advert.views.comment_view import CommentView
 from advert.views.help_view import HelpCategoryViewSet, HelpViewSet, FAQListView
 from advert.views.statistics_view import StatisticsView
+from advert.views.site_view import FooterLinkView
 from advert.views.advert_view import (
     AdvertViewSet,
     CityListView,
@@ -28,6 +29,7 @@ router.register("promote", PromoteViewSet, basename="promote")
 router.register("comment", CommentView, basename="comment")
 router.register("feedback", FeedbackView, basename="feedback")
 router.register("help", HelpViewSet, basename="help")
+router.register("site_link", FooterLinkView, basename="footer")
 router.register("help_category", HelpCategoryViewSet, basename="helpcategory")
 
 

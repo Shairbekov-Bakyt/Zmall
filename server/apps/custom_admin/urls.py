@@ -6,7 +6,7 @@ from custom_admin.views import *
 
 
 router = DefaultRouter()
-router.register("advert", AdvertViewSet, basename="advert")
+router.register("advert", AdvertView, basename="advert")
 router.register("user", UserViewSet)
 
 

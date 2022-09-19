@@ -4,6 +4,6 @@ from advert.api.footerlinks_serializers import FooterLinkSerializer
 from advert.models import FooterLink
 
 
-class FooterLinksView(ModelViewSet):
+class FooterLinkView(ModelViewSet):
     queryset = FooterLink.objects.all()
     serializer_class = FooterLinkSerializer
