@@ -20,7 +20,7 @@ schema_view = get_schema_view(
     public=True,
     permission_classes=[permissions.AllowAny],
 )
-
+API_PREFIX = 'api/v1/'
 urlpatterns = [
     re_path(
         r"^swagger(?P<format>\.json|\.yaml)$",
@@ -36,11 +36,11 @@ urlpatterns = [
         r"^redoc/$", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"
     ),
     path("admin/", admin.site.urls),
-    path("api/v1/user/", include("user.urls")),
-    path("api/v1/", include("advert.urls")),
-    path("api/v1/", include("chat.urls")),
-    path("api/v1/", include("custom_admin.urls")),
-    path("api/v1/social_auth/", include("social_auth.urls")),
+    path(f"{API_PREFIX}user/", include("user.urls")),
+    path(f"{API_PREFIX}", include("advert.urls")),
+    path(f"{API_PREFIX}", include("chat.urls")),
+    path(f"{API_PREFIX}", include("custom_admin.urls")),
+    path(f"{API_PREFIX}social_auth/", include("social_auth.urls")),
 ]
 
 urlpatterns += static(base.MEDIA_URL, document_root=base.MEDIA_ROOT)
