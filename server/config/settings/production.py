@@ -4,7 +4,7 @@ import datetime
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["188.225.83.42"]
+ALLOWED_HOSTS = ["188.225.83.42", "0.0.0.0"]
 
 DATABASES = {
     "default": {

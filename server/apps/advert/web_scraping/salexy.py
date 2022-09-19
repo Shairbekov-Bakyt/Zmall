@@ -1,5 +1,4 @@
 import requests
-import re
 from bs4 import BeautifulSoup
 
 from advert.models import Category, SubCategory, City, Advert, AdvertImage

@@ -1,10 +1,12 @@
 import json
 
+from rest_framework import serializers
+from phonenumber_field.validators import validate_international_phonenumber
 from user.utils import Util
 from datetime import datetime
 
 from advert.utils import connect_to_redis
-from advert.models import Advert
+from advert.models import Advert, AdvertImage, AdvertContact
 
 
 def send_advert_to_email(emails):
@@ -118,3 +120,36 @@ def set_advert_views(id: int):
     views_count = advert_info["views_counter"]
 
     return views_count
+
+def create_ad_imgs(advert, imgs):
+    if len(imgs) > 8:
+        raise serializers.ValidationError("Максимальное кол-во изображений: 8")
+
+    img_objects = []
+    for img in imgs:
+        img_objects.append(AdvertImage(advert=advert, image=img))
+    print("creating")
+    AdvertImage.objects.bulk_create(img_objects)
+
+def create_ad_contacts(advert, contacts):
+    if len(contacts) > 8:
+        raise serializers.ValidationError("Максимальное кол-во контактов: 8")
+
+    ad_contacts = []
+    for contact in contacts[0].split(','):
+        validate_international_phonenumber(contact)
+        ad_contacts.append(AdvertContact(advert=advert, phone_number=contact))
+
+    AdvertContact.objects.bulk_create(ad_contacts)
+
+
+def delete_ad_imgs(advert):
+    images = AdvertImage.objects.filter(advert=advert)
+    for image in images:
+        image.delete()
+
+
+def delete_ad_contacts(advert):
+    contacts = AdvertContact.objects.filter(advert=advert)
+    for contact in contacts:
+        contact.delete()

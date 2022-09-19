@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import requests
 import cssutils
 
-from web_scraping.salexy import setUp
+from advert.web_scraping.salexy import setUp
 from advert.models import Advert, AdvertImage
 from config.celery import app
 
