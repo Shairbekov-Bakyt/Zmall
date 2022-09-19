@@ -79,14 +79,16 @@ class ChatCreateView(CreateAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         chat = serializer.save()
+
         data = {
             "message": chat.message,
-            "from_user": chat.from_user.get_full_name(),
-            "to_user": chat.to_user.get_full_name(),
+            "from_user": chat.from_user.id,
+            "to_user": chat.to_user.id,
             "date": str(chat.date),
         }
+
         if chat.file:
-            data["image"] = chat.file.url
+            data["file"] = chat.file.url
 
         pusher_client.trigger(f"{chat.room.id}", "message_create", data)
         response_data = {

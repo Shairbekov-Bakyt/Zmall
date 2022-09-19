@@ -29,7 +29,7 @@ from advert.models import (
 
 
 class AdvertFilter(django_filters.FilterSet):
-    start_price = django_filters.RangeFilter(field_name="start_price")
+    start_price = django_filters.NumericRangeFilter(field_name="start_price")
     image = django_filters.BooleanFilter(
         lookup_expr="isnull", field_name="advert_image"
     )
