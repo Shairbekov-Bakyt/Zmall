@@ -8,6 +8,11 @@ from user.models import CustomUser as User
 from user.selectors import get_user_by_email
 
 
+class ChangeUserInfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ["last_name", "first_name", "email", "phone_number"]
+
 class ForgotPasswordSerializer(serializers.Serializer):
     new_password = serializers.CharField(required=True, validators=[validate_password])
     confirm_password = serializers.CharField(

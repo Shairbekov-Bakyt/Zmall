@@ -1,6 +1,7 @@
 import random
 import string
 
+from rest_framework_simplejwt.tokens import RefreshToken
 from django.core.mail import send_mail
 from config.settings.base import EMAIL_HOST_USER
 
@@ -23,3 +24,8 @@ class Util:
         letters = string.ascii_lowercase
         result_str = "".join(random.choice(letters) for i in range(length))
         return result_str
+
+    @staticmethod
+    def get_token_by_user(user):
+        token = RefreshToken.for_user(user).access_token
+        return str(token)

@@ -10,6 +10,7 @@ from advert.views.comment_view import CommentView
 from advert.views.help_view import HelpCategoryViewSet, HelpViewSet, FAQListView
 from advert.views.statistics_view import StatisticsView
 from advert.views.site_view import FooterLinkView
+from advert.views.transaction_view import TransactionViewSet
 from advert.views.advert_view import (
     AdvertViewSet,
     CityListView,
@@ -24,6 +25,7 @@ from advert.views.advert_view import (
 
 router = DefaultRouter()
 router.register("advert", AdvertViewSet, basename="advert")
+router.register("transaction", TransactionViewSet, basename="transaction")
 router.register("favorite", FavoriteAdvertView, basename="favorite_advert")
 router.register("promote", PromoteViewSet, basename="promote")
 router.register("comment", CommentView, basename="comment")

@@ -173,7 +173,7 @@ CELERY_BEAT_SCHEDULE = {
 STATIC_URL = "/static/"
 STATIC_ROOT = str(BASE_DIR.parent) + "/staticfiles"
 
-MEDIA_ROOT = str(BASE_DIR.parent) + "/media"
+MEDIA_ROOT = str(BASE_DIR.parent) + "/media/"
 MEDIA_URL = "/media/"
 
 # Default primary key field type

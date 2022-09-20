@@ -1,5 +1,5 @@
 from advert.models import Comment, Advert
-
+from chat.models import Chat
 
 def recrursive_sql_query():
     sql = """with recursive tree (id, text, advert_id, parent_id, user_id)

@@ -4,8 +4,8 @@ from rest_framework import serializers
 
 from user.models import CustomUser
 from advert.utils import connect_to_redis
+
 from apps.advert.utils import connect_to_redis
-from config.settings.local import BASE_IMAGE_API
 from advert.models import (
     Advert,
     AdvertContact,
@@ -74,6 +74,7 @@ class AdvertListSerializer(serializers.ModelSerializer):
     advert_image_count = serializers.IntegerField(
         source="advert_image.count", read_only=True
     )
+    advert_image = AdvertImageSerializer(read_only=True, many=True)
     city = serializers.SlugRelatedField(slug_field="id", queryset=City.objects.all())
 
     class Meta:
@@ -90,20 +91,10 @@ class AdvertListSerializer(serializers.ModelSerializer):
             "city",
             "created_date",
             "description",
-            "advert_contact"
+            "advert_contact",
+            "advert_image"
         )
 
-    def to_representation(self, instance):
-        data = super().to_representation(instance)
-        image = AdvertImage.objects.filter(advert=instance.id).first()
-        serializer = AdvertImageSerializer(image)
-
-        if serializer.data["image"] == None:
-            data["advert_image"] = []
-        else:
-            data["advert_image"] = f'{BASE_IMAGE_API}{serializer.data["image"]}'
-
-        return data
 
 
 class AdvertDetailSerializer(serializers.ModelSerializer):

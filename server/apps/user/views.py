@@ -1,5 +1,6 @@
 import jwt
 from django.http import HttpRequest
+from decouple import config
 
 from rest_framework import generics, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -7,13 +8,24 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
 
 from user.services import send_url_with_mail, send_password_with_email
-from user.selectors import get_user_by_email
+from user.models import CustomUser as User
+from user.selectors import get_user_by_email, get_user_by_id
 from user.api.serializers import (
     MyTokenObtainPairSerializer,
     RegisterSerializer,
     ChangePasswordSerializer,
     EmailSerializer,
+    ChangeUserInfoSerializer,
 )
+
+
+class ChangeUserInfoView(generics.UpdateAPIView):
+    permission_classes = [IsAuthenticated, ]
+    queryset = User.objects.all()
+    serializer_class = ChangeUserInfoSerializer
+
+    def get_object(self):
+        return self.request.user
 
 
 class ForgotPasswordView(generics.CreateAPIView):
@@ -55,7 +67,7 @@ class ChangePasswordView(generics.UpdateAPIView):
         user = self.get_object()
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        user.set_password(serializer.data.get("confirm_password"))
+        user.set_password(serializer.data.get("new_password"))
         user.save()
         return Response(
             {"password": "password change successfully"}, status=status.HTTP_200_OK
@@ -83,7 +95,7 @@ class RegisterView(generics.GenericAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         user = serializer.user
-        send_url_with_mail(user)
+        send_url_with_mail(user, request)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
@@ -94,9 +106,10 @@ class VerifyEmail(generics.GenericAPIView):
     """
 
     def get(self, request: HttpRequest) -> Response:
-        email = request.GET.get("email")
+        token = request.GET.get("token")
         try:
-            user = get_user_by_email(email)
+            payload = jwt.decode(token, config('SECRET_KEY'), algorithms=["HS256"])
+            user = get_user_by_id(payload["user_id"])
             if not user.is_active:
                 user.is_active = True
                 user.save()
