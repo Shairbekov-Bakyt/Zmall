@@ -32,7 +32,7 @@ def register_social_user(provider, email, user):
         user = {"email": email, "password": config("SOCIAL_SECRET"), "first_name": user['given_name'],
                 "last_name": user['family_name']}
 
-        user = User.objects.create_user(**user)
+        user = User.objects.create(**user)
         user.is_active = True
         user.auth_provider = provider
         user.save()
