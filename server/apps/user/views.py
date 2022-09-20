@@ -6,7 +6,6 @@ from rest_framework import generics, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
-from phonenumber_field.modelfields import PhoneNumberField, validate_international_phonenumber
 
 from user.services import send_code_with_mail, send_password_with_email
 from user.models import CustomUser as User
@@ -48,31 +47,6 @@ class ForgotPasswordView(generics.CreateAPIView):
 
         return Response(
             {"forgot password": "check your email"}, status=status.HTTP_200_OK
-        )
-
-
-class ChangePasswordView(generics.UpdateAPIView):
-    """
-    an endpoint change password
-    """
-
-    serializer_class = ChangePasswordSerializer
-    permission_classes = [
-        IsAuthenticated,
-    ]
-
-    def get_object(self):
-        obj = self.request.user
-        return obj
-
-    def update(self, request, *args, **kwargs):
-        user = self.get_object()
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        user.set_password(serializer.data.get("new_password"))
-        user.save()
-        return Response(
-            {"password": "password change successfully"}, status=status.HTTP_200_OK
         )
 
 

@@ -41,7 +41,6 @@ urlpatterns = [
     path("category/", CategoryView.as_view()),
     path("sub_category/", SubCategoryView.as_view()),
     path("city/", CityListView.as_view()),
-    # path("premium_advert/", PremiumAdvertView.as_view()),
     path("FAQ/", FAQListView.as_view()),
     path("favorite/<int:advert_id>/<int:delete>/", FavoriteUpdateDelete.as_view()),
     path("advert_contacts/<int:advert_id>/", ContactView.as_view()),
