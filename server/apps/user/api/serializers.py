@@ -37,7 +37,6 @@ class ChangeUserInfoSerializer(serializers.ModelSerializer):
         return super().update(instance, validated_data)
 
 
-
 class ForgotPasswordSerializer(serializers.Serializer):
     new_password = serializers.CharField(required=True, validators=[validate_password])
     confirm_password = serializers.CharField(
