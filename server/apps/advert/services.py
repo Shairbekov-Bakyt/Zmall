@@ -128,8 +128,8 @@ def create_ad_imgs(advert, imgs):
     img_objects = []
     for img in imgs:
         img_objects.append(AdvertImage(advert=advert, image=img))
-    print("creating")
     AdvertImage.objects.bulk_create(img_objects)
+
 
 def create_ad_contacts(advert, contacts):
     if len(contacts) > 8:

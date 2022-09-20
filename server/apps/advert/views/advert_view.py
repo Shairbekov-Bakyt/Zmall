@@ -29,7 +29,7 @@ from advert.models import (
 
 
 class AdvertFilter(django_filters.FilterSet):
-    start_price = django_filters.NumericRangeFilter(field_name="start_price")
+    start_price = django_filters.RangeFilter(field_name="start_price")
     image = django_filters.BooleanFilter(
         lookup_expr="isnull", field_name="advert_image"
     )
@@ -112,19 +112,9 @@ class AdvertViewSet(ModelViewSet):
         return super().get_serializer_class()
 
 
-class PremiumAdvertView(ListAPIView):
+class PremiumAdvertView(AdvertViewSet):
     queryset = Advert.objects.filter(status="act", promote__isnull=False)
     serializer_class = serializers.AdvertListSerializer
-    pagination_class = AdvertPagination
-    filter_backends = [
-        django_filters.rest_framework.DjangoFilterBackend,
-        filters.OrderingFilter,
-        filters.SearchFilter,
-    ]
-    filterset_class = AdvertFilter
-    ordering_fields = ["created_date", "end_price"]
-    ordering = ["created_date"]
-    search_fields = ["name"]
 
 
 class ContactView(CreateAPIView):
