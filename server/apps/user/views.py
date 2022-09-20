@@ -30,6 +30,7 @@ class ChangeUserInfoView(generics.UpdateAPIView):
 
 
 
+
 class ForgotPasswordView(generics.CreateAPIView):
     """
     an endpoint forgot password

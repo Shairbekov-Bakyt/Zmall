@@ -10,9 +10,7 @@ from user.selectors import get_user_by_email
 
 
 class ChangeUserInfoSerializer(serializers.ModelSerializer):
-    old_password = serializers.CharField(
-        required=False, validators=[validate_password]
-    )
+    old_password = serializers.CharField(required=False)
     new_password = serializers.CharField(
         required=False, validators=[validate_password]
     )
@@ -34,11 +32,10 @@ class ChangeUserInfoSerializer(serializers.ModelSerializer):
 
         return attrs
 
-    def create(self, data):
-        user = User.objects.create(**data)
-        user.set_password(data['new_password'])
-        user.save()
-        return user
+    def update(self, instance, validated_data):
+        instance.set_password(validated_data['new_password'])
+        return super().update(instance, validated_data)
+
 
 
 class ForgotPasswordSerializer(serializers.Serializer):
