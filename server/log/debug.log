@@ -18487,3 +18487,134 @@ AssertionError: 'VerifyEmail' should either include a `serializer_class` attribu
 2022-09-20 06:28:41,085 [Image | DEBUG] Importing XbmImagePlugin
 2022-09-20 06:28:41,087 [Image | DEBUG] Importing XpmImagePlugin
 2022-09-20 06:28:41,088 [Image | DEBUG] Importing XVThumbImagePlugin
+2022-09-20 07:04:43,341 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-20 07:04:50,009 [log | WARNING] Not Found: /
+2022-09-20 07:04:50,295 [log | WARNING] Not Found: /favicon.ico
+2022-09-20 07:05:19,178 [log | WARNING] Not Found: /media/category/icon/2022/09/15/Screen_Shot_2022-09-15_at_13.26.39.png
+2022-09-20 07:05:19,178 [log | WARNING] Not Found: /media/icon.png
+2022-09-20 07:05:19,421 [log | WARNING] Not Found: /api/v1/site_links/
+2022-09-20 07:05:22,701 [log | WARNING] Not Found: /media/icon.png
+2022-09-20 07:05:22,701 [log | WARNING] Not Found: /media/category/icon/2022/09/15/Screen_Shot_2022-09-15_at_13.26.39.png
+2022-09-20 07:05:27,878 [requests | DEBUG] Making request: GET https://www.googleapis.com/oauth2/v1/certs
+2022-09-20 07:05:27,984 [connectionpool | DEBUG] Starting new HTTPS connection (1): www.googleapis.com:443
+2022-09-20 07:05:28,529 [connectionpool | DEBUG] https://www.googleapis.com:443 "GET /oauth2/v1/certs HTTP/1.1" 200 1751
+2022-09-20 07:05:28,555 [requests | DEBUG] Making request: GET https://www.googleapis.com/oauth2/v1/certs
+2022-09-20 07:05:28,558 [connectionpool | DEBUG] Starting new HTTPS connection (1): www.googleapis.com:443
+2022-09-20 07:05:29,101 [connectionpool | DEBUG] https://www.googleapis.com:443 "GET /oauth2/v1/certs HTTP/1.1" 200 1751
+2022-09-20 07:05:29,475 [log | WARNING] Not Found: /api/v1/site_links/
+2022-09-20 07:05:29,485 [log | WARNING] Not Found: /media/icon.png
+2022-09-20 07:05:29,486 [log | WARNING] Not Found: /media/category/icon/2022/09/15/Screen_Shot_2022-09-15_at_13.26.39.png
+2022-09-20 07:05:36,799 [log | WARNING] Unauthorized: /api/v1/favorite/121/1/
+2022-09-20 07:06:06,679 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-20 07:06:27,199 [requests | DEBUG] Making request: GET https://www.googleapis.com/oauth2/v1/certs
+2022-09-20 07:06:27,213 [connectionpool | DEBUG] Starting new HTTPS connection (1): www.googleapis.com:443
+2022-09-20 07:06:27,521 [connectionpool | DEBUG] https://www.googleapis.com:443 "GET /oauth2/v1/certs HTTP/1.1" 200 1751
+2022-09-20 07:06:27,546 [requests | DEBUG] Making request: GET https://www.googleapis.com/oauth2/v1/certs
+2022-09-20 07:06:27,549 [connectionpool | DEBUG] Starting new HTTPS connection (1): www.googleapis.com:443
+2022-09-20 07:06:27,861 [connectionpool | DEBUG] https://www.googleapis.com:443 "GET /oauth2/v1/certs HTTP/1.1" 200 1751
+2022-09-20 07:06:28,506 [log | WARNING] Not Found: /api/v1/site_links/
+2022-09-20 07:06:28,600 [log | WARNING] Not Found: /media/icon.png
+2022-09-20 07:06:28,602 [log | WARNING] Not Found: /media/category/icon/2022/09/15/Screen_Shot_2022-09-15_at_13.26.39.png
+2022-09-20 07:06:49,740 [log | WARNING] Not Found: /media/category/icon/2022/09/15/Screen_Shot_2022-09-15_at_13.26.39.png
+2022-09-20 07:06:49,742 [log | WARNING] Not Found: /media/icon.png
+2022-09-20 07:06:54,889 [requests | DEBUG] Making request: GET https://www.googleapis.com/oauth2/v1/certs
+2022-09-20 07:06:54,895 [connectionpool | DEBUG] Starting new HTTPS connection (1): www.googleapis.com:443
+2022-09-20 07:06:55,327 [connectionpool | DEBUG] https://www.googleapis.com:443 "GET /oauth2/v1/certs HTTP/1.1" 200 1751
+2022-09-20 07:06:55,338 [requests | DEBUG] Making request: GET https://www.googleapis.com/oauth2/v1/certs
+2022-09-20 07:06:55,343 [connectionpool | DEBUG] Starting new HTTPS connection (1): www.googleapis.com:443
+2022-09-20 07:06:55,780 [connectionpool | DEBUG] https://www.googleapis.com:443 "GET /oauth2/v1/certs HTTP/1.1" 200 1751
+2022-09-20 07:06:56,158 [log | WARNING] Not Found: /api/v1/site_links/
+2022-09-20 07:06:56,166 [log | WARNING] Not Found: /media/icon.png
+2022-09-20 07:06:56,167 [log | WARNING] Not Found: /media/category/icon/2022/09/15/Screen_Shot_2022-09-15_at_13.26.39.png
+2022-09-20 07:07:21,760 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/social_auth/views.py changed, reloading.
+2022-09-20 07:07:22,304 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-20 07:07:30,663 [log | WARNING] Not Found: /media/icon.png
+2022-09-20 07:07:30,663 [log | WARNING] Not Found: /media/category/icon/2022/09/15/Screen_Shot_2022-09-15_at_13.26.39.png
+2022-09-20 07:07:36,430 [requests | DEBUG] Making request: GET https://www.googleapis.com/oauth2/v1/certs
+2022-09-20 07:07:36,442 [connectionpool | DEBUG] Starting new HTTPS connection (1): www.googleapis.com:443
+2022-09-20 07:07:36,769 [connectionpool | DEBUG] https://www.googleapis.com:443 "GET /oauth2/v1/certs HTTP/1.1" 200 1751
+2022-09-20 07:07:36,779 [requests | DEBUG] Making request: GET https://www.googleapis.com/oauth2/v1/certs
+2022-09-20 07:07:36,781 [connectionpool | DEBUG] Starting new HTTPS connection (1): www.googleapis.com:443
+2022-09-20 07:07:37,077 [connectionpool | DEBUG] https://www.googleapis.com:443 "GET /oauth2/v1/certs HTTP/1.1" 200 1751
+2022-09-20 07:07:37,447 [log | WARNING] Not Found: /media/icon.png
+2022-09-20 07:07:37,451 [log | WARNING] Not Found: /media/category/icon/2022/09/15/Screen_Shot_2022-09-15_at_13.26.39.png
+2022-09-20 07:07:37,452 [log | WARNING] Not Found: /api/v1/site_links/
+2022-09-20 07:07:55,077 [log | WARNING] Not Found: /media/icon.png
+2022-09-20 07:07:55,078 [log | WARNING] Not Found: /media/category/icon/2022/09/15/Screen_Shot_2022-09-15_at_13.26.39.png
+2022-09-20 07:07:59,150 [requests | DEBUG] Making request: GET https://www.googleapis.com/oauth2/v1/certs
+2022-09-20 07:07:59,154 [connectionpool | DEBUG] Starting new HTTPS connection (1): www.googleapis.com:443
+2022-09-20 07:07:59,570 [connectionpool | DEBUG] https://www.googleapis.com:443 "GET /oauth2/v1/certs HTTP/1.1" 200 1751
+2022-09-20 07:07:59,580 [requests | DEBUG] Making request: GET https://www.googleapis.com/oauth2/v1/certs
+2022-09-20 07:07:59,583 [connectionpool | DEBUG] Starting new HTTPS connection (1): www.googleapis.com:443
+2022-09-20 07:07:59,997 [connectionpool | DEBUG] https://www.googleapis.com:443 "GET /oauth2/v1/certs HTTP/1.1" 200 1751
+2022-09-20 07:08:00,351 [log | ERROR] Internal Server Error: /api/v1/social_auth/google/
+Traceback (most recent call last):
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/c0mrade/Documents/Zmall/server/env/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/c0mrade/Documents/Zmall/server/apps/social_auth/views.py", line 32, in post
+    data["access"] = data['tokens']['access']
+KeyError: 'tokens'
+2022-09-20 07:08:21,708 [log | WARNING] Not Found: /api/v1/site_links/
+2022-09-20 07:08:54,193 [log | WARNING] Not Found: /api/v1/site_links/
+2022-09-20 07:09:05,708 [log | WARNING] Not Found: /api/v1/site_links/
+2022-09-20 07:09:05,890 [log | WARNING] Not Found: /media/category/icon/2022/09/15/Screen_Shot_2022-09-15_at_13.26.39.png
+2022-09-20 07:09:49,048 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/social_auth/views.py changed, reloading.
+2022-09-20 07:09:49,608 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-20 07:09:57,109 [autoreload | INFO] /Users/c0mrade/Documents/Zmall/server/apps/social_auth/views.py changed, reloading.
+2022-09-20 07:09:57,542 [autoreload | INFO] Watching for file changes with StatReloader
+2022-09-20 07:10:10,397 [requests | DEBUG] Making request: GET https://www.googleapis.com/oauth2/v1/certs
+2022-09-20 07:10:10,417 [connectionpool | DEBUG] Starting new HTTPS connection (1): www.googleapis.com:443
+2022-09-20 07:10:10,821 [connectionpool | DEBUG] https://www.googleapis.com:443 "GET /oauth2/v1/certs HTTP/1.1" 200 1753
+2022-09-20 07:10:10,836 [requests | DEBUG] Making request: GET https://www.googleapis.com/oauth2/v1/certs
+2022-09-20 07:10:10,841 [connectionpool | DEBUG] Starting new HTTPS connection (1): www.googleapis.com:443
+2022-09-20 07:10:11,272 [connectionpool | DEBUG] https://www.googleapis.com:443 "GET /oauth2/v1/certs HTTP/1.1" 200 1753
+2022-09-20 07:10:11,732 [log | WARNING] Not Found: /api/v1/site_links/
+2022-09-20 07:10:11,812 [log | WARNING] Not Found: /media/category/icon/2022/09/15/Screen_Shot_2022-09-15_at_13.26.39.png
+2022-09-20 07:10:11,812 [log | WARNING] Not Found: /media/icon.png
+2022-09-20 07:10:23,531 [log | WARNING] Not Found: /media/category/icon/2022/09/15/Screen_Shot_2022-09-15_at_13.26.39.png
+2022-09-20 07:10:23,533 [log | WARNING] Not Found: /media/icon.png
+2022-09-20 07:10:28,614 [requests | DEBUG] Making request: GET https://www.googleapis.com/oauth2/v1/certs
+2022-09-20 07:10:28,620 [connectionpool | DEBUG] Starting new HTTPS connection (1): www.googleapis.com:443
+2022-09-20 07:10:28,927 [connectionpool | DEBUG] https://www.googleapis.com:443 "GET /oauth2/v1/certs HTTP/1.1" 200 1751
+2022-09-20 07:10:28,937 [requests | DEBUG] Making request: GET https://www.googleapis.com/oauth2/v1/certs
+2022-09-20 07:10:28,942 [connectionpool | DEBUG] Starting new HTTPS connection (1): www.googleapis.com:443
+2022-09-20 07:10:29,265 [connectionpool | DEBUG] https://www.googleapis.com:443 "GET /oauth2/v1/certs HTTP/1.1" 200 1751
+2022-09-20 07:10:29,764 [log | WARNING] Not Found: /api/v1/site_links/
+2022-09-20 07:10:29,775 [log | WARNING] Not Found: /media/icon.png
+2022-09-20 07:10:29,776 [log | WARNING] Not Found: /media/category/icon/2022/09/15/Screen_Shot_2022-09-15_at_13.26.39.png
+2022-09-20 07:10:36,872 [log | WARNING] Not Found: /media/icon.png
+2022-09-20 07:10:36,874 [log | WARNING] Not Found: /media/category/icon/2022/09/15/Screen_Shot_2022-09-15_at_13.26.39.png
+2022-09-20 07:10:43,018 [requests | DEBUG] Making request: GET https://www.googleapis.com/oauth2/v1/certs
+2022-09-20 07:10:43,030 [connectionpool | DEBUG] Starting new HTTPS connection (1): www.googleapis.com:443
+2022-09-20 07:10:43,453 [connectionpool | DEBUG] https://www.googleapis.com:443 "GET /oauth2/v1/certs HTTP/1.1" 200 1753
+2022-09-20 07:10:43,464 [requests | DEBUG] Making request: GET https://www.googleapis.com/oauth2/v1/certs
+2022-09-20 07:10:43,470 [connectionpool | DEBUG] Starting new HTTPS connection (1): www.googleapis.com:443
+2022-09-20 07:10:43,906 [connectionpool | DEBUG] https://www.googleapis.com:443 "GET /oauth2/v1/certs HTTP/1.1" 200 1753
+2022-09-20 07:10:44,238 [log | WARNING] Not Found: /api/v1/site_links/
+2022-09-20 07:10:44,243 [log | WARNING] Not Found: /media/icon.png
+2022-09-20 07:10:44,246 [log | WARNING] Not Found: /media/category/icon/2022/09/15/Screen_Shot_2022-09-15_at_13.26.39.png
+2022-09-20 07:10:50,405 [log | WARNING] Not Found: /media/icon.png
+2022-09-20 07:10:50,406 [log | WARNING] Not Found: /media/category/icon/2022/09/15/Screen_Shot_2022-09-15_at_13.26.39.png
+2022-09-20 07:10:55,340 [requests | DEBUG] Making request: GET https://www.googleapis.com/oauth2/v1/certs
+2022-09-20 07:10:55,346 [connectionpool | DEBUG] Starting new HTTPS connection (1): www.googleapis.com:443
+2022-09-20 07:10:55,663 [connectionpool | DEBUG] https://www.googleapis.com:443 "GET /oauth2/v1/certs HTTP/1.1" 200 1751
+2022-09-20 07:10:55,674 [requests | DEBUG] Making request: GET https://www.googleapis.com/oauth2/v1/certs
+2022-09-20 07:10:55,680 [connectionpool | DEBUG] Starting new HTTPS connection (1): www.googleapis.com:443
+2022-09-20 07:10:55,991 [connectionpool | DEBUG] https://www.googleapis.com:443 "GET /oauth2/v1/certs HTTP/1.1" 200 1751
+2022-09-20 07:10:56,450 [log | WARNING] Not Found: /api/v1/site_links/
+2022-09-20 07:10:56,458 [log | WARNING] Not Found: /media/category/icon/2022/09/15/Screen_Shot_2022-09-15_at_13.26.39.png
+2022-09-20 07:10:56,460 [log | WARNING] Not Found: /media/icon.png

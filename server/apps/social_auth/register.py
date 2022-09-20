@@ -39,4 +39,4 @@ def register_social_user(provider, email, user):
 
         new_user = authenticate(email=email, password=config("SOCIAL_SECRET"))
         tokens = new_user.tokens()
-        return {"email": new_user.email, "access": tokens['access'], "refresh": tokens['refresh']}
+        return {"email": new_user.email, **tokens}
