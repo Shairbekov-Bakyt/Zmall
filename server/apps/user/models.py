@@ -5,7 +5,8 @@ from phonenumber_field.modelfields import PhoneNumberField
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from user.managers import UserManager
-from user.utils import Util
+from user.utils import validate_international_phonenumber
+
 
 class CustomUser(AbstractUser):
     """Base user model add phone, auth_provider"""
@@ -16,7 +17,8 @@ class CustomUser(AbstractUser):
         max_length=255, default=AUTH_PROVIDERS.get("email")
     )
     email = models.EmailField(verbose_name="email address", max_length=255, unique=True)
-    phone_number = PhoneNumberField(blank=True)
+    phone_number = PhoneNumberField(blank=True, validators=[validate_international_phonenumber])
+    # phone_number.error_messages['invalid'] = 'Incorrect International Calling Code or Mobile Number!'
     activation_code = models.CharField(max_length=13, blank=True)
     username = None
 

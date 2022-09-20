@@ -91,6 +91,7 @@ class RegisterSerializer(serializers.ModelSerializer):
             UniqueValidator(queryset=User.objects.all(), message="email уже занят")
         ],
     )
+
     password = serializers.CharField(
         write_only=True, required=True, validators=[validate_password]
     )

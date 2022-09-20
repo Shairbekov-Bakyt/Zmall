@@ -6,6 +6,7 @@ from rest_framework import generics, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
+from phonenumber_field.modelfields import PhoneNumberField, validate_international_phonenumber
 
 from user.services import send_code_with_mail, send_password_with_email
 from user.models import CustomUser as User
