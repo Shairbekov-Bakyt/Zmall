@@ -9,6 +9,7 @@ from user.views import (
     ChangePasswordView,
     ForgotPasswordView,
     ChangeUserInfoView,
+    CheckActivationCode,
 )
 
 
@@ -16,6 +17,7 @@ urlpatterns = [
     path("login/", MyObtainTokenPairView.as_view(), name="token_obtain_pair"),
     path("login/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("change/user/", ChangeUserInfoView.as_view(), name="user_update"),
+    path("check/activation/code/", CheckActivationCode.as_view(), name="user_activate"),
     path("register/", RegisterView.as_view(), name="auth_register"),
     path("activation/", VerifyEmail.as_view(), name="email-verify"),
     path("change/password/", ChangePasswordView.as_view(), name="user_change_password"),

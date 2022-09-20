@@ -23,6 +23,17 @@ def send_password_with_email(user):
     Util.send_email(data)
 
 
+def send_code_with_mail(user):
+    email_body = "Hi " + user.first_name + " use code below to verify email \n" + user.activation_code
+
+    data = {
+        "email_body": email_body,
+        "email_subject": "Verify your email",
+        "to_whom": user.email,
+    }
+    Util.send_email(data)
+
+
 def send_url_with_mail(user, request):
     current_site = get_current_site(request).domain
     relativeLink = reverse("email-verify")

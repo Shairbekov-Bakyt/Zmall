@@ -5,7 +5,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from user.managers import UserManager
-
+from user.utils import Util
 
 class CustomUser(AbstractUser):
     """Base user model add phone, auth_provider"""
@@ -17,6 +17,7 @@ class CustomUser(AbstractUser):
     )
     email = models.EmailField(verbose_name="email address", max_length=255, unique=True)
     phone_number = PhoneNumberField(blank=True)
+    activation_code = models.CharField(max_length=13, blank=True)
     username = None
 
     REQUIRED_FIELDS = [
@@ -27,6 +28,10 @@ class CustomUser(AbstractUser):
     USERNAME_FIELD = "email"
 
     objects = UserManager()
+
+    # def save(self):
+    #     self.activation_code = Util.get_random_string(12)
+    #     super().save()
 
     def tokens(self):
         refresh = RefreshToken.for_user(self)

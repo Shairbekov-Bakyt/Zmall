@@ -5,6 +5,7 @@ from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
 
 from user.models import CustomUser as User
+from user.utils import Util
 from user.selectors import get_user_by_email
 
 
@@ -107,11 +108,28 @@ class RegisterSerializer(serializers.ModelSerializer):
             first_name=validated_data["first_name"],
             last_name=validated_data["last_name"],
             phone_number=validated_data["phone_number"],
+            activation_code=Util.get_random_string(12)
         )
 
         user.set_password(validated_data["password"])
         user.save()
 
-        self.user = user
-
         return user
+
+
+class VerifyEmailCodeSerializer(serializers.Serializer):
+    email = serializers.EmailField(max_length=100)
+    code = serializers.CharField(max_length=13)
+
+    def validate(self, attrs):
+        activation_code = User.objects.get(email=dict(attrs)['email'])
+
+        if activation_code.activation_code != dict(attrs)['code']:
+            raise ValueError("code is invalid")
+
+        activation_code.is_active = True
+        activation_code.save()
+        return attrs
+
+    def create(self, validated_data):
+        return {"status": "activate"}

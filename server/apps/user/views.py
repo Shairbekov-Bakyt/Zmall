@@ -7,7 +7,7 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
 
-from user.services import send_url_with_mail, send_password_with_email
+from user.services import send_code_with_mail, send_password_with_email
 from user.models import CustomUser as User
 from user.selectors import get_user_by_email, get_user_by_id
 from user.api.serializers import (
@@ -16,6 +16,7 @@ from user.api.serializers import (
     ChangePasswordSerializer,
     EmailSerializer,
     ChangeUserInfoSerializer,
+    VerifyEmailCodeSerializer,
 )
 
 
@@ -40,7 +41,6 @@ class ForgotPasswordView(generics.CreateAPIView):
         serializer = EmailSerializer(data=email)
         serializer.is_valid(raise_exception=True)
         email = serializer.data["email"]
-
         user = get_user_by_email(email)
         send_password_with_email(user)
 
@@ -93,9 +93,8 @@ class RegisterView(generics.GenericAPIView):
     def post(self, request: HttpRequest) -> Response:
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
-        serializer.save()
-        user = serializer.user
-        send_url_with_mail(user, request)
+        user = serializer.save()
+        send_code_with_mail(user)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
@@ -122,3 +121,12 @@ class VerifyEmail(generics.GenericAPIView):
             return Response(
                 {"email": "Activation Expired"}, status=status.HTTP_400_BAD_REQUEST
             )
+
+
+class CheckActivationCode(generics.CreateAPIView):
+    serializer_class = VerifyEmailCodeSerializer
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        return Response({"status": "activate"})
