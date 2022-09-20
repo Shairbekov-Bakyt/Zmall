@@ -16,13 +16,13 @@ from advert.models import (
 class UserSerializerAD(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ("first_name", "last_name", "phone_number", "email")
+        fields = ("id", "first_name", "last_name", "phone_number", "email")
 
 
 class CustomerFeedbackSerializer(serializers.ModelSerializer):
     class Meta:
         model = Feedback
-        fields = ("name", "email", "feedback_title", "message")
+        fields = ("id", "name", "email", "feedback_title", "message")
 
 
 class CitySerializer(serializers.ModelSerializer):
