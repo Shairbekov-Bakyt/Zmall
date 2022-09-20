@@ -29,6 +29,7 @@ class ChangeUserInfoView(generics.UpdateAPIView):
         return self.request.user
 
 
+
 class ForgotPasswordView(generics.CreateAPIView):
     """
     an endpoint forgot password

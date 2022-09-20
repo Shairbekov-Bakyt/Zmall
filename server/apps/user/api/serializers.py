@@ -10,9 +10,36 @@ from user.selectors import get_user_by_email
 
 
 class ChangeUserInfoSerializer(serializers.ModelSerializer):
+    old_password = serializers.CharField(
+        required=False, validators=[validate_password]
+    )
+    new_password = serializers.CharField(
+        required=False, validators=[validate_password]
+    )
+
     class Meta:
         model = User
-        fields = ["last_name", "first_name", "email", "phone_number"]
+        fields = ["last_name", "first_name", "email", "phone_number", "old_password", "new_password"]
+
+    def validate(self, attrs):
+        if not attrs.get('old_password'):
+            return attrs
+
+        user = get_user_by_email(attrs['email'])
+
+        if not user.check_password(attrs['old_password']):
+            raise serializers.ValidationError(
+                {"old_password": "old_password is invalid"}
+            )
+
+        return attrs
+
+    def create(self, data):
+        user = User.objects.create(**data)
+        user.set_password(data['new_password'])
+        user.save()
+        return user
+
 
 class ForgotPasswordSerializer(serializers.Serializer):
     new_password = serializers.CharField(required=True, validators=[validate_password])
