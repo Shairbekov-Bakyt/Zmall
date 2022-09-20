@@ -2,26 +2,19 @@ from django.contrib import admin
 from django.utils.html import format_html
 
 from advert.models import (
-    Advert,
-    AdvertContact,
-    AdvertImage,
-    Category,
-    City,
-    Promote,
-    SubCategory,
-    Comment,
-    Help,
-    HelpCategory,
-    AdvertStatistics,
-    AdvertReport,
-    Feedback,
-    FeedbackMessage,
-    PrivacyPolicy,
+    Advert, AdvertContact, AdvertImage,
+    Category, City, Promote,
+    SubCategory, Comment, Help,
+    HelpCategory, AdvertStatistics,
+    AdvertReport, Feedback,
+    FeedbackMessage, PrivacyPolicy,
+    Transaction,
 )
 
 admin.site.register(City)
 admin.site.register(Feedback)
 admin.site.register(Comment)
+admin.site.register(Transaction)
 
 
 class AdvertImageInline(admin.TabularInline):

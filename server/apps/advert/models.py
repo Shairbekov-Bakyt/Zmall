@@ -41,13 +41,19 @@ class SubCategory(models.Model):
 
 
 class AdvertImage(models.Model):
+
+    def image_upload_to(self, instance=None):
+        if instance:
+            return os.path.join('advert/image/', self.advert.name, instance)
+        return None
+
     advert = models.ForeignKey(
         "Advert",
         on_delete=models.CASCADE,
         verbose_name="объявления",
         related_name="advert_image",
     )
-    image = models.ImageField()
+    image = models.ImageField(upload_to=image_upload_to)
 
     def __str__(self):
         return self.image.url
@@ -349,3 +355,28 @@ class PrivacyPolicy(models.Model):
     class Meta:
         verbose_name = "Политика конфиденциальности"
         verbose_name_plural = "Политика конфиденциальности"
+
+
+class Transaction(models.Model):
+    class TransactionType(models.TextChoices):
+        vip = "статус VIP", "статус VIP"
+        urgently = "добавление стикера Cрочно", "добавление стикера Cрочно"
+        highlighted = "Выделение цветом", "Выделение цветом"
+
+    owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='transaction_owner', blank=True)
+    advert = models.ForeignKey(Advert, on_delete=models.PROTECT, related_name="transaction_advert", verbose_name='объявления')
+    date = models.DateTimeField(auto_now=True, verbose_name='дата')
+    types = models.CharField(max_length=30, choices=TransactionType.choices)
+    price = models.IntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.id}-{self.advert.name}"
+
+    @staticmethod
+    def validate_price(price):
+        if price < 0:
+            raise ValueError("price must be greaten than 0")
+
+    class Meta:
+        verbose_name = 'Трансакция'
+        verbose_name_plural = 'Трансакции'
