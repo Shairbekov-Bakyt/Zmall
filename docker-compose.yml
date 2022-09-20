@@ -14,6 +14,7 @@ services:
       - static_volume:/backend/staticfiles
     depends_on:
       - db
+      - mongo
     command: ["./server/healthy-check.sh", "db:5432"]
 
 
@@ -25,6 +26,15 @@ services:
     env_file: server/.env
 #    ports:
 #      - 172.17.0.1:5432:5432
+
+  mongo:
+    container_name: mongo_db
+    image: mongo
+    volumes:
+      - ./data-mongodb:/data/db
+    ports:
+      - "27017:27017"
+
   redis:
     image: redis:alpine
   celery:
