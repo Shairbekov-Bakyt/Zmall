@@ -5,7 +5,7 @@ from rest_framework import serializers
 from user.models import CustomUser
 from advert.utils import connect_to_redis
 
-from apps.advert.utils import connect_to_redis
+from advert.utils import connect_to_redis
 from advert.models import (
     Advert,
     AdvertContact,

@@ -10,6 +10,7 @@ from advert.models import (
     Category,
     SubCategory,
     Promote,
+    AdvertReport,
 )
 
 
@@ -43,7 +44,13 @@ class AdvertImageSerializer(serializers.ModelSerializer):
         fields = ["image"]
 
 
-class AdvertCreateSerializer(serializers.ModelSerializer):
+class AdReportSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AdvertReport
+        fields = "__all__"
+
+
+class AdminAdvertSerializer(serializers.ModelSerializer):
     owner = serializers.SlugRelatedField(
         slug_field="id", queryset=CustomUser.objects.all()
     )
@@ -60,5 +67,4 @@ class AdvertCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Advert
-
         exclude = ("created_date", "status")
