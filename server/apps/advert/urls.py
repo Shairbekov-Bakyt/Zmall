@@ -21,6 +21,7 @@ from advert.views.advert_view import (
     UserAdvertUpdateView,
     FeedbackMessageView,
     PrivacyPolicyView,
+    FavAdvertView,
 )
 
 router = DefaultRouter()
@@ -34,7 +35,7 @@ router.register("help", HelpViewSet, basename="help")
 router.register("site_link", FooterLinkView, basename="footer")
 router.register("help_category", HelpCategoryViewSet, basename="helpcategory")
 router.register("premium_advert", PremiumAdvertView, basename="premium_advert")
-
+router.register("fav_adverts", FavAdvertView, basename="fav_adverts"),
 
 urlpatterns = [
     path("", include(router.urls)),

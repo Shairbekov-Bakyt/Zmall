@@ -4,6 +4,8 @@ from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 from phonenumber_field.validators import validate_international_phonenumber
+from rest_framework.permissions import IsAuthenticated
+
 
 from advert.api import permissions
 from advert.selectors import advert_with_select_related_filter
@@ -25,6 +27,7 @@ from advert.models import (
     AdvertReport,
     FeedbackMessage,
     PrivacyPolicy,
+    FavoriteAdvert,
 )
 
 
@@ -150,6 +153,16 @@ class UserAdvertView(ListAPIView):
     def get_queryset(self):
         user = self.request.user
         return Advert.objects.filter(owner__email=user)
+
+
+class FavAdvertView(AdvertViewSet):
+    permission_classes = [IsAuthenticated]
+    http_method_names = ["get"]
+
+    def get_queryset(self):
+        user = self.request.user
+        fav = FavoriteAdvert.objects.get(user_id=user)
+        return Advert.objects.filter(favorite_adverts=fav)
 
 
 class UserAdvertUpdateView(UpdateAPIView):
