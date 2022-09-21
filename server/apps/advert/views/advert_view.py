@@ -30,11 +30,12 @@ from advert.models import (
 
 class AdvertFilter(django_filters.FilterSet):
     start_price = django_filters.RangeFilter(field_name="start_price")
-    image = django_filters.BooleanFilter(
-        lookup_expr="isnull", field_name="advert_image"
-    )
+
     city = django_filters.ModelMultipleChoiceFilter(
         field_name="city", queryset=City.objects.all()
+    )
+    image = django_filters.BooleanFilter(
+        lookup_expr="isnull", field_name="advert_image", distinct=True
     )
 
     class Meta:
