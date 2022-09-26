@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     "drf_yasg",
     "celery",
     "django_filters",
+    'rest_framework.authtoken',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +71,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "config.urls"
 PREVIOUS_PASSWORD_COUNT = 2
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -86,6 +89,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "config.wsgi.application"
+ASGI_APPLICATION = "config.asgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases

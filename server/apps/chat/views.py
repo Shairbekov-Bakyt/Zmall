@@ -1,98 +1,39 @@
-from rest_framework.viewsets import ModelViewSet
-from rest_framework.generics import CreateAPIView
-from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.mixins import ListModelMixin, RetrieveModelMixin
+from rest_framework.viewsets import GenericViewSet
 
-from chat.web_socket import pusher_client
-from chat.api.serializers import ChatSerializer, ChatListSerializer
-from chat.models import Chat, Room
-from chat.services import notificate_user
-from chat.selectors import (
-    get_user_channels,
-    get_user_messages_in_channels,
-)
+from chat.models import Conversation, Message
+from chat.api.pagination import MessagePagination
+
+from chat.api.serializers import MessageSerializer, ConversationSerializer
 
 
-class RoomViewSet(ModelViewSet):
-    queryset = Room.objects.all()
-    serializer_class = ChatListSerializer
-    permission_classes = [IsAuthenticated]
-    http_method_names = ["get", "post"]
+class ConversationViewSet(ListModelMixin, RetrieveModelMixin, GenericViewSet):
+    serializer_class = ConversationSerializer
+    queryset = Conversation.objects.none()
+    lookup_field = "name"
 
-    def list(self, request, *args, **kwargs):
-        if not request.user.is_authenticated:
-            return Response([])
+    def get_queryset(self):
+        queryset = Conversation.objects.filter(
+            name__contains=self.request.user.email
+        )
+        return queryset
 
-        obj = get_user_channels(request.user)
-        serializer = self.get_serializer(obj, many=True)
-        return Response(serializer.data)
+    def get_serializer_context(self):
+        return {"request": self.request, "user": self.request.user}
 
-    def retrieve(self, request, pk, *args, **kwargs):
-        room = Room.objects.get(pk=pk)
-        print(room.get_notification)
-        Chat.objects.filter(room=room).update(is_read=True)
-        notificate_user(request.user)
-        obj = get_user_messages_in_channels(request.user, room)
-        serializer = ChatSerializer(obj, many=True)
-        response_data = {
-            "messages": serializer.data,
-            "advert_id": room.advert.id,
-            "advert": room.advert.name,
-            "to_user": {
-                "id": room.user.id,
-                "first_name": room.user.first_name,
-                "last_name": room.user.last_name,
-            },
-            "from_user": {
-                "id": room.owner.id,
-                "first_name": room.owner.first_name,
-                "last_name": room.user.last_name,
-            },
-        }
-        return Response(response_data)
 
-    def create(self, request, *args, **kwargs):
-        try:
-            obj = Room.objects.get(
-                owner=request.data["owner"],
-                user=request.data["user"],
-                advert=request.data["advert"],
+class MessageViewSet(ListModelMixin, GenericViewSet):
+    serializer_class = MessageSerializer
+    queryset = Message.objects.none()
+    pagination_class = MessagePagination
+
+    def get_queryset(self):
+        conversation_name = self.request.GET.get("conversation")
+        queryset = (
+            Message.objects.filter(
+                conversation__name__contains=self.request.user.username,
             )
-            serializer = self.get_serializer(obj)
-            return Response(serializer.data)
-
-        except:
-            serializer = self.get_serializer(data=request.data)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-            return Response(serializer.data)
-
-
-class ChatCreateView(CreateAPIView):
-    serializer_class = ChatSerializer
-    queryset = Chat.objects.all()
-
-    def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        chat = serializer.save()
-
-        data = {
-            "message": chat.message,
-            "from_user": chat.from_user.id,
-            "to_user": chat.to_user.id,
-            "date": str(chat.date),
-        }
-
-        if chat.file:
-            data["file"] = chat.file.url
-
-        notificate_user(chat.to_user)
-        pusher_client.trigger(f"{chat.room.id}", "message_create", data)
-
-        response_data = {
-            "message": serializer.data,
-            "advert_name": chat.room.advert.name,
-            "advert_price": chat.room.advert.start_price,
-        }
-        return Response(response_data)
+            .filter(conversation__name=conversation_name)
+            .order_by("-timestamp")
+        )
+        return queryset

@@ -9,6 +9,12 @@ from user.utils import Util
 from user.selectors import get_user_by_email
 
 
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ["username", "email"]
+
+
 class UserLoginSerializer(serializers.Serializer):
     email = serializers.EmailField()
     password = serializers.CharField(validators=[validate_password, ])

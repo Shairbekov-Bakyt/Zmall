@@ -20,7 +20,7 @@ class CustomUser(AbstractUser):
     phone_number = PhoneNumberField(blank=True, validators=[validate_international_phonenumber])
     # phone_number.error_messages['invalid'] = 'Incorrect International Calling Code or Mobile Number!'
     activation_code = models.CharField(max_length=13, blank=True)
-    username = None
+    username = models.CharField(max_length=150, unique=True)
 
     REQUIRED_FIELDS = [
         "first_name",

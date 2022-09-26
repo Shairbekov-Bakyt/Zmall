@@ -20,7 +20,7 @@ DATABASES = {
     }
 }
 
-REDIS_HOST = "localhost"
+REDIS_HOST = "127.0.0.1"
 REDIS_PORT = 6379
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
@@ -30,6 +30,17 @@ CELERY_BROKER_TRANSPORT_OPTIONS = {"visibility_timeout": 3600}
 CELERY_ACCEPT_CONTENT = ["application/json"]
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [REDIS_HOST, REDIS_PORT],
+        },
+    },
+}
+
+
 
 JWT_AUTH = {
     'ACCESS_TOKEN_LIFETIME': datetime.timedelta(days=2),

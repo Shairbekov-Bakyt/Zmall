@@ -1,51 +1,58 @@
 from rest_framework import serializers
 
-from chat.models import Chat, Room
-from user.models import CustomUser as User
-from advert.models import Advert
+from chat.models import Message, Conversation
+from user.api.serializers import UserSerializer
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
-class UserForChatSerializer(serializers.ModelSerializer):
+class ConversationSerializer(serializers.ModelSerializer):
+    other_user = serializers.SerializerMethodField()
+    last_message = serializers.SerializerMethodField()
+
     class Meta:
-        model = User
-        fields = ("id", "first_name", "last_name")
+        model = Conversation
+        fields = ("id", "name", "other_user", "last_message")
 
+    def get_last_message(self, obj):
+        messages = obj.messages.all().order_by("-timestamp")
+        if not messages.exists():
+            return None
+        message = messages[0]
+        return MessageSerializer(message).data
 
-class ChatSerializer(serializers.ModelSerializer):
+    def get_other_user(self, obj):
+        usernames = obj.name.split("__")
+        context = {}
+        for username in usernames:
+            if username != self.context["user"].email:
+                # This is the other participant
+                other_user = User.objects.get(email=username)
+                return UserSerializer(other_user, context=context).data
+
+class MessageSerializer(serializers.ModelSerializer):
+    from_user = serializers.SerializerMethodField()
+    to_user = serializers.SerializerMethodField()
+    conversation = serializers.SerializerMethodField()
+
     class Meta:
-        model = Chat
-        fields = ("id", "message", "room", "from_user", "to_user", "date", "file")
-        oextra_kwargs = {
-            "file": {"required": False},
-            "message": {"required": False}}
+        model = Message
+        fields = (
+            "id",
+            "conversation",
+            "from_user",
+            "to_user",
+            "content",
+            "timestamp",
+            "read",
+        )
 
+    def get_conversation(self, obj):
+        return str(obj.conversation.id)
 
-class ChatListSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Room
-        fields = "__all__"
+    def get_from_user(self, obj):
+        return UserSerializer(obj.from_user).data
 
-    def to_representation(self, instance):
-        data = super().to_representation(instance)
-
-        data["owner"] = {}
-        data["user"] = {}
-
-        advert_id = instance.advert.id
-
-        chat = Chat.objects.filter(room=instance).last()
-        if chat is not None:
-
-            data["message"] = chat.message
-            data["date"] = chat.date
-
-        data["advert_id"] = advert_id
-        data["advert"] = Advert.objects.get(pk=advert_id).name
-
-        data["owner"]["id"] = instance.owner.id
-        data["owner"]["first_name"] = instance.owner.first_name
-        data["owner"]["last_name"] = instance.owner.last_name
-        data["user"]["id"] = instance.user.id
-        data["user"]["first_name"] = instance.user.first_name
-        data["user"]["last_name"] = instance.user.last_name
-        return data
+    def get_to_user(self, obj):
+        return UserSerializer(obj.to_user).data
