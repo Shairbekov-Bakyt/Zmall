@@ -9,11 +9,13 @@ from user.views import (
     ForgotPasswordView,
     ChangeUserInfoView,
     CheckActivationCode,
+    LoginCreateView,
 )
 
 
 urlpatterns = [
     path("login/", MyObtainTokenPairView.as_view(), name="token_obtain_pair"),
+    path("login/jwt/", LoginCreateView.as_view()),
     path("login/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("change/info/", ChangeUserInfoView.as_view(), name="user_update"),
     path("check/activation/code/", CheckActivationCode.as_view(), name="user_activate"),

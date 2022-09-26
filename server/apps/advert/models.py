@@ -366,6 +366,7 @@ class Transaction(models.Model):
     owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='transaction_owner', blank=True)
     advert = models.ForeignKey(Advert, on_delete=models.PROTECT, related_name="transaction_advert", verbose_name='объявления')
     date = models.DateTimeField(auto_now=True, verbose_name='дата')
+    description = models.TextField()
     types = models.CharField(max_length=30, choices=TransactionType.choices)
     price = models.IntegerField(default=0)
 

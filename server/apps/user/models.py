@@ -31,10 +31,6 @@ class CustomUser(AbstractUser):
 
     objects = UserManager()
 
-    # def save(self):
-    #     self.activation_code = Util.get_random_string(12)
-    #     super().save()
-
     def tokens(self):
         refresh = RefreshToken.for_user(self)
         return {"refresh": str(refresh), "access": str(refresh.access_token)}
