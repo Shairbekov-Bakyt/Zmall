@@ -34,7 +34,6 @@ class AdReportView(ModelViewSet):
 class AdvertView(AdvertViewSet):
     queryset = Advert.objects.select_related("category", "sub_category").all()
     filterset_class = AdvertFilter
-    serializer_class = AdminAdvertSerializer
     filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
     pagination_class = AdvertPagination
     http_method_names = ["get", "put", "delete"]

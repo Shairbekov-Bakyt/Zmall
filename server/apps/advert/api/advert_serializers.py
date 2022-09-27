@@ -76,6 +76,19 @@ class AdvertListSerializer(serializers.ModelSerializer):
     )
     advert_image = AdvertImageSerializer(read_only=True, many=True)
     city = serializers.SlugRelatedField(slug_field="id", queryset=City.objects.all())
+    views = serializers.SerializerMethodField(source="get_views", read_only=True)
+
+    def get_views(self, instance):
+        view = connect_to_redis()
+        redis_views = view.get(instance.id)
+        ad_views = 0
+
+        if redis_views is not None:
+            redis_views = json.loads(redis_views.decode("utf-8"))
+            ad_views = redis_views['views_counter']
+
+        return ad_views
+
 
     class Meta:
         model = Advert
@@ -113,8 +126,13 @@ class AdvertDetailSerializer(serializers.ModelSerializer):
 
     def get_views(self, instance):
         view = connect_to_redis()
-        redis_views = json.loads(view.get(instance.id).decode("utf-8"))
-        ad_views = redis_views["views_counter"]
+        redis_views = view.get(instance.id)
+        ad_views = 0
+
+        if redis_views is not None:
+            redis_views = json.loads(redis_views.decode("utf-8"))
+            ad_views = redis_views['views_counter']
+
         return ad_views
 
 
