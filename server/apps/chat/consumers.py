@@ -36,46 +36,48 @@ class ChatConsumer(JsonWebsocketConsumer):
         self.user = self.scope["user"]
         if not self.user.is_authenticated:
             return
+        try:
+            self.accept()
+            self.conversation_name = (
+                f"{self.scope['url_route']['kwargs']['conversation_name']}"
+            )
+            self.conversation, created = Conversation.objects.get_or_create(
+                name=self.conversation_name
+            )
 
-        self.accept()
-        self.conversation_name = (
-            f"{self.scope['url_route']['kwargs']['conversation_name']}"
-        )
-        self.conversation, created = Conversation.objects.get_or_create(
-            name=self.conversation_name
-        )
+            async_to_sync(self.channel_layer.group_add)(
+                self.conversation_name,
+                self.channel_name,
+            )
 
-        async_to_sync(self.channel_layer.group_add)(
-            self.conversation_name,
-            self.channel_name,
-        )
+            self.send_json(
+                {
+                    "type": "online_user_list",
+                    "users": [user.username for user in self.conversation.online.all()],
+                }
+            )
 
-        self.send_json(
-            {
-                "type": "online_user_list",
-                "users": [user.username for user in self.conversation.online.all()],
-            }
-        )
+            async_to_sync(self.channel_layer.group_send)(
+                self.conversation_name,
+                {
+                    "type": "user_join",
+                    "user": self.user.username,
+                },
+            )
 
-        async_to_sync(self.channel_layer.group_send)(
-            self.conversation_name,
-            {
-                "type": "user_join",
-                "user": self.user.username,
-            },
-        )
+            self.conversation.online.add(self.user)
 
-        self.conversation.online.add(self.user)
-
-        messages = self.conversation.messages.all().order_by("-timestamp")[0:10]
-        message_count = self.conversation.messages.all().count()
-        self.send_json(
-            {
-                "type": "last_50_messages",
-                "messages": MessageSerializer(messages, many=True).data,
-                "has_more": message_count > 5,
-            }
-        )
+            messages = self.conversation.messages.all().order_by("-timestamp")[0:10]
+            message_count = self.conversation.messages.all().count()
+            self.send_json(
+                {
+                    "type": "last_50_messages",
+                    "messages": MessageSerializer(messages, many=True).data,
+                    "has_more": message_count > 5,
+                }
+            )
+        except Exception as e:
+            print(e)
 
     def disconnect(self, code):
         if self.user.is_authenticated:
@@ -99,7 +101,6 @@ class ChatConsumer(JsonWebsocketConsumer):
 
     def receive_json(self, content, **kwargs):
         message_type = content["type"]
-
         if message_type == "read_messages":
             messages_to_me = self.conversation.messages.filter(to_user=self.user)
             messages_to_me.update(read=True)
