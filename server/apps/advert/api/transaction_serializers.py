@@ -7,6 +7,3 @@ class TransactionListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Transaction
         fields = '__all__'
-        extra_kwargs = {
-            "owner": {"read_only": True}
-        }

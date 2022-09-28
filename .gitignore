@@ -7,3 +7,4 @@ server/apps/*/migrations/000*
 .DS_Store
 apps/chat/migrations/000*
 data-mongodb
+*.db

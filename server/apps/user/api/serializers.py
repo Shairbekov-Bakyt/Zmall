@@ -9,6 +9,11 @@ from user.utils import Util
 from user.selectors import get_user_by_email
 
 
+class UserLoginSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    password = serializers.CharField(validators=[validate_password, ])
+
+
 class ChangeUserInfoSerializer(serializers.ModelSerializer):
     old_password = serializers.CharField(required=False)
     new_password = serializers.CharField(

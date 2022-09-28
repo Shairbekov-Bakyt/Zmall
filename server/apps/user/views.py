@@ -1,7 +1,8 @@
-import jwt
+from django.shortcuts import get_object_or_404
 from django.http import HttpRequest
-from decouple import config
 
+import jwt, json
+from decouple import config
 from rest_framework import generics, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
@@ -13,11 +14,44 @@ from user.selectors import get_user_by_email, get_user_by_id
 from user.api.serializers import (
     MyTokenObtainPairSerializer,
     RegisterSerializer,
-    ChangePasswordSerializer,
+    UserLoginSerializer,
     EmailSerializer,
     ChangeUserInfoSerializer,
     VerifyEmailCodeSerializer,
 )
+
+
+class LoginCreateView(generics.CreateAPIView):
+    serializer_class = UserLoginSerializer
+
+    def post(self, request, *args, **kwargs):
+        if not request.data:
+            return Response({'Error': "Please provide username/password"}, status="400")
+
+        email = request.data['email']
+        password = request.data['password']
+        user = get_object_or_404(User, email=email)
+        if not user.check_password(password):
+            return Response({'Error': "Invalid username/password"}, status="400")
+
+        if not user:
+            return Response(
+                json.dumps({'Error': "Invalid credentials"}),
+                status=400,
+                content_type="application/json"
+            )
+
+        payload = {
+            'id': user.id,
+            'email': user.email,
+        }
+        jwt_token = {'token': jwt.encode(payload, config("SECRET_KEY"))}
+
+        return Response(
+            json.dumps(jwt_token),
+            status=200,
+            content_type="application/json"
+        )
 
 
 class ChangeUserInfoView(generics.UpdateAPIView):

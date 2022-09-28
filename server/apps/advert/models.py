@@ -53,7 +53,7 @@ class AdvertImage(models.Model):
         verbose_name="объявления",
         related_name="advert_image",
     )
-    image = models.ImageField(upload_to=image_upload_to)
+    image = models.ImageField(upload_to=image_upload_to, max_length=1000)
 
     def __str__(self):
         return self.image.url
@@ -154,7 +154,7 @@ class Advert(models.Model):
         verbose_name="реклама",
     )
 
-    name = models.CharField(max_length=250, verbose_name="название объявления")
+    name = models.CharField(max_length=1000, verbose_name="название объявления")
     description = models.TextField(verbose_name="описание")
     start_price = models.IntegerField(verbose_name="от цены")
     end_price = models.IntegerField(verbose_name="до цены", null=True, blank=True)
@@ -366,6 +366,7 @@ class Transaction(models.Model):
     owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='transaction_owner', blank=True)
     advert = models.ForeignKey(Advert, on_delete=models.PROTECT, related_name="transaction_advert", verbose_name='объявления')
     date = models.DateTimeField(auto_now=True, verbose_name='дата')
+    description = models.TextField()
     types = models.CharField(max_length=30, choices=TransactionType.choices)
     price = models.IntegerField(default=0)
 
