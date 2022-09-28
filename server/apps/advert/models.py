@@ -245,6 +245,7 @@ class Feedback(models.Model):
     email = models.EmailField(max_length=100, verbose_name="E-mail")
     feedback_title = models.CharField(max_length=150, verbose_name="тема сообщение")
     message = models.TextField(verbose_name="сообщение")
+    date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
