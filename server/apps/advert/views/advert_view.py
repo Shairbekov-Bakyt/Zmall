@@ -74,18 +74,6 @@ class AdvertViewSet(ModelViewSet):
         serializer.is_valid(raise_exception=True)
         advert = serializer.save()
 
-        img_objects = []
-        for img in imgs:
-            img_objects.append(AdvertImage(advert=advert, image=img))
-
-        AdvertImage.objects.bulk_create(img_objects)
-
-        ad_contacts = []
-        for contact in contacts[0].split(","):
-            validate_international_phonenumber(contact)
-            ad_contacts.append(AdvertContact(advert=advert, phone_number=contact))
-
-        AdvertContact.objects.bulk_create(ad_contacts)
         create_ad_imgs(advert, imgs)
         create_ad_contacts(advert, contacts)
 
