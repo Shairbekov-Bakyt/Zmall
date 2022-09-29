@@ -360,9 +360,9 @@ class PrivacyPolicy(models.Model):
 
 class Transaction(models.Model):
     class TransactionType(models.TextChoices):
-        vip = "статус VIP", "статус VIP"
-        urgently = "добавление стикера Cрочно", "добавление стикера Cрочно"
-        highlighted = "Выделение цветом", "Выделение цветом"
+        vip = "vip", "VIP"
+        urgently = "urgently", "Срочно"
+        highlighted = "highlighted", "Выделить"
 
     owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='transaction_owner', blank=True)
     advert = models.ForeignKey(Advert, on_delete=models.PROTECT, related_name="transaction_advert", verbose_name='объявления')
