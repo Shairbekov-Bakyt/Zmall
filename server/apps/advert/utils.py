@@ -32,7 +32,7 @@ def generate_sig(data: dict, method: str) -> dict:
         pg_amount=data.price,
         pg_description=data.description,
         pg_salt=Util.get_random_string(30),
-        pg_success_url='http://188.225.83.42/swagger/',
+        pg_success_url='http://localhost:3000',
     )
     data = OrderedDict(sorted(data.items()))
     string = method
