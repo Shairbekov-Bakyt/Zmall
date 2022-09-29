@@ -1,7 +1,10 @@
 import json
+from django.contrib.auth.password_validation import validate_password
 
 from rest_framework import serializers
+from rest_framework.validators import UniqueValidator
 
+from user.models import CustomUser as User
 from advert.utils import connect_to_redis
 from user.models import CustomUser
 from advert.models import (
@@ -83,3 +86,28 @@ class AdminAdvertSerializer(serializers.ModelSerializer):
     class Meta:
         model = Advert
         exclude = ("created_date", "status")
+
+
+class UserPatchSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField(
+        required=False,
+        validators=[
+            UniqueValidator(queryset=User.objects.all(), message="email уже занят")
+        ],
+    )
+
+    password = serializers.CharField(
+        write_only=True, required=False, validators=[validate_password]
+    )
+    password2 = serializers.CharField(write_only=True, required=True)
+
+    class Meta:
+        model = User
+        fields = "__all__"
+
+        extra_kwargs = {
+            "first_name": {"required": True},
+            "last_name": {"required": True},
+            "phone_number": {"required": True},
+        }
+
