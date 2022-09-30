@@ -1,4 +1,5 @@
 import hashlib
+import requests
 from bs4 import BeautifulSoup
 from collections import OrderedDict
 
@@ -34,6 +35,21 @@ def generate_sig(data: dict, method: str) -> dict:
         pg_salt=Util.get_random_string(30),
         pg_success_url='https://localhost:3000/',
     )
+
+    return hashed_sig(data, method)
+
+
+def generate_status_sig(order_id, method) -> dict:
+    data = dict(
+        pg_order_id=order_id,
+        pg_merchant_id=config("PG_MERCHANT_ID"),
+        pg_salt=Util.get_random_string(30),
+    )
+
+    return hashed_sig(data, method)
+
+
+def hashed_sig(data, method):
     data = OrderedDict(sorted(data.items()))
     string = method
     for key, value in data.items():
@@ -49,3 +65,19 @@ def generate_sig(data: dict, method: str) -> dict:
 def get_url_from_content(html: str):
     soup = BeautifulSoup(html, 'html.parser')
     return soup.find('pg_redirect_url').text
+
+
+def get_status_content(html: str):
+    soup = BeautifulSoup(html, 'html.parser')
+    return soup.find('pg_transaction_status').text
+
+
+def get_payment_details(params, method):
+    response = requests.post(url=config("PAYBOX_BASE_URL")+method, params=params)
+
+    if "status" in method:
+        url = get_status_content(response.content)
+    else:
+        url = get_url_from_content(response.content)
+
+    return url

@@ -1,3 +1,5 @@
+import celery
+from celery import shared_task
 from django.db import transaction
 
 import requests
@@ -8,7 +10,7 @@ from decouple import config
 
 from advert.api.transaction_serializers import TransactionListSerializer
 from advert.models import Transaction
-from advert.utils import generate_sig, get_url_from_content
+from advert.utils import generate_sig, get_payment_details, generate_status_sig
 
 
 class TransactionViewSet(ModelViewSet):
@@ -25,7 +27,16 @@ class TransactionViewSet(ModelViewSet):
         data.owner = request.user
         data.save()
         method = 'init_payment.php'
-        params = generate_sig(data, 'init_payment.php')
-        response = requests.post(url=config('PAYBOX_BASE_URL')+method, params=params)
-        url = get_url_from_content(response.content)
+        params = generate_sig(data, method)
+        url = get_payment_details(params, method)
         return Response({**serializer.data, 'redirect_url': url})
+
+
+def check_set_status(order_id: int):
+    method = "get_status2.php"
+    params = generate_status_sig(order_id, method)
+
+    return get_payment_details(params, method)
+
+
+

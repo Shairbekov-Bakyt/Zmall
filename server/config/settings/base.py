@@ -144,6 +144,11 @@ CELERY_BEAT_SCHEDULE = {
         "task": "advert.tasks.task_save_advert_statistics",
         "schedule": crontab(minute=0, hour=0),
     },
+    # "check-payment-status": {
+    #     "task": "advert.views.transaction_view.task_check_payment_status",
+    #     "time_limit": 1800,
+    #     "default_retry_delay": 30,
+    # },
 }
 
 """

@@ -1,10 +1,6 @@
 import pathlib
 import time
 
-from django.core.exceptions import SuspiciousOperation
-from rest_framework.response import Response
-from rest_framework import status
-
 from advert.services import set_advert_count
 from advert.utils import connect_to_redis
 
