@@ -26,9 +26,9 @@ class Room(models.Model):
 
     @property
     def get_notification(self):
-        all_notification = Chat.objects.filter(models.Q(to_user=self.user) | models.Q(to_user=self.owner), is_read=False).count()
+        all_notification = Chat.objects.filter(models.Q(to_user=self.user) | models.Q(to_user=self.owner),
+                                               is_read=False).count()
         return all_notification
-
 
 
 class Chat(models.Model):

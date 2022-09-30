@@ -3,17 +3,15 @@ from rest_framework import status, filters
 from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
-from phonenumber_field.validators import validate_international_phonenumber
 from rest_framework.permissions import IsAuthenticated
-
 
 from advert.api import permissions
 from advert.selectors import advert_with_select_related_filter
-from advert.api import advert_serializers as serializers
+from advert.api.serializers import advert_serializers as serializers
 from advert.api.pagination import AdvertPagination
 from config.middleware import get_client_ip
 from advert.services import (
-    set_advert_contacts_count,
+    set_views,
     create_ad_imgs,
     create_ad_contacts,
     delete_ad_imgs,
@@ -21,7 +19,6 @@ from advert.services import (
 )
 from advert.models import (
     Advert,
-    AdvertImage,
     City,
     AdvertContact,
     AdvertReport,
@@ -115,7 +112,7 @@ class ContactView(CreateAPIView):
     def post(self, request, advert_id: int, *args, **kwargs):
         user = request.user
         ip = get_client_ip(request)
-        set_advert_contacts_count(advert_id, str(user), ip)
+        set_views(advert_id, str(user), ip, "contacts")
         return Response(
             {"advert_contact": "counter updated"}, status=status.HTTP_200_OK
         )
@@ -173,11 +170,4 @@ class UserAdvertUpdateView(UpdateAPIView):
             )
 
 
-class FeedbackMessageView(ListAPIView):
-    serializer_class = serializers.FeedbackMessageSerializer
-    queryset = FeedbackMessage.objects.all()
 
-
-class PrivacyPolicyView(ListAPIView):
-    serializer_class = serializers.PrivacyPolicySerializer
-    queryset = PrivacyPolicy.objects.all()

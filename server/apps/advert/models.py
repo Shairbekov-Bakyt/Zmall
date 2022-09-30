@@ -96,12 +96,13 @@ class AdvertContact(models.Model):
         verbose_name_plural = "номера для объявлении"
 
 
-class Promote(models.Model):
-    class PromoteType(models.TextChoices):
-        vip = "vip", "VIP"
-        urgently = "urgently", "Срочно"
-        highlighted = "highlighted", "Выделить"
+class PromoteType(models.TextChoices):
+    vip = "vip", "VIP"
+    urgently = "urgently", "Срочно"
+    highlighted = "highlighted", "Выделить"
 
+
+class Promote(models.Model):
     title = models.CharField(max_length=150)
     description = models.TextField(verbose_name="описание")
     price = models.IntegerField(verbose_name="цена")
@@ -359,17 +360,23 @@ class PrivacyPolicy(models.Model):
 
 
 class Transaction(models.Model):
-    class TransactionType(models.TextChoices):
-        vip = "статус VIP", "статус VIP"
-        urgently = "добавление стикера Cрочно", "добавление стикера Cрочно"
-        highlighted = "Выделение цветом", "Выделение цветом"
+    class TransactionStatusType(models.TextChoices):
+        failed = "failed", "Отменено"
+        success = "success", "Оплачено"
+        pending = "pending", "В ожидании"
 
     owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='transaction_owner', blank=True)
-    advert = models.ForeignKey(Advert, on_delete=models.PROTECT, related_name="transaction_advert", verbose_name='объявления')
+    advert = models.ForeignKey(
+        Advert,
+        on_delete=models.PROTECT,
+        related_name="transaction_advert",
+        verbose_name='объявления')
     date = models.DateTimeField(auto_now=True, verbose_name='дата')
     description = models.TextField()
-    types = models.CharField(max_length=30, choices=TransactionType.choices)
+    types = models.CharField(max_length=30, choices=PromoteType.choices)
     price = models.IntegerField(default=0)
+    status = models.CharField(max_length=15, choices=TransactionStatusType.choices,
+                              default=TransactionStatusType.pending)
 
     def __str__(self):
         return f"{self.id}-{self.advert.name}"
@@ -377,8 +384,8 @@ class Transaction(models.Model):
     @staticmethod
     def validate_price(price):
         if price < 0:
-            raise ValueError("price must be greaten than 0")
+            raise ValueError("price must be greater than 0")
 
     class Meta:
-        verbose_name = 'Трансакция'
-        verbose_name_plural = 'Трансакции'
+        verbose_name = 'Транзакция'
+        verbose_name_plural = 'Транзакции'

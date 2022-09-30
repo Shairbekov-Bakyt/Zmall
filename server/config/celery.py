@@ -1,6 +1,5 @@
 import os
 from celery import Celery
-from celery.schedules import crontab
 
 # from advert.task import task_send_advert_to_email
 

@@ -26,100 +26,57 @@ def send_advert_to_email(emails):
     Util.send_email(data)
 
 
-def set_advert_count(id: int, user, ip):
+def set_views(ad_id: int, user, ip, view_type):
     view = connect_to_redis()
-    format = "%Y-%m-%d, %H:%M"
-    date = str(datetime.now().strftime(format))
-
-    view_info = {"ip": [], "user": [], "views_counter": 0, "last_view": {}}
-    if not view.exists(id):
-        view.set(id, json.dumps(view_info))
-
-    advert_views = json.loads(view.get(id).decode("utf-8"))
-    ad = Advert.objects.get(id=id)
-
-    if user == "AnonymousUser":
-        if ip not in advert_views["ip"]:
-            advert_views["views_counter"] += 1
-            advert_views["ip"] += [ip]
-            advert_views["last_view"][f"{user}-{ip}"] = date
-
-        else:
-            user_last_view = advert_views["last_view"][f"{user}-{ip}"]
-            if dates_difference(user_last_view, format) > 1:
-                advert_views["views_counter"] += 1
-                advert_views["last_view"][f"{user}-{ip}"] = datetime.now()
-
-    elif user not in advert_views["user"]:
-        advert_views["views_counter"] += 1
-        advert_views["user"] += [user]
-        advert_views["last_view"][f"{user}"] = date
-
-    else:
-        user_last_view = advert_views["last_view"][f"{user}"]
-        if dates_difference(user_last_view, format) > 1:
-            advert_views["views_counter"] += 1
-            advert_views["last_view"][f"{user}"] = datetime.now()
-
-    ad.views = advert_views["views_counter"]
-    view.set(id, json.dumps(advert_views))
-
-
-def set_advert_contacts_count(id: int, user, ip):
-    view = connect_to_redis()
-    format = "%Y-%m-%d, %H:%M"
-    date = str(datetime.now().strftime(format))
-    key = f"{id}-contacts"
+    date_format = "%Y-%m-%d, %H:%M"
+    date = str(datetime.now().strftime(date_format))
+    key = ad_id
+    if view_type == "contacts":
+        key = f"{ad_id}-contacts"
 
     view_info = {"ip": [], "user": [], "views_counter": 0, "last_view": {}}
     if not view.exists(key):
         view.set(key, json.dumps(view_info))
 
-    contacts_views = json.loads(view.get(key).decode("utf-8"))
+    object_views = json.loads(view.get(key).decode("utf-8"))
 
     if user == "AnonymousUser":
-        if ip not in contacts_views["ip"]:
-            contacts_views["views_counter"] += 1
-            contacts_views["ip"] += [ip]
-            contacts_views["last_view"][f"{user}-{ip}"] = date
+        if ip not in object_views["ip"]:
+            object_views["views_counter"] += 1
+            object_views["ip"] += [ip]
+            object_views["last_view"][f"{user}-{ip}"] = date
 
         else:
-            user_last_view = contacts_views["last_view"][f"{user}-{ip}"]
-            if dates_difference(user_last_view, format) > 1:
-                contacts_views["views_counter"] += 1
-                contacts_views["last_view"][f"{user}-{ip}"] = datetime.now()
+            user_last_view = object_views["last_view"][f"{user}-{ip}"]
+            if dates_difference(user_last_view, date_format) > 1:
+                object_views["views_counter"] += 1
+                object_views["last_view"][f"{user}-{ip}"] = datetime.now()
 
-    elif user not in contacts_views["user"]:
-        contacts_views["views_counter"] += 1
-        contacts_views["user"] += [user]
-        contacts_views["last_view"][f"{user}"] = date
+    elif user not in object_views["user"]:
+        object_views["views_counter"] += 1
+        object_views["user"] += [user]
+        object_views["last_view"][f"{user}"] = date
 
     else:
-        user_last_view = contacts_views["last_view"][f"{user}"]
-        if dates_difference(user_last_view, format) > 1:
-            contacts_views["views_counter"] += 1
-            contacts_views["last_view"][f"{user}"] = datetime.now()
-    view.set(id, json.dumps(contacts_views))
+        user_last_view = object_views["last_view"][f"{user}"]
+        if dates_difference(user_last_view, date_format) > 1:
+            object_views["views_counter"] += 1
+            object_views["last_view"][f"{user}"] = datetime.now()
+    if view_type == "adverts":
+        ad = Advert.objects.get(id=ad_id)
+        ad.views = object_views["views_counter"]
+        ad.save()
+
+    view.set(key, json.dumps(object_views))
 
 
-def dates_difference(date, format):
+def dates_difference(date, date_format):
     now = datetime.now()
-    dt_object = datetime.strptime(str(date).replace("b", "").replace("'", ""), format)
+    dt_object = datetime.strptime(str(date).replace("b", "").replace("'", ""), date_format)
     diff = now - dt_object
 
     return diff.days
 
-
-def set_advert_views(id: int):
-    view = connect_to_redis()
-
-    if not view.exists(id):
-        return 0
-
-    advert_info = json.loads(view.get(id).decode("utf-8"))
-    views_count = advert_info["views_counter"]
-
-    return views_count
 
 def create_ad_imgs(advert, imgs):
     if len(imgs) > 8:

@@ -12,7 +12,6 @@ class DatabaseLoggingHandler(logging.Handler):
         self.collection = self.db[collection]
 
     def emit(self, record):
-        """save log record in file or database"""
         formatted_message = self.format(record)
 
         database_record = {
@@ -20,7 +19,7 @@ class DatabaseLoggingHandler(logging.Handler):
             "module": record.module,
             "line": record.lineno,
             "asctime": record.asctime if getattr(record, "asctime", None) else strftime("%Y-%m-%d %H:%M", gmtime()),
-            "message": record.message  # use `formatted_message` for store formatted log
+            "message": record.message
         }
 
         try:

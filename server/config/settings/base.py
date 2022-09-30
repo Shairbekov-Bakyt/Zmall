@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 from celery.schedules import crontab
-import os, sys
+import os
+import sys
 
 from decouple import config
 
@@ -144,6 +145,10 @@ CELERY_BEAT_SCHEDULE = {
         "task": "advert.tasks.task_save_advert_statistics",
         "schedule": crontab(minute=0, hour=0),
     },
+    "check-payment-status": {
+        "task": "advert.tasks.task_check_payment_status",
+        "schedule": crontab(),
+    },
 }
 
 """
@@ -196,19 +201,19 @@ LOGGING = {
    'filters': {
        'filter_info_level': {
            '()': 'config.log_middleware.FilterLevels',
-           'filter_levels' : [
+           'filter_levels': [
                "INFO"
            ]
        },
        'filter_error_level': {
            '()': 'config.log_middleware.FilterLevels',
-           'filter_levels' : [
+           'filter_levels': [
                "ERROR"
            ]
        },
        'filter_warning_level': {
            '()': 'config.log_middleware.FilterLevels',
-           'filter_levels' : [
+           'filter_levels': [
                "WARNING"
            ]
        }
@@ -218,7 +223,8 @@ LOGGING = {
            'format': '%(levelname)s : %(message)s - [in %(pathname)s:%(lineno)d]'
        },
        'error-formatter': {
-           'format': '%(levelname)s : %(asctime)s {%(module)s} [%(funcName)s] %(message)s- [in %(pathname)s:%(lineno)d]',
+           'format': '%(levelname)s : %(asctime)s {%(module)s} [%(funcName)s] %(message)s- '
+                     '[in %(pathname)s:%(lineno)d]',
            'datefmt': '%Y-%m-%d %H:%M'
        },
        'short': {

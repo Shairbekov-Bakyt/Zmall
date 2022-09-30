@@ -2,7 +2,7 @@ from django.test import TestCase, Client
 from rest_framework import status
 
 from config.settings.local import BASE_API
-from advert.api.advert_serializers import (
+from api.serializers.advert_serializers import (
     AdvertListSerializer,
     AdvertCreateSerializer,
     CitySerializer
