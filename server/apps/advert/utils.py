@@ -1,17 +1,17 @@
 import hashlib
+import json
 import requests
-from bs4 import BeautifulSoup
-from collections import OrderedDict
-
-from django.conf import settings
-
-
 import redis
 from decouple import config
+from bs4 import BeautifulSoup
+from collections import OrderedDict
+from django.conf import settings
 
-from user.utils import  Util
+from advert.models import Transaction
+from user.utils import Util
 
-def connect_to_redis() -> redis.Redis:
+
+def connect_to_redis():
     client = redis.Redis(host=settings.REDIS_HOST, port=settings.REDIS_PORT)
     return client
 
@@ -81,3 +81,32 @@ def get_payment_details(params, method):
         url = get_url_from_content(response.content)
 
     return url
+
+
+def set_status(order_id: int):
+    method = "get_status2.php"
+    params = generate_status_sig(order_id, method)
+    status = get_payment_details(params, method)
+    order = Transaction.objects.get(pk=order_id)
+
+    failed = ["failed", "refunded", "revoked", "incomplete"]
+
+    if status == "ok":
+        order.status = "success"
+    elif status in failed:
+        order.status = "failed"
+    else:
+        order.status = "pending"
+    order.save()
+
+
+def get_views(instance):
+    view = connect_to_redis()
+    redis_views = view.get(instance.id)
+    ad_views = 0
+
+    if redis_views is not None:
+        redis_views = json.loads(redis_views.decode("utf-8"))
+        ad_views = redis_views['views_counter']
+
+    return ad_views

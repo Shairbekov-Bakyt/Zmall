@@ -1,7 +1,7 @@
 import pathlib
 import time
 
-from advert.services import set_advert_count
+from advert.services import set_views
 from advert.utils import connect_to_redis
 
 
@@ -58,5 +58,5 @@ class AdvertCountMiddleware:
 
         client_ip = get_client_ip(request)
         user = request.user
-        set_advert_count(int(path.name), str(user), client_ip)
+        set_views(int(path.name), str(user), client_ip, "adverts")
         return self.get_response(request)

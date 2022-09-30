@@ -5,7 +5,7 @@ from rest_framework.permissions import IsAdminUser
 
 from user.models import CustomUser
 from user.api.serializers import RegisterSerializer
-from advert.views.advert_view import AdvertViewSet
+from advert.api.views.advert_view import AdvertViewSet
 from custom_admin.serializers import UserSerializerAD, AdReportSerializer, UserPatchSerializer
 from advert.api.pagination import AdvertPagination
 from advert.models import Advert, AdvertReport
@@ -57,6 +57,3 @@ class AdvertView(AdvertViewSet):
     pagination_class = AdvertPagination
     http_method_names = ["get", "put", "delete"]
     permission_classes = [IsAdminUser]
-
-
-

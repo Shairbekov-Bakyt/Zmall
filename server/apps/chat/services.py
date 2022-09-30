@@ -2,13 +2,10 @@ from django.db.models import Q
 
 from chat.web_socket import pusher_client
 from chat.selectors import get_user_channels
-from chat.models import (
-    Room,
-    Chat
-)
+from chat.models import Chat
 
 
-def notificate_user(user, ):
+def notify_user(user, ):
     data = {}
     rooms = get_user_channels(user).values_list('id', flat=True)
 
@@ -22,4 +19,3 @@ def notificate_user(user, ):
         "notificate",
         data,
     )
-    print(data)

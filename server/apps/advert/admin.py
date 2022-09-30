@@ -14,7 +14,6 @@ from advert.models import (
 admin.site.register(City)
 admin.site.register(Feedback)
 admin.site.register(Comment)
-admin.site.register(Transaction)
 
 
 class AdvertImageInline(admin.TabularInline):
@@ -39,12 +38,6 @@ class AdvertStatisticsInline(admin.StackedInline):
 class AdvertReportInline(admin.StackedInline):
     model = AdvertReport
     readonly_fields = ["report_message", "report"]
-
-    # def get_readonly_fields(self, request, obj=None):
-    #     if self.get_queryset(request).last().report_message is None:
-    #         return ['report', ]
-    #
-    #     return ['report_message', ]
 
     def get_empty_value_display(self):
         return "empty"
@@ -134,3 +127,8 @@ class PrivacyPolicyAdmin(admin.ModelAdmin):
 
     class Meta:
         model = PrivacyPolicy
+
+
+@admin.register(Transaction)
+class TransactionAdmin(admin.ModelAdmin):
+    list_filter = ('status',)

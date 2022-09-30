@@ -3,6 +3,7 @@ from django.db.models import Q
 from chat.models import Chat, Room
 from user.models import CustomUser as User
 
+
 def get_user_channels(user):
     return Room.objects.filter(Q(owner=user) | Q(user=user))
 

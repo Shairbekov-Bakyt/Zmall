@@ -3,6 +3,7 @@ from django.urls import reverse
 
 from .utils import Util
 
+
 def send_password_with_email(user):
     password = Util.get_random_string(12)
     email_body = (
@@ -36,11 +37,11 @@ def send_code_with_mail(user):
 
 def send_url_with_mail(user, request):
     current_site = get_current_site(request).domain
-    relativeLink = reverse("email-verify")
+    relative_link = reverse("email-verify")
 
     token = Util.get_token_by_user(user)
 
-    absurl = "http://" + current_site + relativeLink + "?token=" + str(token)
+    absurl = "http://" + current_site + relative_link + "?token=" + str(token)
 
     email_body = "Hi " + user.first_name + " use link below to verify email \n" + absurl
 

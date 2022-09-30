@@ -1,17 +1,9 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from advert.views.promote_view import PromoteViewSet
-from advert.views.category_view import CategoryView
-from advert.views.favorite_view import FavoriteAdvertView, FavoriteUpdateDelete
-from advert.views.subcategory_view import SubCategoryView
-from advert.views.feedback_view import FeedbackView
-from advert.views.comment_view import CommentView
-from advert.views.help_view import HelpCategoryViewSet, HelpViewSet, FAQListView
-from advert.views.statistics_view import StatisticsView
-from advert.views.site_view import FooterLinkView
-from advert.views.transaction_view import TransactionViewSet
-from advert.views.advert_view import (
+from advert.api.views.comment_view import CommentView
+from advert.api.views.site_view import *
+from advert.api.views.advert_view import (
     AdvertViewSet,
     CityListView,
     PremiumAdvertView,
@@ -19,8 +11,6 @@ from advert.views.advert_view import (
     AdvertReportView,
     UserAdvertView,
     UserAdvertUpdateView,
-    FeedbackMessageView,
-    PrivacyPolicyView,
     FavAdvertView,
 )
 
@@ -33,7 +23,7 @@ router.register("comment", CommentView, basename="comment")
 router.register("feedback", FeedbackView, basename="feedback")
 router.register("help", HelpViewSet, basename="help")
 router.register("site_link", FooterLinkView, basename="footer")
-router.register("help_category", HelpCategoryViewSet, basename="helpcategory")
+router.register("help_category", HelpCategoryViewSet, basename="help_category")
 router.register("premium_advert", PremiumAdvertView, basename="premium_advert")
 router.register("fav_adverts", FavAdvertView, basename="fav_adverts"),
 

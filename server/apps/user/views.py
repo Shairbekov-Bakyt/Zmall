@@ -1,7 +1,8 @@
 from django.shortcuts import get_object_or_404
 from django.http import HttpRequest
 
-import jwt, json
+import jwt
+import json
 from decouple import config
 from rest_framework import generics, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -126,7 +127,7 @@ class VerifyEmail(generics.GenericAPIView):
                 {"email": "Successfully activated"}, status=status.HTTP_200_OK
             )
 
-        except jwt.ExpiredSignatureError as e:
+        except jwt.ExpiredSignatureError as _:
             return Response(
                 {"email": "Activation Expired"}, status=status.HTTP_400_BAD_REQUEST
             )

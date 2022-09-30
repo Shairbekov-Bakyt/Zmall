@@ -15,7 +15,7 @@ class ChatSerializer(serializers.ModelSerializer):
     class Meta:
         model = Chat
         fields = ("id", "message", "room", "from_user", "to_user", "date", "file")
-        oextra_kwargs = {
+        extra_kwargs = {
             "file": {"required": False},
             "message": {"required": False}}
 

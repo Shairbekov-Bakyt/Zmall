@@ -3,7 +3,7 @@ from decouple import config
 from . import google, facebook
 from .register import register_social_user
 from rest_framework.exceptions import AuthenticationFailed
-from google.oauth2 import id_token
+
 
 class FacebookSocialAuthSerializer(serializers.Serializer):
     """Handles serialization of facebook related data"""
@@ -20,7 +20,7 @@ class FacebookSocialAuthSerializer(serializers.Serializer):
                 provider=provider,
                 email=email,
             )
-        except Exception as identifier:
+        except Exception as _:
 
             raise serializers.ValidationError(
                 "The token  is invalid or expired. Please login again."
@@ -35,7 +35,7 @@ class GoogleSocialAuthSerializer(serializers.Serializer):
         user_data = google.Google.validate(auth_token)
         try:
             user_data["sub"]
-        except:
+        except Exception as _:
             raise serializers.ValidationError(
                 "The token is invalid or expired. Please login again."
             )

@@ -70,18 +70,6 @@ class AdminAdvertSerializer(serializers.ModelSerializer):
         slug_field="types", queryset=Promote.objects.all(), allow_null=True
     )
     city = serializers.SlugRelatedField(slug_field="id", queryset=City.objects.all())
-    views = serializers.SerializerMethodField(source='get_views', read_only=True)
-
-    def get_views(self, instance):
-        view = connect_to_redis()
-        redis_views = view.get(instance.id)
-        ad_views = 0
-
-        if redis_views is not None:
-            redis_views = json.loads(redis_views.decode("utf-8"))
-            ad_views = redis_views['views_counter']
-
-        return ad_views
 
     class Meta:
         model = Advert

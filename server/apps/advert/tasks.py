@@ -1,8 +1,8 @@
 import json
 from celery import shared_task
 
-from advert.models import Advert, AdvertStatistics
-from advert.utils import connect_to_redis
+from advert.models import Advert, AdvertStatistics, Transaction
+from advert.utils import connect_to_redis, set_status
 from advert.web_scraping.salexy import salexy
 from advert.web_scraping.doska import doska
 
@@ -25,16 +25,16 @@ def task_save_advert_statistics():
 
     statistics = []
     for advert in adverts:
-        id = advert.id
-        if not rd.exists(id):
+        ad_id = advert.id
+        if not rd.exists(ad_id):
             continue
 
         contacts_views = 0
-        if rd.exists(f"{id}-contacts"):
-            advert_contacts_views = json.loads(rd.get(f"{id}-contacts").decode("utf-8"))
+        if rd.exists(f"{ad_id}-contacts"):
+            advert_contacts_views = json.loads(rd.get(f"{ad_id}-contacts").decode("utf-8"))
             contacts_views = advert_contacts_views["views_counter"]
 
-        advert_views = json.loads(rd.get(id).decode("utf-8"))
+        advert_views = json.loads(rd.get(ad_id).decode("utf-8"))
         statistics.append(
             AdvertStatistics(
                 advert=advert,
@@ -44,3 +44,11 @@ def task_save_advert_statistics():
         )
 
     AdvertStatistics.objects.bulk_create(statistics)
+
+
+@shared_task()
+def task_check_payment_status():
+    transactions = Transaction.objects.all().filter(status="pending")
+
+    for transaction in transactions:
+        set_status(transaction.id)
