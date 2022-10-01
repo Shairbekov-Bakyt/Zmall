@@ -4,7 +4,7 @@ import datetime
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["188.225.83.42", "0.0.0.0", "api"]
+ALLOWED_HOSTS = ["188.225.83.42", "0.0.0.0", "api", "lavka.zeonithub.com"]
 
 DATABASES = {
     "default": {
