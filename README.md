@@ -1,6 +1,6 @@
-# Zeon Bazar
+# Bazar.kz
 
-### zeon bazar is Ecommerce project with features
+### Bazar.kz is Ecommerce project with features
 - advertisement with CRUD
 - category and sub category with CRUD
 - custom Base Command
